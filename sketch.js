@@ -1,11 +1,26 @@
+import drawStartScreen from "./src/screens/startScreen.js";
+import drawEndScreen from "./src/screens/endScreen.js";
+import drawGameScreen from "./src/screens/gameScreen.js";
+import drawCustomizationScreen from "./src/screens/customizationScreen.js";
+
+let currentScreen = "start";
+
 window.preload = function () {};
 
-window.draw = function () {};
+window.draw = function () {
+  if (currentScreen === "start") {
+    drawStartScreen();
+  } else if (currentScreen === "customization") {
+    drawCustomizationScreen();
+  } else if (currentScreen === "game") {
+    drawGameScreen();
+  } else if (currentScreen === "end") {
+    drawEndScreen();
+  }
+};
 
 window.mouseClicked = function () {};
 
-let jobs = [new Job("Steuerberater", 1000), new Job("Kellner", 500)];
-let apartments = [
-  new Apartment(100, "Auf dem Land", true),
-  new Apartment(500, "Innenstadt", false),
-];
+export function setCurrentScreen(newScreen) {
+  currentScreen = newScreen;
+}
