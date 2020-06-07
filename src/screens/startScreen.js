@@ -8,14 +8,3 @@ export default function () {
   textAlign(CENTER);
   text("open vindu", width / 2, height / 2);
 }
-
-class Button {
-  constructor(x, y, width, height) {
-    this.x = x;
-    this.y = y;
-    this.width = width;
-    this.height = height;
-  }
-
-  onClick() {}
-}

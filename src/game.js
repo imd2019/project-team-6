@@ -5,8 +5,13 @@ let week1Questions = [
   new Question(
     "Deine Mutter liegt krank im Altersheim. Um sie zu besuchen musst du dich krankschreiben lassen. Was machst du?",
     [
-      new Choice("Ich besuche sie und bringe was mit.", 5, -45),
-      new Choice("Ich gehe arbeiten.", -5),
+      new Choice(
+        "Ich besuche sie und bringe was mit.",
+        "blumen, trinkgeld, wär schön mit mama",
+        5,
+        -45
+      ),
+      new Choice("Ich gehe arbeiten.", "schlechtes gewissen", -5),
     ]
   ),
 ];
@@ -16,7 +21,7 @@ let week4Questions = [];
 
 export class Game {
   constructor(player) {
-    this.currentTime = 0;
+    this.currentDay = 0;
     this.player = player;
     this.events = [];
   }

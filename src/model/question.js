@@ -3,4 +3,5 @@ export class Question {
     this.text = text;
     this.choices = choices;
   }
+  display() {}
 }
