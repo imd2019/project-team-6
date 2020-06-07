@@ -39,7 +39,7 @@ let week1Questions = [
     new Choice("Ich kaufe mir eine.", "sicherheit", 0, 0, 0, 1),
     //konsequenz ist 50/50 chance. wo soll das hin? oder gehen wir davon aus, dass es nicht klappt bzw das es klappt?
     new Choice(
-      "Ich kaufe eine zu Sicherheit.",
+      "Ich nähe mir eine.",
       "du schaffst es/du schaffst es nicht",
       0,
       0,
@@ -143,7 +143,7 @@ let week3Questions = [
     new Choice("Ich kaufe mir eine.", "sicherheit", 0, 0, 0, 1),
     //konsequenz ist 50/50 chance. wo soll das hin? oder gehen wir davon aus, dass es nicht klappt bzw das es klappt?
     new Choice(
-      "Ich kaufe eine zu Sicherheit.",
+      "Ich nähe mir eine.",
       "du schaffst es/du schaffst es nicht",
       0,
       0,
