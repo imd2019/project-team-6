@@ -1,10 +1,11 @@
 export class Button {
-  constructor(x, y, width, height, text) {
+  constructor(x, y, width, height, text, clicked) {
     this.x = x;
     this.y = y;
     this.width = width;
     this.height = height;
     this.text = text;
+    this.clicked = clicked;
   }
 
   display() {
@@ -21,10 +22,6 @@ export class Button {
     if (this.hitTest(mouseX, mouseY)) {
       this.clicked();
     }
-  }
-
-  clicked() {
-    console.log("hi");
   }
 
   hitTest(x, y) {
