@@ -1,1 +1,5 @@
-export default function () {}
+function draw() {}
+
+function mouseClicked() {}
+
+export default { draw, mouseClicked };
