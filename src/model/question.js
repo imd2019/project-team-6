@@ -14,13 +14,13 @@ export class Question {
     textAlign(CENTER);
     text(this.text, windowWidth / 2, windowHeight / 2 - 130);
 
-    //2 antworten
+    //1 antwort
     if (this.choices.length === 1) {
       //erste im array
       fill("#d5d5d5");
       rect(windowWidth / 2, windowHeight / 2 - 10, 140, 50, 3);
       fill("black");
-      text(this.choices[0], windowWidth / 2, windowHeight / 2 - 7);
+      text(this.choices[0].text, windowWidth / 2, windowHeight / 2 - 7);
     }
 
     //2 antworten
@@ -29,13 +29,13 @@ export class Question {
       fill("#d5d5d5");
       rect(windowWidth / 2 - 90, windowHeight / 2 - 10, 140, 50, 3);
       fill("black");
-      text(this.choices[0], windowWidth / 2 - 90, windowHeight / 2 - 7);
+      text(this.choices[0].text, windowWidth / 2 - 90, windowHeight / 2 - 7);
 
       //zweite im array
       fill("#d5d5d5");
       rect(windowWidth / 2 + 90, windowHeight / 2 - 10, 140, 50, 3);
       fill("black");
-      text(this.choices[1], windowWidth / 2 + 90, windowHeight / 2 - 7);
+      text(this.choices[1].text, windowWidth / 2 + 90, windowHeight / 2 - 7);
     }
     //3 antworten
     if (this.choices.length === 3) {
@@ -43,19 +43,19 @@ export class Question {
       fill("#d5d5d5");
       rect(windowWidth / 2 - 175, windowHeight / 2 - 10, 140, 50, 3);
       fill("black");
-      text(this.choices[0], windowWidth / 2 - 175, windowHeight / 2 - 7);
+      text(this.choices[0].text, windowWidth / 2 - 175, windowHeight / 2 - 7);
 
       //zweite im array
       fill("#d5d5d5");
       rect(windowWidth / 2, windowHeight / 2 - 10, 140, 50, 3);
       fill("black");
-      text(this.choices[1], windowWidth / 2, windowHeight / 2 - 7);
+      text(this.choices[1].text, windowWidth / 2, windowHeight / 2 - 7);
 
-      //drittes im array
+      //dritte im array
       fill("#d5d5d5");
       rect(windowWidth / 2 + 175, windowHeight / 2 - 10, 140, 50, 3);
       fill("black");
-      text(this.choices[1], windowWidth / 2 + 175, windowHeight / 2 - 7);
+      text(this.choices[2].text, windowWidth / 2 + 175, windowHeight / 2 - 7);
     }
   }
 }

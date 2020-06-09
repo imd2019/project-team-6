@@ -1,7 +1,19 @@
 import { Question } from "../model/question.js";
+import { Choice } from "../model/choice.js";
 let question = new Question(
-  "Das ist ein Test für die Fragen. \n Deshalb mache ich jetzt eine etwas lännger\n um nachzuschauen ob alles klappt wie ich möchte",
-  ["ich brauche wörter", "ich brauche wörter"]
+  "Deine Mutter liegt krank im Altersheim. Um sie zu besuchen musst du dich krankschreiben lassen. Was machst du?",
+  [
+    new Choice(
+      "Ich besuche sie und bringe was mit.",
+      "blumen, trinkgeld, wär schön mit mama",
+      0,
+      0,
+      0,
+      1
+    ),
+    new Choice("Ich gehe arbeiten.", "schlechtes gewissen", 0, 0, 0, 1),
+    new Choice("Ich gehe arbeiten.", "schlechtes gewissen", 0, 0, 0, 1),
+  ]
 );
 function draw() {
   background("black");
