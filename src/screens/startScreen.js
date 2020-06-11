@@ -14,7 +14,7 @@ let button = new Button(
 );
 
 function draw() {
-  // background("black");
+  background("black");
   button.display();
 }
 

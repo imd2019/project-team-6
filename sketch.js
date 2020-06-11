@@ -5,7 +5,9 @@ import customizationScreen from "./src/screens/customizationScreen.js";
 
 let currentScreen = "start";
 
-window.preload = function () {};
+window.preload = function () {
+  gameScreen.preload();
+};
 
 function getScreen(screenName) {
   if (screenName === "start") {

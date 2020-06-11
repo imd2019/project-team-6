@@ -15,11 +15,23 @@ let question = new Question(
     new Choice("Ich gehe arbeiten.", "schlechtes gewissen", 0, 0, 0, 1),
   ]
 );
+
+let gif_createImg;
+
+function preload() {
+  gif_createImg = createImg("../../assets/testScreen.gif", "test screen");
+  console.log(gif_createImg);
+  gif_createImg.position(0, 0);
+  gif_createImg.hide();
+}
+
 function draw() {
-  background("black");
+  clear();
   question.display();
+  gif_createImg.size(windowWidth, windowHeight);
+  gif_createImg.show();
 }
 
 function mouseClicked() {}
 
-export default { draw, mouseClicked };
+export default { draw, mouseClicked, preload };
