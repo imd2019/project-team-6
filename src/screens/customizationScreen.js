@@ -11,7 +11,7 @@ let apartments = [
 ];
 
 let button = new Button(0, 0, 300, 100, "customize", () =>
-  setCurrentScreen("game")
+  setCurrentScreen("getSex")
 );
 
 function draw() {
