@@ -4,7 +4,7 @@ body {
   overflow: hidden;
 }
 
-img {
+video {
   z-index: -1;
-  user-select: none;
+  /* user-select: none; */
 }

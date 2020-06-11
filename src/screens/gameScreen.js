@@ -16,22 +16,32 @@ let question = new Question(
   ]
 );
 
-let gif_createImg;
+//let gif_createImg;
+let vid;
 
-function preload() {
-  gif_createImg = createImg("../../assets/testScreen.gif", "test screen");
-  console.log(gif_createImg);
-  gif_createImg.position(0, 0);
-  gif_createImg.hide();
+function onStart() {
+  // gif_createImg = createImg("../../assets/testScreen.gif", "test screen");
+  // gif_createImg.position(0, 0);
+  // gif_createImg.hide();
+  vid = createVideo("../../assets/frage_05.mp4", () => vid.loop());
+  vid.position(0, 0);
+  vid.hide();
+
+  setTimeout(() => {
+    vid.src = "../../assets/frage_26.mp4";
+    vid.loop();
+  }, 1000 * 10);
 }
 
 function draw() {
   clear();
   question.display();
-  gif_createImg.size(windowWidth, windowHeight);
-  gif_createImg.show();
+  // gif_createImg.size(windowWidth, windowHeight);
+  // gif_createImg.show();
+  vid.size(windowWidth, windowHeight);
+  vid.show();
 }
 
 function mouseClicked() {}
 
-export default { draw, mouseClicked, preload };
+export default { draw, mouseClicked, onStart };
