@@ -2,16 +2,33 @@ import startScreen from "./src/screens/startScreen.js";
 import endScreen from "./src/screens/endScreen.js";
 import gameScreen from "./src/screens/gameScreen.js";
 import customizationScreen from "./src/screens/customizationScreen.js";
+import getSex from "./src/screens/getSex.js";
+import getJob from "./src/screens/getJob.js";
+import getChild from "./src/screens/getChild.js";
+import getFlat from "./src/screens/getFlat.js";
 
 let currentScreen = "start";
 
-window.preload = function () {};
+window.preload = function () {
+  getSex.preload();
+  getJob.preload();
+  getChild.preload();
+  getFlat.preload();
+};
 
 function getScreen(screenName) {
   if (screenName === "start") {
     return startScreen;
   } else if (screenName === "customization") {
     return customizationScreen;
+  } else if (screenName === "getSex") {
+    return getSex;
+  } else if (screenName === "getJob") {
+    return getJob;
+  } else if (screenName === "getChild") {
+    return getChild;
+  } else if (screenName === "getFlat") {
+    return getFlat;
   } else if (screenName === "game") {
     return gameScreen;
   } else if (screenName === "end") {
