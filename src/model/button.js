@@ -1,7 +1,9 @@
 export class Button {
-  constructor(x, y, width, height, text, clicked) {
-    this.x = x;
-    this.y = y;
+  constructor(xOffset, yOffset, width, height, text, clicked) {
+    this.xOffset = xOffset;
+    this.yOffset = yOffset;
+    this.x = 0;
+    this.y = 0;
     this.width = width;
     this.height = height;
     this.text = text;
@@ -9,6 +11,9 @@ export class Button {
   }
 
   display() {
+    this.x = windowWidth / 2 + this.xOffset;
+    this.y = windowHeight / 2 + this.yOffset;
+
     fill(21, 21, 21, 150);
     rectMode(CENTER);
     rect(this.x, this.y - 10, this.width, this.height, 30);
