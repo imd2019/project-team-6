@@ -9,34 +9,14 @@ let apartments = [
   new Apartment(500, "Innenstadt", false),
 ];
 
-let question = new Button(
-  windowWidth / 2,
-  windowHeight / 4,
-  300,
-  100,
-  "Wähle deinen Familienstand:"
-);
+let question = new Button(0, -300, 300, 100, "Wähle deinen Familienstand:");
 
-let child = new Button(
-  windowWidth / 3,
-  windowHeight / 1.2,
-  320,
-  100,
-  "Alleine",
-  () => {
-    setCurrentScreen("getFlat");
-  }
-);
-let noChild = new Button(
-  windowWidth / 1.4,
-  windowHeight / 1.2,
-  320,
-  100,
-  "Mit Kind",
-  () => {
-    setCurrentScreen("getFlat");
-  }
-);
+let child = new Button(-200, 250, 320, 100, "Alleine", () => {
+  setCurrentScreen("getFlat");
+});
+let noChild = new Button(200, 250, 320, 100, "Mit Kind", () => {
+  setCurrentScreen("getFlat");
+});
 
 let manConsulter;
 let womanConsulter;

@@ -9,44 +9,17 @@ let apartments = [
   new Apartment(500, "Innenstadt", false),
 ];
 
-let question = new Button(
-  windowWidth / 2,
-  windowHeight / 4,
-  300,
-  100,
-  "Wähle dein Geschlecht:"
-);
+let question = new Button(0, -300, 300, 100, "Wähle dein Geschlecht:");
 
-let man = new Button(
-  windowWidth / 4,
-  windowHeight / 1.2,
-  300,
-  100,
-  "Männlich",
-  () => {
-    setCurrentScreen("getJob");
-  }
-);
-let woman = new Button(
-  windowWidth / 2,
-  windowHeight / 1.2,
-  300,
-  100,
-  "Weiblich",
-  () => {
-    setCurrentScreen("getJob");
-  }
-);
-let divers = new Button(
-  windowWidth / 1.3,
-  windowHeight / 1.2,
-  300,
-  100,
-  "Divers",
-  () => {
-    setCurrentScreen("getJob");
-  }
-);
+let man = new Button(-250, 250, 300, 100, "Männlich", () => {
+  setCurrentScreen("getJob");
+});
+let woman = new Button(0, 250, 300, 100, "Weiblich", () => {
+  setCurrentScreen("getJob");
+});
+let divers = new Button(250, 250, 300, 100, "Divers", () => {
+  setCurrentScreen("getJob");
+});
 
 let manPic;
 let womanPic;
