@@ -7,11 +7,14 @@ let button = new Button(
   300,
   100,
   "open vindu",
-  () => setCurrentScreen("customization")
+  () => {
+    setCurrentScreen("customization");
+    document.body.requestFullscreen();
+  }
 );
 
 function draw() {
-  background("black");
+  // background("black");
   button.display();
 }
 
