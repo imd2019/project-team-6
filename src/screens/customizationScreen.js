@@ -14,8 +14,8 @@ let button = new Button(
   windowHeight / 2,
   300,
   100,
-  "customize",
-  () => setCurrentScreen("game")
+  "Name??",
+  () => setCurrentScreen("getSex")
 );
 
 function draw() {

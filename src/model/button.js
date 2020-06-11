@@ -18,6 +18,17 @@ export class Button {
     text(this.text, this.x, this.y);
   }
 
+  showPicture(n) {
+    rectMode(CENTER);
+    image(
+      n,
+      this.x - this.width / 2,
+      this.y - this.height - 388,
+      1750 / 5.5,
+      2475 / 5.5
+    );
+  }
+
   mouseClicked() {
     if (this.hitTest(mouseX, mouseY)) {
       this.clicked();
