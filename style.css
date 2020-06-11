@@ -3,3 +3,8 @@ body {
   margin: 0;
   overflow: hidden;
 }
+
+img {
+  z-index: -1;
+  user-select: none;
+}
