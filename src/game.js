@@ -1,12 +1,12 @@
-import { Question } from "./model/question";
-import { Choice } from "./model/choice";
-import { Player } from "./model/player";
-import { Apartment } from "./model/apartment";
-import { Job } from "./model/job";
-import getSex from "./screens/getSex";
-import getChild from "./screens/getChild";
-import getJob from "./screens/getJob";
-import getFlat from "./screens/getFlat";
+import { Question } from "./model/question.js";
+import { Choice } from "./model/choice.js";
+import { Player } from "./model/player.js";
+import { Apartment } from "./model/apartment.js";
+import { Job } from "./model/job.js";
+import getSex from "./screens/getSex.js";
+import getChild from "./screens/getChild.js";
+import getJob from "./screens/getJob.js";
+import getFlat from "./screens/getFlat.js";
 
 let job = new Job(getJob.jobTitel, getJob.jobSalary + getChild.extraSalary);
 let apartment = new Apartment(
@@ -229,10 +229,12 @@ let week4Questions = [
   ),
 ];
 
-export class Game {
-  constructor(player) {
-    this.currentDay = 0;
-    this.player = player;
-    this.events = [];
-  }
-}
+// export class Game {
+//   constructor(player) {
+//     this.currentDay = 0;
+//     this.player = player;
+//     this.events = [];
+//   }
+// }
+
+export default { player };
