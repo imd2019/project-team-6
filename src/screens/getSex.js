@@ -6,15 +6,15 @@ let question = new Button(0, -300, 300, 100, "Wähle dein Geschlecht:");
 
 let man = new Button(-250, 250, 300, 100, "Männlich", () => {
   setCurrentScreen("getChild");
-  sex = m;
+  sex = "m";
 });
 let woman = new Button(0, 250, 300, 100, "Weiblich", () => {
   setCurrentScreen("getChild");
-  sex = w;
+  sex = "w";
 });
 let divers = new Button(250, 250, 300, 100, "Divers", () => {
   setCurrentScreen("getChild");
-  sex = d;
+  sex = "d";
 });
 
 let manPic;
