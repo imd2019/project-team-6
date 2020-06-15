@@ -1,21 +1,20 @@
-import { Job } from "../model/job.js";
-import { Apartment } from "../model/apartment.js";
 import { Button } from "../model/button.js";
 import { setCurrentScreen } from "../../sketch.js";
 
-let job = new Job("Kellner", 500);
-let apartments = [
-  new Apartment(100, "Auf dem Land", true),
-  new Apartment(500, "Innenstadt", false),
-];
+let jobTitel;
+let jobSalary;
 
 let question = new Button(0, -300, 300, 100, "Wähle dein Beruf:");
 
 let waiter = new Button(-200, 250, 320, 100, "Servicekraft", () => {
-  setCurrentScreen("getChild");
+  setCurrentScreen("getFlat");
+  jobTitel = "Kellner";
+  jobSalary = 1660;
 });
 let taxConsulant = new Button(200, 250, 320, 100, "Steuerberater", () => {
-  setCurrentScreen("getChild");
+  setCurrentScreen("getFlat");
+  jobTitel = "Steuerberater";
+  jobSalary = 1660;
 });
 
 let manConsulter;
@@ -61,4 +60,4 @@ function mouseClicked() {
   taxConsulant.mouseClicked();
 }
 
-export default { draw, mouseClicked, preload };
+export default { draw, mouseClicked, preload, jobTitel, jobSalary };

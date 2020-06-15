@@ -1,5 +1,21 @@
 import { Question } from "./model/question";
 import { Choice } from "./model/choice";
+import { Player } from "./model/player";
+import { Apartment } from "./model/apartment";
+import { Job } from "./model/job";
+import getSex from "./screens/getSex";
+import getChild from "./screens/getChild";
+import getJob from "./screens/getJob";
+import getFlat from "./screens/getFlat";
+
+let job = new Job(getJob.jobTitel, getJob.jobSalary);
+let apartment = new Apartment(
+  getFlat.flatCost,
+  getFlat.flatDescription,
+  getFlat.needsCar
+);
+
+let player = new Player(getSex.sex, job, apartment, getChild.hasChild);
 
 let week1Questions = [
   new Question(

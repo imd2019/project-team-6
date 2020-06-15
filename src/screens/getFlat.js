@@ -1,21 +1,23 @@
-import { Job } from "../model/job.js";
-import { Apartment } from "../model/apartment.js";
 import { Button } from "../model/button.js";
 import { setCurrentScreen } from "../../sketch.js";
 
-let job = new Job("Kellner", 500);
-let apartments = [
-  new Apartment(100, "Auf dem Land", true),
-  new Apartment(500, "Innenstadt", false),
-];
+let flatCost;
+let flatDescription;
+let needsCar;
 
 let question = new Button(0, -300, 300, 100, "Wähle deine Wohnung:");
 
 let village = new Button(-200, 250, 320, 100, "Außerhalb", () => {
   setCurrentScreen("game");
+  flatCost = 530;
+  flatDescription = "Außerorts";
+  needsCar = true;
 });
 let city = new Button(200, 250, 320, 100, "Innenstadt", () => {
   setCurrentScreen("game");
+  flatCost = 1030;
+  flatDescription = "Innenstadt";
+  needsCar = false;
 });
 
 let manConsulter;
@@ -85,4 +87,11 @@ function mouseClicked() {
   village.mouseClicked();
 }
 
-export default { draw, mouseClicked, preload };
+export default {
+  draw,
+  mouseClicked,
+  preload,
+  flatCost,
+  flatDescription,
+  needsCar,
+};
