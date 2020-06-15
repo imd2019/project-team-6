@@ -8,7 +8,7 @@ import getChild from "./screens/getChild";
 import getJob from "./screens/getJob";
 import getFlat from "./screens/getFlat";
 
-let job = new Job(getJob.jobTitel, getJob.jobSalary);
+let job = new Job(getJob.jobTitel, getJob.jobSalary + getChild.extraSalary);
 let apartment = new Apartment(
   getFlat.flatCost,
   getFlat.flatDescription,
