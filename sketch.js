@@ -10,10 +10,7 @@ import getFlat from "./src/screens/getFlat.js";
 let currentScreen = "start";
 
 window.preload = function () {
-  getSex.preload();
-  getJob.preload();
-  getChild.preload();
-  getFlat.preload();
+  customizationScreen.preload();
 };
 
 function getScreen(screenName) {

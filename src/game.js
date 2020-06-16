@@ -6,16 +6,11 @@ import { Job } from "./model/job.js";
 import getSex from "./screens/getSex.js";
 import getChild from "./screens/getChild.js";
 import getJob from "./screens/getJob.js";
-import getFlat from "./screens/getFlat.js";
+import { apartmentData } from "./screens/getFlat.js";
 
-let job = new Job(getJob.jobTitel, getJob.jobSalary + getChild.extraSalary);
-let apartment = new Apartment(
-  getFlat.flatCost,
-  getFlat.flatDescription,
-  getFlat.needsCar
-);
+export let player;
 
-export let player = new Player(getSex.sex, job, apartment, getChild.hasChild);
+player = new Player();
 
 let week1Questions = [
   new Question(

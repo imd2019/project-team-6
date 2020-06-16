@@ -1,7 +1,7 @@
 import { Question } from "../model/question.js";
 import { Choice } from "../model/choice.js";
 
-import { player } from "../game.js";
+import { player, createPlayer } from "../game.js";
 
 let question = new Question(
   "Deine Mutter liegt krank im Altersheim. Um sie zu besuchen musst du dich krankschreiben lassen. Was machst du?",
@@ -37,6 +37,10 @@ function onStart() {
 }
 
 function draw() {
+  if (!player) {
+    createPlayer();
+  }
+
   clear();
   question.display();
   // gif_createImg.size(windowWidth, windowHeight);

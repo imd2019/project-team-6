@@ -1,5 +1,6 @@
 import { Button } from "../model/button.js";
 import { setCurrentScreen } from "../../sketch.js";
+import { male } from "./customizationScreen.js";
 
 let hasChild;
 let extraSalary;
@@ -16,26 +17,6 @@ let noChild = new Button(200, 250, 320, 100, "Mit Kind", () => {
   hasChild = true;
   extraSalary = 264;
 });
-
-let male;
-let female;
-let diverse;
-
-let maleChild;
-let femaleChild;
-let diverseChild;
-
-function preload() {
-  male = loadImage("../../assets/male.png");
-  female = loadImage("../../assets/female.png");
-  diverse = loadImage("../../assets/diverse.png");
-
-  maleChild = loadImage("../../assets/male.png");
-  femaleChild = loadImage("../../assets/female.png");
-  diverseChild = loadImage("../../assets/female.png");
-
-  //child=loadImage("../../assets/male.png"); ??
-}
 
 function draw() {
   background("black");
@@ -62,4 +43,4 @@ function mouseClicked() {
   noChild.mouseClicked();
 }
 
-export default { draw, mouseClicked, preload, hasChild, extraSalary };
+export default { draw, mouseClicked, hasChild, extraSalary };
