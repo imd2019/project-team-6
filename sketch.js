@@ -5,7 +5,7 @@ import customizationScreen from "./src/screens/customizationScreen.js";
 import getSex from "./src/screens/getSex.js";
 import getJob from "./src/screens/getJob.js";
 import getChild from "./src/screens/getChild.js";
-import getFlat from "./src/screens/getFlat.js";
+import getFlat from "./src/screens/getApartment.js";
 
 let currentScreen = "start";
 
