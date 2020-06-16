@@ -15,7 +15,7 @@ let apartment = new Apartment(
   getFlat.needsCar
 );
 
-let player = new Player(getSex.sex, job, apartment, getChild.hasChild);
+export let player = new Player(getSex.sex, job, apartment, getChild.hasChild);
 
 let week1Questions = [
   new Question(
