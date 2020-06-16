@@ -17,24 +17,24 @@ let noChild = new Button(200, 250, 320, 100, "Mit Kind", () => {
   extraSalary = 264;
 });
 
-let man;
-let woman;
-let divers;
+let male;
+let female;
+let diverse;
 
-let manChild;
-let womanChild;
-let diversChild;
+let maleChild;
+let femaleChild;
+let diverseChild;
 
 function preload() {
-  man = loadImage("../../assets/man.png");
-  woman = loadImage("../../assets/woman.png");
-  divers = loadImage("../../assets/divers.png");
+  male = loadImage("../../assets/male.png");
+  female = loadImage("../../assets/female.png");
+  diverse = loadImage("../../assets/diverse.png");
 
-  manChild = loadImage("../../assets/man.png");
-  womanChild = loadImage("../../assets/woman.png");
-  diversChild = loadImage("../../assets/woman.png");
+  maleChild = loadImage("../../assets/male.png");
+  femaleChild = loadImage("../../assets/female.png");
+  diverseChild = loadImage("../../assets/female.png");
 
-  //child=loadImage("../../assets/man.png"); ??
+  //child=loadImage("../../assets/male.png"); ??
 }
 
 function draw() {
@@ -42,19 +42,19 @@ function draw() {
   question.display();
   child.display();
   noChild.display();
-  child.showPicture(man);
-  noChild.showPicture(man);
+  child.showPicture(male);
+  noChild.showPicture(male);
 
   //erstmal nur für die Form
   // if(sex=w ){
-  //   child.showPicture(womanChild);
-  //   noChild.showPicture(woman);
+  //   child.showPicture(femaleChild);
+  //   noChild.showPicture(female);
   // else if(sex=m ){
-  //   child.showPicture(manChild);
-  //   noChild.showPicture(man);
+  //   child.showPicture(maleChild);
+  //   noChild.showPicture(male);
   // else if(sex=d ){
-  //   child.showPicture(diversChild);
-  //   noChild.showPicture(divers);
+  //   child.showPicture(diverseChild);
+  //   noChild.showPicture(diverse);
 }
 
 function mouseClicked() {

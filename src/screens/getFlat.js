@@ -20,34 +20,34 @@ let city = new Button(200, 250, 320, 100, "Innenstadt", () => {
   needsCar = false;
 });
 
-let manConsulter;
-let womanConsulter;
-let diversConsulter;
-let manWaiter;
-let womanWaiter;
-let diversWaiter;
+let maleConsulter;
+let femaleConsulter;
+let diverseConsulter;
+let maleWaiter;
+let femaleWaiter;
+let diverseWaiter;
 
-let manConsulterChild;
-let womanConsulterChild;
-let diversConsulterChild;
-let manWaiterChild;
-let womanWaiterChild;
-let diversWaiterChild;
+let maleConsulterChild;
+let femaleConsulterChild;
+let diverseConsulterChild;
+let maleWaiterChild;
+let femaleWaiterChild;
+let diverseWaiterChild;
 
 function preload() {
-  manConsulter = loadImage("../../assets/man.png");
-  womanConsulter = loadImage("../../assets/woman.png");
-  diversConsulter = loadImage("../../assets/divers.png");
-  manWaiter = loadImage("../../assets/man.png");
-  womanWaiter = loadImage("../../assets/woman.png");
-  diversWaiter = loadImage("../../assets/divers.png");
+  maleConsulter = loadImage("../../assets/male.png");
+  femaleConsulter = loadImage("../../assets/female.png");
+  diverseConsulter = loadImage("../../assets/diverse.png");
+  maleWaiter = loadImage("../../assets/male.png");
+  femaleWaiter = loadImage("../../assets/female.png");
+  diverseWaiter = loadImage("../../assets/diverse.png");
 
-  manConsulterChild = loadImage("../../assets/man.png");
-  womanConsulterChild = loadImage("../../assets/woman.png");
-  diversConsulterChild = loadImage("../../assets/divers.png");
-  manWaiterChild = loadImage("../../assets/man.png");
-  womanWaiterChild = loadImage("../../assets/woman.png");
-  diversWaiterChild = loadImage("../../assets/divers.png");
+  maleConsulterChild = loadImage("../../assets/male.png");
+  femaleConsulterChild = loadImage("../../assets/female.png");
+  diverseConsulterChild = loadImage("../../assets/diverse.png");
+  maleWaiterChild = loadImage("../../assets/male.png");
+  femaleWaiterChild = loadImage("../../assets/female.png");
+  diverseWaiterChild = loadImage("../../assets/diverse.png");
 
   //selbe frage. drüber legen oder bedingungen mit allen bildern? Problem sag ich dir noch
 }
@@ -57,29 +57,29 @@ function draw() {
   question.display();
   city.display();
   village.display();
-  city.showPicture(manConsulter);
-  village.showPicture(manWaiter);
+  city.showPicture(maleConsulter);
+  village.showPicture(maleWaiter);
 
   //erstmal nur für die Form
   // if(sex=w && job=K){
-  //   child.showPicture(womanWaiterChild);
-  //   noChild.showPicture(womanWaiter);
+  //   child.showPicture(femaleWaiterChild);
+  //   noChild.showPicture(femaleWaiter);
   // else if(sex=m && job=K){
-  //   child.showPicture(manWaiterChild);
-  //   noChild.showPicture(manWaiter);
+  //   child.showPicture(maleWaiterChild);
+  //   noChild.showPicture(maleWaiter);
   // else if(sex=d && job=K){
-  //   child.showPicture(diversWaiterChild);
-  //   noChild.showPicture(diversWaiter);
+  //   child.showPicture(diverseWaiterChild);
+  //   noChild.showPicture(diverseWaiter);
 
   //else if(sex=w && job=SB){
-  //   child.showPicture(womanConsulterChild);
-  //   noChild.showPicture(womanConsulter);
+  //   child.showPicture(femaleConsulterChild);
+  //   noChild.showPicture(femaleConsulter);
   // else if(sex=m && job=SB){
-  //   child.showPicture(manConsulterChild);
-  //   noChild.showPicture(manConsulter);
+  //   child.showPicture(maleConsulterChild);
+  //   noChild.showPicture(maleConsulter);
   // else if(sex=d && job=SB){
-  //   child.showPicture(diversConsulterChild);
-  //   noChild.showPicture(diversConsulter);
+  //   child.showPicture(diverseConsulterChild);
+  //   noChild.showPicture(diverseConsulter);
 }
 
 function mouseClicked() {

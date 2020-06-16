@@ -17,20 +17,20 @@ let taxConsulant = new Button(200, 250, 320, 100, "Steuerberater", () => {
   jobSalary = 1660;
 });
 
-let manConsulter;
-let womanConsulter;
-let diversConsulter;
-let manWaiter;
-let womanWaiter;
-let diversWaiter;
+let maleConsulter;
+let femaleConsulter;
+let diverseConsulter;
+let maleWaiter;
+let femaleWaiter;
+let diverseWaiter;
 
 function preload() {
-  manConsulter = loadImage("../../assets/man.png");
-  womanConsulter = loadImage("../../assets/woman.png");
-  diversConsulter = loadImage("../../assets/divers.png");
-  manWaiter = loadImage("../../assets/man.png");
-  womanWaiter = loadImage("../../assets/woman.png");
-  diversWaiter = loadImage("../../assets/divers.png");
+  maleConsulter = loadImage("../../assets/male.png");
+  femaleConsulter = loadImage("../../assets/female.png");
+  diverseConsulter = loadImage("../../assets/diverse.png");
+  maleWaiter = loadImage("../../assets/male.png");
+  femaleWaiter = loadImage("../../assets/female.png");
+  diverseWaiter = loadImage("../../assets/diverse.png");
 }
 
 function draw() {
@@ -38,20 +38,20 @@ function draw() {
   question.display();
   waiter.display();
   taxConsulant.display();
-  taxConsulant.showPicture(manConsulter);
-  waiter.showPicture(manWaiter);
+  taxConsulant.showPicture(maleConsulter);
+  waiter.showPicture(maleWaiter);
 
   //erstmal nur für die Form
   // if(sex=w){
-  //   taxConsulant.showPicture(womanConsulter);
-  //   waiter.showPicture(womanWaiter);
+  //   taxConsulant.showPicture(femaleConsulter);
+  //   waiter.showPicture(femaleWaiter);
   // }
   // else if(sex=m){
-  //   taxConsulant.showPicture(manConsulter);
-  //   waiter.showPicture(manWaiter);
+  //   taxConsulant.showPicture(maleConsulter);
+  //   waiter.showPicture(maleWaiter);
   // }else if(sex=d){
-  //   taxConsulant.showPicture(diversConsulter);
-  //   waiter.showPicture(diversWaiter);
+  //   taxConsulant.showPicture(diverseConsulter);
+  //   waiter.showPicture(diverseWaiter);
   // }
 }
 
