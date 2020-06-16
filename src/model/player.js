@@ -1,11 +1,11 @@
 export class Player {
-  constructor(sex, job, apartment, hasChild) {
-    this.sex = sex;
+  constructor() {
+    this.sex = "f";
 
-    this.job = job;
-    this.money = job.salary;
-    this.apartment = apartment;
-    this.hasChild = hasChild;
+    this.job = null;
+    this.money = 0;
+    this.apartment = null;
+    this.hasChild = false;
     this.happiness = 100;
     this.health = 100;
   }

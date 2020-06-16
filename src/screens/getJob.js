@@ -1,25 +1,27 @@
 import { Button } from "../model/button.js";
 import { setCurrentScreen } from "../../sketch.js";
-import { maleConsulter, maleWaiter } from "./customizationScreen.js";
-
-let jobTitle;
-let jobSalary;
+import { maleConsultant, maleWaiter } from "./customizationScreen.js";
+import { player } from "../game.js";
+import { Job } from "../model/job.js";
 
 let question = new Button(0, -300, 300, 100, "Wähle dein Beruf:");
 
-let waiter = new Button(-200, 250, 320, 100, "Servicekraft", () => {
-  setCurrentScreen("getFlat");
-  jobTitle = "Kellner";
-  jobSalary = 1660;
+let waiterTitle = "Kellner";
+let waiter = new Button(-200, 250, 320, 100, waiterTitle, () => {
+  player.job = new Job(waiterTitle, 1660);
+
+  setCurrentScreen("getApartment");
 });
+let taxConsultantTitle = "Steuerberater";
 let taxConsultant = new Button(200, 250, 320, 100, taxConsultantTitle, () => {
-  setCurrentScreen("getFlat");
-  jobTitle = "Steuerberater";
-  jobSalary = 1660;
+  player.job = new Job(taxConsultantTitle, 1660);
+
+  setCurrentScreen("getApartment");
 });
 
 function draw() {
   background("black");
+
   question.display();
   waiter.display();
   taxConsultant.display();
@@ -29,14 +31,14 @@ function draw() {
 
   //erstmal nur für die Form
   // if(sex=w){
-  //   taxConsulant.showPicture(femaleConsulter);
+  //   taxConsultant.showPicture(femaleConsultant);
   //   waiter.showPicture(femaleWaiter);
   // }
   // else if(sex=m){
-  //   taxConsulant.showPicture(maleConsulter);
+  //   taxConsultant.showPicture(maleConsultant);
   //   waiter.showPicture(maleWaiter);
   // }else if(sex=d){
-  //   taxConsulant.showPicture(diverseConsulter);
+  //   taxConsultant.showPicture(diverseConsultant);
   //   waiter.showPicture(diverseWaiter);
   // }
 }
@@ -46,4 +48,4 @@ function mouseClicked() {
   taxConsultant.mouseClicked();
 }
 
-export default { draw, mouseClicked, jobTitle, jobSalary };
+export default { draw, mouseClicked };

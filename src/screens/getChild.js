@@ -1,21 +1,20 @@
 import { Button } from "../model/button.js";
 import { setCurrentScreen } from "../../sketch.js";
 import { male } from "./customizationScreen.js";
-
-let hasChild;
-let extraSalary;
+import { player } from "../game.js";
 
 let question = new Button(0, -300, 300, 100, "Wähle deinen Familienstand:");
 
 let child = new Button(-200, 250, 320, 100, "Alleine", () => {
+  player.hasChild = false;
+
   setCurrentScreen("getJob");
-  hasChild = false;
-  extraSalary = 0;
 });
+
 let noChild = new Button(200, 250, 320, 100, "Mit Kind", () => {
+  player.hasChild = true;
+
   setCurrentScreen("getJob");
-  hasChild = true;
-  extraSalary = 264;
 });
 
 function draw() {
@@ -43,4 +42,4 @@ function mouseClicked() {
   noChild.mouseClicked();
 }
 
-export default { draw, mouseClicked, hasChild, extraSalary };
+export default { draw, mouseClicked };

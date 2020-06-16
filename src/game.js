@@ -1,16 +1,8 @@
 import { Question } from "./model/question.js";
 import { Choice } from "./model/choice.js";
 import { Player } from "./model/player.js";
-import { Apartment } from "./model/apartment.js";
-import { Job } from "./model/job.js";
-import getSex from "./screens/getSex.js";
-import getChild from "./screens/getChild.js";
-import getJob from "./screens/getJob.js";
-import { apartmentData } from "./screens/getApartment.js";
 
-export let player;
-
-player = new Player();
+export let player = new Player();
 
 let week1Questions = [
   new Question(

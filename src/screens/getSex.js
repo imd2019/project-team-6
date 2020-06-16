@@ -1,21 +1,21 @@
 import { Button } from "../model/button.js";
 import { setCurrentScreen } from "../../sketch.js";
 import { female, male, diverse } from "./customizationScreen.js";
+import { player } from "../game.js";
 
-let sex;
 let question = new Button(0, -300, 300, 100, "Wähle dein Geschlecht:");
 
 let maleBtn = new Button(-250, 250, 300, 100, "Männlich", () => {
   setCurrentScreen("getChild");
-  sex = "m";
+  player.sex = "m";
 });
 let femaleBtn = new Button(0, 250, 300, 100, "Weiblich", () => {
   setCurrentScreen("getChild");
-  sex = "w";
+  player.sex = "f";
 });
 let diverseBtn = new Button(250, 250, 300, 100, "diverse", () => {
   setCurrentScreen("getChild");
-  sex = "d";
+  player.sex = "d";
 });
 
 function draw() {
@@ -38,4 +38,4 @@ function mouseClicked() {
   diverseBtn.mouseClicked();
 }
 
-export default { draw, mouseClicked, sex };
+export default { draw, mouseClicked };

@@ -6,22 +6,22 @@ import {
   drawPlayer,
 } from "./customizationScreen.js";
 import { player } from "../game.js";
+import { Apartment } from "../model/apartment.js";
 
 let question = new Button(0, -300, 300, 100, "Wähle deine Wohnung:");
 
-let town = new Button(-200, 250, 320, 100, "Außerhalb", () => {
-  player.apartment.flatCost = 530;
-  player.apartment.flatDescription = "Außerorts";
-  player.apartment.needsCar = true;
+let townTitle = "Außerhalb der Stadt";
+let town = new Button(-200, 250, 320, 100, townTitle, () => {
+  player.apartment = new Apartment(530, townTitle, true);
 
-  setCurrentScreen("game");
+  setCurrentScreen("yourMoney");
 });
-let city = new Button(200, 250, 320, 100, "Innenstadt", () => {
-  player.apartment.flatCost = 1030;
-  player.apartment.flatDescription = "Innenstadt";
-  player.apartment.needsCar = false;
 
-  setCurrentScreen("game");
+let cityTitle = "Innenstadt";
+let city = new Button(200, 250, 320, 100, cityTitle, () => {
+  player.apartment = new Apartment(1030, cityTitle, false);
+
+  setCurrentScreen("yourMoney");
 });
 
 function draw() {
