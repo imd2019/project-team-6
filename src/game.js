@@ -6,7 +6,7 @@ import { Job } from "./model/job.js";
 import getSex from "./screens/getSex.js";
 import getChild from "./screens/getChild.js";
 import getJob from "./screens/getJob.js";
-import { apartmentData } from "./screens/getFlat.js";
+import { apartmentData } from "./screens/getApartment.js";
 
 export let player;
 

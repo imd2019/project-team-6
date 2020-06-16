@@ -7,15 +7,15 @@ export let diverse;
 export let maleChild;
 export let femaleChild;
 export let diverseChild;
-export let maleConsulter;
-export let femaleConsulter;
-export let diverseConsulter;
+export let maleConsultant;
+export let femaleConsultant;
+export let diverseConsultant;
 export let maleWaiter;
 export let femaleWaiter;
 export let diverseWaiter;
-export let maleConsulterChild;
-export let femaleConsulterChild;
-export let diverseConsulterChild;
+export let maleConsultantChild;
+export let femaleConsultantChild;
+export let diverseConsultantChild;
 export let maleWaiterChild;
 export let femaleWaiterChild;
 export let diverseWaiterChild;
@@ -42,16 +42,16 @@ function preload() {
   femaleChild = loadImage("../../assets/female.png");
   diverseChild = loadImage("../../assets/female.png");
 
-  maleConsulter = loadImage("../../assets/male.png");
-  femaleConsulter = loadImage("../../assets/female.png");
-  diverseConsulter = loadImage("../../assets/diverse.png");
+  maleConsultant = loadImage("../../assets/male.png");
+  femaleConsultant = loadImage("../../assets/female.png");
+  diverseConsultant = loadImage("../../assets/diverse.png");
   maleWaiter = loadImage("../../assets/male.png");
   femaleWaiter = loadImage("../../assets/female.png");
   diverseWaiter = loadImage("../../assets/diverse.png");
 
-  maleConsulterChild = loadImage("../../assets/male.png");
-  femaleConsulterChild = loadImage("../../assets/female.png");
-  diverseConsulterChild = loadImage("../../assets/diverse.png");
+  maleConsultantChild = loadImage("../../assets/male.png");
+  femaleConsultantChild = loadImage("../../assets/female.png");
+  diverseConsultantChild = loadImage("../../assets/diverse.png");
   maleWaiterChild = loadImage("../../assets/male.png");
   femaleWaiterChild = loadImage("../../assets/female.png");
   diverseWaiterChild = loadImage("../../assets/diverse.png");
@@ -70,14 +70,14 @@ export function drawPlayer() {
   //   child.showPicture(diverseWaiterChild);
   //   noChild.showPicture(diverseWaiter);
   //else if(sex=w && job=SB){
-  //   child.showPicture(femaleConsulterChild);
-  //   noChild.showPicture(femaleConsulter);
+  //   child.showPicture(femaleConsultantChild);
+  //   noChild.showPicture(femaleConsultant);
   // else if(sex=m && job=SB){
-  //   child.showPicture(maleConsulterChild);
-  //   noChild.showPicture(maleConsulter);
+  //   child.showPicture(maleConsultantChild);
+  //   noChild.showPicture(maleConsultant);
   // else if(sex=d && job=SB){
-  //   child.showPicture(diverseConsulterChild);
-  //   noChild.showPicture(diverseConsulter);
+  //   child.showPicture(diverseConsultantChild);
+  //   noChild.showPicture(diverseConsultant);
 }
 
 export default { draw, mouseClicked, preload };

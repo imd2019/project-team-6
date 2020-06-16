@@ -12,7 +12,7 @@ let waiter = new Button(-200, 250, 320, 100, "Servicekraft", () => {
   jobTitle = "Kellner";
   jobSalary = 1660;
 });
-let taxConsulant = new Button(200, 250, 320, 100, "Steuerberater", () => {
+let taxConsultant = new Button(200, 250, 320, 100, taxConsultantTitle, () => {
   setCurrentScreen("getFlat");
   jobTitle = "Steuerberater";
   jobSalary = 1660;
@@ -22,8 +22,9 @@ function draw() {
   background("black");
   question.display();
   waiter.display();
-  taxConsulant.display();
-  taxConsulant.showPicture(maleConsulter);
+  taxConsultant.display();
+
+  taxConsultant.showPicture(maleConsultant);
   waiter.showPicture(maleWaiter);
 
   //erstmal nur für die Form
@@ -42,7 +43,7 @@ function draw() {
 
 function mouseClicked() {
   waiter.mouseClicked();
-  taxConsulant.mouseClicked();
+  taxConsultant.mouseClicked();
 }
 
 export default { draw, mouseClicked, jobTitle, jobSalary };
