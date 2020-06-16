@@ -9,8 +9,7 @@ import { player } from "../game.js";
 
 let question = new Button(0, -300, 300, 100, "Wähle deine Wohnung:");
 
-let 
-let village = new Button(-200, 250, 320, 100, "Außerhalb", () => {
+let town = new Button(-200, 250, 320, 100, "Außerhalb", () => {
   player.apartment.flatCost = 530;
   player.apartment.flatDescription = "Außerorts";
   player.apartment.needsCar = true;
@@ -30,15 +29,15 @@ function draw() {
 
   question.display();
   city.display();
-  village.display();
+  town.display();
 
   city.showPicture(maleConsultant);
-  village.showPicture(maleWaiter);
+  town.showPicture(maleWaiter);
 }
 
 function mouseClicked() {
   city.mouseClicked();
-  village.mouseClicked();
+  town.mouseClicked();
 
   drawPlayer();
 }
