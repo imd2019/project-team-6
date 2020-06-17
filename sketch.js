@@ -2,11 +2,12 @@ import startScreen from "./src/screens/startScreen.js";
 import endScreen from "./src/screens/endScreen.js";
 import gameScreen from "./src/screens/gameScreen.js";
 import customizationScreen from "./src/screens/customizationScreen.js";
-import getSex from "./src/screens/getSex.js";
+import getGender from "./src/screens/getGender.js";
 import getJob from "./src/screens/getJob.js";
 import getChild from "./src/screens/getChild.js";
 import getApartment from "./src/screens/getApartment.js";
 import yourMoney from "./src/screens/yourMoney.js";
+import getGender from "./src/screens/getGender.js";
 
 let currentScreen = "start";
 
@@ -19,8 +20,8 @@ function getScreen(screenName) {
     return startScreen;
   } else if (screenName === "customization") {
     return customizationScreen;
-  } else if (screenName === "getSex") {
-    return getSex;
+  } else if (screenName === "getGender") {
+    return getGender;
   } else if (screenName === "getJob") {
     return getJob;
   } else if (screenName === "getChild") {

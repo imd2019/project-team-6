@@ -21,7 +21,7 @@ export let femaleWaiterChild;
 export let diverseWaiterChild;
 
 let button = new Button(0, 0, 300, 100, "customize", () =>
-  setCurrentScreen("getSex")
+  setCurrentScreen("getGender")
 );
 
 function draw() {
