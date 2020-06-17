@@ -23,10 +23,10 @@ export class Button {
     text(this.text, this.x, this.y);
   }
 
-  showPicture(n) {
+  showPicture(pic) {
     rectMode(CENTER);
     image(
-      n,
+      pic,
       this.x - this.width / 2,
       this.y - this.height - 388,
       1750 / 5.5,
