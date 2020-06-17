@@ -1,5 +1,6 @@
 import { Button } from "../model/button.js";
 import { setCurrentScreen } from "../../sketch.js";
+import { player } from "../game.js";
 
 export let male;
 export let female;
