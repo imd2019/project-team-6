@@ -9,57 +9,107 @@ let week1Questions = [
     "Deine Mutter liegt krank im Altersheim. Um sie zu besuchen musst du dich krankschreiben lassen. Was machst du?",
     [
       new Choice(
-        "Ich besuche sie und bringe was mit.",
-        "blumen, trinkgeld, wär schön mit mama",
-        0,
+        "Ich besuche sie.",
+        "Du bist froh, weil du deine Mutter sehen kannst und bringst ihr etwas mit. Aber die Freude ist gedämpft, weil du Trinkgeld von einem Tag verlierst.",
+        5,
+        -36,
+        -5,
+        1
+      ),
+      new Choice(
+        "Ich gehe arbeiten.",
+        "Du hast ein schlechtes Gewissen.",
+        -10,
         0,
         0,
         1
       ),
-      new Choice("Ich gehe arbeiten.", "schlechtes gewissen", 0, 0, 0, 1),
     ]
   ),
   new Question(
-    "Du hattest einen Urlaub gebucht, allerdings wird empfohlen alle Urlaube zu stonieren. Was machst du?",
+    "Du hattest einen Urlaub gebucht, allerdings wird gerade empfohlen alle Urlaube zu stornieren. Was machst du?",
     [
-      new Choice("Ich stoniere.", "kannst urlaub nicht antreten", 0, 0, 0, 1),
-      new Choice("Ich stoniere nicht", "geld kann verloren gehen", 0, 0, 0, 1),
+      new Choice(
+        "Ich stoniere.",
+        "Du ärgerst dich, dass du deinen Urlaub stornieren musstest",
+        -5,
+        0,
+        0,
+        1
+      ),
+      new Choice("Ich stoniere nicht.", "Du hoffst und wartest", 0, 0, 0, 1),
     ]
   ),
   new Question("Freunde haben dich in eine Bar eingeladen. Gehst du mit?", [
     new Choice(
       "Ich gehe mit.",
-      "bestellst zu viele getränke, bist glücklich",
-      0,
+      [
+        "Du musstest einen Babysitter besorgen. Der hat 80€ gekostet und du hast 60€ in der Bar gelassen.",
+        "Du hast 60€ in der Bar gelassen und du hast deine Freunde wieder gesehen.",
+      ],
+      [0, 5],
+      [-140, -60],
+      -5,
+      1
+    ),
+    new Choice(
+      "Ich bleibe daheim.",
+      [
+        "Du bist glücklich den Abend mit dem Kind zu verbringen, vermisst aber deine Freunde.",
+        "Du fühlst dich alleine, aber sparst wenigstens ein Geld.",
+      ],
+      [0, -5],
       0,
       0,
       1
     ),
-    new Choice("Ich bleibe daheim.", "du magst dich couch", 0, 0, 0, 1),
   ]),
   new Question("Möchtest du dir eine Maske kaufen?", [
-    new Choice("Nein, ich brauche keine.", "unsicherheit", 0, 0, 0, 1),
-    new Choice("Ich kaufe mir eine.", "sicherheit", 0, 0, 0, 1),
-    //konsequenz ist 50/50 chance. wo soll das hin? oder gehen wir davon aus, dass es nicht klappt bzw das es klappt?
     new Choice(
-      "Ich nähe mir eine.",
-      "du schaffst es/du schaffst es nicht",
+      "Nein, ich brauche keine.",
+      "Du siehst die Gefahr noch nicht und tust das als unnötig ab.",
       0,
       0,
+      -5,
+      1
+    ),
+    new Choice(
+      "Ich kaufe mir eine.",
+      "Du fühlst dich sicher, aber die Masken waren sehr teuer.",
+      5,
+      -35,
       0,
       1
+    ),
+    new Choice(
+      "Nein, ich werde mir eine nähen.",
+      [
+        "Du bist stolz auf dich, weil du es geschafft hast, Geld gespart hast und geschützt bist.",
+        "Du bist enttäuscht: Es hat nicht geklappt, du hast Zeit verschwendet und bist nicht geschützt.",
+      ],
+      [10, -10],
+      [0, 0],
+      [0, -5],
+      0.5
     ),
   ]),
   new Question(
-    "Deine Arbeitsschuhe sind kaputt. Neue würden deinen Arbeitsalltag erleichtern. Was machst du?",
+    "Deine Arbeitsschuhe sind kaputt. Neue würden deinen Arbeitsalltag erleichtern. Was machst du?",
     [
-      new Choice("Ich kaufe mir neue.", " ", 0, 0, 0, 1),
+      new Choice(
+        "Ich kaufe mir neue.",
+        "Du bist glücklich, endlich neue Arbeitsschuhe, aber es hat dich schon was gekostet.",
+        10,
+        -85,
+        0,
+        1
+      ),
       new Choice(
         "Ich benutze weiterhin die alten.",
-        "schlechtes gewissen",
+        "Nach der Arbeit schmerzen deine Füße sehr.",
+        -5,
         0,
-        0,
-        0,
+        -5,
         1
       ),
     ]
