@@ -7,7 +7,6 @@ import getJob from "./src/screens/getJob.js";
 import getChild from "./src/screens/getChild.js";
 import getApartment from "./src/screens/getApartment.js";
 import yourMoney from "./src/screens/yourMoney.js";
-import getGender from "./src/screens/getGender.js";
 
 let currentScreen = "start";
 

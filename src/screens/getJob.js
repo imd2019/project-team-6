@@ -12,9 +12,10 @@ let waiter = new Button(-200, 250, 320, 100, waiterTitle, () => {
 
   setCurrentScreen("getApartment");
 });
+
 let taxConsultantTitle = "Steuerberater";
 let taxConsultant = new Button(200, 250, 320, 100, taxConsultantTitle, () => {
-  player.job = new Job(taxConsultantTitle, 1660);
+  player.job = new Job(taxConsultantTitle, 3240);
 
   setCurrentScreen("getApartment");
 });
