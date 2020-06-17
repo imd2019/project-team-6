@@ -18,17 +18,21 @@ export let maleWaiter;
 export let femaleWaiter;
 export let diverseWaiter;
 
-let button = new Button(0, 0, 300, 100, "customize", () =>
+export let customizationImage;
+
+let button = new Button(0, -150, 0, 0, "Gestalte deinen Charakter", () =>
   setCurrentScreen("getGender")
 );
-
+let letsGo = new Button(0, 0, 0, 0, "Los", () => setCurrentScreen("getGender"));
 function draw() {
-  background("black");
+  background("#171d41");
   button.display();
+  letsGo.display();
+  image(customizationImage, 350, 250);
 }
 
 function mouseClicked() {
-  button.mouseClicked();
+  letsGo.mouseClicked();
 }
 
 function preload() {
@@ -46,6 +50,8 @@ function preload() {
   maleWaiter = loadImage("../../assets/male.png");
   femaleWaiter = loadImage("../../assets/femaleWaiter.png");
   diverseWaiter = loadImage("../../assets/diverseWaiter.png");
+
+  customizationImage = loadImage("../../assets/customization.png");
 }
 
 export function drawPlayer() {
