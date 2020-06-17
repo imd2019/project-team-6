@@ -25,13 +25,7 @@ export class Button {
 
   showPicture(pic) {
     rectMode(CENTER);
-    image(
-      pic,
-      this.x - this.width / 2,
-      this.y - this.height - 388,
-      1750 / 5.5,
-      2475 / 5.5
-    );
+    image(pic, this.x - this.width / 2, this.y - this.height - 388);
   }
 
   mouseClicked() {
