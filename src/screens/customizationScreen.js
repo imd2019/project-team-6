@@ -32,9 +32,9 @@ function mouseClicked() {
 }
 
 function preload() {
-  // male = loadImage("../../assets/male.png");
-  // female = loadImage("../../assets/female.png");
-  // diverse = loadImage("../../assets/diverse.png");
+  male = loadImage("../../assets/male.png");
+  female = loadImage("../../assets/female.png");
+  diverse = loadImage("../../assets/diverse.png");
 
   // maleChild = loadImage("../../assets/male.png");
   // femaleChild = loadImage("../../assets/female.png");

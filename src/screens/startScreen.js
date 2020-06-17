@@ -9,7 +9,7 @@ let button = new Button(0, 0, 300, 100, "open vindu", () => {
 });
 
 function draw() {
-  background("black");
+  background("#171d41");
   button.display();
 }
 
