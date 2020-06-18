@@ -10,7 +10,8 @@ function setPlayerMoney() {
   player.money = player.job.salary - player.apartment.cost;
 
   if (player.hasChild) {
-    player.money += 264;
+    player.money += 204;
+    player.job.salary += 60;
   }
 }
 
