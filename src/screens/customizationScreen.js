@@ -23,7 +23,9 @@ export let customizationImage;
 let button = new Button(0, -300, 0, 0, "Gestalte deinen Charakter", () =>
   setCurrentScreen("getGender")
 );
-let letsGo = new Button(0, 0, 0, 0, "Los", () => setCurrentScreen("getGender"));
+let letsGo = new Button(0, 0, 200, 100, "Los", () =>
+  setCurrentScreen("getGender")
+);
 function draw() {
   background("#171d41");
   image(customizationImage, windowWidth / 2 - 555, windowHeight / 2 - 600);

@@ -14,7 +14,8 @@ export class Button {
     this.x = windowWidth / 2 + this.xOffset;
     this.y = windowHeight / 2 + this.yOffset;
 
-    fill(21, 21, 21, 150);
+    fill("#1e1f3f");
+    noStroke();
     rectMode(CENTER);
     rect(this.x, this.y - 10, this.width, this.height, 30);
     fill("white");
