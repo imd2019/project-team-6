@@ -36,9 +36,13 @@ function draw() {
   text("Dein Nettogehalt: ", windowWidth / 2 + 105, windowHeight / 2 - 60);
   text("Warmmiete: ", windowWidth / 2 + 105, windowHeight / 2 - 30);
   text("Zus. Nebenkosten: ", windowWidth / 2 + 105, windowHeight / 2);
-  text("Kindergeld: ", windowWidth / 2 + 105, windowHeight / 2 + 30);
-  text("Dein Kontostand: ", windowWidth / 2 + 105, windowHeight / 2 + 65);
-
+  if (player.hasChild === false) {
+    text("Dein Kontostand: ", windowWidth / 2 + 105, windowHeight / 2 + 35);
+  }
+  if (player.hasChild === true) {
+    text("Kindergeld: ", windowWidth / 2 + 105, windowHeight / 2 + 30);
+    text("Dein Kontostand: ", windowWidth / 2 + 105, windowHeight / 2 + 65);
+  }
   textAlign(LEFT);
   text(player.job.salary + "€", windowWidth / 2 + 105, windowHeight / 2 - 60);
   text(
@@ -51,19 +55,30 @@ function draw() {
     windowWidth / 2 + 105,
     windowHeight / 2
   );
+
   if (player.hasChild === true) {
     text(childBenefit + "€", windowWidth / 2 + 105, windowHeight / 2 + 30);
+    text(player.money + "€", windowWidth / 2 + 105, windowHeight / 2 + 65);
+    strokeWeight(2);
+    stroke("black");
+    line(
+      windowWidth / 2 - 75,
+      windowHeight / 2 + 40,
+      windowWidth / 2 + 155,
+      windowHeight / 2 + 40
+    );
   }
-  text(player.money + "€", windowWidth / 2 + 105, windowHeight / 2 + 65);
-
-  strokeWeight(2);
-  stroke("black");
-  line(
-    windowWidth / 2 - 75,
-    windowHeight / 2 + 40,
-    windowWidth / 2 + 155,
-    windowHeight / 2 + 40
-  );
+  if (player.hasChild === false) {
+    text(player.money + "€", windowWidth / 2 + 105, windowHeight / 2 + 35);
+    strokeWeight(2);
+    stroke("black");
+    line(
+      windowWidth / 2 - 75,
+      windowHeight / 2 + 10,
+      windowWidth / 2 + 155,
+      windowHeight / 2 + 10
+    );
+  }
 
   continueButton.display();
 }
