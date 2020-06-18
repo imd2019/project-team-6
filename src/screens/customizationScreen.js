@@ -5,33 +5,36 @@ import { player } from "../game.js";
 export let male;
 export let female;
 export let diverse;
+
 export let maleChild;
 export let femaleChild;
 export let diverseChild;
+
 export let maleConsultant;
 export let femaleConsultant;
 export let diverseConsultant;
+
 export let maleWaiter;
 export let femaleWaiter;
 export let diverseWaiter;
-export let maleConsultantChild;
-export let femaleConsultantChild;
-export let diverseConsultantChild;
-export let maleWaiterChild;
-export let femaleWaiterChild;
-export let diverseWaiterChild;
 
-let button = new Button(0, 0, 300, 100, "customize", () =>
+export let customizationImage;
+
+let button = new Button(0, -300, 0, 0, "Gestalte deinen Charakter", () =>
   setCurrentScreen("getGender")
 );
-
+let letsGo = new Button(0, 0, 200, 100, "Los", () =>
+  setCurrentScreen("getGender")
+);
 function draw() {
-  background("black");
+  background("#171d41");
+  image(customizationImage, windowWidth / 2 - 555, windowHeight / 2 - 600);
   button.display();
+  letsGo.display();
 }
 
 function mouseClicked() {
-  button.mouseClicked();
+  letsGo.mouseClicked();
 }
 
 function preload() {
@@ -39,23 +42,18 @@ function preload() {
   female = loadImage("../../assets/female.png");
   diverse = loadImage("../../assets/diverse.png");
 
-  maleChild = loadImage("../../assets/male.png");
-  femaleChild = loadImage("../../assets/female.png");
-  diverseChild = loadImage("../../assets/female.png");
+  // maleChild = loadImage("../../assets/male.png");
+  // femaleChild = loadImage("../../assets/female.png");
+  // diverseChild = loadImage("../../assets/female.png");
 
-  maleConsultant = loadImage("../../assets/male.png");
-  femaleConsultant = loadImage("../../assets/female.png");
+  maleConsultant = loadImage("../../assets/maleConsultant.png");
+  femaleConsultant = loadImage("../../assets/femaleConsultant.png");
   diverseConsultant = loadImage("../../assets/diverse.png");
   maleWaiter = loadImage("../../assets/male.png");
-  femaleWaiter = loadImage("../../assets/female.png");
-  diverseWaiter = loadImage("../../assets/diverse.png");
+  femaleWaiter = loadImage("../../assets/femaleWaiter.png");
+  diverseWaiter = loadImage("../../assets/diverseWaiter.png");
 
-  maleConsultantChild = loadImage("../../assets/male.png");
-  femaleConsultantChild = loadImage("../../assets/female.png");
-  diverseConsultantChild = loadImage("../../assets/diverse.png");
-  maleWaiterChild = loadImage("../../assets/male.png");
-  femaleWaiterChild = loadImage("../../assets/female.png");
-  diverseWaiterChild = loadImage("../../assets/diverse.png");
+  customizationImage = loadImage("../../assets/customization.png");
 }
 
 export function drawPlayer() {

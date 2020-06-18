@@ -13,7 +13,7 @@ let week1Questions = [
         "Du bist froh, weil du deine Mutter sehen kannst und bringst ihr etwas mit. Aber die Freude ist gedämpft, weil du Trinkgeld von einem Tag verlierst.",
         5,
         -36,
-        -5,
+        -10,
         1
       ),
       new Choice(
@@ -49,7 +49,7 @@ let week1Questions = [
       ],
       [0, 5],
       [-140, -60],
-      -5,
+      -10,
       1
     ),
     new Choice(
@@ -70,7 +70,7 @@ let week1Questions = [
       "Du siehst die Gefahr noch nicht und tust das als unnötig ab.",
       0,
       0,
-      -5,
+      -10,
       1
     ),
     new Choice(
@@ -89,7 +89,7 @@ let week1Questions = [
       ],
       [10, -10],
       [0, 0],
-      [0, -5],
+      [0, -10],
       0.5
     ),
   ]),
@@ -109,159 +109,505 @@ let week1Questions = [
         "Nach der Arbeit schmerzen deine Füße sehr.",
         -5,
         0,
-        -5,
+        -10,
         1
       ),
     ]
   ),
 ];
 let week2Questions = [
-  new Question("Deine Freundin möchte mit dir essen gehen. Gehst du mit?", [
-    new Choice("Ich gehe mit.", " ", 0, 0, 0, 1),
-    new Choice("Ich beibe daheim", " ", 0, 0, 0, 1),
-  ]),
   new Question(
-    "Eine teure Rechnung landet im Briefkasten. Zahlst du sie sofort?",
-    [
-      new Choice("Ich warte noch.", " ", 0, 0, 0, 1),
-      new Choice("Ich bezahle sofort.", " ", 0, 0, 0, 1),
-    ]
-  ),
-  new Question(
-    "Um deine Gesundheit zu verbessen überlegst du, Sport zu machen.",
-    [
-      new Choice("Ich mache ein Workout daheim..", " ", 0, 0, 0, 1),
-      new Choice("Ich melde mich im Fitnessstudio an.", " ", 0, 0, 0, 1),
-    ]
-  ),
-  new Question(
-    "Waren wie Toilettenpapier sind stark nachgefragt. Viele Leute kaufen größere mengen ein, als sie eigentlich brauchen.",
-    [
-      //50/50 chance
-      new Choice("Ich hamstere auch.", "supermarkt voll/leer ", 0, 0, 0, 1),
-      //50/50 Chance
-      new Choice("Ich hamstere nicht ", " voll/leer", 0, 0, 0, 1),
-    ]
-  ),
-  new Question(
-    "Dein Kind hat Geburtstag. Du brauchst noch ein Geschenk. Du kaufst...",
-    [
-      //75/25 chance
-      new Choice("...ein Buch.", " ", 0, 0, 0, 1),
-      //50/50 chance
-      new Choice("...Markenklamotten", " ", 0, 0, 0, 1),
-      //25/75 chance
-      new Choice("...eine Bluetooth-Box", " ", 0, 0, 0, 1),
-    ]
-  ),
-];
-let week3Questions = [
-  new Question("Deiner Mutter geht es wieder besser.", [
-    new Choice("Ich besuche sie im Altersheim.", " ", 0, 0, 0, 1),
-    new Choice("Ich besuche sie nicht.", " ", 0, 0, 0, 1),
-  ]),
-  new Question(
-    "Die Schulen sind geschlossen und dein Kind ist daheim. Du musst allerdings arbeiten.",
-    [
-      new Choice("Ich bringe es bei einer Freundin unter.", " ", 0, 0, 0, 1),
-      new Choice("Ich nehme mir Urlaub für die Woche.", " ", 0, 0, 0, 1),
-      //nur bei Steuerberater möglich
-      new Choice("Ich mache Home-Office", "", 0, 0, 0, 1),
-    ]
-  ),
-  new Question(
-    "Das Essen für dein Kind in der Betreuung fällt weg. Um eine weitere Mahlzeit zu stellen, musst du mehr Geld ausgeben.",
-    [
-      new Choice("Du lässt die Mahlzeit ausfallen.", " ", 0, 0, 0, 1),
-      new Choice("Du kaufst mehr ein und kochst mehr.", " ", 0, 0, 0, 1),
-    ]
-  ),
-  new Question("Das Abflussrohr deiner Küche ist verstopft.", [
-    new Choice("Ich rufe einen Handwerker.", " ", 0, 0, 0, 1),
-    //50/50 chance
-    new Choice("Ich versuche es selbst", " ", 0, 0, 0, 1),
-  ]),
-  new Question("Deine Freundin möchte mit dir essen gehen. Gehst du mit?", [
-    new Choice("Ich gehe mit.", " ", 0, 0, 0, 1),
-    new Choice("Ich beibe daheim", " ", 0, 0, 0, 1),
-  ]),
-  //falls nicht gezahlt worden ist (Rechnung)
-  new Question(
-    "Du wolltest die Rechnung nicht zahlen. Jetzt hast du eine Mahnung bekommen.",
-    [new Choice("Du musst sie jetzt bezahlen.", " ", 0, 0, 0, 1)]
-  ),
-  //falls nicht schon gekauft oder genäht wurde oder es nicht geklptt ha tmit nähen
-  new Question("Möchtest du dir eine Maske kaufen?", [
-    new Choice("Nein, ich brauche keine.", "unsicherheit", 0, 0, 0, 1),
-    new Choice("Ich kaufe mir eine.", "sicherheit", 0, 0, 0, 1),
-    //konsequenz ist 50/50 chance. wo soll das hin? oder gehen wir davon aus, dass es nicht klappt bzw das es klappt?
-    new Choice(
-      "Ich nähe mir eine.",
-      "du schaffst es/du schaffst es nicht",
-      0,
-      0,
-      0,
-      1
-    ),
-  ]),
-  new Question(
-    "In deiner Stadt ist gerade eine Blutspendeaktion. Gehst du Blut spenden?",
-    [new Choice("Ja.", " ", 0, 0, 0, 1), new Choice("Nein", " ", 0, 0, 0, 1)]
-  ),
-  new Question("Deine Verwandten kommen endlich aus dem Urlaub zurück.", [
-    new Choice("Ich hole sie ab.", " ", 0, 0, 0, 1),
-    new Choice("Sie können sich ein Taxi rufen.", " ", 0, 0, 0, 1),
-  ]),
-];
-let week4Questions = [
-  new Question("Freunde laden dich zum Spazieren gehen ein.", [
-    new Choice("Ich gehe mit.", " ", 0, 0, 0, 1),
-    new Choice("Ich beibe daheim", " ", 0, 0, 0, 1),
-  ]),
-  //nur falls obere ja
-  new Question("Deine Freunde wollen dich umarmen.", [
-    new Choice("Nein, das möchte ich nicht.", " ", 0, 0, 0, 1),
-    new Choice("Ich umarme sie ebenfalls.", " ", 0, 0, 0, 1),
-  ]),
-  new Question("Deine Mutter ist im Altersheim und fühlt sich alleine.", [
-    new Choice("Du fühlst dich schuldig", " ", 0, 0, 0, 1),
-  ]),
-  new Question(
-    "Deine Freundin ruft dich verängstigt an. Sie kann nicht bei mit ihrem Freund zusammenleben.",
+    "Deine beste Freundin möchte mit dir mittag essen gehen. Gehst du mit?",
     [
       new Choice(
-        "Sie kann für zwei Wochen bei mir unterkommen.",
-        " ",
+        "Ich gehe mit.",
+        [
+          "Endlich. Du siehst deine beste Freundin wieder, ihr habt einen schönen Tag, aber hast schon wieder Geld ausgegeben. ",
+          "Endlich. Du siehst deine beste Freundin wieder, ihr habt einen schönen Tag, aber hast schon wieder Geld ausgegeben.",
+        ],
+        5,
+        [-115, 35],
+        -10,
+        1
+      ),
+      new Choice(
+        "Ich beibe daheim",
+        [
+          "Du verbringst einen schönen Spielemittag mit deinem Kind, aber deine Freunde haben dich lange nicht mehr gesehen.",
+          "Du hast deine Freundin lange nicht mehr gesehen, und hättest dich gefreut sie wieder zu sehen.",
+        ],
+        [0, -5],
+        0,
+        0,
+        1
+      ),
+    ]
+  ),
+  new Question(
+    "Eine teure Rechnung landet bei dir im Briefkasten. Zahlst du sie?",
+    [
+      new Choice(
+        "Ich warte noch.",
+        "Du hast zwei Wochen Zeit, vergiss es nicht.",
         0,
         0,
         0,
         1
       ),
-      new Choice("Ich habe leider selbst kaum Platz.", " ", 0, 0, 0, 1),
+      new Choice(
+        "Ich bezahle sofort.",
+        "Du hast keine Schulden mehr, aber die Rechnung war sehr hoch.",
+        -5,
+        -175,
+        0,
+        1
+      ),
     ]
   ),
   new Question(
-    "Dein Kind muss von zu Hause aus mit einem Tablet arbeiten. Die Schule verteilt zehn Stück an die Schüler pro Klasse.",
+    "Um deine Gesundheit zu verbessern überlegst du, Sport zu machen. Im Fitnessstudio erzielst du schneller Erfolge, es kostet aber auch mehr Geld. Was machst du?",
+    [
+      new Choice(
+        "Ich mache Workouts daheim.",
+        [
+          "Du fühlst dich fit und du sparst Geld.",
+          "Du hast keine Disziplin, um regelmäßig Heim-Workouts zu machen, und bist enttäuscht von dir selbst.",
+        ],
+        [5, -5],
+        0,
+        [10, 0],
+        0.5
+      ),
+      new Choice(
+        "Ich melde mich im Fitnessstudio an.",
+        [
+          "Du bist total motiviert und fühlst dich fit. Deine Investition hat sich gelohnt.",
+          "Du hast keine Disziplin, um regelmäßig ins Fitnessstudio zu gehen, bist enttäuscht von dir selbst und hast Geld aus dem Fenster geschmissen.",
+        ],
+        [5, -5],
+        80,
+        [10, 0],
+        0.5
+      ),
+    ]
+  ),
+  new Question(
+    "Viele Waren wie Toilettenpapier sind stark nachgefragt. Viele Leute kaufen in größeren Mengen ein, als sie es eigentlich brauchen. Hamsterst du auch?",
+    [
+      new Choice(
+        "Ja, ich hamstere.",
+        "Du hamsterst ab jetzt. Hoffen wir, dass es sich lohnt.",
+        0,
+        0,
+        0,
+        1
+      ),
+
+      new Choice(
+        "Nein, ich hamstere nicht.",
+        "Du hast dich gegen das Hamstern entschieden, hoffen wir es war die richtige Entscheidung.",
+        0,
+        0,
+        0,
+        1
+      ),
+    ]
+  ),
+  new Question("Dein Kind hat Geburtstag. Was schenkst du ihm?", [
+    new Choice(
+      "Ein Buch.",
+      ["Deinem Kind gefällt das Buch.", "Deinem Kind gefällt das Buch nicht."],
+      [5, -5],
+      -20,
+      0,
+      0.25
+    ),
+    new Choice(
+      "Markenklamotten",
+      [
+        "Dein Kind freut sich über die neuen Klamotten.",
+        "Deinem Kind gefallen die neuen Klamotten gar nicht.",
+      ],
+      [10, -10],
+      -50,
+      0,
+      0.5
+    ),
+    new Choice(
+      "Eine Bluetooth-Box",
+      [
+        "Dein Kind freut sich riesig über das Geschenk und du freust dich mit.",
+        "Dein Kind freut sich nicht über die Box, das macht dich traurig.",
+      ],
+      [15, -15],
+      -80,
+      0,
+      0.8
+    ),
+  ]),
+  new Question(
+    "Die Schulen sind geschlossen und dein Kind ist daheim. Du musst allerdings arbeiten. Was machst du?",
+    [
+      new Choice(
+        "Ich bringe mein Kind bei einer Freundin unter.",
+        "Du fühlst dich schlecht, weil du ihre Zeit in Anspruch nimmst.",
+        -5,
+        50,
+        0,
+        1
+      ),
+      new Choice(
+        "Ich nehme mir Urlaub für die Woche, um auf mein Kind aufpassen zu können.",
+
+        "Du bist unzufrieden mit der Situation, dass die Schulen geschlossen haben.",
+        -5,
+        -40,
+        0,
+        1
+      ),
+    ]
+  ),
+  new Question("Du hattest einen Fahrradunfall. Gehst du zum Arzt?", [
+    new Choice(
+      "Ich gehe zum Arzt.",
+      "Du fühlst dich gut, es tut nicht mehr weh und es kann sich nicht mehr entzünden.",
+      5,
+      -10,
+      0,
+      1
+    ),
+    new Choice(
+      "Nein, ich gehe nicht zum Arzt.",
+
+      [
+        "Es hat sich entzündet. Wärst du nur besser zum Arzt gegangen. Jetzt hast du schmerzen.",
+        "Du fühlst dich gut, du konntest arbeiten gehen und warst nicht unnötig beim Arzt.",
+      ],
+      [-10, 10],
+      0,
+      [-10, 0],
+      1
+    ),
+  ]),
+];
+
+let week3Questions = [
+  new Question(
+    "Die Restaurants haben geschlossen. Du bist jetzt auf Kurzarbeit. Suchst du dir einen Nebenjob?",
+    [
+      new Choice(
+        "Ja, ich schreibe Bewerbungen.",
+        "Du hast deine Bewerbungen geschrieben und wartest jetzt auf die Antwort.",
+        0,
+        -5,
+        0,
+        1
+      ),
+      new Choice(
+        "Nein, dafür habe ich keine Zeit.",
+        "Dich ärgert die Maßnahme, dass alle Restaurants schließen mussten und das dein Gehalt beeinflusst.",
+        -5,
+        0,
+        0,
+        1
+      ),
+    ]
+  ),
+  new Question(
+    "Deiner Mutter geht es wieder besser. Möchtest du sie im Altersheim besuchen?",
+    [
+      new Choice(
+        "Ich besuche sie.",
+        "Endlich kannst du mal wieder eine Runde Schach mit deiner Mutter spielen und hast ihr Blumen mitgebracht. ",
+        5,
+        -15,
+        -10,
+        1
+      ),
+      new Choice(
+        "Ich besuche sie nicht.",
+        "Sie tut dir leid und du weißt nicht wann du sie das nächste mal wieder siehst. Sie vermisst dich.",
+        -10,
+        0,
+        0,
+        1
+      ),
+    ]
+  ),
+  new Question(
+    "Das Essen der Kinder in der Betreuung fällt weg. Um eine weitere Mahlzeit zu stellen musst du mehr Geld ausgeben. Was tust du?",
+    [
+      new Choice(
+        "Ich lasse die Mahlzeit ausfallen.",
+        "Es macht dich traurig, dass du deinem Kind kein Mittagessen bieten kannst.",
+        -15,
+        0,
+        -10,
+        1
+      ),
+      new Choice("Ich kaufe mehr ein und koche mehr.", " ", 0, 0, 0, 1),
+    ]
+  ),
+  new Question(
+    "Das Abflussrohr in deiner Küche ist verstopft. Was machst du?",
+    [
+      new Choice(
+        "Ich rufe einen Handwerker.",
+        "Du musstest zwar Geld für den Handwerker zahlen, aber dafür ist das Rohr jetzt frei.",
+        0,
+        -110,
+        0,
+        1
+      ),
+      new Choice(
+        "ch versuche es selbst.",
+        [
+          "Du bist stolz auf dich, es hat funktioniert. Das Rohr ist frei und du hast die den Handwerker gespart.",
+          "Du hast es versucht, es ha nicht geklappt. Das Rohr ist immer noch verstopft und es ist schlimmer als vorher. Du musst einen Handwerker rufen.",
+        ],
+        [15, -10],
+        [0, 140],
+        0,
+        0.5
+      ),
+    ]
+  ),
+  new Question(
+    "In deiner Stadt ist gerade eine Blutspendeaktion. Gehst du Blutspenden?",
+    [
+      new Choice(
+        "Ja.",
+        "Du bist glücklich, dass du anderen helfen kannst. Bonus: Du hast Geld dafür bekommen.",
+        10,
+        20,
+        -10,
+        1
+      ),
+      new Choice(
+        "Nein.",
+        "Du hast momentan keine Zeit und kein Kopf dafür.",
+        0,
+        0,
+        0,
+        1
+      ),
+    ]
+  ),
+  //falls nicht schon gekauft oder genäht wurde undes nicht geklptt hat
+  new Question("Möchtest du dir eine Maske kaufen?", [
+    new Choice(
+      "Nein, ich brauche keine.",
+      "Du siehst die Gefahr noch nicht und tust das als unnötig ab.",
+      0,
+      0,
+      -10,
+      1
+    ),
+    new Choice(
+      "Ich kaufe mir eine.",
+      "Du fühlst dich sicher, aber die Masken waren sehr teuer.",
+      5,
+      -35,
+      0,
+      1
+    ),
+    new Choice(
+      "Nein, ich werde mir eine nähen.",
+      [
+        "Du bist stolz auf dich, weil du es geschafft hast, Geld gespart hast und geschützt bist.",
+        "Du bist enttäuscht: Es hat nicht geklappt, du hast Zeit verschwendet und bist nicht geschützt.",
+      ],
+      [10, -10],
+      [0, 0],
+      [0, -10],
+      0.5
+    ),
+  ]),
+  new Question(
+    "Deine Verwandten kommen aus dem Urlaub zurück. Holst du sie ab?",
+    [
+      new Choice(
+        "Wofür ist Familie da?",
+        "Du erwartest das selbe von ihnen und freust dich sie wieder zu sehen, aber musst auftanken.",
+        5,
+        -20,
+        -10,
+        1
+      ),
+      new Choice(
+        "Nein, sie können sich ein Taxi nehmen.",
+        "Du hast ein schlechtes Gewissen, aber im Moment hast du dafür keine Zeit und Geld dafür.",
+        -5,
+        0,
+        0,
+        1
+      ),
+    ]
+  ),
+];
+let week4Questions = [
+  new Question("Freunde laden dich zum Spazieren gehen ein. Was machst du?", [
+    new Choice(
+      "Ich gehe mit.",
+      "Du bist endlich wieder an der frischen Luft uns siehst deine Freunde.",
+      10,
+      0,
+      -10,
+      1
+    ),
+    new Choice(
+      "Ich bleibe daheim.",
+      "Du möchtest eigentlich raus, aber du hast Angst eine Strafe zu zahlen.",
+      -5,
+      0,
+      0,
+      1
+    ),
+  ]),
+  //nur falls obere ja
+  new Question(
+    "Du triffst dich mit deinen Freunden. Sie wollen dich umarmen. Was machst du?",
+    [
+      new Choice(
+        "Ich lehne ab.",
+        "Dir ist die Situation unangenehm, aber du willst auf Nummer sicher gehen.",
+        -5,
+        0,
+        0,
+        1
+      ),
+      new Choice(
+        "Ich lasse mich umarmen.",
+        [
+          "Dir hat menschliche Nähe gefehlt.",
+          "Du wurdest von der Polizei erwischt und musst die Strafe zahlen. Du ärgerst dich darüber.",
+        ],
+        [5, 10],
+        0,
+        -10,
+        0.8
+      ),
+    ]
+  ),
+  new Question(
+    "Deine Freundin ruft dich an und erzählt dir von ihrem gewalttätigen Freund. Lässt du sie bei dir eine Woche unterkommen?",
+    [
+      new Choice(
+        "Dafür sind Freunde doch da!",
+        "Deine Freundin gibt dir ein wenig zur Haushaltskasse dazu. Du bist froh ihr helfen zu können.",
+        10,
+        50,
+        -10,
+        1
+      ),
+      new Choice(
+        "Ich habe selber kaum Platz in meiner Wohnung.",
+        "Du fühlst dich schlecht, dass du ihr nicht helfen kannst.",
+        -15,
+        0,
+        0,
+        1
+      ),
+    ]
+  ),
+  new Question(
+    "Dein Kind kommt nicht mit dem Schulstoff zurecht. Heuerst du einen Nachhilfelehrer an?",
+    [
+      new Choice(
+        "Ja, ich hole Online-Nachhilfe.",
+        "Die Bildung deines Kindes ist dir sehr wichtig und zahlst für einen Online-Nachhilfelehrer zweimal die Woche.",
+        5,
+        -30,
+        0,
+        1
+      ),
+      new Choice(
+        "Nein, ich versuche selber zu helfen.",
+        [
+          "Du sparst Geld und du bist froh, dass du helfen kannst.",
+          "Es tut dir leid, dass du deinem Kind nicht helfen kannst. Du machst dir Sorgen um die Schulbildung und ist für beide Parteien frustrierend.",
+        ],
+        [10, -10],
+        0,
+        0,
+        1
+      ),
+    ]
+  ),
+  new Question(
+    "Dein Kind muss von Zuhause aus mit einem Tablet arbeiten. Die Schule verteilt 10 Tablets an die Schüler pro Klasse.",
     [
       //70/30 chance
-      new Choice("Einschreiben", " ", 0, 0, 0, 1),
+      new Choice(
+        "Einschreiben",
+        ["Dein Kind bekommt keins.", "Dein Kind bekommt ein Tablet."],
+        [-10, 10],
+        0,
+        0,
+        0.7
+      ),
     ]
   ),
   //falls kein Tablet bekommen
-  new Question("Dein Kind hat kein Tablet bekomme. ", [
-    new Choice("Ich lass mein Kind mein Handy benutzen.", " ", 0, 0, 0, 1),
-    new Choice("Ich kaufe ein Tablet.", " ", 0, 0, 0, 1),
+  new Question("Dein Kind hat kein Tablet bekommen. Was machst du?", [
+    new Choice(
+      "Mein Kind kann mein Handy benutzen.",
+      "Du hast Angst, dass dein Kind über das Handy nicht so gut mitarbeiten kann und bist genervt, dass du dein Handy in der Zeit nicht benutzen kannst.",
+      -5,
+      0,
+      0,
+      1
+    ),
+    new Choice(
+      "Ich kaufe ein Tablet.",
+      "Dein Kind kann wieder mitarbeiten, aber du ärgerst dich über die Finanzen.",
+      0,
+      -45,
+      0,
+      1
+    ),
   ]),
-  new Question("Dein Auto ist kaputt. Bringst du es in die Werkstatt?", [
-    new Choice("Nein, ein wenig laufen tut gut..", " ", 0, 0, 0, 1),
-    new Choice("Ja, ich brauche mein Auto.", "", 0, 0, 0, 1),
-  ]),
-  //falls auto kaputt.
   new Question(
-    "Der Supermarkt um die Ecke ist sehr teurer. Der günstigere Supermakt ist nur mit der bahn zu erreichen, da dein Auto noch in der Werktstatt steht. Wo kaufst du ein?",
+    "Dein Auto geht kaputt, du brauchst es zum Einkaufen. Lässt du es reparieren?",
     [
-      new Choice("Im teurem Supermarkt.", " ", 0, 0, 0, 1),
-      new Choice("Im günstigem Supermarkt.", " ", 0, 0, 0, 1),
+      new Choice(
+        "Ich bringe es in die Werkstatt.",
+        "Dein Auto ist in der Werkstatt. Aber dein Alltag lässt sich nun schlechter gestalten.",
+        5,
+        -200,
+        0,
+        1
+      ),
+      new Choice(
+        "Ich bringe es nicht in die Werkstatt.",
+        "Dein Alltag wird schwieriger zu gestalten, da du nicht mehr mobil bist.",
+        -10,
+        0,
+        0,
+        1
+      ),
+    ]
+  ),
+  //falls auto in Werkstatt.
+  new Question(
+    "Der Supermarkt um die Ecke ist teurer aber dafür näher. Der billige Supermarkt ist nur mit der Bahn zu erreichen, da dein Auto noch in der Werkstatt steht. Was tust du?",
+    [
+      new Choice(
+        "Ich gehe in den billigeren Supermarkt.",
+        "Du brauchst länger zum Einkaufen und du musst alle Einkäufe mit der Hand tragen.",
+        -5,
+        -10,
+        -10,
+        1
+      ),
+      new Choice(
+        "Ich gehe in den teuren Supermarkt.",
+        "Du musst alle Einkäufe mit der Hand tragen und du musst mehr bezahlen, aber Weg ist nicht so weit.",
+        -10,
+        -10,
+        0,
+        1
+      ),
     ]
   ),
 ];
