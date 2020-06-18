@@ -1,35 +1,35 @@
 import { Button } from "../model/button.js";
 import { setCurrentScreen } from "../../sketch.js";
-import { female, male, diverse } from "./customizationScreen.js";
+import { female, male, diverse, noPic } from "./customizationScreen.js";
 import { player } from "../game.js";
 
-let question = new Button(0, -300, 300, 100, "Wähle dein Geschlecht:");
+let headline = new Button(0, -300, 0, 0, false, "Wähle dein Geschlecht:");
 
-let maleBtn = new Button(-250, 250, 300, 100, "Männlich", () => {
+let maleBtn = new Button(-350, 250, 300, 100, true, "Männlich", () => {
   setCurrentScreen("getChild");
   player.sex = "m";
 });
-let femaleBtn = new Button(0, 250, 300, 100, "Weiblich", () => {
+let femaleBtn = new Button(0, 250, 300, 100, true, "Weiblich", () => {
   setCurrentScreen("getChild");
   player.sex = "f";
 });
-let diverseBtn = new Button(250, 250, 300, 100, "diverse", () => {
+let diverseBtn = new Button(350, 250, 300, 100, true, "Diverse", () => {
   setCurrentScreen("getChild");
   player.sex = "d";
 });
 
 function draw() {
-  background("black");
+  background("#1e1f3f");
 
-  question.display();
+  headline.display();
 
   maleBtn.display();
   femaleBtn.display();
   diverseBtn.display();
 
-  femaleBtn.showPicture(female);
-  maleBtn.showPicture(male);
-  diverseBtn.showPicture(diverse);
+  femaleBtn.showPicture(female, noPic);
+  maleBtn.showPicture(male, noPic);
+  diverseBtn.showPicture(diverse, noPic);
 }
 
 function mouseClicked() {

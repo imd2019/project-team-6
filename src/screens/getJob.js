@@ -1,47 +1,59 @@
 import { Button } from "../model/button.js";
 import { setCurrentScreen } from "../../sketch.js";
-import { maleConsultant, maleWaiter } from "./customizationScreen.js";
+import {
+  maleConsultant,
+  maleWaiter,
+  femaleWaiter,
+  femaleConsultant,
+  diverseWaiter,
+  diverseConsultant,
+  noPic,
+  child,
+} from "./customizationScreen.js";
 import { player } from "../game.js";
 import { Job } from "../model/job.js";
 
-let question = new Button(0, -300, 300, 100, "Wähle dein Beruf:");
+let headline = new Button(0, -300, 0, 0, false, "Wähle dein Beruf:");
 
 let waiterTitle = "Kellner";
-let waiter = new Button(-200, 250, 320, 100, waiterTitle, () => {
+let waiter = new Button(-200, 250, 320, 100, true, waiterTitle, () => {
   player.job = new Job(waiterTitle, 1660);
 
   setCurrentScreen("getApartment");
 });
 
 let taxConsultantTitle = "Steuerberater";
-let taxConsultant = new Button(200, 250, 320, 100, taxConsultantTitle, () => {
-  player.job = new Job(taxConsultantTitle, 3240);
+let taxConsultant = new Button(
+  200,
+  250,
+  320,
+  100,
+  true,
+  taxConsultantTitle,
+  () => {
+    player.job = new Job(taxConsultantTitle, 3240);
 
-  setCurrentScreen("getApartment");
-});
+    setCurrentScreen("getApartment");
+  }
+);
 
 function draw() {
-  background("black");
+  background("#1e1f3f");
 
-  question.display();
+  headline.display();
   waiter.display();
   taxConsultant.display();
 
-  taxConsultant.showPicture(maleConsultant);
-  waiter.showPicture(maleWaiter);
-
-  //erstmal nur für die Form
-  // if(sex=w){
-  //   taxConsultant.showPicture(femaleConsultant);
-  //   waiter.showPicture(femaleWaiter);
-  // }
-  // else if(sex=m){
-  //   taxConsultant.showPicture(maleConsultant);
-  //   waiter.showPicture(maleWaiter);
-  // }else if(sex=d){
-  //   taxConsultant.showPicture(diverseConsultant);
-  //   waiter.showPicture(diverseWaiter);
-  // }
+  if (player.sex === "f") {
+    taxConsultant.showPicture(femaleConsultant, noPic);
+    waiter.showPicture(femaleWaiter, noPic);
+  } else if ((player.sex = "m")) {
+    taxConsultant.showPicture(maleConsultant, noPic);
+    waiter.showPicture(maleWaiter, noPic);
+  } else if ((player.sex = "d")) {
+    taxConsultant.showPicture(diverseConsultant, noPic);
+    waiter.showPicture(diverseWaiter, noPic);
+  }
 }
 
 function mouseClicked() {
