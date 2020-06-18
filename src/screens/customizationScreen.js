@@ -17,6 +17,7 @@ export let femaleWaiter;
 export let diverseWaiter;
 
 export let noPic;
+export let moneyLarge;
 
 let button = new Button(0, -300, 0, 0, false, "Gestalte deinen Charakter", () =>
   setCurrentScreen("getGender")
@@ -50,6 +51,8 @@ function preload() {
   diverseWaiter = loadImage("../../assets/diverseWaiter.png");
 
   noPic = loadImage("../../assets/noPic.png");
+
+  moneyLarge = loadImage("../../assets/moneyLarge.png");
 }
 
 export function drawPlayer() {

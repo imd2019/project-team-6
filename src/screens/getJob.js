@@ -8,7 +8,6 @@ import {
   diverseWaiter,
   diverseConsultant,
   noPic,
-  child,
 } from "./customizationScreen.js";
 import { player } from "../game.js";
 import { Job } from "../model/job.js";

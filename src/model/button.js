@@ -17,6 +17,7 @@ export class Button {
 
     if (this.color === true) {
       fill(222, 70, 90, 150);
+      // fill(245, 189, 197);
     }
     if (this.color === false) {
       noFill();
@@ -29,7 +30,7 @@ export class Button {
       fill("#1e1f3f");
     }
     if (this.color === false) {
-      fill(222, 70, 90, 150);
+      fill("#f5bdc5");
     }
     textSize(50);
     textAlign(CENTER);
@@ -37,9 +38,9 @@ export class Button {
   }
 
   showPicture(picAdult, picChild) {
-    rectMode(CENTER);
-    image(picAdult, this.x - this.width / 2, this.y - this.height - 388);
-    image(picChild, this.x - this.width / 2 - 50, this.y - this.height - 200);
+    imageMode(CENTER);
+    image(picAdult, this.x, this.y - 300);
+    image(picChild, this.x - 100, this.y - this.height - 100);
   }
 
   mouseClicked() {

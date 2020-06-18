@@ -1,6 +1,7 @@
 export class Apartment {
-  constructor(cost, description, needsCar) {
-    this.cost = cost;
+  constructor(rent, additionalCosts, description, needsCar) {
+    this.rent = rent;
+    this.additionalCosts = additionalCosts;
     this.description = description;
     this.needsCar = needsCar;
   }
