@@ -6,9 +6,7 @@ export let male;
 export let female;
 export let diverse;
 
-export let maleChild;
-export let femaleChild;
-export let diverseChild;
+export let child;
 
 export let maleConsultant;
 export let femaleConsultant;
@@ -42,14 +40,13 @@ function preload() {
   female = loadImage("../../assets/female.png");
   diverse = loadImage("../../assets/diverse.png");
 
-  // maleChild = loadImage("../../assets/male.png");
-  // femaleChild = loadImage("../../assets/female.png");
-  // diverseChild = loadImage("../../assets/female.png");
+  child = loadImage("../../assets/child.png");
 
   maleConsultant = loadImage("../../assets/maleConsultant.png");
   femaleConsultant = loadImage("../../assets/femaleConsultant.png");
-  diverseConsultant = loadImage("../../assets/diverse.png");
-  maleWaiter = loadImage("../../assets/male.png");
+  diverseConsultant = loadImage("../../assets/diverseConsultant.png");
+
+  maleWaiter = loadImage("../../assets/maleWaiter.png");
   femaleWaiter = loadImage("../../assets/femaleWaiter.png");
   diverseWaiter = loadImage("../../assets/diverseWaiter.png");
 
