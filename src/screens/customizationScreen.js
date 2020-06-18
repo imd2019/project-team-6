@@ -20,15 +20,15 @@ export let diverseWaiter;
 
 export let customizationImage;
 
-let button = new Button(0, -150, 0, 0, "Gestalte deinen Charakter", () =>
+let button = new Button(0, -300, 0, 0, "Gestalte deinen Charakter", () =>
   setCurrentScreen("getGender")
 );
 let letsGo = new Button(0, 0, 0, 0, "Los", () => setCurrentScreen("getGender"));
 function draw() {
   background("#171d41");
+  image(customizationImage, windowWidth / 2 - 555, windowHeight / 2 - 600);
   button.display();
   letsGo.display();
-  image(customizationImage, 350, 250);
 }
 
 function mouseClicked() {
