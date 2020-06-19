@@ -34,7 +34,7 @@ export class Button {
     }
     textSize(50);
     textAlign(CENTER);
-    text(this.text, this.x, this.y);
+    text(this.text, this.x, this.y + 2);
   }
 
   showPicture(picAdult, picChild) {

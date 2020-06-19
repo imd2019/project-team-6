@@ -3,7 +3,9 @@ import { setCurrentScreen } from "../../sketch.js";
 import { player } from "../game.js";
 import { moneyLarge } from "./customizationScreen.js";
 
-let continueButton = new Button(0, -300, 0, 0, false, "Deine Finanzen", () => {
+let finance = new Button(0, -300, 0, 0, false, "Deine Finanzen");
+
+let continueBtn = new Button(0, 200, 150, 80, true, "Start", () => {
   setCurrentScreen("game");
 });
 
@@ -88,11 +90,12 @@ function draw() {
     );
   }
 
-  continueButton.display();
+  finance.display();
+  continueBtn.display();
 }
 
 function mouseClicked() {
-  continueButton.mouseClicked();
+  continueBtn.mouseClicked();
 }
 
 export default {
