@@ -1,7 +1,11 @@
 import { Question } from "../model/question.js";
 import { Choice } from "../model/choice.js";
-
+import { Icons } from "../model/icons.js";
 import { player } from "../game.js";
+
+let icons = new Icons(-windowWidth / 2.2, -windowHeight / 2.6);
+
+icons.money = player.money;
 
 let question = new Question(
   "Deine Mutter liegt krank im Altersheim. Um sie zu besuchen musst du dich krankschreiben lassen. Was machst du?",
@@ -41,10 +45,13 @@ function draw() {
   question.display();
   // gif_createImg.size(windowWidth, windowHeight);
   // gif_createImg.show();
-  vid.size(windowWidth, windowHeight);
-  vid.show();
+
+  // vid.size(windowWidth, windowHeight);
+  // vid.show();
 
   console.log(player);
+
+  icons.display();
 }
 
 function mouseClicked() {}
