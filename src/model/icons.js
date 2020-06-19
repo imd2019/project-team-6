@@ -5,23 +5,24 @@ import {
 } from "../screens/customizationScreen.js";
 
 export class Icons {
-  constructor(xOffset, yOffset, money) {
+  constructor(xOffset, yOffset, width, height) {
     this.xOffset = xOffset;
     this.yOffset = yOffset;
-    this.money = money;
+    this.width = width;
+    this.height = height;
+    this.money = null;
+
     this.x = 0;
     this.y = 0;
-    this.width = 75;
-    this.height = 75;
   }
   display() {
     this.x = windowWidth / 2 + this.xOffset;
     this.y = windowHeight / 2 + this.yOffset;
     imageMode(CENTER);
     noStroke();
-    image(moneyIcon, this.x, this.y, this.width, this.height);
-    image(healthIcon, this.x, this.y + 100, this.width, this.height);
-    image(happinessIcon, this.x, this.y + 200, this.width, this.height);
+    image(moneyIcon, this.x, this.y);
+    image(healthIcon, this.x, this.y + 100);
+    image(happinessIcon, this.x, this.y + 200);
     fill(245, 189, 197);
     textSize(18);
     textAlign(LEFT);
@@ -30,7 +31,7 @@ export class Icons {
     text("Zufriedenheit", this.x + 50, this.y + 195);
     noFill();
     stroke(245, 189, 197);
-    rect(this.x + 110, this.y + 110, 130, 20, 10);
-    rect(this.x + 110, this.y + 210, 130, 20, 10);
+    rect(this.x + 110, this.y + 110, this.width, this.height, 10);
+    rect(this.x + 110, this.y + 210, this.width, this.height, 10);
   }
 }

@@ -3,7 +3,7 @@ import { Choice } from "../model/choice.js";
 import { Icons } from "../model/icons.js";
 import { player } from "../game.js";
 
-let icons = new Icons(-windowWidth / 2.2, -windowHeight / 2.6);
+let icons = new Icons(-windowWidth / 2.2, -windowHeight / 2.6, 130, 20);
 
 icons.money = player.money;
 
