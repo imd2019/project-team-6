@@ -27,11 +27,13 @@ export class Icons {
     textSize(18);
     textAlign(LEFT);
     text(this.money + "€", this.x + 50, this.y + 5);
+    textSize(14);
     text("Gesundheit", this.x + 50, this.y + 95);
     text("Zufriedenheit", this.x + 50, this.y + 195);
     noFill();
     stroke(245, 189, 197);
-    rect(this.x + 110, this.y + 110, this.width, this.height, 10);
-    rect(this.x + 110, this.y + 210, this.width, this.height, 10);
+    rectMode(LEFT);
+    rect(this.x + 100, this.y + 110, this.width, this.height, 10);
+    rect(this.x + 100, this.y + 210, this.width, this.height, 10);
   }
 }
