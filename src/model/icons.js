@@ -32,8 +32,38 @@ export class Icons {
     text("Zufriedenheit", this.x + 50, this.y + 195);
     noFill();
     stroke(245, 189, 197);
-    rectMode(LEFT);
-    rect(this.x + 100, this.y + 110, this.width, this.height, 10);
-    rect(this.x + 100, this.y + 210, this.width, this.height, 10);
+    strokeWeight(2);
+    rectMode(CORNER);
+    rect(this.x + 50, this.y + 110, this.width, this.height, 10);
+    rect(this.x + 50, this.y + 210, this.width, this.height, 10);
+    noStroke();
+    fill("#1e1f3f");
+    rect(this.x + 50, this.y + 110, this.width, this.height, 10);
+    rect(this.x + 50, this.y + 210, this.width, this.height, 10);
+  }
+  animate(healthChange, happinessChange, rounding) {
+    rectMode(CORNER);
+
+    fill(245, 189, 197);
+    rect(
+      this.x + 50,
+      this.y + 110,
+      this.width + healthChange,
+      this.height,
+      10,
+      rounding,
+      rounding,
+      10
+    );
+    rect(
+      this.x + 50,
+      this.y + 210,
+      this.width + happinessChange,
+      this.height,
+      10,
+      rounding,
+      rounding,
+      10
+    );
   }
 }

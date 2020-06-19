@@ -5,8 +5,6 @@ import { player } from "../game.js";
 
 let icons = new Icons(-windowWidth / 2.2, -windowHeight / 2.6, 100, 20);
 
-icons.money = player.money;
-
 let question = new Question(
   "Deine Mutter liegt krank im Altersheim. Um sie zu besuchen musst du dich krankschreiben lassen. Was machst du?",
   [
@@ -22,6 +20,10 @@ let question = new Question(
     new Choice("Ich gehe arbeiten.", "schlechtes gewissen", 0, 0, 0, 1),
   ]
 );
+
+//weiß nicht, ob es tatsächlich drauf zugreift
+let happinesChange = question.choices.happiness;
+let healthChange = question.choices.health;
 
 //let gif_createImg;
 let vid;
@@ -42,6 +44,7 @@ function onStart() {
 
 function draw() {
   clear();
+  icons.money = player.money;
   question.display();
   // gif_createImg.size(windowWidth, windowHeight);
   // gif_createImg.show();
@@ -49,11 +52,12 @@ function draw() {
   // vid.size(windowWidth, windowHeight);
   // vid.show();
 
-  console.log(player);
-
+  // console.log(player);
   icons.display();
 }
 
-function mouseClicked() {}
+function mouseClicked() {
+  icons.animate(happinesChange, healthChange, 0);
+}
 
 export default { draw, mouseClicked, onStart };
