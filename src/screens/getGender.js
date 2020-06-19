@@ -6,15 +6,15 @@ import { player } from "../game.js";
 let headline = new Button(0, -300, 0, 0, false, "Wähle dein Geschlecht:");
 
 let maleBtn = new Button(-350, 250, 300, 100, true, "Männlich", () => {
-  setCurrentScreen("getChild");
+  setCurrentScreen("getJob");
   player.sex = "m";
 });
 let femaleBtn = new Button(0, 250, 300, 100, true, "Weiblich", () => {
-  setCurrentScreen("getChild");
+  setCurrentScreen("getJob");
   player.sex = "f";
 });
 let diverseBtn = new Button(350, 250, 300, 100, true, "Diverse", () => {
-  setCurrentScreen("getChild");
+  setCurrentScreen("getJob");
   player.sex = "d";
 });
 

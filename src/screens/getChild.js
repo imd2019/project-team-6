@@ -1,6 +1,15 @@
 import { Button } from "../model/button.js";
 import { setCurrentScreen } from "../../sketch.js";
-import { female, male, diverse, child, noPic } from "./customizationScreen.js";
+import {
+  femaleWaiter,
+  femaleConsultant,
+  maleWaiter,
+  maleConsultant,
+  diverseWaiter,
+  diverseConsultant,
+  child,
+  noPic,
+} from "./customizationScreen.js";
 import { player } from "../game.js";
 
 let headline = new Button(0, -300, 0, 0, false, "Wähle deinen Familienstand:");
@@ -8,13 +17,13 @@ let headline = new Button(0, -300, 0, 0, false, "Wähle deinen Familienstand:");
 let hasChild = new Button(-200, 250, 320, 100, true, "Mit Kind", () => {
   player.hasChild = true;
 
-  setCurrentScreen("getJob");
+  setCurrentScreen("getApartment");
 });
 
 let noChild = new Button(200, 250, 320, 100, true, "Alleine", () => {
   player.hasChild = false;
 
-  setCurrentScreen("getJob");
+  setCurrentScreen("getApartment");
 });
 
 function draw() {
@@ -22,15 +31,24 @@ function draw() {
   headline.display();
   hasChild.display();
   noChild.display();
-  if (player.sex === "f") {
-    hasChild.showPicture(female, child);
-    noChild.showPicture(female, noPic);
-  } else if (player.sex === "m") {
-    hasChild.showPicture(male, child);
-    noChild.showPicture(male, noPic);
-  } else if (player.sex === "d") {
-    hasChild.showPicture(diverse, child);
-    noChild.showPicture(diverse, noPic);
+  if (player.sex === "f" && player.job.title === "Kellner") {
+    hasChild.showPicture(femaleWaiter, child);
+    noChild.showPicture(femaleWaiter, noPic);
+  } else if (player.sex === "m" && player.job.title === "Kellner") {
+    hasChild.showPicture(maleWaiter, child);
+    noChild.showPicture(maleWaiter, noPic);
+  } else if (player.sex === "d" && player.job.title === "Kellner") {
+    hasChild.showPicture(diverseWaiter, child);
+    noChild.showPicture(diverseWaiter, noPic);
+  } else if (player.sex === "f" && player.job.title === "Steuerberater") {
+    hasChild.showPicture(femaleConsultant, child);
+    noChild.showPicture(femaleConsultant, noPic);
+  } else if (player.sex === "m" && player.job.title === "Steuerberater") {
+    hasChild.showPicture(maleConsultant, child);
+    noChild.showPicture(maleConsultant, noPic);
+  } else if (player.sex === "d" && player.job.title === "Steuerberater") {
+    hasChild.showPicture(diverseConsultant, child);
+    noChild.showPicture(diverseConsultant, noPic);
   }
 }
 

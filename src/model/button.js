@@ -16,8 +16,8 @@ export class Button {
     this.y = windowHeight / 2 + this.yOffset;
 
     if (this.color === true) {
-      fill(222, 70, 90, 150);
-      // fill(245, 189, 197);
+      // fill(222, 70, 90, 150);
+      fill(245, 189, 197);
     }
     if (this.color === false) {
       noFill();

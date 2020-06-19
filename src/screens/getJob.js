@@ -18,7 +18,7 @@ let waiterTitle = "Kellner";
 let waiter = new Button(-200, 250, 320, 100, true, waiterTitle, () => {
   player.job = new Job(waiterTitle, 1660);
 
-  setCurrentScreen("getApartment");
+  setCurrentScreen("getChild");
 });
 
 let taxConsultantTitle = "Steuerberater";
@@ -32,7 +32,7 @@ let taxConsultant = new Button(
   () => {
     player.job = new Job(taxConsultantTitle, 3240);
 
-    setCurrentScreen("getApartment");
+    setCurrentScreen("getChild");
   }
 );
 
