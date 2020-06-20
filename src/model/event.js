@@ -1,4 +1,4 @@
-export class Event {
+export class VinduEvent {
   constructor(daysUntil) {
     this.daysUntil = daysUntil;
   }
