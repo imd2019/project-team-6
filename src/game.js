@@ -1,6 +1,7 @@
 import { Question } from "./model/question.js";
 import { Choice } from "./model/choice.js";
 import { Player } from "./model/player.js";
+import { QuestionEvent } from "./model/questionEvent.js";
 
 export let player = new Player();
 
@@ -290,7 +291,6 @@ let week2Questions = [
     ),
   ]),
 ];
-
 let week3Questions = [
   new Question(
     "Die Restaurants haben geschlossen. Du bist jetzt auf Kurzarbeit. Suchst du dir einen Nebenjob?",
@@ -612,12 +612,33 @@ let week4Questions = [
   ),
 ];
 
-// export class Game {
-//   constructor(player) {
-//     this.currentDay = 0;
-//     this.player = player;
-//     this.events = [];
-//   }
-// }
+let currentDay = 0;
+let upcomingEvents = [
+  new QuestionEvent(week1Questions[0], 5),
+  new QuestionEvent(week1Questions[1], 2),
+];
 
-export default { player };
+function getNextEvent() {
+  while (!hasEventToday(upcomingEvents)) {
+    for (let currentEvent of upcomingEvents) {
+      currentEvent.daysUntil--;
+    }
+    currentDay++;
+  }
+  for (let i in upcomingEvents) {
+    let currentEvent = upcomingEvents[i];
+    if (currentEvent.daysUntil === 0) {
+      upcomingEvents.splice(i, 1);
+      return currentEvent;
+    }
+  }
+}
+
+function hasEventToday(events) {
+  for (let currentEvent of events) {
+    if (currentEvent.daysUntil === 0) {
+      return true;
+    }
+  }
+  return false;
+}

@@ -49,8 +49,8 @@ function draw() {
   // gif_createImg.size(windowWidth, windowHeight);
   // gif_createImg.show();
 
-  // vid.size(windowWidth, windowHeight);
-  // vid.show();
+  vid.size(windowWidth, windowHeight);
+  vid.show();
 
   // console.log(player);
   icons.display();
