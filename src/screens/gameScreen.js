@@ -1,7 +1,18 @@
 import { Question } from "../model/question.js";
 import { Choice } from "../model/choice.js";
 import { Icons } from "../model/icons.js";
-import { player } from "../game.js";
+import { player, runNextEvent, getCurrentEvent } from "../game.js";
+import { Button } from "../model/button.js";
+
+let runButton = new Button(
+  0,
+  300,
+  100,
+  100,
+  "white",
+  "run next event",
+  runNextEvent
+);
 
 let icons = new Icons(-windowWidth / 2.2, -windowHeight / 2.6, 100, 20);
 
@@ -45,19 +56,24 @@ function onStart() {
 function draw() {
   clear();
   icons.money = player.money;
-  question.display();
-  // gif_createImg.size(windowWidth, windowHeight);
-  // gif_createImg.show();
+  // question.display();
+  // // gif_createImg.size(windowWidth, windowHeight);
+  // // gif_createImg.show();
 
-  vid.size(windowWidth, windowHeight);
-  vid.show();
+  // vid.size(windowWidth, windowHeight);
+  // vid.show();
 
-  // console.log(player);
+  // // console.log(player);
   icons.display();
+  runButton.display();
+  if (getCurrentEvent()) {
+    getCurrentEvent().question.display();
+  }
 }
 
 function mouseClicked() {
   icons.animate(happinesChange, healthChange, 0);
+  runButton.mouseClicked();
 }
 
 export default { draw, mouseClicked, onStart };

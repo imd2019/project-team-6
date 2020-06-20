@@ -619,6 +619,10 @@ let upcomingEvents = [
 ];
 
 function getNextEvent() {
+  if (upcomingEvents.length === 0) {
+    return null;
+  }
+
   while (!hasEventToday(upcomingEvents)) {
     for (let currentEvent of upcomingEvents) {
       currentEvent.daysUntil--;
@@ -641,4 +645,16 @@ function hasEventToday(events) {
     }
   }
   return false;
+}
+
+let currentEvent;
+
+export function runNextEvent() {
+  // after making a choice, show animation before showing next event
+
+  currentEvent = getNextEvent();
+}
+
+export function getCurrentEvent() {
+  return currentEvent;
 }
