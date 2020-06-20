@@ -4,6 +4,7 @@ export class Question {
     this.choices = choices;
   }
   display() {
+    push();
     noStroke();
     //frage
     fill(21, 21, 21, 150);
@@ -56,6 +57,7 @@ export class Question {
       rect(windowWidth / 2 + 175, windowHeight / 2 - 10, 140, 50, 3);
       fill("black");
       text(this.choices[2].text, windowWidth / 2 + 175, windowHeight / 2 - 7);
+      pop();
     }
   }
 }
