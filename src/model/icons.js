@@ -5,12 +5,17 @@ import {
 } from "../screens/customizationScreen.js";
 
 export class Icons {
-  constructor(xOffset, yOffset, width, height) {
+  constructor(xOffset, yOffset, money) {
     this.xOffset = xOffset;
     this.yOffset = yOffset;
-    this.width = width;
-    this.height = height;
-    this.money = null;
+    this.width = 100;
+    this.height = 20;
+    this.money = money;
+    this.health = 100;
+    this.happiness = 100;
+    this.moneyChange = 0;
+    this.healthChange = 0;
+    this.happinessChange = 0;
 
     this.x = 0;
     this.y = 0;
@@ -28,7 +33,6 @@ export class Icons {
     fill(245, 189, 197);
     textSize(18);
     textAlign(LEFT);
-    text(this.money + "€", this.x + 50, this.y + 5);
     textSize(14);
     text("Gesundheit", this.x + 50, this.y + 95);
     text("Zufriedenheit", this.x + 50, this.y + 195);
@@ -42,30 +46,52 @@ export class Icons {
     fill("#1e1f3f");
     rect(this.x + 50, this.y + 110, this.width, this.height, 10);
     rect(this.x + 50, this.y + 210, this.width, this.height, 10);
-  }
-  animate(healthChange, happinessChange, rounding) {
+
     rectMode(CORNER);
 
+    this.changeValues();
+
     fill(245, 189, 197);
-    rect(
-      this.x + 50,
-      this.y + 110,
-      this.width + healthChange,
-      this.height,
-      10,
-      rounding,
-      rounding,
-      10
-    );
-    rect(
-      this.x + 50,
-      this.y + 210,
-      this.width + happinessChange,
-      this.height,
-      10,
-      rounding,
-      rounding,
-      10
-    );
+    textSize(18);
+    text(this.money + "€", this.x + 50, this.y + 5);
+
+    fill(245, 189, 197);
+    rect(this.x + 50, this.y + 110, this.health, this.height, 10);
+    rect(this.x + 50, this.y + 210, this.happiness, this.height, 10);
+  }
+
+  animate(healthChange, happinessChange, moneyChange) {
+    this.healthChange = healthChange;
+    this.happinessChange = happinessChange;
+    this.moneyChange = moneyChange;
+  }
+
+  changeValues() {
+    if (this.healthChange > 0) {
+      this.health++;
+      this.healthChange--;
+    }
+    if (this.healthChange < 0) {
+      this.health--;
+      this.healthChange++;
+    }
+
+    if (this.happinessChange > 0) {
+      this.happiness++;
+      this.happinessChange--;
+    }
+    if (this.happinessChange < 0) {
+      this.happiness--;
+      this.happinessChange++;
+    }
+
+    if (this.moneyChange > 0) {
+      this.money++;
+      this.moneyChange--;
+    }
+    if (this.moneyChange < 0) {
+      this.money--;
+      this.moneyChange++;
+    }
   }
 }

@@ -14,27 +14,7 @@ let runButton = new Button(
   runNextEvent
 );
 
-let icons = new Icons(-windowWidth / 2.2, -windowHeight / 2.6, 100, 20);
-
-let question = new Question(
-  "Deine Mutter liegt krank im Altersheim. Um sie zu besuchen musst du dich krankschreiben lassen. Was machst du?",
-  [
-    new Choice(
-      "Ich besuche sie und bringe was mit.",
-      "blumen, trinkgeld, wär schön mit mama",
-      -20,
-      0,
-      -50,
-      1
-    ),
-    new Choice("Ich gehe arbeiten.", "schlechtes gewissen", 0, 0, 0, 1),
-    new Choice("Ich gehe arbeiten.", "schlechtes gewissen", 0, 0, 0, 1),
-  ]
-);
-
-//weiß nicht, ob es tatsächlich drauf zugreift
-let happinessChange = question.choices.happiness;
-let healthChange = question.choices.health;
+let icons;
 
 //let gif_createImg;
 let vid;
@@ -55,7 +35,10 @@ function onStart() {
 
 function draw() {
   clear();
-  icons.money = player.money;
+  if (!icons) {
+    icons = new Icons(-windowWidth / 2.2, -windowHeight / 2.6, player.money);
+  }
+
   // question.display();
   // // gif_createImg.size(windowWidth, windowHeight);
   // // gif_createImg.show();
@@ -72,8 +55,8 @@ function draw() {
 }
 
 function mouseClicked() {
-  icons.animate(happinessChange, healthChange, 0);
   runButton.mouseClicked();
+  icons.animate(-25, -25, 500);
 }
 
 export default { draw, mouseClicked, onStart };
