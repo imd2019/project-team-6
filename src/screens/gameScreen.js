@@ -56,7 +56,7 @@ function draw() {
 
 function mouseClicked() {
   runButton.mouseClicked();
-  icons.animate(-25, -25, 500);
+  icons.animate(-25, -25, 5);
 }
 
 export default { draw, mouseClicked, onStart };
