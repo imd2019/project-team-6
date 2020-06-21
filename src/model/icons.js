@@ -16,6 +16,8 @@ export class Icons {
     this.moneyChange = 0;
     this.healthChange = 0;
     this.happinessChange = 0;
+    this.healthRound = 0;
+    this.happinessRound = 0;
 
     this.x = 0;
     this.y = 0;
@@ -56,8 +58,38 @@ export class Icons {
     text(this.money + "€", this.x + 50, this.y + 5);
 
     fill(245, 189, 197);
-    rect(this.x + 50, this.y + 110, this.health, this.height, 10);
-    rect(this.x + 50, this.y + 210, this.happiness, this.height, 10);
+
+    if (this.health === 100) {
+      this.healthRound = 10;
+    } else if (this.health < 99) {
+      this.healthRound = 0;
+    }
+    if (this.happiness === 100) {
+      this.happinessRound = 10;
+    } else if (this.happiness < 99) {
+      this.happinessRound = 0;
+    }
+
+    rect(
+      this.x + 50,
+      this.y + 110,
+      this.health,
+      this.height,
+      10,
+      this.healthRound,
+      this.healthRound,
+      10
+    );
+    rect(
+      this.x + 50,
+      this.y + 210,
+      this.happiness,
+      this.height,
+      10,
+      this.happinessRound,
+      this.happinessRound,
+      10
+    );
   }
 
   animate(healthChange, happinessChange, moneyChange) {
