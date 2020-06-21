@@ -31,6 +31,7 @@ function draw() {
   headline.display();
   hasChild.display();
   noChild.display();
+
   if (player.sex === "f" && player.job.title === "Kellner") {
     hasChild.showPicture(femaleWaiter, child);
     noChild.showPicture(femaleWaiter, noPic);

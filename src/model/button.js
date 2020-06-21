@@ -1,3 +1,5 @@
+import { mainFont } from "../screens/customizationScreen.js";
+
 export class Button {
   constructor(xOffset, yOffset, width, height, color, text, clicked) {
     this.xOffset = xOffset;
@@ -34,6 +36,7 @@ export class Button {
     }
     textSize(50);
     textAlign(CENTER);
+    textFont(mainFont);
     text(this.text, this.x, this.y + 2);
   }
 

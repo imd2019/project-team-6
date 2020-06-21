@@ -18,8 +18,10 @@ export class Icons {
   display() {
     this.x = windowWidth / 2 + this.xOffset;
     this.y = windowHeight / 2 + this.yOffset;
+
     imageMode(CENTER);
     noStroke();
+
     image(moneyIcon, this.x, this.y);
     image(healthIcon, this.x, this.y + 100);
     image(happinessIcon, this.x, this.y + 200);

@@ -23,6 +23,8 @@ export let moneyIcon;
 export let happinessIcon;
 export let healthIcon;
 
+export let mainFont;
+
 let button = new Button(0, -300, 0, 0, false, "Gestalte deinen Charakter", () =>
   setCurrentScreen("getGender")
 );
@@ -61,6 +63,8 @@ function preload() {
   moneyIcon = loadImage("../../assets/money.png");
   happinessIcon = loadImage("../../assets/happiness.png");
   healthIcon = loadImage("../../assets/health.png");
+
+  mainFont = loadFont("../../assets/Semplicita_Medium.otf");
 }
 
 export function drawPlayer() {

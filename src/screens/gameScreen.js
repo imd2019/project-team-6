@@ -22,9 +22,9 @@ let question = new Question(
     new Choice(
       "Ich besuche sie und bringe was mit.",
       "blumen, trinkgeld, wär schön mit mama",
+      -20,
       0,
-      0,
-      0,
+      -50,
       1
     ),
     new Choice("Ich gehe arbeiten.", "schlechtes gewissen", 0, 0, 0, 1),
@@ -33,7 +33,7 @@ let question = new Question(
 );
 
 //weiß nicht, ob es tatsächlich drauf zugreift
-let happinesChange = question.choices.happiness;
+let happinessChange = question.choices.happiness;
 let healthChange = question.choices.health;
 
 //let gif_createImg;
@@ -72,7 +72,7 @@ function draw() {
 }
 
 function mouseClicked() {
-  icons.animate(happinesChange, healthChange, 0);
+  icons.animate(happinessChange, healthChange, 0);
   runButton.mouseClicked();
 }
 
