@@ -1,11 +1,6 @@
 import { Button } from "../model/button.js";
 import { setCurrentScreen } from "../../sketch.js";
-import {
-  maleConsultant,
-  maleWaiter,
-  drawPlayer,
-  noPic,
-} from "./customizationScreen.js";
+import { cityPic, townPic, drawPlayer, noPic } from "./customizationScreen.js";
 import { player } from "../game.js";
 import { Apartment } from "../model/apartment.js";
 
@@ -32,8 +27,8 @@ function draw() {
   city.display();
   town.display();
 
-  city.showPicture(maleConsultant, noPic);
-  town.showPicture(maleWaiter, noPic);
+  city.showPicture(cityPic, noPic);
+  town.showPicture(townPic, noPic);
 }
 
 function mouseClicked() {

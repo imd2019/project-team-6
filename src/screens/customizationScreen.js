@@ -16,6 +16,9 @@ export let maleWaiter;
 export let femaleWaiter;
 export let diverseWaiter;
 
+export let townPic;
+export let cityPic;
+
 export let noPic;
 export let moneyLarge;
 
@@ -55,6 +58,9 @@ function preload() {
   maleWaiter = loadImage("../../assets/maleWaiter.png");
   femaleWaiter = loadImage("../../assets/femaleWaiter.png");
   diverseWaiter = loadImage("../../assets/diverseWaiter.png");
+
+  cityPic = loadImage("../../assets/cityPic.png");
+  townPic = loadImage("../../assets/townPic.png");
 
   noPic = loadImage("../../assets/noPic.png");
 
