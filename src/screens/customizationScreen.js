@@ -28,7 +28,7 @@ export let healthIcon;
 
 export let mainFont;
 
-export let timeline;
+export let timelinePic;
 
 let button = new Button(0, -300, 0, 0, false, "Gestalte deinen Charakter", () =>
   setCurrentScreen("getGender")
@@ -74,7 +74,7 @@ function preload() {
 
   mainFont = loadFont("../../assets/Semplicita_Medium.otf");
 
-  timeline = loadImage("../../assets/timeline.png");
+  timelinePic = loadImage("../../assets/timeline.png");
 }
 
 export function drawPlayer() {

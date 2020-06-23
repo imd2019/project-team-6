@@ -1,4 +1,4 @@
-import { timeline } from "../screens/customizationScreen.js";
+import { timelinePic } from "../screens/customizationScreen.js";
 
 export class Timeline {
   constructor(xOffset, yOffset, day) {
@@ -21,6 +21,6 @@ export class Timeline {
     imageMode(CENTER);
     noStroke();
 
-    image(timeline, this.x + 480, this.y);
+    image(timelinePic, this.x + 480, this.y);
   }
 }

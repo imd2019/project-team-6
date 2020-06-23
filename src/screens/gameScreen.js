@@ -15,7 +15,7 @@ let runButton = new Button(
   runNextEvent
 );
 
-let time = new Timeline(-windowWidth / 2.2, +windowHeight / 2.6);
+let timeline = new Timeline(-windowWidth / 2.2, +windowHeight / 2.6);
 
 let icons;
 
@@ -52,7 +52,7 @@ function draw() {
   // // console.log(player);
   icons.display();
   runButton.display();
-  time.display();
+  timeline.display();
   if (getCurrentEvent()) {
     getCurrentEvent().question.display();
   }
