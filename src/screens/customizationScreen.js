@@ -28,6 +28,8 @@ export let healthIcon;
 
 export let mainFont;
 
+export let timeline;
+
 let button = new Button(0, -300, 0, 0, false, "Gestalte deinen Charakter", () =>
   setCurrentScreen("getGender")
 );
@@ -71,29 +73,12 @@ function preload() {
   healthIcon = loadImage("../../assets/health.png");
 
   mainFont = loadFont("../../assets/Semplicita_Medium.otf");
+
+  timeline = loadImage("../../assets/timeline.png");
 }
 
 export function drawPlayer() {
   // TODO: Implement
-  //erstmal nur für die Form
-  // if(sex=w && job=K){
-  //   child.showPicture(femaleWaiterChild);
-  //   noChild.showPicture(femaleWaiter);
-  // else if(sex=m && job=K){
-  //   child.showPicture(maleWaiterChild);
-  //   noChild.showPicture(maleWaiter);
-  // else if(sex=d && job=K){
-  //   child.showPicture(diverseWaiterChild);
-  //   noChild.showPicture(diverseWaiter);
-  //else if(sex=w && job=SB){
-  //   child.showPicture(femaleConsultantChild);
-  //   noChild.showPicture(femaleConsultant);
-  // else if(sex=m && job=SB){
-  //   child.showPicture(maleConsultantChild);
-  //   noChild.showPicture(maleConsultant);
-  // else if(sex=d && job=SB){
-  //   child.showPicture(diverseConsultantChild);
-  //   noChild.showPicture(diverseConsultant);
 }
 
 export default { draw, mouseClicked, preload };

@@ -8,7 +8,7 @@ import getChild from "./src/screens/getChild.js";
 import getApartment from "./src/screens/getApartment.js";
 import yourMoney from "./src/screens/yourMoney.js";
 
-let currentScreen = "start";
+let currentScreen = "game";
 
 window.preload = function () {
   customizationScreen.preload();

@@ -1,6 +1,7 @@
 import { Question } from "../model/question.js";
 import { Choice } from "../model/choice.js";
 import { Icons } from "../model/icons.js";
+import { Timeline } from "../model/timeline.js";
 import { player, runNextEvent, getCurrentEvent } from "../game.js";
 import { Button } from "../model/button.js";
 
@@ -13,6 +14,8 @@ let runButton = new Button(
   "run next event",
   runNextEvent
 );
+
+let time = new Timeline(-windowWidth / 2.2, +windowHeight / 2.6);
 
 let icons;
 
@@ -49,6 +52,7 @@ function draw() {
   // // console.log(player);
   icons.display();
   runButton.display();
+  time.display();
   if (getCurrentEvent()) {
     getCurrentEvent().question.display();
   }
