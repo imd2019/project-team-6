@@ -22,7 +22,7 @@ let coronaQuestion = [
   ),
   new Question("Möchtest du dir eine Maske kaufen?", [
     new Choice(
-      "Nein, ich brauche keine.",
+      "Ich brauche keine.",
       "Du siehst die Gefahr noch nicht und tust das als unnötig ab.",
       0,
       0,
@@ -38,7 +38,7 @@ let coronaQuestion = [
       1
     ),
     new Choice(
-      "Nein, ich werde mir eine nähen.",
+      "Ich nähe mir eine.",
       [
         "Du bist stolz auf dich, weil du es geschafft hast, Geld gespart hast und geschützt bist.",
         "Du bist enttäuscht: Es hat nicht geklappt, du hast Zeit verschwendet und bist nicht geschützt.",

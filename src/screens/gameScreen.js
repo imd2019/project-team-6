@@ -57,6 +57,7 @@ function draw() {
 function mouseClicked() {
   runButton.mouseClicked();
   icons.animate(-25, -25, 5);
+  // getCurrentEvent().question.mouseClicked();
 }
 
 export default { draw, mouseClicked, onStart };
