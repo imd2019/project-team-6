@@ -23,6 +23,7 @@ export class Icons {
     this.y = 0;
   }
   display() {
+    push();
     this.x = windowWidth / 2 + this.xOffset;
     this.y = windowHeight / 2 + this.yOffset;
 
@@ -38,13 +39,11 @@ export class Icons {
     textSize(14);
     text("Gesundheit", this.x + 50, this.y + 95);
     text("Zufriedenheit", this.x + 50, this.y + 195);
-    noFill();
-    stroke(245, 189, 197);
-    strokeWeight(2);
+
     rectMode(CORNER);
     rect(this.x + 50, this.y + 110, this.width, this.height, 10);
     rect(this.x + 50, this.y + 210, this.width, this.height, 10);
-    noStroke();
+
     fill("#1e1f3f");
     rect(this.x + 50, this.y + 110, this.width, this.height, 10);
     rect(this.x + 50, this.y + 210, this.width, this.height, 10);
@@ -90,6 +89,7 @@ export class Icons {
       this.happinessRound,
       10
     );
+    pop();
   }
 
   animate(healthChange, happinessChange, moneyChange) {
