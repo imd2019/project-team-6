@@ -14,13 +14,14 @@ export class Timeline {
     this.y = windowHeight / 2 + this.yOffset;
 
     fill(245, 189, 197);
-    ellipse(this.x, this.y, 75, 75);
+    ellipse(this.x, this.y, 40, 40);
     fill(222, 70, 90);
     textAlign(CENTER);
-    text(this.day, this.x, this.y + 15);
+    textSize(23);
+    text(this.day, this.x, this.y + 8);
     imageMode(CENTER);
     noStroke();
 
-    image(timelinePic, this.x + 480, this.y);
+    image(timelinePic, this.x + 460, this.y);
   }
 }
