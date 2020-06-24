@@ -7,10 +7,10 @@ import { Button } from "../model/button.js";
 
 let runButton = new Button(
   0,
-  300,
+  200,
+  400,
   100,
-  100,
-  "white",
+  true,
   "run next event",
   runNextEvent
 );
@@ -56,6 +56,14 @@ function draw() {
   if (getCurrentEvent()) {
     getCurrentEvent().question.display();
   }
+
+  // document
+  //   .getElementById("timelineAnimation-svg")
+  //   .contentDocument.getElementById("e5cr2dpkonuq1")
+  //   .dispatchEvent(new Event("hover"));
+
+  // document.getElementById("timelineAnimation-svg").src =
+  //   "../../assets/timelineAnimation.svg";
 }
 
 function mouseClicked() {
