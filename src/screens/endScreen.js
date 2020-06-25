@@ -1,13 +1,12 @@
 import { Button } from "../model/button.js";
-import { setCurrentScreen } from "../../sketch.js";
-import mainFont, { caritasPic, tafelPic } from "./customizationScreen.js";
+import { mainFont, caritasPic, tafelPic } from "./customizationScreen.js";
 
 let opacityText = 0;
 let opacityChange = +5;
 
-let tafel = new Button(-80, -20, 50, 30, false, "TAFEL");
+let tafel = new Button(-80, 0, 50, 30, false, "TAFEL");
 
-let caritas = new Button(80, -20, 60, 30, false, "CARITAS");
+let caritas = new Button(80, 0, 60, 30, false, "CARITAS");
 
 function textContent() {
   textAlign(CENTER);
@@ -22,6 +21,7 @@ function textContent() {
 }
 function draw() {
   clear();
+  document.getElementById("timelineAnimation-svg").style.display = "none";
   background("#1e1f3f");
   textContent();
   if (opacityText <= 250) {
@@ -32,8 +32,8 @@ function draw() {
     tafel.display();
     caritas.display();
     imageMode(CENTER);
-    image(caritasPic, windowWidth / 2 + 80, windowHeight / 2 + 20, 50, 50);
-    image(tafelPic, windowWidth / 2 - 80, windowHeight / 2 + 20, 50, 50);
+    image(caritasPic, windowWidth / 2 + 80, windowHeight / 2 + 40, 50, 50);
+    image(tafelPic, windowWidth / 2 - 80, windowHeight / 2 + 40, 50, 50);
   }
 }
 
