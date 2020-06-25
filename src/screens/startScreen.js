@@ -2,7 +2,7 @@ import gameScreen from "./gameScreen.js";
 import { Button } from "../model/button.js";
 import { setCurrentScreen } from "../../sketch.js";
 
-let button = new Button(0, 0, 150, 60, true, "open", () => {
+let button = new Button(0, 0, 100, 40, true, "open", () => {
   setCurrentScreen("customization");
   document.body.requestFullscreen();
   gameScreen.onStart();

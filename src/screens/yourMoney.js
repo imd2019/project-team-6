@@ -3,7 +3,7 @@ import { setCurrentScreen } from "../../sketch.js";
 import { player, pushRandomQuestions } from "../game.js";
 import { moneyLarge } from "./customizationScreen.js";
 
-let finance = new Button(0, -300, 0, 0, false, "Deine Finanzen");
+let finance = new Button(0, -300, 0, 0, true, "Deine Finanzen");
 
 let continueBtn = new Button(0, 200, 150, 80, true, "Start", () => {
   pushRandomQuestions();

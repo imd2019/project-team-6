@@ -4,10 +4,10 @@ import { cityPic, townPic, drawPlayer, noPic } from "./customizationScreen.js";
 import { player, pushHasCarQuestions } from "../game.js";
 import { Apartment } from "../model/apartment.js";
 
-let headline = new Button(0, -300, 0, 0, false, "Wähle deine Wohnung:");
+let headline = new Button(0, -300, 0, 0, true, "Wähle deine Wohnung:");
 
 let townTitle = "Vorstadt";
-let town = new Button(-200, 250, 300, 100, true, townTitle, () => {
+let town = new Button(-200, 250, 120, 50, true, townTitle, () => {
   player.apartment = new Apartment(530, 121, townTitle, true);
 
   pushHasCarQuestions();
@@ -16,7 +16,7 @@ let town = new Button(-200, 250, 300, 100, true, townTitle, () => {
 });
 
 let cityTitle = "Innenstadt";
-let city = new Button(200, 250, 300, 100, true, cityTitle, () => {
+let city = new Button(200, 250, 130, 50, true, cityTitle, () => {
   player.apartment = new Apartment(1030, 121, cityTitle, false);
 
   setCurrentScreen("yourMoney");

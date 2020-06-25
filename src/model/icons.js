@@ -34,7 +34,6 @@ export class Icons {
     image(healthIcon, this.x, this.y + 100);
     image(happinessIcon, this.x, this.y + 200);
     fill(245, 189, 197);
-    textSize(18);
     textAlign(LEFT);
     textSize(14);
     text("Gesundheit", this.x + 50, this.y + 95);
@@ -53,7 +52,7 @@ export class Icons {
     this.changeValues();
 
     fill(245, 189, 197);
-    textSize(18);
+    textSize(14);
     text(this.money + "€", this.x + 50, this.y + 5);
 
     fill(245, 189, 197);

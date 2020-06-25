@@ -30,20 +30,49 @@ export let mainFont;
 
 export let timelinePic;
 
-let button = new Button(0, -300, 0, 0, false, "Gestalte deinen Charakter", () =>
+export let tafelPic;
+export let caritasPic;
+
+let opacityText = 0;
+let opacityChange = +2;
+
+let yes = new Button(-50, 25, 50, 20, false, "Ja", () =>
   setCurrentScreen("getGender")
 );
-let letsGo = new Button(0, 0, 200, 100, true, "Los", () =>
-  setCurrentScreen("getGender")
+
+let no = new Button(50, 25, 50, 20, false, "Nein", () =>
+  setCurrentScreen("start")
 );
+
+function textContent() {
+  textAlign(CENTER);
+  textFont(mainFont);
+  fill(222, 70, 90, opacityText);
+  textSize(14);
+  text(
+    "Pandemien wie Corona betreffen alle Menschen.\n Aber manche trifft es härter als andere.\n\nSchlüpfe in VINDU in die Schuhe eines Anderen und versuche vier Wochen \ndurch eine simulierte Pandemie durchzukommen.\nDu wirst auf Situationen treffen, bei denen du vielleicht schwere Entscheidungen treffen musst. \nBehalte dabei dein Geld, deine Gesundheit und deine Zufriedenheit im Auge.",
+    windowWidth / 2,
+    windowHeight / 3
+  );
+  fill(245, 189, 197, opacityText);
+  text("Nimmst du die Herausforderung an?", windowWidth / 2, windowHeight / 2);
+}
 function draw() {
+  clear();
   background("#1e1f3f");
-  button.display();
-  letsGo.display();
+  if (opacityText <= 250) {
+    opacityText += opacityChange;
+  }
+  textContent();
+  if (opacityText >= 250) {
+    yes.display();
+    no.display();
+  }
 }
 
 function mouseClicked() {
-  letsGo.mouseClicked();
+  yes.mouseClicked();
+  no.mouseClicked();
 }
 
 function preload() {
@@ -75,10 +104,13 @@ function preload() {
   mainFont = loadFont("../../assets/Semplicita_Medium.otf");
 
   timelinePic = loadImage("../../assets/timeline.png");
+
+  caritasPic = loadImage("../../assets/caritasPic.svg");
+  tafelPic = loadImage("../../assets/tafelPic.svg");
 }
 
 export function drawPlayer() {
   // TODO: Implement
 }
 
-export default { draw, mouseClicked, preload };
+export default { textContent, draw, mouseClicked, preload };

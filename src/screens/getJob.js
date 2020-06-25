@@ -12,10 +12,10 @@ import {
 import { player } from "../game.js";
 import { Job } from "../model/job.js";
 
-let headline = new Button(0, -300, 0, 0, false, "Wähle dein Beruf:");
+let headline = new Button(0, -300, 0, 0, true, "Wähle dein Beruf:");
 
 let waiterTitle = "Kellner";
-let waiter = new Button(-200, 250, 320, 100, true, waiterTitle, () => {
+let waiter = new Button(-200, 250, 120, 50, true, waiterTitle, () => {
   player.job = new Job(waiterTitle, 1660);
 
   setCurrentScreen("getChild");
@@ -25,8 +25,8 @@ let taxConsultantTitle = "Steuerberater";
 let taxConsultant = new Button(
   200,
   250,
-  320,
-  100,
+  170,
+  50,
   true,
   taxConsultantTitle,
   () => {
