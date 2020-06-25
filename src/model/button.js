@@ -1,14 +1,14 @@
 import { mainFont } from "../screens/customizationScreen.js";
 
 export class Button {
-  constructor(xOffset, yOffset, width, height, color, text, clicked) {
+  constructor(xOffset, yOffset, width, height, headline, text, clicked) {
     this.xOffset = xOffset;
     this.yOffset = yOffset;
     this.x = 0;
     this.y = 0;
     this.width = width;
     this.height = height;
-    this.color = color;
+    this.headline = headline;
     this.text = text;
     this.clicked = clicked;
   }
@@ -17,27 +17,21 @@ export class Button {
     this.x = windowWidth / 2 + this.xOffset;
     this.y = windowHeight / 2 + this.yOffset;
 
-    if (this.color === true) {
-      // fill(222, 70, 90, 150);
-      fill(245, 189, 197);
-    }
-    if (this.color === false) {
-      noFill();
-    }
+    noFill();
     noStroke();
     rectMode(CENTER);
-    rect(this.x, this.y - 10, this.width, this.height, 30);
+    rect(this.x, this.y, this.width, this.height, 30);
 
-    if (this.color === true) {
-      fill("#1e1f3f");
+    if (this.headline === false) {
+      textSize(14);
     }
-    if (this.color === false) {
-      fill("#f5bdc5");
+    if (this.headline === true) {
+      textSize(24);
     }
-    textSize(50);
+    fill("#f5bdc5");
     textAlign(CENTER);
     textFont(mainFont);
-    text(this.text, this.x, this.y + 2);
+    text(this.text, this.x, this.y + 4);
   }
 
   showPicture(picAdult, picChild) {
