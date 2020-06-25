@@ -8,3 +8,8 @@ video {
   z-index: -1;
   /* user-select: none; */
 }
+
+#timelineAnimation-svg {
+  position: relative;
+  top: 75vh;
+}
