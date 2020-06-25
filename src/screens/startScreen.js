@@ -11,6 +11,7 @@ let button = new Button(0, 0, 150, 60, true, "open", () => {
 function draw() {
   background("#1e1f3f");
   button.display();
+  document.getElementById("timelineAnimation-svg").style.display = "none";
 }
 
 function mouseClicked() {
