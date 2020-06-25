@@ -10,12 +10,14 @@ import {
   child,
   noPic,
 } from "./customizationScreen.js";
-import { player } from "../game.js";
+import { player, pushHasChildQuestions } from "../game.js";
 
 let headline = new Button(0, -300, 0, 0, true, "Wähle deinen Familienstand:");
 
 let hasChild = new Button(-200, 250, 120, 50, true, "Mit Kind", () => {
   player.hasChild = true;
+
+  pushHasChildQuestions;
 
   setCurrentScreen("getApartment");
 });

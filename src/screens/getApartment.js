@@ -1,7 +1,7 @@
 import { Button } from "../model/button.js";
 import { setCurrentScreen } from "../../sketch.js";
 import { cityPic, townPic, drawPlayer, noPic } from "./customizationScreen.js";
-import { player } from "../game.js";
+import { player, pushHasCarQuestions } from "../game.js";
 import { Apartment } from "../model/apartment.js";
 
 let headline = new Button(0, -300, 0, 0, true, "Wähle deine Wohnung:");
@@ -9,6 +9,8 @@ let headline = new Button(0, -300, 0, 0, true, "Wähle deine Wohnung:");
 let townTitle = "Vorstadt";
 let town = new Button(-200, 250, 120, 50, true, townTitle, () => {
   player.apartment = new Apartment(530, 121, townTitle, true);
+
+  pushHasCarQuestions();
 
   setCurrentScreen("yourMoney");
 });

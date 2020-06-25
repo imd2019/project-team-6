@@ -1,5 +1,3 @@
-import { Question } from "../model/question.js";
-import { Choice } from "../model/choice.js";
 import { Icons } from "../model/icons.js";
 import { Timeline } from "../model/timeline.js";
 import { player, runNextEvent, getCurrentEvent } from "../game.js";
