@@ -1,11 +1,13 @@
 import { Button } from "../model/button.js";
 import { setCurrentScreen } from "../../sketch.js";
-import { player } from "../game.js";
+import { player, pushRandomQuestions } from "../game.js";
 import { moneyLarge } from "./customizationScreen.js";
 
 let finance = new Button(0, -300, 0, 0, false, "Deine Finanzen");
 
 let continueBtn = new Button(0, 200, 150, 80, true, "Start", () => {
+  pushRandomQuestions();
+
   setCurrentScreen("game");
 });
 
@@ -24,7 +26,6 @@ function setPlayerMoney() {
 }
 
 function draw() {
-  clear();
   background("#1e1f3f");
   fill(245, 189, 197, 180);
   rect(windowWidth / 2 + 30, windowHeight / 2, 500, 227, 35);
