@@ -5,7 +5,7 @@ import { QuestionEvent } from "./model/questionEvent.js";
 
 export let player = new Player();
 
-let coronaQuestion = [
+let coronaQuestions = [
   new Question(
     "Du hattest einen Urlaub gebucht, allerdings wird gerade empfohlen alle Urlaube zu stornieren. Was machst du?",
     [
@@ -187,7 +187,7 @@ let coronaQuestion = [
   ),
 ];
 
-let randomQuestionWeek1to2 = [
+let randomQuestionsWeek1to2 = [
   new Question(
     "Deine Mutter liegt krank im Altersheim. Um sie zu besuchen musst du dich krankschreiben lassen. Was machst du?",
     [
@@ -312,7 +312,7 @@ let randomQuestionWeek1to2 = [
   ),
 ];
 
-let randomQuestionWeek3to4 = [
+let randomQuestionsWeek3to4 = [
   new Question(
     "Eine teure Rechnung landet bei dir im Briefkasten. Zahlst du sie?",
     [
@@ -617,8 +617,14 @@ let hasCarQuestions = [
 
 let currentDay = 0;
 let upcomingEvents = [
-  new QuestionEvent(coronaQuestion[0], 5),
-  new QuestionEvent(coronaQuestion[1], 2),
+  new QuestionEvent(coronaQuestions[0], 1),
+  new QuestionEvent(coronaQuestions[1], 2),
+  new QuestionEvent(coronaQuestions[2], 3),
+  new QuestionEvent(coronaQuestions[3], 4),
+  new QuestionEvent(coronaQuestions[4], 5),
+  new QuestionEvent(coronaQuestions[5], 6),
+  new QuestionEvent(coronaQuestions[6], 7),
+  new QuestionEvent(coronaQuestions[7], 8),
 ];
 
 function getNextEvent() {
@@ -660,4 +666,23 @@ export function runNextEvent() {
 
 export function getCurrentEvent() {
   return currentEvent;
+}
+
+export function pushHasCarQuestions() {
+  upcomingEvents.push(
+    new QuestionEvent(hasCarQuestions[0], 1),
+    new QuestionEvent(hasCarQuestions[1], 1),
+    new QuestionEvent(hasCarQuestions[2], 1)
+  );
+}
+
+export function pushHasChildQuestions() {
+  upcomingEvents.push(
+    new QuestionEvent(hasChildQuestions[0], 1),
+    new QuestionEvent(hasChildQuestions[1], 1),
+    new QuestionEvent(hasChildQuestions[2], 1),
+    new QuestionEvent(hasChildQuestions[3], 1),
+    new QuestionEvent(hasChildQuestions[4], 1),
+    new QuestionEvent(hasChildQuestions[5], 1)
+  );
 }
