@@ -1,6 +1,11 @@
 import { Icons } from "../model/icons.js";
 import { Timeline } from "../model/timeline.js";
-import { player, runNextEvent, getCurrentEvent } from "../game.js";
+import {
+  player,
+  runNextEvent,
+  getCurrentEvent,
+  upcomingEvents,
+} from "../game.js";
 import { Button } from "../model/button.js";
 
 let runButton = new Button(
@@ -48,6 +53,7 @@ function draw() {
   vid.show();
 
   // // console.log(player);
+  console.log(upcomingEvents);
   icons.display();
   runButton.display();
   // timeline.display();

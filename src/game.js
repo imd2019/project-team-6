@@ -91,7 +91,7 @@ let coronaQuestions = [
         1
       ),
     ]
-  ), //falls nicht schon gekauft oder genäht wurde undes nicht geklptt hat
+  ), //falls nicht schon gekauft oder genäht wurde und es nicht geklaptt hat
   new Question("Möchtest du dir eine Maske kaufen?", [
     new Choice(
       "Nein, ich brauche keine.",
@@ -616,12 +616,12 @@ let hasCarQuestions = [
 ];
 
 let currentDay = 0;
-let upcomingEvents = [
+export let upcomingEvents = [
   new QuestionEvent(coronaQuestions[0], 1),
   new QuestionEvent(coronaQuestions[1], 2),
   new QuestionEvent(coronaQuestions[2], 3),
   new QuestionEvent(coronaQuestions[3], 4),
-  new QuestionEvent(coronaQuestions[4], 5),
+  // new QuestionEvent(coronaQuestions[4], 5),
   new QuestionEvent(coronaQuestions[5], 6),
   new QuestionEvent(coronaQuestions[6], 7),
   new QuestionEvent(coronaQuestions[7], 8),
@@ -668,12 +668,20 @@ export function getCurrentEvent() {
   return currentEvent;
 }
 
+let week1QuestionsCount = 2;
+let week2QuestionsCount = 1;
+let week3QuestionsCount = 1;
+let week4QuestionsCount = 2;
+
 export function pushHasCarQuestions() {
   upcomingEvents.push(
     new QuestionEvent(hasCarQuestions[0], 1),
     new QuestionEvent(hasCarQuestions[1], 1),
     new QuestionEvent(hasCarQuestions[2], 1)
   );
+
+  week2QuestionsCount += 1;
+  week4QuestionsCount += 1;
 }
 
 export function pushHasChildQuestions() {
@@ -685,4 +693,33 @@ export function pushHasChildQuestions() {
     new QuestionEvent(hasChildQuestions[4], 1),
     new QuestionEvent(hasChildQuestions[5], 1)
   );
+
+  week1QuestionsCount += 1;
+  week2QuestionsCount += 1;
+  week3QuestionsCount += 2;
+  week4QuestionsCount += 1;
+}
+
+export function pushRandomQuestions() {
+  if (week1QuestionsCount <= 4 || week2QuestionsCount <= 4) {
+    upcomingEvents.push(
+      new QuestionEvent(
+        randomQuestionsWeek1to2[
+          Math.round(0, randomQuestionsWeek1to2.length - 1)
+        ],
+        1
+      )
+    );
+  }
+
+  if (week3QuestionsCount < 4 || week4QuestionsCount < 4) {
+    upcomingEvents.push(
+      new QuestionEvent(
+        randomQuestionsWeek3to4[
+          Math.round(0, randomQuestionsWeek3to4.length - 1)
+        ],
+        1
+      )
+    );
+  }
 }
