@@ -10,6 +10,7 @@ video {
 }
 
 #timelineAnimation-svg {
-  position: relative;
+  position: absolute;
   top: 75vh;
+  left: 1.5vw;
 }

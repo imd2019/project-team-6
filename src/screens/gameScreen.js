@@ -52,7 +52,7 @@ function draw() {
   // // console.log(player);
   icons.display();
   runButton.display();
-  timeline.display();
+  // timeline.display();
   if (getCurrentEvent()) {
     getCurrentEvent().question.display();
   }
