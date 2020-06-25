@@ -30,16 +30,17 @@ export let mainFont;
 
 export let timelinePic;
 
-let count = 0;
+export let tafelPic;
+export let caritasPic;
 
 let opacityText = 0;
-let opacityChange = +5;
+let opacityChange = +2;
 
-let yes = new Button(-50, 70, 50, 20, false, "Ja", () =>
+let yes = new Button(-50, 25, 50, 20, false, "Ja", () =>
   setCurrentScreen("getGender")
 );
 
-let no = new Button(50, 70, 50, 20, false, "Nein", () =>
+let no = new Button(50, 25, 50, 20, false, "Nein", () =>
   setCurrentScreen("start")
 );
 
@@ -54,11 +55,7 @@ function textContent() {
     windowHeight / 3
   );
   fill(245, 189, 197, opacityText);
-  text(
-    "Nimmst du die Herausforderung an?",
-    windowWidth / 2,
-    windowHeight / 1.8
-  );
+  text("Nimmst du die Herausforderung an?", windowWidth / 2, windowHeight / 2);
 }
 function draw() {
   clear();
@@ -107,6 +104,9 @@ function preload() {
   mainFont = loadFont("../../assets/Semplicita_Medium.otf");
 
   timelinePic = loadImage("../../assets/timeline.png");
+
+  caritasPic = loadImage("../../assets/caritasPic.svg");
+  tafelPic = loadImage("../../assets/tafelPic.svg");
 }
 
 export function drawPlayer() {
