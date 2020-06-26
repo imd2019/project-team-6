@@ -1,3 +1,5 @@
+import { mainFont } from "../screens/customizationScreen.js";
+
 export class Question {
   constructor(text, choices, clicked) {
     this.text = text;
@@ -21,6 +23,7 @@ export class Question {
     rect(windowWidth / 1.25, windowHeight / 6, 500, 200, 30);
     fill("white");
     textSize(14);
+    textFont(mainFont);
     textAlign(CENTER);
     text(this.text, windowWidth / 1.25, windowHeight / 6 - 50);
 

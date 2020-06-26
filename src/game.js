@@ -168,7 +168,7 @@ let coronaQuestions = [
     "Deine Freundin ruft dich an und erzählt dir von ihrem gewalttätigen Freund. Lässt du sie bei dir eine Woche unterkommen?",
     [
       new Choice(
-        "Dafür sind Freunde doch da!",
+        "Dafür sind Freunde doch da!",
         "Deine Freundin gibt dir ein wenig zur Haushaltskasse dazu. Du bist froh ihr helfen zu können.",
         10,
         50,
@@ -236,7 +236,7 @@ let randomQuestionsWeek1to2 = [
   ]),
 
   new Question(
-    "Deine Arbeitsschuhe sind kaputt. Neue würden deinen Arbeitsalltag erleichtern. Was machst du?",
+    "Deine Arbeitsschuhe sind kaputt. Neue würden deinen Arbeitsalltag erleichtern. Was machst du?",
     [
       new Choice(
         "Ich kaufe mir neue.",
@@ -284,7 +284,7 @@ let randomQuestionsWeek1to2 = [
     ]
   ),
   new Question(
-    "Um deine Gesundheit zu verbessern überlegst du, Sport zu machen. Im Fitnessstudio erzielst du schneller Erfolge, es kostet aber auch mehr Geld. Was machst du?",
+    "Um deine Gesundheit zu verbessern überlegst du, Sport zu machen. Im Fitnessstudio erzielst du schneller Erfolge, es kostet aber auch mehr Geld. Was machst du?",
     [
       new Choice(
         "Ich mache Workouts daheim.",
@@ -353,7 +353,7 @@ let randomQuestionsWeek3to4 = [
     ),
   ]),
   new Question(
-    "Das Abflussrohr in deiner Küche ist verstopft. Was machst du?",
+    "Das Abflussrohr in deiner Küche ist verstopft. Was machst du?",
     [
       new Choice(
         "Ich rufe einen Handwerker.",
@@ -466,7 +466,7 @@ let hasChildQuestions = [
         1
       ),
       new Choice(
-        "Ich nehme mir Urlaub für die Woche, um auf mein Kind aufpassen zu können.",
+        "Ich nehme mir Urlaub für die Woche, um auf mein Kind aufpassen zu können.",
 
         "Du bist unzufrieden mit der Situation, dass die Schulen geschlossen haben.",
         -5,
@@ -515,7 +515,7 @@ let hasChildQuestions = [
     ]
   ),
   new Question(
-    "Dein Kind muss von Zuhause aus mit einem Tablet arbeiten. Die Schule verteilt 10 Tablets an die Schüler pro Klasse.",
+    "Dein Kind muss von Zuhause aus mit einem Tablet arbeiten. Die Schule verteilt 10 Tablets an die Schüler pro Klasse.",
     [
       //70/30 chance
       new Choice(
@@ -551,10 +551,10 @@ let hasChildQuestions = [
 
 let hasCarQuestions = [
   new Question(
-    "Deine Verwandten kommen aus dem Urlaub zurück. Holst du sie ab?",
+    "Deine Verwandten kommen aus dem Urlaub zurück. Holst du sie ab?",
     [
       new Choice(
-        "Wofür ist Familie da?",
+        "Wofür ist Familie da?",
         "Du erwartest das selbe von ihnen und freust dich sie wieder zu sehen, aber musst auftanken.",
         5,
         -20,
@@ -593,7 +593,7 @@ let hasCarQuestions = [
     ]
   ),
   new Question(
-    "Der Supermarkt um die Ecke ist teurer aber dafür näher. Der billige Supermarkt ist nur mit der Bahn zu erreichen, da dein Auto noch in der Werkstatt steht. Was tust du?",
+    "Der Supermarkt um die Ecke ist teurer aber dafür näher. Der billige Supermarkt ist nur mit der Bahn zu erreichen, da dein Auto noch in der Werkstatt steht. Was tust du?",
     [
       new Choice(
         "Ich gehe in den billigeren Supermarkt.",
@@ -623,7 +623,7 @@ export let upcomingEvents = [
   new QuestionEvent(coronaQuestions[3], 4),
   // new QuestionEvent(coronaQuestions[4], 5),
   new QuestionEvent(coronaQuestions[5], 6),
-  new QuestionEvent(coronaQuestions[6], 7),
+  // new QuestionEvent(coronaQuestions[6], 7),
   new QuestionEvent(coronaQuestions[7], 8),
 ];
 
@@ -699,9 +699,9 @@ export function pushHasChildQuestions() {
   week3QuestionsCount += 2;
   week4QuestionsCount += 1;
 }
-
+// randomQuestions should not appear on the same day
 export function pushRandomQuestions() {
-  if (week1QuestionsCount <= 4 || week2QuestionsCount <= 4) {
+  if (week1QuestionsCount < 4 || week2QuestionsCount < 4) {
     upcomingEvents.push(
       new QuestionEvent(
         randomQuestionsWeek1to2[
