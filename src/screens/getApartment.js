@@ -1,7 +1,11 @@
 import { Button } from "../model/button.js";
 import { setCurrentScreen } from "../../sketch.js";
 import { cityPic, townPic, drawPlayer, noPic } from "./customizationScreen.js";
-import { player, pushHasCarQuestions } from "../game.js";
+import {
+  player,
+  pushHasCarQuestions,
+  deleteHasChildQuestions,
+} from "../game.js";
 import { Apartment } from "../model/apartment.js";
 
 let headline = new Button(0, -300, 0, 0, true, "Wähle deine Wohnung:");
@@ -22,12 +26,21 @@ let city = new Button(200, 250, 130, 50, true, cityTitle, () => {
   setCurrentScreen("yourMoney");
 });
 
+let backBtn = new Button(0, 400, 120, 50, true, "back", () => {
+  if (player.hasChild) {
+    deleteHasChildQuestions();
+  }
+
+  setCurrentScreen("getChild");
+});
+
 function draw() {
   background("#1e1f3f");
 
   headline.display();
   city.display();
   town.display();
+  backBtn.display();
 
   city.showPicture(cityPic, noPic);
   town.showPicture(townPic, noPic);
@@ -36,6 +49,7 @@ function draw() {
 function mouseClicked() {
   city.mouseClicked();
   town.mouseClicked();
+  backBtn.mouseClicked();
 
   drawPlayer();
 }

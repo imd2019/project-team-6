@@ -684,6 +684,16 @@ export function pushHasCarQuestions() {
   week4QuestionsCount++;
 }
 
+export function deleteHasCarQuestions() {
+  upcomingEvents.splice(
+    upcomingEvents.length - hasCarQuestions.length - 1,
+    hasCarQuestions.length
+  );
+
+  week2QuestionsCount--;
+  week4QuestionsCount--;
+}
+
 export function pushHasChildQuestions() {
   upcomingEvents.push(
     new QuestionEvent(hasChildQuestions[0], 1),
@@ -699,6 +709,19 @@ export function pushHasChildQuestions() {
   week3QuestionsCount += 2;
   week4QuestionsCount++;
 }
+
+export function deleteHasChildQuestions() {
+  upcomingEvents.splice(
+    upcomingEvents.length - hasChildQuestions.length - 1,
+    hasChildQuestions.length
+  );
+
+  week1QuestionsCount--;
+  week2QuestionsCount--;
+  week3QuestionsCount -= 2;
+  week4QuestionsCount--;
+}
+
 // randomQuestions should not appear on the same day
 export function pushRandomQuestions() {
   addRandomQuestionsToEachWeek(1, week1QuestionsCount, randomQuestionsWeek1to2);
@@ -731,7 +754,7 @@ function randomFreeDayInWeek(week) {
 }
 
 function hasUpcomingEventOnDay(day) {
-  for (let event of upcomingEvent) {
+  for (let event of upcomingEvents) {
     if (event.daysUntil === day) {
       return true;
     }

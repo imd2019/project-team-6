@@ -17,7 +17,7 @@ let headline = new Button(0, -300, 0, 0, true, "Wähle deinen Familienstand:");
 let hasChild = new Button(-200, 250, 120, 50, true, "Mit Kind", () => {
   player.hasChild = true;
 
-  pushHasChildQuestions;
+  pushHasChildQuestions();
 
   setCurrentScreen("getApartment");
 });
@@ -28,11 +28,16 @@ let noChild = new Button(200, 250, 120, 50, true, "Alleine", () => {
   setCurrentScreen("getApartment");
 });
 
+let backBtn = new Button(0, 400, 120, 50, true, "back", () => {
+  setCurrentScreen("getJob");
+});
+
 function draw() {
   background("#1e1f3f");
   headline.display();
   hasChild.display();
   noChild.display();
+  backBtn.display();
 
   if (player.sex === "f" && player.job.title === "Kellner") {
     hasChild.showPicture(femaleWaiter, child);
@@ -58,6 +63,7 @@ function draw() {
 function mouseClicked() {
   hasChild.mouseClicked();
   noChild.mouseClicked();
+  backBtn.mouseClicked();
 }
 
 export default { draw, mouseClicked };

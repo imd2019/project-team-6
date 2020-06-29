@@ -1,11 +1,11 @@
 import { Button } from "../model/button.js";
 import { setCurrentScreen } from "../../sketch.js";
-import { player, pushRandomQuestions } from "../game.js";
+import { player, pushRandomQuestions, deleteHasCarQuestions } from "../game.js";
 import { moneyLarge } from "./customizationScreen.js";
 
 let finance = new Button(0, -300, 0, 0, true, "Deine Finanzen");
 
-let continueBtn = new Button(0, 200, 150, 80, true, "Start", () => {
+let startBtn = new Button(0, 200, 150, 80, true, "Start", () => {
   pushRandomQuestions();
 
   setCurrentScreen("game");
@@ -13,6 +13,14 @@ let continueBtn = new Button(0, 200, 150, 80, true, "Start", () => {
 
 let childBenefit = 204;
 let taxBenefit = 60;
+
+let backBtn = new Button(0, 400, 120, 50, true, "back", () => {
+  if (player.apartment.needsCar) {
+    deleteHasCarQuestions();
+  }
+
+  setCurrentScreen("getApartment");
+});
 
 function setPlayerMoney() {
   player.money =
@@ -92,11 +100,13 @@ function draw() {
   }
 
   finance.display();
-  continueBtn.display();
+  startBtn.display();
+  backBtn.display();
 }
 
 function mouseClicked() {
-  continueBtn.mouseClicked();
+  startBtn.mouseClicked();
+  backBtn.mouseClicked();
 }
 
 export default {

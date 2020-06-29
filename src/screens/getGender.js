@@ -18,6 +18,10 @@ let diverseBtn = new Button(350, 250, 120, 50, true, "Diverse", () => {
   player.sex = "d";
 });
 
+let backBtn = new Button(0, 400, 120, 50, true, "back", () => {
+  setCurrentScreen("customization");
+});
+
 function draw() {
   background("#1e1f3f");
 
@@ -26,6 +30,8 @@ function draw() {
   maleBtn.display();
   femaleBtn.display();
   diverseBtn.display();
+
+  backBtn.display();
 
   femaleBtn.showPicture(female, noPic);
   maleBtn.showPicture(male, noPic);
@@ -36,6 +42,7 @@ function mouseClicked() {
   maleBtn.mouseClicked();
   femaleBtn.mouseClicked();
   diverseBtn.mouseClicked();
+  backBtn.mouseClicked();
 }
 
 export default { draw, mouseClicked };

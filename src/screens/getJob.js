@@ -36,12 +36,17 @@ let taxConsultant = new Button(
   }
 );
 
+let backBtn = new Button(0, 400, 120, 50, true, "back", () => {
+  setCurrentScreen("getGender");
+});
+
 function draw() {
   background("#1e1f3f");
 
   headline.display();
   waiter.display();
   taxConsultant.display();
+  backBtn.display();
 
   if (player.sex === "f") {
     taxConsultant.showPicture(femaleConsultant, noPic);
@@ -58,6 +63,7 @@ function draw() {
 function mouseClicked() {
   waiter.mouseClicked();
   taxConsultant.mouseClicked();
+  backBtn.mouseClicked();
 }
 
 export default { draw, mouseClicked };
