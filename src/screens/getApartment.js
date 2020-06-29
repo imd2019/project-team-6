@@ -22,12 +22,17 @@ let city = new Button(200, 250, 130, 50, true, cityTitle, () => {
   setCurrentScreen("yourMoney");
 });
 
+let backward = new Button(0, 300, 60, 20, false, "zurück", () => {
+  setCurrentScreen("getChild");
+});
+
 function draw() {
   background("#1e1f3f");
 
   headline.display();
   city.display();
   town.display();
+  backward.display();
 
   city.showPicture(cityPic, noPic);
   town.showPicture(townPic, noPic);
