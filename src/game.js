@@ -680,8 +680,8 @@ export function pushHasCarQuestions() {
     new QuestionEvent(hasCarQuestions[2], 1)
   );
 
-  week2QuestionsCount += 1;
-  week4QuestionsCount += 1;
+  week2QuestionsCount++;
+  week4QuestionsCount++;
 }
 
 export function pushHasChildQuestions() {
@@ -694,32 +694,48 @@ export function pushHasChildQuestions() {
     new QuestionEvent(hasChildQuestions[5], 1)
   );
 
-  week1QuestionsCount += 1;
-  week2QuestionsCount += 1;
+  week1QuestionsCount++;
+  week2QuestionsCount++;
   week3QuestionsCount += 2;
-  week4QuestionsCount += 1;
+  week4QuestionsCount++;
 }
 // randomQuestions should not appear on the same day
 export function pushRandomQuestions() {
-  if (week1QuestionsCount < 4 || week2QuestionsCount < 4) {
-    upcomingEvents.push(
-      new QuestionEvent(
-        randomQuestionsWeek1to2[
-          Math.round(0, randomQuestionsWeek1to2.length - 1)
-        ],
-        1
-      )
-    );
+  addRandomQuestionsToEachWeek(1, week1QuestionsCount, randomQuestionsWeek1to2);
+}
+
+function addRandomQuestionsToEachWeek(week, weekCount, randomQuestions) {
+  while (weekCount < 4) {
+    weekCount++;
+
+    let i = Math.round(random(0, randomQuestions.length - 1));
+    let question = randomQuestions[i];
+    randomQuestions.splice(i, 1);
+
+    let freeDay = randomFreeDayInWeek(week);
+
+    upcomingEvents.push(new QuestionEvent(question, freeDay));
+  }
+}
+
+function randomFreeDayInWeek(week) {
+  let firstDayOfWeek = 7 * (week - 1) + 1;
+
+  while (true) {
+    let randomFreeDay = Math.round(random(firstDayOfWeek, firstDayOfWeek + 5));
+
+    if (!hasUpcomingEventOnDay(randomFreeDay)) {
+      return randomFreeDay;
+    }
+  }
+}
+
+function hasUpcomingEventOnDay(day) {
+  for (let event of upcomingEvent) {
+    if (event.daysUntil === day) {
+      return true;
+    }
   }
 
-  if (week3QuestionsCount < 4 || week4QuestionsCount < 4) {
-    upcomingEvents.push(
-      new QuestionEvent(
-        randomQuestionsWeek3to4[
-          Math.round(0, randomQuestionsWeek3to4.length - 1)
-        ],
-        1
-      )
-    );
-  }
+  return false;
 }
