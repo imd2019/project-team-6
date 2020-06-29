@@ -24,7 +24,7 @@ export class Button {
     rect(this.x, this.y, this.width, this.height, 30);
 
     if (this.headline === false) {
-      textSize(14);
+      textSize(16);
     }
     if (this.headline === true) {
       textSize(24);

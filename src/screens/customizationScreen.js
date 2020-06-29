@@ -36,11 +36,11 @@ export let caritasPic;
 let opacityText = 0;
 let opacityChange = +2;
 
-let yes = new Button(-50, 25, 50, 20, false, "Ja", () =>
+let yes = new Button(-50, 80, 50, 20, false, "Ja", () =>
   setCurrentScreen("getGender")
 );
 
-let no = new Button(50, 25, 50, 20, false, "Nein", () =>
+let no = new Button(50, 80, 50, 20, false, "Nein", () =>
   setCurrentScreen("start")
 );
 
@@ -48,14 +48,18 @@ function textContent() {
   textAlign(CENTER);
   textFont(mainFont);
   fill(222, 70, 90, opacityText);
-  textSize(14);
+  textSize(20);
   text(
     "Pandemien wie Corona betreffen alle Menschen.\n Aber manche trifft es härter als andere.\n\nSchlüpfe in VINDU in die Schuhe eines Anderen und versuche vier Wochen \ndurch eine simulierte Pandemie durchzukommen.\nDu wirst auf Situationen treffen, bei denen du vielleicht schwere Entscheidungen treffen musst. \nBehalte dabei dein Geld, deine Gesundheit und deine Zufriedenheit im Auge.",
     windowWidth / 2,
     windowHeight / 3
   );
   fill(245, 189, 197, opacityText);
-  text("Nimmst du die Herausforderung an?", windowWidth / 2, windowHeight / 2);
+  text(
+    "Nimmst du die Herausforderung an?",
+    windowWidth / 2,
+    (windowHeight / 3) * 1.6
+  );
 }
 function draw() {
   clear();
