@@ -28,7 +28,11 @@ let noChild = new Button(200, 250, 120, 50, true, "Alleine", () => {
   setCurrentScreen("getApartment");
 });
 
+<<<<<<< HEAD
 let backBtn = new Button(0, 400, 120, 50, true, "back", () => {
+=======
+let backward = new Button(0, 300, 60, 20, false, "zurück", () => {
+>>>>>>> b8b8f7938d3bc8ae6a6340cd7398b572b2718bef
   setCurrentScreen("getJob");
 });
 
@@ -37,7 +41,11 @@ function draw() {
   headline.display();
   hasChild.display();
   noChild.display();
+<<<<<<< HEAD
   backBtn.display();
+=======
+  backward.display();
+>>>>>>> b8b8f7938d3bc8ae6a6340cd7398b572b2718bef
 
   if (player.sex === "f" && player.job.title === "Kellner") {
     hasChild.showPicture(femaleWaiter, child);

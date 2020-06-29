@@ -26,11 +26,15 @@ let city = new Button(200, 250, 130, 50, true, cityTitle, () => {
   setCurrentScreen("yourMoney");
 });
 
+<<<<<<< HEAD
 let backBtn = new Button(0, 400, 120, 50, true, "back", () => {
   if (player.hasChild) {
     deleteHasChildQuestions();
   }
 
+=======
+let backward = new Button(0, 300, 60, 20, false, "zurück", () => {
+>>>>>>> b8b8f7938d3bc8ae6a6340cd7398b572b2718bef
   setCurrentScreen("getChild");
 });
 
@@ -40,7 +44,11 @@ function draw() {
   headline.display();
   city.display();
   town.display();
+<<<<<<< HEAD
   backBtn.display();
+=======
+  backward.display();
+>>>>>>> b8b8f7938d3bc8ae6a6340cd7398b572b2718bef
 
   city.showPicture(cityPic, noPic);
   town.showPicture(townPic, noPic);

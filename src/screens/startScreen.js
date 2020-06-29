@@ -9,8 +9,11 @@ let button = new Button(0, 0, 100, 40, true, "open", () => {
 });
 
 function draw() {
+  clear();
   background("#1e1f3f");
+
   button.display();
+  button.mouseOver();
   document.getElementById("timelineAnimation-svg").style.display = "none";
 }
 
