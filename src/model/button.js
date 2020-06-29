@@ -11,6 +11,7 @@ export class Button {
     this.headline = headline;
     this.text = text;
     this.clicked = clicked;
+    this.textTriangle = "";
   }
 
   display() {
@@ -31,7 +32,7 @@ export class Button {
     fill("#f5bdc5");
     textAlign(CENTER);
     textFont(mainFont);
-    text(this.text, this.x, this.y + 4);
+    text(this.textTriangle + this.text, this.x, this.y + 4);
   }
 
   showPicture(picAdult, picChild) {
@@ -53,5 +54,10 @@ export class Button {
       y >= this.y - this.height / 2 &&
       y <= this.y + this.height / 2
     );
+  }
+  mouseOver() {
+    if (this.hitTest(mouseX, mouseY)) {
+      this.textTriangle = "►";
+    } else this.textTriangle = "";
   }
 }
