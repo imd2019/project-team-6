@@ -21,10 +21,6 @@ let waiter = new Button(-200, 250, 120, 50, true, waiterTitle, () => {
   setCurrentScreen("getChild");
 });
 
-let backward = new Button(0, 300, 60, 20, false, "zurück", () => {
-  setCurrentScreen("getGender");
-});
-
 let taxConsultantTitle = "Steuerberater";
 let taxConsultant = new Button(
   200,
@@ -40,14 +36,13 @@ let taxConsultant = new Button(
   }
 );
 
-let backBtn = new Button(0, 400, 120, 50, true, "back", () => {
+let backBtn = new Button(0, 400, 120, 50, true, "zurück", () => {
   setCurrentScreen("getGender");
 });
 
 function draw() {
   background("#1e1f3f");
 
-  backward.display();
   headline.display();
   waiter.display();
   taxConsultant.display();

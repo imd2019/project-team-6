@@ -14,7 +14,7 @@ let startBtn = new Button(0, 200, 150, 80, true, "Start", () => {
 let childBenefit = 204;
 let taxBenefit = 60;
 
-let backBtn = new Button(0, 400, 120, 50, true, "back", () => {
+let backBtn = new Button(0, 400, 120, 50, true, "zurück", () => {
   if (player.apartment.needsCar) {
     deleteHasCarQuestions();
   }
