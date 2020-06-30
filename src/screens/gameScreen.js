@@ -20,8 +20,11 @@ let runButton = new Button(
 
 let timeline = new Timeline(-windowWidth / 2.2, +windowHeight / 2.6);
 
-let icons;
-
+export let icons = new Icons(
+  -windowWidth / 2.2,
+  -windowHeight / 2.6,
+  player.money
+);
 //let gif_createImg;
 let vid;
 
@@ -41,10 +44,6 @@ function onStart() {
 
 function draw() {
   clear();
-  if (!icons) {
-    icons = new Icons(-windowWidth / 2.2, -windowHeight / 2.6, player.money);
-  }
-
   // question.display();
   // // gif_createImg.size(windowWidth, windowHeight);
   // // gif_createImg.show();
@@ -52,8 +51,6 @@ function draw() {
   vid.size(windowWidth, windowHeight);
   vid.show();
 
-  // // console.log(player);
-  console.log(upcomingEvents);
   icons.display();
   runButton.display();
   // timeline.display();
