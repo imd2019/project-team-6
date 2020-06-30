@@ -4,6 +4,10 @@ export class Question {
   constructor(text, choices) {
     this.text = text;
     this.choices = choices;
+    this.boxWidth = 600;
+    this.choices.push(this.choices[0]);
+
+    //this.choices.splice(0, 1);
   }
   display() {
     push();
@@ -11,56 +15,41 @@ export class Question {
     //frage
     fill(21, 21, 21, 150);
     rectMode(CENTER);
-    rect(windowWidth / 2, windowHeight / 2 - 10, 500, 200, 30);
+    rect(windowWidth / 2, windowHeight / 2 - 10, this.boxWidth, 220, 50);
     fill("white");
     textSize(14);
     textFont(mainFont);
     textAlign(CENTER);
     text(this.text, windowWidth / 2, windowHeight / 2 - 130);
 
-    //1 antwort
+    for (let i in this.choices) {
+      let choice = this.choices[i];
+
+      choice.display(this.getQuestionX(i), windowHeight / 2 + 30);
+    }
+  }
+
+  mouseClicked() {
+    for (let i in this.choices) {
+      let choice = this.choices[i];
+
+      choice.mouseClicked(this.getQuestionX(i), windowHeight / 2 - 10);
+    }
+  }
+
+  getQuestionX(i) {
+    let offset;
+
     if (this.choices.length === 1) {
-      //erste im array
-      fill("#d5d5d5");
-      rect(windowWidth / 2, windowHeight / 2 - 10, 140, 50, 3);
-      fill("black");
-      text(this.choices[0].text, windowWidth / 2, windowHeight / 2 - 7);
+      offset = 0;
+    } else if (this.choices.length === 2) {
+      offset = 300;
+    } else if (this.choices.length === 3) {
+      offset = 400;
     }
 
-    //2 antworten
-    if (this.choices.length === 2) {
-      //erste im array
-      fill("#d5d5d5");
-      rect(windowWidth / 2 - 90, windowHeight / 2 - 10, 140, 50, 3);
-      fill("black");
-      text(this.choices[0].text, windowWidth / 2 - 90, windowHeight / 2 - 7);
-
-      //zweite im array
-      fill("#d5d5d5");
-      rect(windowWidth / 2 + 90, windowHeight / 2 - 10, 140, 50, 3);
-      fill("black");
-      text(this.choices[1].text, windowWidth / 2 + 90, windowHeight / 2 - 7);
-    }
-    //3 antworten
-    if (this.choices.length === 3) {
-      //erste im array
-      fill("#d5d5d5");
-      rect(windowWidth / 2 - 175, windowHeight / 2 - 10, 140, 50, 3);
-      fill("black");
-      text(this.choices[0].text, windowWidth / 2 - 175, windowHeight / 2 - 7);
-
-      //zweite im array
-      fill("#d5d5d5");
-      rect(windowWidth / 2, windowHeight / 2 - 10, 140, 50, 3);
-      fill("black");
-      text(this.choices[1].text, windowWidth / 2, windowHeight / 2 - 7);
-
-      //dritte im array
-      fill("#d5d5d5");
-      rect(windowWidth / 2 + 175, windowHeight / 2 - 10, 140, 50, 3);
-      fill("black");
-      text(this.choices[2].text, windowWidth / 2 + 175, windowHeight / 2 - 7);
-      pop();
-    }
+    return (
+      windowWidth / 2 - offset / 2 + (this.boxWidth / this.choices.length) * i
+    );
   }
 }

@@ -14,6 +14,14 @@ export class Choice {
     this.health = health;
     this.chance = chance;
   }
-  onclick() {}
+
+  display(x, y) {
+    fill("#d5d5d5");
+    rect(x, y, 140, 50, 8);
+    fill("black");
+    text(this.text, x, y + 3);
+  }
+  mouseClicked(x, y) {}
+
   displayConsequence() {}
 }
