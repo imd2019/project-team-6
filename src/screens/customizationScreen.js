@@ -36,11 +36,11 @@ export let caritasPic;
 let opacityText = 0;
 let opacityChange = +2;
 
-let yes = new Button(-50, 80, 50, 20, false, "Ja", () =>
+let yes = new Button(-50, 120, 50, 20, false, "Ja", () =>
   setCurrentScreen("getGender")
 );
 
-let no = new Button(50, 80, 50, 20, false, "Nein", () =>
+let no = new Button(50, 120, 50, 20, false, "Nein", () =>
   setCurrentScreen("start")
 );
 
@@ -58,7 +58,7 @@ function textContent() {
   text(
     "Nimmst du die Herausforderung an?",
     windowWidth / 2,
-    (windowHeight / 3) * 1.6
+    (windowHeight / 3) * 1.8
   );
 }
 function draw() {
