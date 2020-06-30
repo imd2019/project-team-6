@@ -1,6 +1,11 @@
 import { Button } from "../model/button.js";
 import { setCurrentScreen } from "../../sketch.js";
-import { player, pushRandomQuestions, deleteHasCarQuestions } from "../game.js";
+import {
+  player,
+  pushRandomQuestions,
+  deleteHasCarQuestions,
+  runNextEvent,
+} from "../game.js";
 import { moneyLarge } from "./customizationScreen.js";
 import { icons } from "./gameScreen.js";
 
@@ -10,6 +15,7 @@ let startBtn = new Button(0, 200, 150, 80, true, "Start", () => {
   pushRandomQuestions();
 
   icons.animate(100, 100, player.money);
+  runNextEvent();
 
   setCurrentScreen("game");
 });

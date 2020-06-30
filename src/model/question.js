@@ -13,12 +13,18 @@ export class Question {
     //frage
     fill(21, 21, 21, 150);
     rectMode(CENTER);
-    rect(windowWidth / 2, windowHeight / 2 - 10, this.boxWidth, 220, 50);
+    rect(windowWidth / 2, windowHeight / 2 - 100, this.boxWidth, 220, 50);
     fill("white");
     textSize(16);
     textFont(mainFont);
     textAlign(CENTER);
-    text(this.text, windowWidth / 2, windowHeight / 2 - 130);
+    text(
+      this.text,
+      windowWidth / 2,
+      windowHeight / 2 - 50,
+      this.boxWidth - 50,
+      200
+    );
 
     for (let i in this.choices) {
       let choice = this.choices[i];

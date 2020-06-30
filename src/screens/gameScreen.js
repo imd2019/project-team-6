@@ -1,22 +1,7 @@
 import { Icons } from "../model/icons.js";
 import { Timeline } from "../model/timeline.js";
-import {
-  player,
-  runNextEvent,
-  getCurrentEvent,
-  upcomingEvents,
-} from "../game.js";
+import { player, runNextEvent, getCurrentEvent } from "../game.js";
 import { Button } from "../model/button.js";
-
-let runButton = new Button(
-  0,
-  200,
-  400,
-  100,
-  true,
-  "run next event",
-  runNextEvent
-);
 
 let timeline = new Timeline(-windowWidth / 2.2, +windowHeight / 2.6);
 
@@ -52,7 +37,6 @@ function draw() {
   vid.show();
 
   icons.display();
-  runButton.display();
   // timeline.display();
   if (getCurrentEvent()) {
     getCurrentEvent().question.display();
@@ -68,9 +52,6 @@ function draw() {
 }
 
 function mouseClicked() {
-  runButton.mouseClicked();
-  icons.animate(-25, -25, 5);
-
   if (getCurrentEvent()) {
     getCurrentEvent().question.mouseClicked();
   }

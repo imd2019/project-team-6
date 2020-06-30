@@ -36,11 +36,11 @@ export let caritasPic;
 let opacityText = 0;
 let opacityChange = +2;
 
-let yes = new Button(-50, 120, 50, 20, false, "Ja", () =>
+let yes = new Button(-50, 150, 50, 20, false, "Ja", () =>
   setCurrentScreen("getGender")
 );
 
-let no = new Button(50, 120, 50, 20, false, "Nein", () =>
+let no = new Button(50, 150, 50, 20, false, "Nein", () =>
   setCurrentScreen("start")
 );
 

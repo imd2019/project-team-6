@@ -1,3 +1,6 @@
+import { icons } from "../screens/gameScreen.js";
+import { runNextEvent } from "../game.js";
+
 export class Choice {
   constructor(
     text,
@@ -18,14 +21,15 @@ export class Choice {
   }
 
   display(x, y) {
-    fill("black");
+    fill(0, 0, 0, 50);
     rect(x, y, this.width, this.height, 8);
     fill("white");
-    text(this.text, x, y + 3);
+    text(this.text, x, y, this.width + 50, this.height - 10);
   }
   mouseClicked(x, y) {
     if (this.hitTest(x, y, mouseX, mouseY)) {
-      console.log(this.text);
+      icons.animate(this.health, this.happiness, this.money);
+      runNextEvent();
     }
   }
 
