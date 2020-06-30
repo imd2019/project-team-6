@@ -13,15 +13,30 @@ export class Choice {
     this.money = money;
     this.health = health;
     this.chance = chance;
+    this.width = 140;
+    this.height = 50;
   }
 
   display(x, y) {
-    fill("#d5d5d5");
-    rect(x, y, 140, 50, 8);
     fill("black");
+    rect(x, y, this.width, this.height, 8);
+    fill("white");
     text(this.text, x, y + 3);
   }
-  mouseClicked(x, y) {}
+  mouseClicked(x, y) {
+    if (this.hitTest(x, y, mouseX, mouseY)) {
+      console.log(this.text);
+    }
+  }
+
+  hitTest(x, y, mouseX, mouseY) {
+    return (
+      mouseX >= x - this.width / 2 &&
+      mouseX <= x + this.width / 2 &&
+      mouseY >= y - this.height / 2 &&
+      mouseY <= y + this.height / 2
+    );
+  }
 
   displayConsequence() {}
 }

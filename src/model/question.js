@@ -5,9 +5,7 @@ export class Question {
     this.text = text;
     this.choices = choices;
     this.boxWidth = 600;
-    this.choices.push(this.choices[0]);
-
-    //this.choices.splice(0, 1);
+    this.choiceY = windowHeight / 2 + 30;
   }
   display() {
     push();
@@ -17,7 +15,7 @@ export class Question {
     rectMode(CENTER);
     rect(windowWidth / 2, windowHeight / 2 - 10, this.boxWidth, 220, 50);
     fill("white");
-    textSize(14);
+    textSize(16);
     textFont(mainFont);
     textAlign(CENTER);
     text(this.text, windowWidth / 2, windowHeight / 2 - 130);
@@ -25,7 +23,7 @@ export class Question {
     for (let i in this.choices) {
       let choice = this.choices[i];
 
-      choice.display(this.getQuestionX(i), windowHeight / 2 + 30);
+      choice.display(this.getQuestionX(i), this.choiceY);
     }
   }
 
@@ -33,7 +31,7 @@ export class Question {
     for (let i in this.choices) {
       let choice = this.choices[i];
 
-      choice.mouseClicked(this.getQuestionX(i), windowHeight / 2 - 10);
+      choice.mouseClicked(this.getQuestionX(i), this.choiceY);
     }
   }
 
