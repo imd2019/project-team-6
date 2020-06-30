@@ -14,7 +14,6 @@ function draw() {
 
   button.display();
   button.mouseOver();
-  document.getElementById("timelineAnimation-svg").style.display = "none";
 }
 
 function mouseClicked() {

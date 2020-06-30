@@ -21,7 +21,7 @@ function textContent() {
 }
 function draw() {
   clear();
-  document.getElementById("timelineAnimation-svg").style.display = "none";
+
   background("#1e1f3f");
   textContent();
   if (opacityText <= 250) {

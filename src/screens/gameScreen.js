@@ -61,8 +61,6 @@ function draw() {
     getCurrentEvent().question.display();
   }
 
-  document.getElementById("timelineAnimation-svg").style.display = "block";
-
   // document
   //   .getElementById("timelineAnimation-svg")
   //   .contentDocument.getElementById("e5cr2dpkonuq1")
