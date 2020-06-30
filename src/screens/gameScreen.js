@@ -7,7 +7,7 @@ let timeline = new Timeline(-windowWidth / 2.2, +windowHeight / 2.6);
 
 export let icons = new Icons(
   -windowWidth / 2.2,
-  -windowHeight / 2.6,
+  -windowHeight / 2.1,
   player.money
 );
 //let gif_createImg;
@@ -22,7 +22,7 @@ function onStart() {
   vid.hide();
 
   setTimeout(() => {
-    vid.src = "../../assets/frage_26.mp4";
+    vid.src = "../../assets/frage_27.mp4";
     vid.loop();
   }, 1000 * 10);
 }
