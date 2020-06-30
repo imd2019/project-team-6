@@ -10,14 +10,14 @@ let coronaQuestions = [
     "Du hattest einen Urlaub gebucht, allerdings wird gerade empfohlen alle Urlaube zu stornieren. Was machst du?",
     [
       new Choice(
-        "Ich stoniere.",
+        "Ich storniere.",
         "Du ärgerst dich, dass du deinen Urlaub stornieren musstest",
         -5,
         0,
         0,
         1
       ),
-      new Choice("Ich stoniere nicht.", "Du hoffst und wartest", 0, 0, 0, 1),
+      new Choice("Ich storniere nicht.", "Du hoffst und wartest", 0, 0, 0, 1),
     ]
   ),
   new Question("Möchtest du dir eine Maske kaufen?", [
