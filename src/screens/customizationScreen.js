@@ -115,7 +115,7 @@ function preload() {
   caritasPic = loadImage("../../assets/caritasPic.svg");
   tafelPic = loadImage("../../assets/tafelPic.svg");
 
-  closedVindu = loadImage("../../assets/fenster_geschlossen.svg");
+  closedVindu = loadImage("../../assets/fenster_geschlossen.png");
 }
 
 export function drawPlayer() {
