@@ -725,6 +725,9 @@ export function deleteHasChildQuestions() {
 // randomQuestions should not appear on the same day
 export function pushRandomQuestions() {
   addRandomQuestionsToEachWeek(1, week1QuestionsCount, randomQuestionsWeek1to2);
+  addRandomQuestionsToEachWeek(2, week2QuestionsCount, randomQuestionsWeek1to2);
+  addRandomQuestionsToEachWeek(3, week3QuestionsCount, randomQuestionsWeek3to4);
+  addRandomQuestionsToEachWeek(4, week4QuestionsCount, randomQuestionsWeek3to4);
 }
 
 function addRandomQuestionsToEachWeek(week, weekCount, randomQuestions) {
