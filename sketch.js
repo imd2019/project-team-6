@@ -12,6 +12,7 @@ let currentScreen = "start";
 
 window.preload = function () {
   customizationScreen.preload();
+  startScreen.preload();
 };
 
 function getScreen(screenName) {
