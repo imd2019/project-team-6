@@ -33,6 +33,9 @@ export let timelinePic;
 export let tafelPic;
 export let caritasPic;
 
+export let closedVindu;
+export let openVindu;
+
 let opacityText = 0;
 let opacityChange = +2;
 
@@ -111,6 +114,8 @@ function preload() {
 
   caritasPic = loadImage("../../assets/caritasPic.svg");
   tafelPic = loadImage("../../assets/tafelPic.svg");
+
+  closedVindu = loadImage("../../assets/fenster_geschlossen.svg");
 }
 
 export function drawPlayer() {
