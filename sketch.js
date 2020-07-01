@@ -26,11 +26,6 @@ window.preload = function () {
   startScreen.preload();
 };
 
-window.setup = function () {
-  var canvas = createCanvas(windowWidth, windowHeight);
-  canvas.parent("vindu");
-};
-
 function getScreen(screenName) {
   if (screenName === "start") {
     return startScreen;
