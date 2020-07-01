@@ -5,22 +5,14 @@ import { closedVindu } from "./customizationScreen.js";
 
 let opened = false;
 
-let button = new Button(
-  windowWidth / 2,
-  (windowHeight / 4) * 3.2,
-  100,
-  40,
-  true,
-  "open vindu",
-  () => {
-    setTimeout(() => setCurrentScreen("customization"), 1000 * 3);
-    openVinduVid.play();
-    openVinduVid.show();
-    opened = true;
-    document.body.requestFullscreen();
-    gameScreen.onStart();
-  }
-);
+let button = new Button(50, 250, 100, 40, true, "open vindu", () => {
+  setTimeout(() => setCurrentScreen("customization"), 1000 * 3);
+  openVinduVid.play();
+  openVinduVid.show();
+  opened = true;
+  document.body.requestFullscreen();
+  gameScreen.onStart();
+});
 
 function draw() {
   clear();
