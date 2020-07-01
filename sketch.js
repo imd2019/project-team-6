@@ -12,7 +12,7 @@ import { Button } from "./src/model/button.js";
 let currentScreen = "start";
 
 let exitBtn = new Button(
-  windowWidth / 2,
+  windowWidth / 3,
   -windowHeight / 2,
   50,
   20,
