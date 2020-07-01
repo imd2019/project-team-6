@@ -27,7 +27,7 @@ export class Button {
       textSize(16);
     }
     if (this.headline === true) {
-      textSize(24);
+      textSize(16);
     }
     fill("#f5bdc5");
     textAlign(CENTER);
