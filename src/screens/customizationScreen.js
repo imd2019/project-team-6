@@ -71,7 +71,7 @@ function draw() {
     opacityText += opacityChange;
   }
   textContent();
-  if (opacityText >= 250) {
+  if (opacityText >= 230) {
     yes.display();
     no.display();
   }

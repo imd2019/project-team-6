@@ -7,7 +7,7 @@ export let player = new Player();
 
 let coronaQuestions = [
   new Question(
-    "Du hattest einen Urlaub gebucht, allerdings wird gerade empfohlen alle Urlaube zu stornieren. Was machst du?",
+    "Du hattest einen Urlaub gebucht, allerdings wird gerade empfohlen alle Urlaube zu stornieren. \nWas machst du?",
     [
       new Choice(
         "Ich storniere.",
@@ -19,38 +19,43 @@ let coronaQuestions = [
       ),
       new Choice("Ich storniere nicht.", "Du hoffst und wartest", 0, 0, 0, 1),
     ],
-    0,
-    0
+    windowWidth / 2 - 300,
+    windowHeight / 2 - 110
   ),
-  new Question("Möchtest du dir eine Maske kaufen?", [
-    new Choice(
-      "Nein, ich brauche keine.",
-      "Du siehst die Gefahr noch nicht und tust das als unnötig ab.",
-      0,
-      0,
-      -10,
-      1
-    ),
-    new Choice(
-      "Ich kaufe mir eine.",
-      "Du fühlst dich sicher, aber die Masken waren sehr teuer.",
-      5,
-      -35,
-      0,
-      1
-    ),
-    new Choice(
-      "Nein, ich werde mir eine nähen.",
-      [
-        "Du bist stolz auf dich, weil du es geschafft hast, Geld gespart hast und geschützt bist.",
-        "Du bist enttäuscht: Es hat nicht geklappt, du hast Zeit verschwendet und bist nicht geschützt.",
-      ],
-      [10, -10],
-      [0, 0],
-      [0, -10],
-      0.5
-    ),
-  ]),
+  new Question(
+    "Möchtest du dir eine Maske kaufen?",
+    [
+      new Choice(
+        "Nein, ich brauche keine.",
+        "Du siehst die Gefahr noch nicht und tust das als unnötig ab.",
+        0,
+        0,
+        -10,
+        1
+      ),
+      new Choice(
+        "Ich kaufe mir eine.",
+        "Du fühlst dich sicher, aber die Masken waren sehr teuer.",
+        5,
+        -35,
+        0,
+        1
+      ),
+      new Choice(
+        "Nein, ich werde mir eine nähen.",
+        [
+          "Du bist stolz auf dich, weil du es geschafft hast, Geld gespart hast und geschützt bist.",
+          "Du bist enttäuscht: Es hat nicht geklappt, du hast Zeit verschwendet und bist nicht geschützt.",
+        ],
+        [10, -10],
+        [0, 0],
+        [0, -10],
+        0.5
+      ),
+    ],
+    -windowWidth / 2 + 300,
+    -windowHeight / 2 + 110
+  ),
   new Question(
     "Viele Waren wie Toilettenpapier sind stark nachgefragt. Viele Leute kaufen in größeren Mengen ein, als sie es eigentlich brauchen. Hamsterst du auch?",
     [
@@ -71,7 +76,9 @@ let coronaQuestions = [
         0,
         1
       ),
-    ]
+    ],
+    -windowWidth / 2 + 300,
+    windowHeight / 2 - 110
   ),
   new Question(
     "Die Restaurants haben geschlossen. Du bist jetzt auf Kurzarbeit. Suchst du dir einen Nebenjob?",
@@ -92,55 +99,67 @@ let coronaQuestions = [
         0,
         1
       ),
-    ]
+    ],
+    windowWidth / 2 - 300,
+    -windowHeight / 2 + 110
   ), //falls nicht schon gekauft oder genäht wurde und es nicht geklaptt hat
-  new Question("Möchtest du dir eine Maske kaufen?", [
-    new Choice(
-      "Nein, ich brauche keine.",
-      "Du siehst die Gefahr noch nicht und tust das als unnötig ab.",
-      0,
-      0,
-      -10,
-      1
-    ),
-    new Choice(
-      "Ich kaufe mir eine.",
-      "Du fühlst dich sicher, aber die Masken waren sehr teuer.",
-      5,
-      -35,
-      0,
-      1
-    ),
-    new Choice(
-      "Nein, ich werde mir eine nähen.",
-      [
-        "Du bist stolz auf dich, weil du es geschafft hast, Geld gespart hast und geschützt bist.",
-        "Du bist enttäuscht: Es hat nicht geklappt, du hast Zeit verschwendet und bist nicht geschützt.",
-      ],
-      [10, -10],
-      [0, 0],
-      [0, -10],
-      0.5
-    ),
-  ]),
-  new Question("Freunde laden dich zum Spazieren gehen ein. Was machst du?", [
-    new Choice(
-      "Ich gehe mit.",
-      "Du bist endlich wieder an der frischen Luft uns siehst deine Freunde.",
-      10,
-      0,
-      -10,
-      1
-    ),
-    new Choice(
-      "Ich bleibe daheim.",
-      "Du möchtest eigentlich raus, aber du hast Angst eine Strafe zu zahlen.",
-      -5,
-      0,
-      0,
-      1
-    ),
-  ]),
+  new Question(
+    "Möchtest du dir eine Maske kaufen?",
+    [
+      new Choice(
+        "Nein, ich brauche keine.",
+        "Du siehst die Gefahr noch nicht und tust das als unnötig ab.",
+        0,
+        0,
+        -10,
+        1
+      ),
+      new Choice(
+        "Ich kaufe mir eine.",
+        "Du fühlst dich sicher, aber die Masken waren sehr teuer.",
+        5,
+        -35,
+        0,
+        1
+      ),
+      new Choice(
+        "Nein, ich werde mir eine nähen.",
+        [
+          "Du bist stolz auf dich, weil du es geschafft hast, Geld gespart hast und geschützt bist.",
+          "Du bist enttäuscht: Es hat nicht geklappt, du hast Zeit verschwendet und bist nicht geschützt.",
+        ],
+        [10, -10],
+        [0, 0],
+        [0, -10],
+        0.5
+      ),
+    ],
+    -windowWidth / 2 + 300,
+    windowHeight / 2 - 110
+  ),
+  new Question(
+    "Freunde laden dich zum Spazieren gehen ein. Was machst du?",
+    [
+      new Choice(
+        "Ich gehe mit.",
+        "Du bist endlich wieder an der frischen Luft uns siehst deine Freunde.",
+        10,
+        0,
+        -10,
+        1
+      ),
+      new Choice(
+        "Ich bleibe daheim.",
+        "Du möchtest eigentlich raus, aber du hast Angst eine Strafe zu zahlen.",
+        -5,
+        0,
+        0,
+        1
+      ),
+    ],
+    windowWidth / 2 - 300,
+    -windowHeight / 2 + 110
+  ),
   //nur falls obere ja
   new Question(
     "Du triffst dich mit deinen Freunden. Sie wollen dich umarmen. Was machst du?",
@@ -164,7 +183,9 @@ let coronaQuestions = [
         -10,
         0.8
       ),
-    ]
+    ],
+    windowWidth / 2 - 300,
+    windowHeight / 2 - 110
   ),
   new Question(
     "Deine Freundin ruft dich an und erzählt dir von ihrem gewalttätigen Freund. Lässt du sie bei dir eine Woche unterkommen?",
@@ -185,7 +206,9 @@ let coronaQuestions = [
         0,
         1
       ),
-    ]
+    ],
+    -windowWidth / 2 + 300,
+    windowHeight / 2 - 110
   ),
 ];
 
@@ -209,33 +232,40 @@ let randomQuestionsWeek1to2 = [
         0,
         1
       ),
-    ]
+    ],
+    -windowWidth / 2 + 300,
+    windowHeight / 2 - 110
   ),
 
-  new Question("Freunde haben dich in eine Bar eingeladen. Gehst du mit?", [
-    new Choice(
-      "Ich gehe mit.",
-      [
-        "Du musstest einen Babysitter besorgen. Der hat 80€ gekostet und du hast 60€ in der Bar gelassen.",
-        "Du hast 60€ in der Bar gelassen und du hast deine Freunde wieder gesehen.",
-      ],
-      [0, 5],
-      [-140, -60],
-      -10,
-      1
-    ),
-    new Choice(
-      "Ich bleibe daheim.",
-      [
-        "Du bist glücklich den Abend mit dem Kind zu verbringen, vermisst aber deine Freunde.",
-        "Du fühlst dich alleine, aber sparst wenigstens ein Geld.",
-      ],
-      [0, -5],
-      0,
-      0,
-      1
-    ),
-  ]),
+  new Question(
+    "Freunde haben dich in eine Bar eingeladen. Gehst du mit?",
+    [
+      new Choice(
+        "Ich gehe mit.",
+        [
+          "Du musstest einen Babysitter besorgen. Der hat 80€ gekostet und du hast 60€ in der Bar gelassen.",
+          "Du hast 60€ in der Bar gelassen und du hast deine Freunde wieder gesehen.",
+        ],
+        [0, 5],
+        [-140, -60],
+        -10,
+        1
+      ),
+      new Choice(
+        "Ich bleibe daheim.",
+        [
+          "Du bist glücklich den Abend mit dem Kind zu verbringen, vermisst aber deine Freunde.",
+          "Du fühlst dich alleine, aber sparst wenigstens ein Geld.",
+        ],
+        [0, -5],
+        0,
+        0,
+        1
+      ),
+    ],
+    windowWidth / 2 - 300,
+    windowHeight / 2 - 110
+  ),
 
   new Question(
     "Deine Arbeitsschuhe sind kaputt. Neue würden deinen Arbeitsalltag erleichtern. Was machst du?",
@@ -256,7 +286,9 @@ let randomQuestionsWeek1to2 = [
         -10,
         1
       ),
-    ]
+    ],
+    -windowWidth / 2 + 300,
+    windowHeight / 2 - 110
   ),
   new Question(
     "Deine beste Freundin möchte mit dir mittag essen gehen. Gehst du mit?",
@@ -283,7 +315,9 @@ let randomQuestionsWeek1to2 = [
         0,
         1
       ),
-    ]
+    ],
+    windowWidth / 2 - 300,
+    windowHeight / 2 - 110
   ),
   new Question(
     "Um deine Gesundheit zu verbessern überlegst du, Sport zu machen. Im Fitnessstudio erzielst du schneller Erfolge, es kostet aber auch mehr Geld. Was machst du?",
@@ -310,7 +344,9 @@ let randomQuestionsWeek1to2 = [
         [10, 0],
         0.5
       ),
-    ]
+    ],
+    windowWidth / 2 - 300,
+    windowHeight / 2 - 110
   ),
 ];
 
@@ -334,26 +370,33 @@ let randomQuestionsWeek3to4 = [
         0,
         1
       ),
-    ]
+    ],
+    windowWidth / 2 - 300,
+    -windowHeight / 2 + 110
   ),
-  new Question("Möchtest du deine Mutter im Altersheim besuchen?", [
-    new Choice(
-      "Ich besuche sie.",
-      "Endlich kannst du mal wieder eine Runde Schach mit deiner Mutter spielen und hast ihr Blumen mitgebracht. ",
-      5,
-      -15,
-      -10,
-      1
-    ),
-    new Choice(
-      "Ich besuche sie nicht.",
-      "Sie tut dir leid und du weißt nicht wann du sie das nächste mal wieder siehst. Sie vermisst dich.",
-      -10,
-      0,
-      0,
-      1
-    ),
-  ]),
+  new Question(
+    "Möchtest du deine Mutter im Altersheim besuchen?",
+    [
+      new Choice(
+        "Ich besuche sie.",
+        "Endlich kannst du mal wieder eine Runde Schach mit deiner Mutter spielen und hast ihr Blumen mitgebracht. ",
+        5,
+        -15,
+        -10,
+        1
+      ),
+      new Choice(
+        "Ich besuche sie nicht.",
+        "Sie tut dir leid und du weißt nicht wann du sie das nächste mal wieder siehst. Sie vermisst dich.",
+        -10,
+        0,
+        0,
+        1
+      ),
+    ],
+    -windowWidth / 2 + 300,
+    windowHeight / 2 - 110
+  ),
   new Question(
     "Das Abflussrohr in deiner Küche ist verstopft. Was machst du?",
     [
@@ -376,7 +419,9 @@ let randomQuestionsWeek3to4 = [
         0,
         0.5
       ),
-    ]
+    ],
+    windowWidth / 2 - 300,
+    windowHeight / 2 - 110
   ),
   new Question(
     "In deiner Stadt ist gerade eine Blutspendeaktion. Gehst du Blutspenden?",
@@ -397,65 +442,80 @@ let randomQuestionsWeek3to4 = [
         0,
         1
       ),
-    ]
+    ],
+    0,
+    -windowHeight / 2 + 110
   ),
-  new Question("Du hattest einen Fahrradunfall. Gehst du zum Arzt?", [
-    new Choice(
-      "Ich gehe zum Arzt.",
-      "Du fühlst dich gut, es tut nicht mehr weh und es kann sich nicht mehr entzünden.",
-      5,
-      -10,
-      0,
-      1
-    ),
-    new Choice(
-      "Nein, ich gehe nicht zum Arzt.",
+  new Question(
+    "Du hattest einen Fahrradunfall. Gehst du zum Arzt?",
+    [
+      new Choice(
+        "Ich gehe zum Arzt.",
+        "Du fühlst dich gut, es tut nicht mehr weh und es kann sich nicht mehr entzünden.",
+        5,
+        -10,
+        0,
+        1
+      ),
+      new Choice(
+        "Nein, ich gehe nicht zum Arzt.",
 
-      [
-        "Es hat sich entzündet. Wärst du nur besser zum Arzt gegangen. Jetzt hast du schmerzen.",
-        "Du fühlst dich gut, du konntest arbeiten gehen und warst nicht unnötig beim Arzt.",
-      ],
-      [-10, 10],
-      0,
-      [-10, 0],
-      1
-    ),
-  ]),
+        [
+          "Es hat sich entzündet. Wärst du nur besser zum Arzt gegangen. Jetzt hast du schmerzen.",
+          "Du fühlst dich gut, du konntest arbeiten gehen und warst nicht unnötig beim Arzt.",
+        ],
+        [-10, 10],
+        0,
+        [-10, 0],
+        1
+      ),
+    ],
+    windowWidth / 2 - 300,
+    -windowHeight / 2 + 110
+  ),
 ];
 
 let hasChildQuestions = [
-  new Question("Dein Kind hat Geburtstag. Was schenkst du ihm?", [
-    new Choice(
-      "Ein Buch.",
-      ["Deinem Kind gefällt das Buch.", "Deinem Kind gefällt das Buch nicht."],
-      [5, -5],
-      -20,
-      0,
-      0.25
-    ),
-    new Choice(
-      "Markenklamotten",
-      [
-        "Dein Kind freut sich über die neuen Klamotten.",
-        "Deinem Kind gefallen die neuen Klamotten gar nicht.",
-      ],
-      [10, -10],
-      -50,
-      0,
-      0.5
-    ),
-    new Choice(
-      "Eine Bluetooth-Box",
-      [
-        "Dein Kind freut sich riesig über das Geschenk und du freust dich mit.",
-        "Dein Kind freut sich nicht über die Box, das macht dich traurig.",
-      ],
-      [15, -15],
-      -80,
-      0,
-      0.8
-    ),
-  ]),
+  new Question(
+    "Dein Kind hat Geburtstag. Was schenkst du ihm?",
+    [
+      new Choice(
+        "Ein Buch.",
+        [
+          "Deinem Kind gefällt das Buch.",
+          "Deinem Kind gefällt das Buch nicht.",
+        ],
+        [5, -5],
+        -20,
+        0,
+        0.25
+      ),
+      new Choice(
+        "Markenklamotten",
+        [
+          "Dein Kind freut sich über die neuen Klamotten.",
+          "Deinem Kind gefallen die neuen Klamotten gar nicht.",
+        ],
+        [10, -10],
+        -50,
+        0,
+        0.5
+      ),
+      new Choice(
+        "Eine Bluetooth-Box",
+        [
+          "Dein Kind freut sich riesig über das Geschenk und du freust dich mit.",
+          "Dein Kind freut sich nicht über die Box, das macht dich traurig.",
+        ],
+        [15, -15],
+        -80,
+        0,
+        0.8
+      ),
+    ],
+    windowWidth / 2 - 300,
+    windowHeight / 2 - 110
+  ),
   new Question(
     "Die Schulen sind geschlossen und dein Kind ist daheim. Du musst allerdings arbeiten. Was machst du?",
     [
@@ -476,7 +536,9 @@ let hasChildQuestions = [
         0,
         1
       ),
-    ]
+    ],
+    -windowWidth / 2 + 300,
+    -windowHeight / 2 + 110
   ),
   new Question(
     "Das Essen der Kinder in der Betreuung fällt weg. Um eine weitere Mahlzeit zu stellen musst du mehr Geld ausgeben. Was tust du?",
@@ -490,7 +552,9 @@ let hasChildQuestions = [
         1
       ),
       new Choice("Ich kaufe mehr ein und koche mehr.", " ", 0, 0, 0, 1),
-    ]
+    ],
+    windowWidth / 2 - 300,
+    -windowHeight / 2 + 110
   ),
   new Question(
     "Dein Kind kommt nicht mit dem Schulstoff zurecht. Heuerst du einen Nachhilfelehrer an?",
@@ -514,7 +578,9 @@ let hasChildQuestions = [
         0,
         1
       ),
-    ]
+    ],
+    windowWidth / 2 - 300,
+    -windowHeight / 2 + 110
   ),
   new Question(
     "Dein Kind muss von Zuhause aus mit einem Tablet arbeiten. Die Schule verteilt 10 Tablets an die Schüler pro Klasse.",
@@ -528,27 +594,34 @@ let hasChildQuestions = [
         0,
         0.7
       ),
-    ]
+    ],
+    -windowWidth / 2 + 300,
+    windowHeight / 2 - 110
   ),
   //falls kein Tablet bekommen
-  new Question("Dein Kind hat kein Tablet bekommen. Was machst du?", [
-    new Choice(
-      "Mein Kind kann mein Handy benutzen.",
-      "Du hast Angst, dass dein Kind über das Handy nicht so gut mitarbeiten kann und bist genervt, dass du dein Handy in der Zeit nicht benutzen kannst.",
-      -5,
-      0,
-      0,
-      1
-    ),
-    new Choice(
-      "Ich kaufe ein Tablet.",
-      "Dein Kind kann wieder mitarbeiten, aber du ärgerst dich über die Finanzen.",
-      0,
-      -45,
-      0,
-      1
-    ),
-  ]),
+  new Question(
+    "Dein Kind hat kein Tablet bekommen. Was machst du?",
+    [
+      new Choice(
+        "Mein Kind kann mein Handy benutzen.",
+        "Du hast Angst, dass dein Kind über das Handy nicht so gut mitarbeiten kann und bist genervt, dass du dein Handy in der Zeit nicht benutzen kannst.",
+        -5,
+        0,
+        0,
+        1
+      ),
+      new Choice(
+        "Ich kaufe ein Tablet.",
+        "Dein Kind kann wieder mitarbeiten, aber du ärgerst dich über die Finanzen.",
+        0,
+        -45,
+        0,
+        1
+      ),
+    ],
+    -windowWidth / 2 + 300,
+    windowHeight / 2 - 110
+  ),
 ];
 
 let hasCarQuestions = [
@@ -571,7 +644,9 @@ let hasCarQuestions = [
         0,
         1
       ),
-    ]
+    ],
+    -windowWidth / 2 + 300,
+    windowHeight / 2 - 110
   ),
   new Question(
     "Dein Auto geht kaputt, du brauchst es zum Einkaufen. Lässt du es reparieren?",
@@ -592,7 +667,9 @@ let hasCarQuestions = [
         0,
         1
       ),
-    ]
+    ],
+    windowWidth / 2 - 300,
+    -windowHeight / 2 + 110
   ),
   new Question(
     "Der Supermarkt um die Ecke ist teurer aber dafür näher. Der billige Supermarkt ist nur mit der Bahn zu erreichen, da dein Auto noch in der Werkstatt steht. Was tust du?",
@@ -613,7 +690,9 @@ let hasCarQuestions = [
         0,
         1
       ),
-    ]
+    ],
+    windowWidth / 2 - 300,
+    windowHeight / 2 - 110
   ),
 ];
 
