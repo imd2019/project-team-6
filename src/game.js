@@ -19,8 +19,8 @@ let coronaQuestions = [
       ),
       new Choice("Ich storniere nicht.", "Du hoffst und wartest", 0, 0, 0, 1),
     ],
-    windowWidth / 2,
-    windowHeight / 2
+    0,
+    0
   ),
   new Question("Möchtest du dir eine Maske kaufen?", [
     new Choice(
