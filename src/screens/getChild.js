@@ -28,7 +28,7 @@ let noChild = new Button(200, 250, 120, 50, true, "Alleine", () => {
   setCurrentScreen("getApartment");
 });
 
-let backBtn = new Button(0, 400, 120, 50, true, "zurück", () => {
+let backBtn = new Button(0, 400, 120, 50, true, "<", () => {
   setCurrentScreen("getJob");
 });
 

@@ -75,6 +75,8 @@ function draw() {
     yes.display();
     no.display();
   }
+  yes.mouseOver();
+  no.mouseOver();
 }
 
 function mouseClicked() {
