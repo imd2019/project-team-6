@@ -13,7 +13,7 @@ let femaleBtn = new Button(0, 250, 120, 50, true, "Weiblich", () => {
   setCurrentScreen("getJob");
   player.sex = "f";
 });
-let diverseBtn = new Button(350, 250, 120, 50, true, "Diverse", () => {
+let diverseBtn = new Button(350, 250, 120, 50, true, "Divers", () => {
   setCurrentScreen("getJob");
   player.sex = "d";
 });
