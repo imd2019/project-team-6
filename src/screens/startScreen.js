@@ -5,7 +5,7 @@ import { closedVindu } from "./customizationScreen.js";
 
 let opened = false;
 
-let button = new Button(0, 250, 100, 40, true, "open", () => {
+let button = new Button(0, 250, 100, 40, true, "open vindu", () => {
   setTimeout(() => setCurrentScreen("customization"), 1000 * 3);
   openVinduVid.play();
   openVinduVid.show();

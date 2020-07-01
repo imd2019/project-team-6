@@ -9,8 +9,6 @@ video {
   /* user-select: none; */
 }
 
-#timelineAnimation-svg {
+#vindu {
   position: absolute;
-  top: 75vh;
-  left: 1.5vw;
 }
