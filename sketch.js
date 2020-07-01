@@ -7,8 +7,19 @@ import getJob from "./src/screens/getJob.js";
 import getChild from "./src/screens/getChild.js";
 import getApartment from "./src/screens/getApartment.js";
 import yourMoney from "./src/screens/yourMoney.js";
+import { Button } from "./src/model/button.js";
 
 let currentScreen = "start";
+
+let exitBtn = new Button(
+  windowWidth / 2,
+  -windowHeight / 2,
+  50,
+  20,
+  true,
+  "x",
+  () => window.location.reload()
+);
 
 window.preload = function () {
   customizationScreen.preload();
@@ -44,10 +55,22 @@ function getScreen(screenName) {
 
 window.draw = function () {
   getScreen(currentScreen).draw();
+  if (
+    currentScreen === "customization" ||
+    currentScreen === "getGender" ||
+    currentScreen === "getJob" ||
+    currentScreen === "getChild" ||
+    currentScreen === "getApartment" ||
+    currentScreen === "getMoney" ||
+    currentScreen === "game" ||
+    currentScreen === "end"
+  )
+    exitBtn.display();
 };
 
 window.mouseClicked = function () {
   getScreen(currentScreen).mouseClicked();
+  exitBtn.mouseClicked();
 };
 
 export function setCurrentScreen(newScreen) {
