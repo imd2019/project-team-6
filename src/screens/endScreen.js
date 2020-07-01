@@ -11,7 +11,7 @@ let caritas = new Button(80, 0, 60, 30, false, "CARITAS");
 function textContent() {
   textAlign(CENTER);
   textFont(mainFont);
-  textSize(14);
+  textSize(20);
   fill(222, 70, 90, opacityText);
   text(
     "Was für dich ein Spiel war, ist für viele Menschen Realität.\nWenn du möchtest, kannst du ihnen helfen.\n\nUnter diesen Links findest du Möglichkeiten zu Spenden\nund Informationen über Hilfsorganisationen, die sich gegen\n Armut in Deutschland einsetzen:",
