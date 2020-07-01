@@ -39,11 +39,11 @@ export let openVindu;
 let opacityText = 0;
 let opacityChange = +2;
 
-let yes = new Button(-50, 150, 50, 20, false, "Ja", () =>
+let yes = new Button(-50, 150, 50, 20, true, "Ja", () =>
   setCurrentScreen("getGender")
 );
 
-let no = new Button(50, 150, 50, 20, false, "Nein", () =>
+let no = new Button(50, 150, 50, 20, true, "Nein", () =>
   setCurrentScreen("start")
 );
 
