@@ -7,7 +7,7 @@ export let player = new Player();
 
 let coronaQuestions = [
   new Question(
-    "Du hattest einen Urlaub gebucht, allerdings wird gerade empfohlen alle Urlaube zu stornieren. \n \nWas machst du?",
+    "Du hattest einen Urlaub gebucht, allerdings wird gerade empfohlen alle Urlaube zu stornieren. \n \nStornierst du?",
     [
       new Choice(
         "Ich storniere.",
@@ -138,7 +138,7 @@ let coronaQuestions = [
     windowHeight / 2 - 110
   ),
   new Question(
-    "Freunde laden dich zum Spazieren gehen ein. \n \nWas machst du?",
+    "Freunde laden dich zum Spazieren gehen ein. \n \nGehst du mit?",
     [
       new Choice(
         "Ich gehe mit.",
@@ -162,7 +162,7 @@ let coronaQuestions = [
   ),
   //nur falls obere ja
   new Question(
-    "Du triffst dich mit deinen Freunden. Sie wollen dich umarmen. \n \nWas machst du?",
+    "Du triffst dich mit deinen Freunden. Sie wollen dich umarmen. \n \nLässt du es zu?",
     [
       new Choice(
         "Ich lehne ab.",
@@ -268,7 +268,7 @@ let randomQuestionsWeek1to2 = [
   ),
 
   new Question(
-    "Deine Arbeitsschuhe sind kaputt. Neue würden deinen Arbeitsalltag erleichtern. \n \nWas machst du?",
+    "Deine Arbeitsschuhe sind kaputt. Neue würden deinen Arbeitsalltag erleichtern. \n \nKaufst du dir neue?",
     [
       new Choice(
         "Ich kaufe mir neue.",
@@ -320,7 +320,7 @@ let randomQuestionsWeek1to2 = [
     windowHeight / 2 - 110
   ),
   new Question(
-    "Um deine Gesundheit zu verbessern überlegst du, Sport zu machen. Im Fitnessstudio erzielst du schneller Erfolge, es kostet aber auch mehr Geld. \n \nWas machst du?",
+    "Um deine Gesundheit zu verbessern überlegst du, Sport zu machen. Im Fitnessstudio erzielst du schneller Erfolge, es kostet aber auch mehr Geld. \n \nFür was entscheidest du dich?",
     [
       new Choice(
         "Ich mache Workouts daheim.",
@@ -517,7 +517,7 @@ let hasChildQuestions = [
     windowHeight / 2 - 110
   ),
   new Question(
-    "Die Schulen sind geschlossen und dein Kind ist daheim. Du musst allerdings arbeiten. \n \nWas machst du?",
+    "Die Schulen sind geschlossen und dein Kind ist daheim. Du musst allerdings arbeiten. \n \nNimmst du dir Urlaub?",
     [
       new Choice(
         "Ich bringe mein Kind bei einer Freundin unter.",
@@ -600,7 +600,7 @@ let hasChildQuestions = [
   ),
   //falls kein Tablet bekommen
   new Question(
-    "Dein Kind hat kein Tablet bekommen. \n \nWas machst du?",
+    "Dein Kind hat kein Tablet bekommen. \n \nKaufst du eins?",
     [
       new Choice(
         "Mein Kind kann mein Handy benutzen.",
