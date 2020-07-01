@@ -19,14 +19,27 @@ let town = new Button(-200, 250, 120, 50, true, townTitle, () => {
   setCurrentScreen("yourMoney");
 });
 
+let townImg = new Button(-200, -50, 290, 100, true, "", () => {
+  player.apartment = new Apartment(530, 121, townTitle, true);
+
+  pushHasCarQuestions();
+
+  setCurrentScreen("yourMoney");
+});
+
 let cityTitle = "Innenstadt";
 let city = new Button(200, 250, 130, 50, true, cityTitle, () => {
   player.apartment = new Apartment(1030, 121, cityTitle, false);
 
   setCurrentScreen("yourMoney");
 });
+let cityImg = new Button(200, -50, 290, 100, true, "", () => {
+  player.apartment = new Apartment(1030, 121, cityTitle, false);
 
-let backBtn = new Button(0, 400, 120, 50, true, "zurück", () => {
+  setCurrentScreen("yourMoney");
+});
+
+let backBtn = new Button(0, 350, 120, 50, true, "zurück", () => {
   if (player.hasChild) {
     deleteHasChildQuestions();
   }
@@ -40,16 +53,25 @@ function draw() {
   headline.display();
   city.display();
   town.display();
+
   backBtn.display();
+  town.mouseOver();
+  city.mouseOver();
 
   city.showPicture(cityPic, noPic);
   town.showPicture(townPic, noPic);
+
+  cityImg.display();
+  townImg.display();
 }
 
 function mouseClicked() {
   city.mouseClicked();
   town.mouseClicked();
   backBtn.mouseClicked();
+
+  cityImg.mouseClicked();
+  townImg.mouseClicked();
 
   drawPlayer();
 }

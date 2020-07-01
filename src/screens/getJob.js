@@ -20,6 +20,11 @@ let waiter = new Button(-200, 250, 120, 50, true, waiterTitle, () => {
 
   setCurrentScreen("getChild");
 });
+let waiterImg = new Button(-200, -50, 170, 400, true, "", () => {
+  player.job = new Job(waiterTitle, 1660);
+
+  setCurrentScreen("getChild");
+});
 
 let taxConsultantTitle = "Steuerberater";
 let taxConsultant = new Button(
@@ -35,8 +40,13 @@ let taxConsultant = new Button(
     setCurrentScreen("getChild");
   }
 );
+let taxConsultantImg = new Button(200, -50, 170, 400, true, "", () => {
+  player.job = new Job(taxConsultantTitle, 3240);
 
-let backBtn = new Button(0, 400, 120, 50, true, "zurück", () => {
+  setCurrentScreen("getChild");
+});
+
+let backBtn = new Button(0, 350, 120, 50, true, "zurück", () => {
   setCurrentScreen("getGender");
 });
 
@@ -46,7 +56,13 @@ function draw() {
   headline.display();
   waiter.display();
   taxConsultant.display();
+  waiter.mouseOver();
+  taxConsultant.mouseOver();
+
   backBtn.display();
+
+  waiterImg.display();
+  taxConsultantImg.display();
 
   if (player.sex === "f") {
     taxConsultant.showPicture(femaleConsultant, noPic);
@@ -64,6 +80,9 @@ function mouseClicked() {
   waiter.mouseClicked();
   taxConsultant.mouseClicked();
   backBtn.mouseClicked();
+
+  waiterImg.mouseClicked();
+  taxConsultantImg.mouseClicked();
 }
 
 export default { draw, mouseClicked };

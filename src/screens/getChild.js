@@ -28,7 +28,21 @@ let noChild = new Button(200, 250, 120, 50, true, "Alleine", () => {
   setCurrentScreen("getApartment");
 });
 
-let backBtn = new Button(0, 400, 120, 50, true, "zurück", () => {
+let hasChildImg = new Button(-200, -50, 120, 400, true, "", () => {
+  player.hasChild = true;
+
+  pushHasChildQuestions();
+
+  setCurrentScreen("getApartment");
+});
+
+let noChildImg = new Button(200, -50, 120, 400, true, "", () => {
+  player.hasChild = false;
+
+  setCurrentScreen("getApartment");
+});
+
+let backBtn = new Button(0, 350, 120, 50, true, "zurück", () => {
   setCurrentScreen("getJob");
 });
 
@@ -37,7 +51,13 @@ function draw() {
   headline.display();
   hasChild.display();
   noChild.display();
+
+  hasChild.mouseOver();
+  noChild.mouseOver();
   backBtn.display();
+
+  hasChildImg.display();
+  noChildImg.display();
 
   if (player.sex === "f" && player.job.title === "Kellner") {
     hasChild.showPicture(femaleWaiter, child);
@@ -64,6 +84,8 @@ function mouseClicked() {
   hasChild.mouseClicked();
   noChild.mouseClicked();
   backBtn.mouseClicked();
+  hasChildImg.mouseClicked();
+  noChildImg.mouseClicked();
 }
 
 export default { draw, mouseClicked };
