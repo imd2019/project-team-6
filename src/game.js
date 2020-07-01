@@ -57,7 +57,7 @@ let coronaQuestions = [
     -windowHeight / 2 + 110
   ),
   new Question(
-    "Viele Waren wie Toilettenpapier sind stark nachgefragt. Viele Leute kaufen in größeren Mengen ein, als sie es eigentlich brauchen. Hamsterst du auch?",
+    "Viele Waren wie Toilettenpapier sind stark nachgefragt. Viele Leute kaufen in größeren Mengen ein, als sie es eigentlich brauchen. \nHamsterst du auch?",
     [
       new Choice(
         "Ja, ich hamstere.",
@@ -81,7 +81,7 @@ let coronaQuestions = [
     windowHeight / 2 - 110
   ),
   new Question(
-    "Die Restaurants haben geschlossen. Du bist jetzt auf Kurzarbeit. Suchst du dir einen Nebenjob?",
+    "Die Restaurants haben geschlossen. Du bist jetzt auf Kurzarbeit. \nSuchst du dir einen Nebenjob?",
     [
       new Choice(
         "Ja, ich schreibe Bewerbungen.",
@@ -138,7 +138,7 @@ let coronaQuestions = [
     windowHeight / 2 - 110
   ),
   new Question(
-    "Freunde laden dich zum Spazieren gehen ein. Was machst du?",
+    "Freunde laden dich zum Spazieren gehen ein. \nWas machst du?",
     [
       new Choice(
         "Ich gehe mit.",
@@ -162,7 +162,7 @@ let coronaQuestions = [
   ),
   //nur falls obere ja
   new Question(
-    "Du triffst dich mit deinen Freunden. Sie wollen dich umarmen. Was machst du?",
+    "Du triffst dich mit deinen Freunden. Sie wollen dich umarmen. \nWas machst du?",
     [
       new Choice(
         "Ich lehne ab.",
@@ -188,7 +188,7 @@ let coronaQuestions = [
     windowHeight / 2 - 110
   ),
   new Question(
-    "Deine Freundin ruft dich an und erzählt dir von ihrem gewalttätigen Freund. Lässt du sie bei dir eine Woche unterkommen?",
+    "Deine Freundin ruft dich an und erzählt dir von ihrem gewalttätigen Freund. \nLässt du sie bei dir eine Woche unterkommen?",
     [
       new Choice(
         "Dafür sind Freunde doch da!",
@@ -214,7 +214,7 @@ let coronaQuestions = [
 
 let randomQuestionsWeek1to2 = [
   new Question(
-    "Deine Mutter liegt krank im Altersheim. Um sie zu besuchen musst du dich krankschreiben lassen. Was machst du?",
+    "Deine Mutter liegt krank im Altersheim. Um sie zu besuchen musst du dich krankschreiben lassen. \nWas machst du?",
     [
       new Choice(
         "Ich besuche sie.",
@@ -238,7 +238,7 @@ let randomQuestionsWeek1to2 = [
   ),
 
   new Question(
-    "Freunde haben dich in eine Bar eingeladen. Gehst du mit?",
+    "Freunde haben dich in eine Bar eingeladen. \nGehst du mit?",
     [
       new Choice(
         "Ich gehe mit.",
@@ -268,7 +268,7 @@ let randomQuestionsWeek1to2 = [
   ),
 
   new Question(
-    "Deine Arbeitsschuhe sind kaputt. Neue würden deinen Arbeitsalltag erleichtern. Was machst du?",
+    "Deine Arbeitsschuhe sind kaputt. Neue würden deinen Arbeitsalltag erleichtern. \nWas machst du?",
     [
       new Choice(
         "Ich kaufe mir neue.",
@@ -291,7 +291,7 @@ let randomQuestionsWeek1to2 = [
     windowHeight / 2 - 110
   ),
   new Question(
-    "Deine beste Freundin möchte mit dir mittag essen gehen. Gehst du mit?",
+    "Deine beste Freundin möchte mit dir mittag essen gehen. \nGehst du mit?",
     [
       new Choice(
         "Ich gehe mit.",
@@ -320,7 +320,7 @@ let randomQuestionsWeek1to2 = [
     windowHeight / 2 - 110
   ),
   new Question(
-    "Um deine Gesundheit zu verbessern überlegst du, Sport zu machen. Im Fitnessstudio erzielst du schneller Erfolge, es kostet aber auch mehr Geld. Was machst du?",
+    "Um deine Gesundheit zu verbessern überlegst du, Sport zu machen. Im Fitnessstudio erzielst du schneller Erfolge, es kostet aber auch mehr Geld. \nWas machst du?",
     [
       new Choice(
         "Ich mache Workouts daheim.",
@@ -352,7 +352,7 @@ let randomQuestionsWeek1to2 = [
 
 let randomQuestionsWeek3to4 = [
   new Question(
-    "Eine teure Rechnung landet bei dir im Briefkasten. Zahlst du sie?",
+    "Eine teure Rechnung landet bei dir im Briefkasten. \nZahlst du sie?",
     [
       new Choice(
         "Ich warte noch.",
@@ -398,7 +398,7 @@ let randomQuestionsWeek3to4 = [
     windowHeight / 2 - 110
   ),
   new Question(
-    "Das Abflussrohr in deiner Küche ist verstopft. Was machst du?",
+    "Das Abflussrohr in deiner Küche ist verstopft. \nWas machst du?",
     [
       new Choice(
         "Ich rufe einen Handwerker.",
@@ -424,7 +424,7 @@ let randomQuestionsWeek3to4 = [
     windowHeight / 2 - 110
   ),
   new Question(
-    "In deiner Stadt ist gerade eine Blutspendeaktion. Gehst du Blutspenden?",
+    "In deiner Stadt ist gerade eine Blutspendeaktion. \nGehst du Blutspenden?",
     [
       new Choice(
         "Ja.",
@@ -447,7 +447,7 @@ let randomQuestionsWeek3to4 = [
     -windowHeight / 2 + 110
   ),
   new Question(
-    "Du hattest einen Fahrradunfall. Gehst du zum Arzt?",
+    "Du hattest einen Fahrradunfall. \nGehst du zum Arzt?",
     [
       new Choice(
         "Ich gehe zum Arzt.",
@@ -477,7 +477,7 @@ let randomQuestionsWeek3to4 = [
 
 let hasChildQuestions = [
   new Question(
-    "Dein Kind hat Geburtstag. Was schenkst du ihm?",
+    "Dein Kind hat Geburtstag. \nWas schenkst du ihm?",
     [
       new Choice(
         "Ein Buch.",
@@ -517,7 +517,7 @@ let hasChildQuestions = [
     windowHeight / 2 - 110
   ),
   new Question(
-    "Die Schulen sind geschlossen und dein Kind ist daheim. Du musst allerdings arbeiten. Was machst du?",
+    "Die Schulen sind geschlossen und dein Kind ist daheim. Du musst allerdings arbeiten. \nWas machst du?",
     [
       new Choice(
         "Ich bringe mein Kind bei einer Freundin unter.",
@@ -541,7 +541,7 @@ let hasChildQuestions = [
     -windowHeight / 2 + 110
   ),
   new Question(
-    "Das Essen der Kinder in der Betreuung fällt weg. Um eine weitere Mahlzeit zu stellen musst du mehr Geld ausgeben. Was tust du?",
+    "Das Essen der Kinder in der Betreuung fällt weg. Um eine weitere Mahlzeit zu stellen musst du mehr Geld ausgeben. \nWas tust du?",
     [
       new Choice(
         "Ich lasse die Mahlzeit ausfallen.",
@@ -557,7 +557,7 @@ let hasChildQuestions = [
     -windowHeight / 2 + 110
   ),
   new Question(
-    "Dein Kind kommt nicht mit dem Schulstoff zurecht. Heuerst du einen Nachhilfelehrer an?",
+    "Dein Kind kommt nicht mit dem Schulstoff zurecht. \nHeuerst du einen Nachhilfelehrer an?",
     [
       new Choice(
         "Ja, ich hole Online-Nachhilfe.",
@@ -600,7 +600,7 @@ let hasChildQuestions = [
   ),
   //falls kein Tablet bekommen
   new Question(
-    "Dein Kind hat kein Tablet bekommen. Was machst du?",
+    "Dein Kind hat kein Tablet bekommen. \nWas machst du?",
     [
       new Choice(
         "Mein Kind kann mein Handy benutzen.",
@@ -626,7 +626,7 @@ let hasChildQuestions = [
 
 let hasCarQuestions = [
   new Question(
-    "Deine Verwandten kommen aus dem Urlaub zurück. Holst du sie ab?",
+    "Deine Verwandten kommen aus dem Urlaub zurück. \nHolst du sie ab?",
     [
       new Choice(
         "Wofür ist Familie da?",
@@ -649,7 +649,7 @@ let hasCarQuestions = [
     windowHeight / 2 - 110
   ),
   new Question(
-    "Dein Auto geht kaputt, du brauchst es zum Einkaufen. Lässt du es reparieren?",
+    "Dein Auto geht kaputt, du brauchst es zum Einkaufen. \nLässt du es reparieren?",
     [
       new Choice(
         "Ich bringe es in die Werkstatt.",
@@ -672,7 +672,7 @@ let hasCarQuestions = [
     -windowHeight / 2 + 110
   ),
   new Question(
-    "Der Supermarkt um die Ecke ist teurer aber dafür näher. Der billige Supermarkt ist nur mit der Bahn zu erreichen, da dein Auto noch in der Werkstatt steht. Was tust du?",
+    "Der Supermarkt um die Ecke ist teurer aber dafür näher. Der billige Supermarkt ist nur mit der Bahn zu erreichen, da dein Auto noch in der Werkstatt steht.\nWas tust du?",
     [
       new Choice(
         "Ich gehe in den billigeren Supermarkt.",
