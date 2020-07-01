@@ -17,7 +17,7 @@ export class Timeline {
     ellipse(this.x, this.y, 40, 40);
     fill(222, 70, 90);
     textAlign(CENTER);
-    textSize(23);
+    textSize(16);
     text(this.day, this.x, this.y + 8);
     imageMode(CENTER);
     noStroke();

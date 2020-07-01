@@ -9,7 +9,7 @@ import {
 import { moneyLarge } from "./customizationScreen.js";
 import { icons } from "./gameScreen.js";
 
-let finance = new Button(0, -300, 0, 0, true, "Deine Finanzen");
+let finance = new Button(0, -370, 0, 0, true, "Deine Finanzen");
 
 let startBtn = new Button(0, 200, 150, 80, true, "Start", () => {
   pushRandomQuestions();
@@ -23,7 +23,7 @@ let startBtn = new Button(0, 200, 150, 80, true, "Start", () => {
 let childBenefit = 204;
 let taxBenefit = 60;
 
-let backBtn = new Button(0, 400, 120, 50, true, "zurück", () => {
+let backBtn = new Button(0, 400, 120, 50, true, "<", () => {
   if (player.apartment.needsCar) {
     deleteHasCarQuestions();
   }
