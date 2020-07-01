@@ -63,6 +63,9 @@ function draw() {
 
   cityImg.display();
   townImg.display();
+
+  cityImg.mouseOver();
+  townImg.mouseOver();
 }
 
 function mouseClicked() {

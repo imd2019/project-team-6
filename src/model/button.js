@@ -1,4 +1,4 @@
-import { mainFont } from "../screens/customizationScreen.js";
+import { mainFont, fallbackFont } from "../screens/customizationScreen.js";
 
 export class Button {
   constructor(xOffset, yOffset, width, height, headline, text, clicked) {
@@ -7,7 +7,7 @@ export class Button {
     this.x = 0;
     this.y = 0;
     this.width = width;
-    this.height = height;
+    this.height = height + 20;
     this.headline = headline;
     this.text = text;
     this.clicked = clicked;
@@ -20,8 +20,9 @@ export class Button {
     // fill("red");
     noFill();
     noStroke();
-    rectMode(CENTER);
-    rect(this.x, this.y, this.width, this.height, 30);
+    // fill(0);
+    rectMode(CORNER);
+    rect(this.x - this.width, this.y, this.width, this.height, 30);
 
     if (this.headline === false) {
       textSize(16);
@@ -29,10 +30,15 @@ export class Button {
     if (this.headline === true) {
       textSize(20);
     }
+    textAlign(LEFT, CENTER);
     fill("#f5bdc5");
-    textAlign(CENTER);
     textFont(mainFont);
-    text(this.textTriangle + this.text, this.x, this.y + 4);
+    text(this.text, this.x - this.width, this.y + 20);
+
+    push();
+    textFont(fallbackFont);
+    text(this.textTriangle, this.x - this.width - 40, this.y + 20);
+    pop();
   }
 
   showPicture(picAdult, picChild) {
@@ -49,15 +55,15 @@ export class Button {
 
   hitTest(x, y) {
     return (
-      x >= this.x - this.width / 2 &&
-      x <= this.x + this.width / 2 &&
-      y >= this.y - this.height / 2 &&
-      y <= this.y + this.height / 2
+      x >= this.x - this.width &&
+      x <= this.x &&
+      y >= this.y &&
+      y <= this.y + this.height
     );
   }
   mouseOver() {
     if (this.hitTest(mouseX, mouseY)) {
-      this.textTriangle = ">";
+      this.textTriangle = "▶";
     } else this.textTriangle = "";
   }
 }

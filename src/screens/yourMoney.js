@@ -44,6 +44,7 @@ function setPlayerMoney() {
 
 function draw() {
   background("#1e1f3f");
+  push();
   fill(245, 189, 197, 180);
   rect(windowWidth / 2 + 30, windowHeight / 2, 500, 227, 35);
   imageMode(CENTER);
@@ -107,10 +108,12 @@ function draw() {
       windowHeight / 2 + 10
     );
   }
+  pop();
 
   finance.display();
   startBtn.display();
   backBtn.display();
+  startBtn.mouseOver();
 }
 
 function mouseClicked() {

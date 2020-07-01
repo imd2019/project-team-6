@@ -10,6 +10,7 @@ export class Timeline {
     this.y = 0;
   }
   display() {
+    push();
     this.x = windowWidth / 2 + this.xOffset;
     this.y = windowHeight / 2 + this.yOffset;
 
@@ -23,5 +24,6 @@ export class Timeline {
     noStroke();
 
     image(timelinePic, this.x + 460, this.y);
+    pop();
   }
 }

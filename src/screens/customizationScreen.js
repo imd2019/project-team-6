@@ -1,6 +1,5 @@
 import { Button } from "../model/button.js";
 import { setCurrentScreen } from "../../sketch.js";
-import { player } from "../game.js";
 
 export let male;
 export let female;
@@ -36,18 +35,21 @@ export let caritasPic;
 export let closedVindu;
 export let openVindu;
 
+export let fallbackFont;
+
 let opacityText = 0;
 let opacityChange = +2;
 
-let yes = new Button(-50, 150, 50, 20, true, "Ja", () =>
+let yes = new Button(-50, 150, 20, 20, true, "Ja", () =>
   setCurrentScreen("getGender")
 );
 
-let no = new Button(50, 150, 50, 20, true, "Nein", () =>
-  setCurrentScreen("start")
+let no = new Button(100, 150, 40, 20, true, "Nein", () =>
+  window.location.reload()
 );
 
 function textContent() {
+  push();
   textAlign(CENTER);
   textFont(mainFont);
   fill(222, 70, 90, opacityText);
@@ -63,6 +65,7 @@ function textContent() {
     windowWidth / 2,
     (windowHeight / 3) * 1.8
   );
+  pop();
 }
 function draw() {
   clear();
@@ -118,6 +121,8 @@ function preload() {
   tafelPic = loadImage("../../assets/tafelPic.svg");
 
   closedVindu = loadImage("../../assets/fenster_geschlossen.png");
+
+  fallbackFont = loadFont("../../assets/seguiemj.ttf");
 }
 
 export function drawPlayer() {

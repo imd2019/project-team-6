@@ -8,3 +8,8 @@ video {
   z-index: -1;
   /* user-select: none; */
 }
+
+/* html {
+  font-family: "Semplicita", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  src: url("./assets/Semplicita_Medium.otf");
+} */

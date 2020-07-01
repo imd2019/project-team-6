@@ -12,6 +12,7 @@ export class Question {
     this.choiceY = this.y - 50;
   }
   display() {
+    push();
     this.x = windowWidth / 2 + this.xOffset;
     this.y = windowHeight / 2 + this.yOffset;
     push();
@@ -31,6 +32,7 @@ export class Question {
 
       choice.display(this.getQuestionX(i), this.choiceY);
     }
+    pop();
   }
 
   mouseClicked() {

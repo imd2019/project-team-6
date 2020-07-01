@@ -9,6 +9,7 @@ let tafel = new Button(-80, 0, 50, 30, false, "TAFEL");
 let caritas = new Button(80, 0, 60, 30, false, "CARITAS");
 
 function textContent() {
+  push();
   textAlign(CENTER);
   textFont(mainFont);
   textSize(20);
@@ -18,6 +19,7 @@ function textContent() {
     windowWidth / 2,
     windowHeight / 3
   );
+  pop();
 }
 function draw() {
   clear();

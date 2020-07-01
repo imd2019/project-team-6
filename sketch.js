@@ -9,13 +9,13 @@ import getApartment from "./src/screens/getApartment.js";
 import yourMoney from "./src/screens/yourMoney.js";
 import { Button } from "./src/model/button.js";
 
-let currentScreen = "start";
+let currentScreen = "getGender";
 
 let exitBtn = new Button(
   windowWidth / 3,
   -windowHeight / 2,
-  50,
-  20,
+  10,
+  5,
   true,
   "x",
   () => window.location.reload()
@@ -51,7 +51,6 @@ function getScreen(screenName) {
 window.draw = function () {
   getScreen(currentScreen).draw();
   if (
-    currentScreen === "customization" ||
     currentScreen === "getGender" ||
     currentScreen === "getJob" ||
     currentScreen === "getChild" ||
