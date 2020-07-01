@@ -12,16 +12,16 @@ import {
 import { player } from "../game.js";
 import { Job } from "../model/job.js";
 
-let headline = new Button(0, -300, 0, 0, true, "Wähle dein Beruf:");
+let headline = new Button(0, -370, 0, 0, true, "Wähle dein Beruf:");
 
-let waiterTitle = "Kellner";
+let waiterTitle = "Kellner*in";
 let waiter = new Button(-200, 250, 120, 50, true, waiterTitle, () => {
   player.job = new Job(waiterTitle, 1660);
 
   setCurrentScreen("getChild");
 });
 
-let taxConsultantTitle = "Steuerberater";
+let taxConsultantTitle = "Steuerberater*in";
 let taxConsultant = new Button(
   200,
   250,
@@ -36,7 +36,7 @@ let taxConsultant = new Button(
   }
 );
 
-let backBtn = new Button(0, 400, 120, 50, true, "zurück", () => {
+let backBtn = new Button(0, 400, 120, 50, true, "<", () => {
   setCurrentScreen("getGender");
 });
 

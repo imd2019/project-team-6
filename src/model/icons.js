@@ -52,7 +52,7 @@ export class Icons {
     this.changeValues();
 
     fill(245, 189, 197);
-    textSize(16);
+    textSize(20);
     text(this.money + "€", this.x + 50, this.y + 5);
 
     fill(245, 189, 197);

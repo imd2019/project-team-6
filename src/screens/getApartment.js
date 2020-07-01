@@ -8,7 +8,7 @@ import {
 } from "../game.js";
 import { Apartment } from "../model/apartment.js";
 
-let headline = new Button(0, -300, 0, 0, true, "Wähle deine Wohnung:");
+let headline = new Button(0, -370, 0, 0, true, "Wähle deine Wohnung:");
 
 let townTitle = "Vorstadt";
 let town = new Button(-200, 250, 120, 50, true, townTitle, () => {
@@ -26,7 +26,7 @@ let city = new Button(200, 250, 130, 50, true, cityTitle, () => {
   setCurrentScreen("yourMoney");
 });
 
-let backBtn = new Button(0, 400, 120, 50, true, "zurück", () => {
+let backBtn = new Button(0, 400, 120, 50, true, "<", () => {
   if (player.hasChild) {
     deleteHasChildQuestions();
   }

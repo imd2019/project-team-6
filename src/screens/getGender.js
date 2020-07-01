@@ -3,7 +3,7 @@ import { setCurrentScreen } from "../../sketch.js";
 import { female, male, diverse, noPic } from "./customizationScreen.js";
 import { player } from "../game.js";
 
-let headline = new Button(0, -300, 0, 0, true, "Wähle dein Geschlecht:");
+let headline = new Button(0, -370, 0, 0, true, "Wähle dein Geschlecht:");
 
 let maleBtn = new Button(-350, 250, 120, 50, true, "Männlich", () => {
   setCurrentScreen("getJob");
@@ -13,12 +13,12 @@ let femaleBtn = new Button(0, 250, 120, 50, true, "Weiblich", () => {
   setCurrentScreen("getJob");
   player.sex = "f";
 });
-let diverseBtn = new Button(350, 250, 120, 50, true, "Diverse", () => {
+let diverseBtn = new Button(350, 250, 120, 50, true, "Divers", () => {
   setCurrentScreen("getJob");
   player.sex = "d";
 });
 
-let backBtn = new Button(0, 400, 120, 50, true, "zurück", () => {
+let backBtn = new Button(0, 400, 120, 50, true, "<", () => {
   setCurrentScreen("customization");
 });
 

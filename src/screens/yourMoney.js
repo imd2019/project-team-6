@@ -9,7 +9,7 @@ import {
 import { moneyLarge } from "./customizationScreen.js";
 import { icons } from "./gameScreen.js";
 
-let finance = new Button(0, -300, 0, 0, true, "Deine Finanzen");
+let finance = new Button(0, -370, 0, 0, true, "Deine Finanzen");
 
 let startBtn = new Button(0, 200, 150, 80, true, "Start", () => {
   pushRandomQuestions();

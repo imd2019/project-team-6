@@ -24,10 +24,10 @@ export class Button {
     rect(this.x, this.y, this.width, this.height, 30);
 
     if (this.headline === false) {
-      textSize(16);
+      textSize(20);
     }
     if (this.headline === true) {
-      textSize(16);
+      textSize(20);
     }
     fill("#f5bdc5");
     textAlign(CENTER);
@@ -57,7 +57,7 @@ export class Button {
   }
   mouseOver() {
     if (this.hitTest(mouseX, mouseY)) {
-      this.textTriangle = "►";
+      this.textTriangle = ">";
     } else this.textTriangle = "";
   }
 }
