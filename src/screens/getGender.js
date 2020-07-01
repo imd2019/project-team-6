@@ -31,7 +31,7 @@ let diverseBtnImg = new Button(340, -50, 150, 400, true, "", () => {
   player.sex = "d";
 });
 
-let backBtn = new Button(0, 350, 120, 50, true, "<",, () => {
+let backBtn = new Button(0, 400, 120, 50, true, "<", () => {
   setCurrentScreen("customization");
 });
 

@@ -39,7 +39,7 @@ let cityImg = new Button(200, -50, 290, 100, true, "", () => {
   setCurrentScreen("yourMoney");
 });
 
-let backBtn = new Button(0, 350, 120, 50, true, "<", () => {
+let backBtn = new Button(0, 400, 120, 50, true, "<", () => {
   if (player.hasChild) {
     deleteHasChildQuestions();
   }
