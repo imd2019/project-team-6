@@ -2,6 +2,7 @@ import { Question } from "./model/question.js";
 import { Choice } from "./model/choice.js";
 import { Player } from "./model/player.js";
 import { QuestionEvent } from "./model/questionEvent.js";
+import { ConsequenceEvent } from "./model/consequenceEvent.js";
 
 export let player = new Player();
 
@@ -845,4 +846,8 @@ function hasUpcomingEventOnDay(day) {
   }
 
   return false;
+}
+
+export function pushConsequenceEvent(event) {
+  upcomingEvents.push(new ConsequenceEvent(event, 0));
 }

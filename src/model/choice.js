@@ -1,5 +1,6 @@
 import { icons } from "../screens/gameScreen.js";
 import { runNextEvent } from "../game.js";
+import { ConsequenceEvent } from "./consequenceEvent.js";
 
 export class Choice {
   constructor(
@@ -26,8 +27,10 @@ export class Choice {
     fill("white");
     text(this.text, x, y, this.width + 50, this.height - 10);
   }
+
   mouseClicked(x, y) {
     if (this.hitTest(x, y, mouseX, mouseY)) {
+      pushConsequenceEvent(new ConsequenceEvent(this.Choice, 0));
       icons.animate(this.health, this.happiness, this.money);
       runNextEvent();
     }

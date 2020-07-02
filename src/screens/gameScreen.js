@@ -17,7 +17,7 @@ let runBtn = new Button(
 
 export let icons = new Icons(
   -windowWidth / 2.2,
-  -windowHeight / 2.1,
+  -windowHeight / 2.2,
   player.money
 );
 //let gif_createImg;

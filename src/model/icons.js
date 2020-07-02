@@ -11,8 +11,8 @@ export class Icons {
     this.width = 100;
     this.height = 20;
     this.money = money;
-    this.health = 0;
-    this.happiness = 0;
+    this.health = 100;
+    this.happiness = 100;
     this.moneyChange = 0;
     this.healthChange = 0;
     this.happinessChange = 0;
@@ -36,26 +36,25 @@ export class Icons {
     fill(245, 189, 197);
     textAlign(LEFT);
     textSize(16);
-    text("Gesundheit", this.x + 50, this.y + 95);
-    text("Zufriedenheit", this.x + 50, this.y + 195);
+    text("Gesundheit", this.x + 50, this.y + 90);
+    text("Zufriedenheit", this.x + 50, this.y + 190);
 
     rectMode(CORNER);
     rect(this.x + 50, this.y + 110, this.width, this.height, 10);
     rect(this.x + 50, this.y + 210, this.width, this.height, 10);
 
     fill("#1e1f3f");
+    strokeWeight(5);
+    stroke("#1e1f3f");
     rect(this.x + 50, this.y + 110, this.width, this.height, 10);
     rect(this.x + 50, this.y + 210, this.width, this.height, 10);
 
-    rectMode(CORNER);
-
     this.changeValues();
 
+    noStroke();
     fill(245, 189, 197);
     textSize(20);
     text(this.money + "€", this.x + 50, this.y + 5);
-
-    fill(245, 189, 197);
 
     if (this.health === 100) {
       this.healthRound = 10;
