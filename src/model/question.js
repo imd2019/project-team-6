@@ -6,7 +6,7 @@ export class Question {
     this.y = y;
     this.text = text;
     this.choices = choices;
-    this.boxWidth = 600;
+    this.boxWidth = 650;
     this.choiceY = this.y + 50;
   }
   display() {
@@ -47,7 +47,7 @@ export class Question {
     } else if (this.choices.length === 2) {
       offset = 300;
     } else if (this.choices.length === 3) {
-      offset = 400;
+      offset = 430;
     }
 
     return this.x - offset / 2 + (this.boxWidth / this.choices.length) * i;

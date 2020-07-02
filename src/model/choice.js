@@ -22,7 +22,7 @@ export class Choice {
 
   display(x, y) {
     fill(0, 0, 0, 50);
-    rect(x, y, this.width, this.height, 8);
+    //rect(x, y, this.width, this.height, 8);
     fill("white");
     text(this.text, x, y, this.width + 50, this.height - 10);
   }
