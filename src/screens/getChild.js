@@ -37,6 +37,8 @@ function draw() {
   headline.display();
   hasChild.display();
   noChild.display();
+  hasChild.mouseOver();
+  noChild.mouseOver();
   backBtn.display();
 
   if (player.sex === "f" && player.job.title === "Kellner*in") {
