@@ -11,14 +11,8 @@ import { Button } from "./src/model/button.js";
 
 let currentScreen = "game";
 
-let exitBtn = new Button(
-  windowWidth / 3,
-  -windowHeight / 2,
-  10,
-  5,
-  true,
-  "x",
-  () => window.location.reload()
+let exitBtn = new Button(550, -325, 10, 5, true, "Exit", () =>
+  window.location.reload()
 );
 
 window.preload = function () {

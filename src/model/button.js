@@ -17,7 +17,7 @@ export class Button {
   display() {
     this.x = windowWidth / 2 + this.xOffset;
     this.y = windowHeight / 2 + this.yOffset;
-    // fill("red");
+
     noFill();
     noStroke();
     // fill(0);
@@ -42,9 +42,12 @@ export class Button {
   }
 
   showPicture(picAdult, picChild) {
+    push();
+
     imageMode(CENTER);
-    image(picAdult, this.x, this.y - 300);
+    image(picAdult, this.x - this.width / 2, this.y - 250);
     image(picChild, this.x - 100, this.y - this.height - 100);
+    pop();
   }
 
   mouseClicked() {

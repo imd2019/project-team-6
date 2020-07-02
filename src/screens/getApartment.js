@@ -7,19 +7,12 @@ import {
   deleteHasChildQuestions,
 } from "../game.js";
 import { Apartment } from "../model/apartment.js";
+import { Pictures } from "../model/imagePosition.js";
 
-let headline = new Button(0, -370, 0, 0, true, "Wähle deine Wohnung:");
+let headline = new Button(100, -320, 200, 20, true, "Wähle deine Wohnung:");
 
 let townTitle = "Vorstadt";
-let town = new Button(-200, 250, 120, 50, true, townTitle, () => {
-  player.apartment = new Apartment(530, 121, townTitle, true);
-
-  pushHasCarQuestions();
-
-  setCurrentScreen("yourMoney");
-});
-
-let townImg = new Button(-200, -50, 290, 100, true, "", () => {
+let town = new Button(-160, 125, 80, 20, true, townTitle, () => {
   player.apartment = new Apartment(530, 121, townTitle, true);
 
   pushHasCarQuestions();
@@ -28,12 +21,7 @@ let townImg = new Button(-200, -50, 290, 100, true, "", () => {
 });
 
 let cityTitle = "Innenstadt";
-let city = new Button(200, 250, 130, 50, true, cityTitle, () => {
-  player.apartment = new Apartment(1030, 121, cityTitle, false);
-
-  setCurrentScreen("yourMoney");
-});
-let cityImg = new Button(200, -50, 290, 100, true, "", () => {
+let city = new Button(245, 125, 90, 20, true, cityTitle, () => {
   player.apartment = new Apartment(1030, 121, cityTitle, false);
 
   setCurrentScreen("yourMoney");
@@ -47,6 +35,20 @@ let backBtn = new Button(0, 400, 120, 50, true, "<", () => {
   setCurrentScreen("getChild");
 });
 
+let townPicture = new Pictures(-200, 0, 100, 400, () => {
+  player.apartment = new Apartment(530, 121, townTitle, true);
+
+  pushHasCarQuestions();
+
+  setCurrentScreen("yourMoney");
+});
+
+let cityPicture = new Pictures(200, 0, 150, 400, () => {
+  player.apartment = new Apartment(1030, 121, cityTitle, false);
+
+  setCurrentScreen("yourMoney");
+});
+
 function draw() {
   background("#1e1f3f");
 
@@ -58,14 +60,11 @@ function draw() {
   town.mouseOver();
   city.mouseOver();
 
-  city.showPicture(cityPic, noPic);
-  town.showPicture(townPic, noPic);
+  townPicture.mouseOver(townPic);
+  townPicture.display(townPic);
 
-  cityImg.display();
-  townImg.display();
-
-  cityImg.mouseOver();
-  townImg.mouseOver();
+  cityPicture.mouseOver(cityPic);
+  cityPicture.display(cityPic);
 }
 
 function mouseClicked() {
@@ -73,8 +72,8 @@ function mouseClicked() {
   town.mouseClicked();
   backBtn.mouseClicked();
 
-  cityImg.mouseClicked();
-  townImg.mouseClicked();
+  cityPicture.mouseClicked();
+  townPicture.mouseClicked();
 
   drawPlayer();
 }
