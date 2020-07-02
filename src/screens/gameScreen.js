@@ -5,6 +5,16 @@ import { Button } from "../model/button.js";
 
 let timeline = new Timeline(-windowWidth / 2.2, +windowHeight / 2.6);
 
+let runBtn = new Button(
+  width / 2,
+  height / 2,
+  100,
+  20,
+  false,
+  "run",
+  runNextEvent()
+);
+
 export let icons = new Icons(
   -windowWidth / 2.2,
   -windowHeight / 2.1,
@@ -29,12 +39,11 @@ function onStart() {
 
 function draw() {
   clear();
-  // question.display();
   // // gif_createImg.size(windowWidth, windowHeight);
   // // gif_createImg.show();
 
-  vid.size(windowWidth, windowHeight);
-  vid.show();
+  // vid.size(windowWidth, windowHeight);
+  // vid.show();
 
   icons.display();
   // timeline.display();

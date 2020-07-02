@@ -1,21 +1,17 @@
 import { mainFont } from "../screens/customizationScreen.js";
 
 export class Question {
-  constructor(text, choices, xOffset, yOffset) {
-    this.xOffset = xOffset;
-    this.yOffset = yOffset;
-    this.x = 0;
-    this.y = 0;
+  constructor(text, choices, x, y) {
+    this.x = x;
+    this.y = y;
     this.text = text;
     this.choices = choices;
     this.boxWidth = 600;
-    this.choiceY = this.y - 50;
+    this.choiceY = this.y + 50;
   }
   display() {
     push();
-    this.x = windowWidth / 2 + this.xOffset;
-    this.y = windowHeight / 2 + this.yOffset;
-    push();
+
     noStroke();
     //frage
     fill(21, 21, 21, 150);
