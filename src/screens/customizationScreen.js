@@ -18,6 +18,7 @@ export let diverseWaiter;
 export let maleStroke;
 export let femaleStroke;
 export let diverseStroke;
+export let childStroke;
 
 export let townPic;
 export let cityPic;
@@ -96,6 +97,7 @@ function preload() {
   maleStroke = loadImage("../../assets/maleStroke.png");
   femaleStroke = loadImage("../../assets/femaleStroke.png");
   diverseStroke = loadImage("../../assets/diverseStroke.png");
+  childStroke = loadImage("../../assets/childStroke.png");
 
   male = loadImage("../../assets/male.png");
   female = loadImage("../../assets/female.png");
