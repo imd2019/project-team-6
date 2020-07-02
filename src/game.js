@@ -756,11 +756,8 @@ let week3QuestionsCount = 1;
 let week4QuestionsCount = 2;
 
 export function pushHasCarQuestions() {
-  upcomingEvents.push(
-    new QuestionEvent(hasCarQuestions[0], 1),
-    new QuestionEvent(hasCarQuestions[1], 1),
-    new QuestionEvent(hasCarQuestions[2], 1)
-  );
+  addRandomQuestions(2, hasCarQuestions);
+  addRandomQuestions(4, hasCarQuestions);
 
   week2QuestionsCount++;
   week4QuestionsCount++;
@@ -778,12 +775,15 @@ export function deleteHasCarQuestions() {
 
 export function pushHasChildQuestions() {
   upcomingEvents.push(
-    new QuestionEvent(hasChildQuestions[0], 1),
-    new QuestionEvent(hasChildQuestions[1], 1),
-    new QuestionEvent(hasChildQuestions[2], 1),
-    new QuestionEvent(hasChildQuestions[3], 1),
-    new QuestionEvent(hasChildQuestions[4], 1),
-    new QuestionEvent(hasChildQuestions[5], 1)
+    new QuestionEvent(hasChildQuestions[0], randomFreeDayInWeek(1)),
+    new QuestionEvent(
+      hasChildQuestions[randomFreeDayInWeek(1)],
+      randomFreeDayInWeek(2)
+    ),
+    new QuestionEvent(hasChildQuestions[2], randomFreeDayInWeek(2)),
+    new QuestionEvent(hasChildQuestions[3], randomFreeDayInWeek(3)),
+    new QuestionEvent(hasChildQuestions[4], randomFreeDayInWeek(3)),
+    new QuestionEvent(hasChildQuestions[5], randomFreeDayInWeek(4))
   );
 
   week1QuestionsCount++;
@@ -815,15 +815,18 @@ export function pushRandomQuestions() {
 function addRandomQuestionsToEachWeek(week, weekCount, randomQuestions) {
   while (weekCount < 4) {
     weekCount++;
-
-    let i = Math.round(random(0, randomQuestions.length - 1));
-    let question = randomQuestions[i];
-    randomQuestions.splice(i, 1);
-
-    let freeDay = randomFreeDayInWeek(week);
-
-    upcomingEvents.push(new QuestionEvent(question, freeDay));
+    addRandomQuestions(week, randomQuestions);
   }
+}
+
+function addRandomQuestions(week, randomQuestions) {
+  let i = Math.round(random(0, randomQuestions.length - 1));
+  let question = randomQuestions[i];
+  randomQuestions.splice(i, 1);
+
+  let freeDay = randomFreeDayInWeek(week);
+
+  upcomingEvents.push(new QuestionEvent(question, freeDay));
 }
 
 function randomFreeDayInWeek(week) {

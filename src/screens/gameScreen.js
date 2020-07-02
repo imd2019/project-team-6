@@ -1,6 +1,11 @@
 import { Icons } from "../model/icons.js";
 import { Timeline } from "../model/timeline.js";
-import { player, runNextEvent, getCurrentEvent } from "../game.js";
+import {
+  player,
+  runNextEvent,
+  getCurrentEvent,
+  upcomingEvents,
+} from "../game.js";
 import { Button } from "../model/button.js";
 
 let timeline = new Timeline(-windowWidth / 2.2, +windowHeight / 2.6);
@@ -33,13 +38,18 @@ function onStart() {
   }, 1000 * 10);
 }
 
+let t = false;
 function draw() {
+  if (!t) {
+    t = true;
+    console.log(upcomingEvents);
+  }
   clear();
   // // gif_createImg.size(windowWidth, windowHeight);
   // // gif_createImg.show();
 
-  // vid.size(windowWidth, windowHeight);
-  // vid.show();
+  vid.size(windowWidth, windowHeight);
+  vid.show();
 
   icons.display();
   // timeline.display();
