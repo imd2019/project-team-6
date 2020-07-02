@@ -15,6 +15,10 @@ export let maleWaiter;
 export let femaleWaiter;
 export let diverseWaiter;
 
+export let maleStroke;
+export let femaleStroke;
+export let diverseStroke;
+
 export let townPic;
 export let cityPic;
 
@@ -37,18 +41,18 @@ export let openVindu;
 
 export let fallbackFont;
 
-let opacityText = 0;
+let opacityText = 2;
 let opacityChange = +2;
 
-let yes = new Button(-50, 150, 20, 20, true, "Ja", () =>
+let yes = new Button(-80, 40, 20, 20, true, "Ja", () =>
   setCurrentScreen("getGender")
 );
 
-let no = new Button(100, 150, 40, 20, true, "Nein", () =>
+let no = new Button(80, 40, 40, 20, true, "Nein", () =>
   window.location.reload()
 );
 
-function textContent() {
+function content() {
   push();
   textAlign(CENTER);
   textFont(mainFont);
@@ -57,29 +61,30 @@ function textContent() {
   text(
     "Pandemien wie Corona betreffen alle Menschen.\n Aber manche trifft es härter als andere.\n\nSchlüpfe in VINDU in die Schuhe eines Anderen und versuche vier Wochen \ndurch eine simulierte Pandemie durchzukommen.\nDu wirst auf Situationen treffen, bei denen du vielleicht schwere Entscheidungen treffen musst. \nBehalte dabei dein Geld, deine Gesundheit und deine Zufriedenheit im Auge.",
     windowWidth / 2,
-    windowHeight / 3
+    windowHeight / 2 - 100
   );
   fill(245, 189, 197, opacityText);
   text(
     "Nimmst du die Herausforderung an?",
     windowWidth / 2,
-    (windowHeight / 3) * 1.8
+    windowHeight / 2 + 20
   );
   pop();
 }
 function draw() {
   clear();
   background("#1e1f3f");
-  if (opacityText <= 250) {
-    opacityText += opacityChange;
-  }
-  textContent();
-  if (opacityText >= 230) {
+  opacityText += opacityChange;
+  content();
+
+  //Fehler nicht gefunden, wenn if Satz existiert, richtet er sich erst aus , wenn ifsatz erfüllt ist
+  if (opacityText === 252) {
+    opacityChange = 0;
     yes.display();
     no.display();
+    yes.mouseOver();
+    no.mouseOver();
   }
-  yes.mouseOver();
-  no.mouseOver();
 }
 
 function mouseClicked() {
@@ -88,6 +93,10 @@ function mouseClicked() {
 }
 
 function preload() {
+  maleStroke = loadImage("../../assets/maleStroke.png");
+  femaleStroke = loadImage("../../assets/femaleStroke.png");
+  diverseStroke = loadImage("../../assets/diverseStroke.png");
+
   male = loadImage("../../assets/male.png");
   female = loadImage("../../assets/female.png");
   diverse = loadImage("../../assets/diverse.png");
@@ -129,4 +138,4 @@ export function drawPlayer() {
   // TODO: Implement
 }
 
-export default { textContent, draw, mouseClicked, preload };
+export default { draw, mouseClicked, preload };

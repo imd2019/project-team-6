@@ -9,12 +9,23 @@ import {
   diverseConsultant,
   child,
   noPic,
+  femaleStroke,
+  maleStroke,
+  diverseStroke,
 } from "./customizationScreen.js";
 import { player, pushHasChildQuestions } from "../game.js";
+import { Pictures } from "../model/imagePosition.js";
 
-let headline = new Button(0, -370, 0, 0, true, "Wähle deinen Familienstand:");
+let headline = new Button(
+  125,
+  -320,
+  250,
+  20,
+  true,
+  "Wähle deinen Familienstand:"
+);
 
-let hasChild = new Button(-200, 250, 120, 50, true, "Mit Kind", () => {
+let hasChild = new Button(-160, 250, 80, 20, true, "Mit Kind", () => {
   player.hasChild = true;
 
   pushHasChildQuestions();
@@ -22,7 +33,7 @@ let hasChild = new Button(-200, 250, 120, 50, true, "Mit Kind", () => {
   setCurrentScreen("getApartment");
 });
 
-let noChild = new Button(200, 250, 120, 50, true, "Alleine", () => {
+let noChild = new Button(235, 250, 70, 20, true, "Alleine", () => {
   player.hasChild = false;
 
   setCurrentScreen("getApartment");
@@ -30,6 +41,20 @@ let noChild = new Button(200, 250, 120, 50, true, "Alleine", () => {
 
 let backBtn = new Button(0, 400, 120, 50, true, "<", () => {
   setCurrentScreen("getJob");
+});
+
+let hasChildPicture = new Pictures(-200, 0, 100, 400, () => {
+  player.hasChild = true;
+
+  pushHasChildQuestions();
+
+  setCurrentScreen("getApartment");
+});
+
+let noChildPicture = new Pictures(200, 0, 150, 400, () => {
+  player.hasChild = false;
+
+  setCurrentScreen("getApartment");
 });
 
 function draw() {
@@ -42,23 +67,35 @@ function draw() {
   backBtn.display();
 
   if (player.sex === "f" && player.job.title === "Kellner*in") {
-    hasChild.showPicture(femaleWaiter, child);
-    noChild.showPicture(femaleWaiter, noPic);
+    hasChildPicture.mouseOver(femaleStroke);
+    noChildPicture.mouseOver(femaleStroke);
+    hasChildPicture.display(femaleConsultant);
+    noChildPicture.display(femaleWaiter);
   } else if (player.sex === "m" && player.job.title === "Kellner*in") {
-    hasChild.showPicture(maleWaiter, child);
-    noChild.showPicture(maleWaiter, noPic);
+    hasChildPicture.mouseOver(femaleStroke);
+    noChildPicture.mouseOver(femaleStroke);
+    hasChildPicture.display(femaleConsultant);
+    noChildPicture.display(femaleWaiter);
   } else if (player.sex === "d" && player.job.title === "Kellner*in") {
-    hasChild.showPicture(diverseWaiter, child);
-    noChild.showPicture(diverseWaiter, noPic);
+    hasChildPicture.mouseOver(femaleStroke);
+    noChildPicture.mouseOver(femaleStroke);
+    hasChildPicture.display(femaleConsultant);
+    noChildPicture.display(femaleWaiter);
   } else if (player.sex === "f" && player.job.title === "Steuerberater*in") {
-    hasChild.showPicture(femaleConsultant, child);
-    noChild.showPicture(femaleConsultant, noPic);
+    hasChildPicture.mouseOver(femaleStroke);
+    noChildPicture.mouseOver(femaleStroke);
+    hasChildPicture.display(femaleConsultant);
+    noChildPicture.display(femaleWaiter);
   } else if (player.sex === "m" && player.job.title === "Steuerberater*in") {
-    hasChild.showPicture(maleConsultant, child);
-    noChild.showPicture(maleConsultant, noPic);
+    hasChildPicture.mouseOver(femaleStroke);
+    noChildPicture.mouseOver(femaleStroke);
+    hasChildPicture.display(femaleConsultant);
+    noChildPicture.display(femaleWaiter);
   } else if (player.sex === "d" && player.job.title === "Steuerberater*in") {
-    hasChild.showPicture(diverseConsultant, child);
-    noChild.showPicture(diverseConsultant, noPic);
+    hasChildPicture.mouseOver(femaleStroke);
+    noChildPicture.mouseOver(femaleStroke);
+    hasChildPicture.display(femaleConsultant);
+    noChildPicture.display(femaleWaiter);
   }
 }
 
@@ -66,6 +103,9 @@ function mouseClicked() {
   hasChild.mouseClicked();
   noChild.mouseClicked();
   backBtn.mouseClicked();
+
+  hasChildPicture.mouseClicked();
+  noChildPicture.mouseClicked();
 }
 
 export default { draw, mouseClicked };

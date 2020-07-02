@@ -9,9 +9,9 @@ import {
 import { moneyLarge } from "./customizationScreen.js";
 import { icons } from "./gameScreen.js";
 
-let finance = new Button(0, -370, 0, 0, true, "Deine Finanzen");
+let finance = new Button(65, -320, 130, 20, true, "Deine Finanzen");
 
-let startBtn = new Button(0, 200, 150, 80, true, "Start", () => {
+let startBtn = new Button(0, 200, 40, 20, true, "Start", () => {
   pushRandomQuestions();
 
   icons.animate(100, 100, player.money);
@@ -46,6 +46,7 @@ function draw() {
   background("#1e1f3f");
   push();
   fill(245, 189, 197, 180);
+  rectMode(CENTER);
   rect(windowWidth / 2 + 30, windowHeight / 2, 500, 227, 35);
   imageMode(CENTER);
   image(moneyLarge, windowWidth / 2 - 200, windowHeight / 2);

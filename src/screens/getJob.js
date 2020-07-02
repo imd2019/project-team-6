@@ -7,20 +7,18 @@ import {
   femaleConsultant,
   diverseWaiter,
   diverseConsultant,
-  noPic,
+  femaleStroke,
+  maleStroke,
+  diverseStroke,
 } from "./customizationScreen.js";
 import { player } from "../game.js";
 import { Job } from "../model/job.js";
+import { Pictures } from "../model/imagePosition.js";
 
-let headline = new Button(0, -370, 0, 0, true, "Wähle dein Beruf:");
+let headline = new Button(80, -320, 160, 20, true, "Wähle dein Beruf:");
 
 let waiterTitle = "Kellner*in";
-let waiter = new Button(-200, 250, 120, 50, true, waiterTitle, () => {
-  player.job = new Job(waiterTitle, 1660);
-
-  setCurrentScreen("getChild");
-});
-let waiterImg = new Button(-200, -50, 170, 400, true, "", () => {
+let waiter = new Button(-155, 250, 90, 20, true, waiterTitle, () => {
   player.job = new Job(waiterTitle, 1660);
 
   setCurrentScreen("getChild");
@@ -28,10 +26,10 @@ let waiterImg = new Button(-200, -50, 170, 400, true, "", () => {
 
 let taxConsultantTitle = "Steuerberater*in";
 let taxConsultant = new Button(
-  200,
+  270,
   250,
-  170,
-  50,
+  140,
+  20,
   true,
   taxConsultantTitle,
   () => {
@@ -40,19 +38,40 @@ let taxConsultant = new Button(
     setCurrentScreen("getChild");
   }
 );
-let taxConsultantImg = new Button(200, -50, 170, 400, true, "", () => {
+
+let backBtn = new Button(0, 300, 10, 10, true, "<", () => {
+  setCurrentScreen("getChild");
+});
+
+let taxConsulantPicture = new Pictures(200, 0, 100, 400, () => {
   player.job = new Job(taxConsultantTitle, 3240);
 
   setCurrentScreen("getChild");
 });
+let waiterPicture = new Pictures(-200, 0, 100, 400, () => {
+  player.job = new Job(waiterTitle, 1660);
 
-let backBtn = new Button(0, 400, 120, 50, true, "<", () => {
-  setCurrentScreen("getGender");
+  setCurrentScreen("getChild");
 });
 
 function draw() {
   background("#1e1f3f");
-
+  if (player.sex === "f") {
+    taxConsulantPicture.mouseOver(femaleStroke);
+    waiterPicture.mouseOver(femaleStroke);
+    taxConsulantPicture.display(femaleConsultant);
+    waiterPicture.display(femaleWaiter);
+  } else if ((player.sex = "m")) {
+    taxConsulantPicture.mouseOver(maleStroke);
+    waiterPicture.mouseOver(maleStroke);
+    taxConsulantPicture.display(maleConsultant);
+    waiterPicture.display(maleWaiter);
+  } else if ((player.sex = "d")) {
+    taxConsulantPicture.mouseOver(diverseStroke);
+    waiterPicture.mouseOver(diverseStroke);
+    taxConsulantPicture.display(diverseConsultant);
+    waiterPicture.display(diverseWaiter);
+  }
   headline.display();
   waiter.display();
   taxConsultant.display();
@@ -60,29 +79,14 @@ function draw() {
   taxConsultant.mouseOver();
 
   backBtn.display();
-
-  waiterImg.display();
-  taxConsultantImg.display();
-
-  if (player.sex === "f") {
-    taxConsultant.showPicture(femaleConsultant, noPic);
-    waiter.showPicture(femaleWaiter, noPic);
-  } else if ((player.sex = "m")) {
-    taxConsultant.showPicture(maleConsultant, noPic);
-    waiter.showPicture(maleWaiter, noPic);
-  } else if ((player.sex = "d")) {
-    taxConsultant.showPicture(diverseConsultant, noPic);
-    waiter.showPicture(diverseWaiter, noPic);
-  }
 }
 
 function mouseClicked() {
   waiter.mouseClicked();
   taxConsultant.mouseClicked();
   backBtn.mouseClicked();
-
-  waiterImg.mouseClicked();
-  taxConsultantImg.mouseClicked();
+  taxConsulantPicture.mouseClicked();
+  waiterPicture.mouseClicked();
 }
 
 export default { draw, mouseClicked };

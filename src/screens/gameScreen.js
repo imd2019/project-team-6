@@ -15,11 +15,7 @@ let runBtn = new Button(
   runNextEvent()
 );
 
-export let icons = new Icons(
-  -windowWidth / 2.2,
-  -windowHeight / 2.1,
-  player.money
-);
+export let icons = new Icons(-550, -300, player.money);
 //let gif_createImg;
 let vid;
 
@@ -50,14 +46,6 @@ function draw() {
   if (getCurrentEvent()) {
     getCurrentEvent().question.display();
   }
-
-  // document
-  //   .getElementById("timelineAnimation-svg")
-  //   .contentDocument.getElementById("e5cr2dpkonuq1")
-  //   .dispatchEvent(new Event("hover"));
-
-  // document.getElementById("timelineAnimation-svg").src =
-  //   "../../assets/timelineAnimation.svg";
 }
 
 function mouseClicked() {
