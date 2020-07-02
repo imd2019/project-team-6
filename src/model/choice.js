@@ -1,6 +1,7 @@
 import { icons } from "../screens/gameScreen.js";
 import { runNextEvent, getUpcomingEvents } from "../game.js";
 import { ConsequenceEvent } from "./consequenceEvent.js";
+import { fallbackFont } from "../screens/customizationScreen.js";
 
 export class Choice {
   constructor(
@@ -19,6 +20,7 @@ export class Choice {
     this.chance = chance;
     this.width = 140;
     this.height = 50;
+    this.textTriangle = "";
   }
 
   display(x, y) {
@@ -27,6 +29,8 @@ export class Choice {
     //rect(x, y, this.width, this.height, 8);
     fill("white");
     text(this.text, x, y, this.width + 50, this.height - 10);
+    textFont(fallbackFont);
+    text(this.textTriangle, x - 40, y + 20);
     pop();
   }
 
@@ -47,4 +51,12 @@ export class Choice {
       mouseY <= y + this.height / 2
     );
   }
+
+  // mouseOver() {
+  //   if (this.hitTest(x, y, mouseX, mouseY)) {
+  //     this.textTriangle = "▶";
+  //   } else {
+  //     this.textTriangle = "";
+  //   }
+  // }
 }

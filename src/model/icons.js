@@ -11,8 +11,8 @@ export class Icons {
     this.width = 100;
     this.height = 20;
     this.money = money;
-    this.health = 100;
-    this.happiness = 100;
+    this.health = 0;
+    this.happiness = 0;
     this.moneyChange = 0;
     this.healthChange = 0;
     this.happinessChange = 0;
