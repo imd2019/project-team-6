@@ -57,6 +57,14 @@ let noChildPicture = new Pictures(200, 0, 150, 400, () => {
   setCurrentScreen("getApartment");
 });
 
+let childPicture = new Pictures(100, 0, 150, 400, () => {
+  player.hasChild = true;
+
+  pushHasChildQuestions();
+
+  setCurrentScreen("getApartment");
+});
+
 function draw() {
   background("#1e1f3f");
   headline.display();
@@ -65,6 +73,9 @@ function draw() {
   hasChild.mouseOver();
   noChild.mouseOver();
   backBtn.display();
+
+  childPicture.mouseOver(child);
+  childPicture.display(child);
 
   if (player.sex === "f" && player.job.title === "Kellner*in") {
     hasChildPicture.mouseOver(femaleStroke);
@@ -106,6 +117,7 @@ function mouseClicked() {
 
   hasChildPicture.mouseClicked();
   noChildPicture.mouseClicked();
+  childPicture.mouseClicked();
 }
 
 export default { draw, mouseClicked };
