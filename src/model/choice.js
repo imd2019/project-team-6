@@ -1,5 +1,5 @@
 import { icons } from "../screens/gameScreen.js";
-import { runNextEvent } from "../game.js";
+import { runNextEvent, getUpcomingEvents } from "../game.js";
 import { ConsequenceEvent } from "./consequenceEvent.js";
 
 export class Choice {
@@ -22,16 +22,19 @@ export class Choice {
   }
 
   display(x, y) {
+    push();
     fill(0, 0, 0, 50);
     //rect(x, y, this.width, this.height, 8);
     fill("white");
     text(this.text, x, y, this.width + 50, this.height - 10);
+    pop();
   }
 
-  mouseClicked(x, y) {
+  mouseClicked(question, x, y) {
     if (this.hitTest(x, y, mouseX, mouseY)) {
-      pushConsequenceEvent(new ConsequenceEvent(this.Choice, 0));
-      icons.animate(this.health, this.happiness, this.money);
+      getUpcomingEvents().push(
+        new ConsequenceEvent(this, question.x, question.y)
+      );
       runNextEvent();
     }
   }
@@ -44,6 +47,4 @@ export class Choice {
       mouseY <= y + this.height / 2
     );
   }
-
-  displayConsequence() {}
 }

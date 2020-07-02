@@ -6,7 +6,11 @@ export class QuestionEvent extends VinduEvent {
     this.question = question;
   }
 
-  run() {
-    console.log("not implemented");
+  display() {
+    this.question.display();
+  }
+
+  mouseClicked() {
+    this.question.mouseClicked();
   }
 }

@@ -12,6 +12,7 @@ export class Button {
     this.text = text;
     this.clicked = clicked;
     this.textTriangle = "";
+    this.textColor = "#f5bdc5";
   }
 
   display() {
@@ -31,14 +32,12 @@ export class Button {
       textSize(20);
     }
     textAlign(LEFT, CENTER);
-    fill("#f5bdc5");
+    fill(this.textColor);
     textFont(mainFont);
     text(this.text, this.x - this.width, this.y + 20);
 
-    push();
     textFont(fallbackFont);
     text(this.textTriangle, this.x - this.width - 40, this.y + 20);
-    pop();
   }
 
   showPicture(picAdult, picChild) {
@@ -67,6 +66,8 @@ export class Button {
   mouseOver() {
     if (this.hitTest(mouseX, mouseY)) {
       this.textTriangle = "▶";
-    } else this.textTriangle = "";
+    } else {
+      this.textTriangle = "";
+    }
   }
 }

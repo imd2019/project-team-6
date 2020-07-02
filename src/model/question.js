@@ -35,7 +35,7 @@ export class Question {
     for (let i in this.choices) {
       let choice = this.choices[i];
 
-      choice.mouseClicked(this.getQuestionX(i), this.choiceY);
+      choice.mouseClicked(this, this.getQuestionX(i), this.choiceY);
     }
   }
 

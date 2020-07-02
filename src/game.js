@@ -848,6 +848,6 @@ function hasUpcomingEventOnDay(day) {
   return false;
 }
 
-export function pushConsequenceEvent(event) {
-  upcomingEvents.push(new ConsequenceEvent(event, 0));
+export function getUpcomingEvents() {
+  return upcomingEvents;
 }

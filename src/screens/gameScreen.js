@@ -43,14 +43,16 @@ function draw() {
 
   icons.display();
   // timeline.display();
-  if (getCurrentEvent()) {
-    getCurrentEvent().question.display();
+  let currentEvent = getCurrentEvent();
+  if (currentEvent) {
+    currentEvent.display();
   }
 }
 
 function mouseClicked() {
-  if (getCurrentEvent()) {
-    getCurrentEvent().question.mouseClicked();
+  let currentEvent = getCurrentEvent();
+  if (currentEvent) {
+    currentEvent.mouseClicked();
   }
 }
 
