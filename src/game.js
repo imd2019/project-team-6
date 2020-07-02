@@ -19,8 +19,8 @@ let coronaQuestions = [
       ),
       new Choice("Ich storniere nicht.", "Du hoffst und wartest", 0, 0, 0, 1),
     ],
-    windowWidth / 4,
-    windowHeight / 4
+    windowWidth / 2,
+    windowHeight / 2
   ),
   new Question(
     "Möchtest du dir eine Maske kaufen?",
@@ -53,8 +53,8 @@ let coronaQuestions = [
         0.5
       ),
     ],
-    -windowWidth / 2 + 300,
-    -windowHeight / 2 + 110
+    windowWidth / 2 + 300,
+    windowHeight / 2 + 110
   ),
   new Question(
     "Viele Waren wie Toilettenpapier sind stark nachgefragt. Viele Leute kaufen in größeren Mengen ein, als sie es eigentlich brauchen. \n \nHamsterst du auch?",
@@ -77,7 +77,7 @@ let coronaQuestions = [
         1
       ),
     ],
-    -windowWidth / 2 + 300,
+    windowWidth / 2 + 300,
     windowHeight / 2 - 110
   ),
   new Question(
@@ -101,7 +101,7 @@ let coronaQuestions = [
       ),
     ],
     windowWidth / 2 - 300,
-    -windowHeight / 2 + 110
+    windowHeight / 2 + 110
   ), //falls nicht schon gekauft oder genäht wurde und es nicht geklaptt hat
   new Question(
     "Möchtest du dir eine Maske kaufen?",
@@ -134,7 +134,7 @@ let coronaQuestions = [
         0.5
       ),
     ],
-    -windowWidth / 2 + 300,
+    windowWidth / 2 + 300,
     windowHeight / 2 - 110
   ),
   new Question(
@@ -158,7 +158,7 @@ let coronaQuestions = [
       ),
     ],
     windowWidth / 2 - 300,
-    -windowHeight / 2 + 110
+    windowHeight / 2 + 110
   ),
   //nur falls obere ja
   new Question(
@@ -207,7 +207,7 @@ let coronaQuestions = [
         1
       ),
     ],
-    -windowWidth / 2 + 300,
+    windowWidth / 2 + 300,
     windowHeight / 2 - 110
   ),
 ];
@@ -233,7 +233,7 @@ let randomQuestionsWeek1to2 = [
         1
       ),
     ],
-    -windowWidth / 2 + 300,
+    windowWidth / 2 + 300,
     windowHeight / 2 - 110
   ),
 
@@ -287,7 +287,7 @@ let randomQuestionsWeek1to2 = [
         1
       ),
     ],
-    -windowWidth / 2 + 300,
+    windowWidth / 2 + 300,
     windowHeight / 2 - 110
   ),
   new Question(
@@ -372,7 +372,7 @@ let randomQuestionsWeek3to4 = [
       ),
     ],
     windowWidth / 2 - 300,
-    -windowHeight / 2 + 110
+    windowHeight / 2 + 110
   ),
   new Question(
     "Möchtest du deine Mutter im Altersheim besuchen?",
@@ -394,7 +394,7 @@ let randomQuestionsWeek3to4 = [
         1
       ),
     ],
-    -windowWidth / 2 + 300,
+    windowWidth / 2 + 300,
     windowHeight / 2 - 110
   ),
   new Question(
@@ -444,7 +444,7 @@ let randomQuestionsWeek3to4 = [
       ),
     ],
     0,
-    -windowHeight / 2 + 110
+    windowHeight / 2 + 110
   ),
   new Question(
     "Du hattest einen Fahrradunfall. \n \nGehst du zum Arzt?",
@@ -471,7 +471,7 @@ let randomQuestionsWeek3to4 = [
       ),
     ],
     windowWidth / 2 - 300,
-    -windowHeight / 2 + 110
+    windowHeight / 2 + 110
   ),
 ];
 
@@ -537,8 +537,8 @@ let hasChildQuestions = [
         1
       ),
     ],
-    -windowWidth / 2 + 300,
-    -windowHeight / 2 + 110
+    windowWidth / 2 + 300,
+    windowHeight / 2 + 110
   ),
   new Question(
     "Das Essen der Kinder in der Betreuung fällt weg. Um eine weitere Mahlzeit zu stellen musst du mehr Geld ausgeben. \n \nWas tust du?",
@@ -554,7 +554,7 @@ let hasChildQuestions = [
       new Choice("Ich kaufe mehr ein und koche mehr.", " ", 0, 0, 0, 1),
     ],
     windowWidth / 2 - 300,
-    -windowHeight / 2 + 110
+    windowHeight / 2 + 110
   ),
   new Question(
     "Dein Kind kommt nicht mit dem Schulstoff zurecht. \n \nHeuerst du einen Nachhilfelehrer an?",
@@ -580,7 +580,7 @@ let hasChildQuestions = [
       ),
     ],
     windowWidth / 2 - 300,
-    -windowHeight / 2 + 110
+    windowHeight / 2 + 110
   ),
   new Question(
     "Dein Kind muss von Zuhause aus mit einem Tablet arbeiten. Die Schule verteilt 10 Tablets an die Schüler pro Klasse.",
@@ -595,7 +595,7 @@ let hasChildQuestions = [
         0.7
       ),
     ],
-    -windowWidth / 2 + 300,
+    windowWidth / 2 + 300,
     windowHeight / 2 - 110
   ),
   //falls kein Tablet bekommen
@@ -619,7 +619,7 @@ let hasChildQuestions = [
         1
       ),
     ],
-    -windowWidth / 2 + 300,
+    windowWidth / 2 + 300,
     windowHeight / 2 - 110
   ),
 ];
@@ -645,7 +645,7 @@ let hasCarQuestions = [
         1
       ),
     ],
-    -windowWidth / 2 + 300,
+    windowWidth / 2 + 300,
     windowHeight / 2 - 110
   ),
   new Question(
@@ -669,7 +669,7 @@ let hasCarQuestions = [
       ),
     ],
     windowWidth / 2 - 300,
-    -windowHeight / 2 + 110
+    windowHeight / 2 + 110
   ),
   new Question(
     "Der Supermarkt um die Ecke ist teurer aber dafür näher. Der billige Supermarkt ist nur mit der Bahn zu erreichen, da dein Auto noch in der Werkstatt steht.\n \nWas tust du?",
