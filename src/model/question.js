@@ -25,7 +25,7 @@ export class Question {
     textSize(16);
     textFont(mainFont);
     textAlign(CENTER);
-    text(this.text, this.x, this.y + 10, this.boxWidth - 50, 200);
+    text(this.text, this.x, this.y - 50, this.boxWidth - 50, 200);
 
     for (let i in this.choices) {
       let choice = this.choices[i];
