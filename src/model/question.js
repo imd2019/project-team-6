@@ -12,11 +12,13 @@ export class Question {
   display() {
     push();
 
-    noStroke();
     //frage
-    fill(21, 21, 21, 150);
+    strokeWeight(3);
+    stroke(255);
+    fill(19, 19, 37, 220);
     rectMode(CENTER);
     rect(this.x, this.y, this.boxWidth, 220, 50);
+    noStroke();
     fill("white");
     textSize(16);
     textFont(mainFont);

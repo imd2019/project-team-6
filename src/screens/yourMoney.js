@@ -6,7 +6,7 @@ import {
   deleteHasCarQuestions,
   runNextEvent,
 } from "../game.js";
-import { moneyLarge } from "./customizationScreen.js";
+import { moneyLarge, mainFont } from "./customizationScreen.js";
 import { icons } from "./gameScreen.js";
 
 let finance = new Button(65, -320, 130, 20, true, "Deine Finanzen");
@@ -55,6 +55,7 @@ function draw() {
   fill("black");
   textAlign(RIGHT);
   textSize(20);
+  textFont(mainFont);
   text("Dein Nettogehalt: ", windowWidth / 2 + 105, windowHeight / 2 - 60);
   text("Warmmiete: ", windowWidth / 2 + 105, windowHeight / 2 - 30);
   text("Zus. Nebenkosten: ", windowWidth / 2 + 105, windowHeight / 2);
@@ -93,9 +94,9 @@ function draw() {
     stroke("black");
     line(
       windowWidth / 2 - 75,
-      windowHeight / 2 + 40,
+      windowHeight / 2 + 47,
       windowWidth / 2 + 180,
-      windowHeight / 2 + 40
+      windowHeight / 2 + 47
     );
   }
   if (player.hasChild === false) {

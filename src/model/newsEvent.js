@@ -9,7 +9,6 @@ export class NewsEvent extends VinduEvent {
     this.x = windowWidth / 2;
     this.y = windowHeight / 2;
     this.text = text;
-    this.boxWidth = 650;
     this.okBtn = new Button(
       this.x - windowWidth / 2,
       this.y - 40 - windowHeight / 2,
@@ -26,15 +25,16 @@ export class NewsEvent extends VinduEvent {
 
   display() {
     push();
+    background(19, 19, 37, 220);
     noStroke();
-    fill(21, 21, 21, 150);
-    rectMode(CENTER);
-    rect(this.x, this.y, this.boxWidth, 220, 50);
+    // fill(19, 19, 37, 220);
+    // rectMode(CENTER);
+    // rect(this.x, this.y, windowWidth, windowHeight + 200);
     fill("white");
     textSize(16);
     textFont(mainFont);
     textAlign(CENTER);
-    text(this.text, this.x, this.y - 40, this.boxWidth - 50, 200);
+    text(this.text, this.x, this.y - 40);
 
     this.okBtn.display();
     pop();

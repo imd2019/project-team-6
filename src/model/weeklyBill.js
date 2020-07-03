@@ -28,10 +28,11 @@ export class WeeklyBillEvent extends VinduEvent {
 
   display() {
     push();
+    background(19, 19, 37, 220);
     noStroke();
-    fill(21, 21, 21, 150);
+    //fill(19, 19, 37, 220);
     rectMode(CENTER);
-    rect(this.x, this.y, this.boxWidth, 220, 50);
+    // rect(this.x, this.y, this.boxWidth, 220, 50);
     fill("white");
     textSize(16);
     textFont(mainFont);
