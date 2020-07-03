@@ -28,6 +28,7 @@ export class Question {
     for (let i in this.choices) {
       let choice = this.choices[i];
 
+      choice.mouseOver(this.getQuestionX(i), this.choiceY);
       choice.display(this.getQuestionX(i), this.choiceY);
     }
     pop();

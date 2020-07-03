@@ -36,12 +36,12 @@ export class NewsEvent extends VinduEvent {
     textAlign(CENTER);
     text(this.text, this.x, this.y - 40);
 
+    this.okBtn.mouseOver();
     this.okBtn.display();
     pop();
   }
 
   mouseClicked() {
     this.okBtn.mouseClicked();
-    this.okBtn.mouseOver();
   }
 }

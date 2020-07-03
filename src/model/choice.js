@@ -25,12 +25,12 @@ export class Choice {
 
   display(x, y) {
     push();
-    //fill(0, 0, 0, 50);
-    //rect(x, y, this.width, this.height, 8);
+    // fill(0, 0, 0, 80);
+    // rect(x, y, this.width, this.height, 8);
     fill("white");
     text(this.text, x, y, this.width + 50, this.height - 10);
     textFont(fallbackFont);
-    text(this.textTriangle, x - 40, y + 20);
+    text(this.textTriangle, x - (this.width / 3) * 2, y);
     pop();
   }
 
@@ -52,11 +52,11 @@ export class Choice {
     );
   }
 
-  // mouseOver() {
-  //   if (this.hitTest(x, y, mouseX, mouseY)) {
-  //     this.textTriangle = "▶";
-  //   } else {
-  //     this.textTriangle = "";
-  //   }
-  // }
+  mouseOver(x, y) {
+    if (this.hitTest(x, y, mouseX, mouseY)) {
+      this.textTriangle = "▶";
+    } else {
+      this.textTriangle = "";
+    }
+  }
 }

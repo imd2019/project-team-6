@@ -44,12 +44,12 @@ export class ConsequenceEvent extends VinduEvent {
     textAlign(CENTER);
     text(this.choice.consequence, this.x, this.y - 40, this.boxWidth - 50, 200);
 
+    this.okBtn.mouseOver();
     this.okBtn.display();
     pop();
   }
 
   mouseClicked() {
     this.okBtn.mouseClicked();
-    this.okBtn.mouseOver();
   }
 }
