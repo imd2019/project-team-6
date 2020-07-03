@@ -2,6 +2,7 @@ import {
   happinessIcon,
   healthIcon,
   moneyIcon,
+  mainFont,
 } from "../screens/customizationScreen.js";
 
 export class Icons {
@@ -34,6 +35,7 @@ export class Icons {
     image(healthIcon, this.x, this.y + 100);
     image(happinessIcon, this.x, this.y + 200);
     fill(245, 189, 197);
+    textFont(mainFont);
     textAlign(LEFT);
     textSize(16);
     text("Gesundheit", this.x + 50, this.y + 90);
