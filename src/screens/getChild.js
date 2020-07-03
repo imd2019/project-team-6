@@ -8,6 +8,7 @@ import {
   diverseWaiter,
   diverseConsultant,
   child,
+  childStroke,
   noPic,
   femaleStroke,
   maleStroke,
@@ -75,7 +76,7 @@ function draw() {
   backBtn.display();
 
   childPicture.mouseOver(child);
-  childPicture.display(child);
+  childPicture.display(childStroke);
 
   if (player.sex === "f" && player.job.title === "Kellner*in") {
     hasChildPicture.mouseOver(femaleStroke);
