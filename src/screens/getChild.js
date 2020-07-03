@@ -52,13 +52,13 @@ let hasChildPicture = new Pictures(-200, 0, 100, 400, () => {
   setCurrentScreen("getApartment");
 });
 
-let noChildPicture = new Pictures(200, 0, 150, 400, () => {
+let noChildPicture = new Pictures(200, 0, 100, 400, () => {
   player.hasChild = false;
 
   setCurrentScreen("getApartment");
 });
 
-let childPicture = new Pictures(100, 0, 150, 400, () => {
+let childPicture = new Pictures(-120, 100, 90, 400, () => {
   player.hasChild = true;
 
   pushHasChildQuestions();
@@ -75,8 +75,8 @@ function draw() {
   noChild.mouseOver();
   backBtn.display();
 
-  childPicture.mouseOver(child);
-  childPicture.display(childStroke);
+  childPicture.mouseOver(childStroke);
+  childPicture.display(child);
 
   if (player.sex === "f" && player.job.title === "Kellner*in") {
     hasChildPicture.mouseOver(femaleStroke);
