@@ -115,12 +115,11 @@ export class Icons {
       this.happinessChange++;
     }
 
-    for (let i = 0; i < Math.round(this.moneyChange / 10) + 1; i++) {
+    for (let i = 0; i < Math.round(Math.abs(this.moneyChange) / 10) + 1; i++) {
       if (this.moneyChange > 0) {
         this.money++;
         this.moneyChange--;
-      }
-      if (this.moneyChange < 0) {
+      } else if (this.moneyChange < 0) {
         this.money--;
         this.moneyChange++;
       }

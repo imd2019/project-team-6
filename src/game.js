@@ -4,6 +4,7 @@ import { Player } from "./model/player.js";
 import { QuestionEvent } from "./model/questionEvent.js";
 import { ConsequenceEvent } from "./model/consequenceEvent.js";
 import { NewsEvent } from "./model/newsEvent.js";
+import { WeeklyBillEvent } from "./model/weeklyBill.js";
 
 export let player = new Player();
 
@@ -708,6 +709,9 @@ export let upcomingEvents = [
   new QuestionEvent(coronaQuestions[5], 22),
   // new QuestionEvent(coronaQuestions[6], 7),
   new QuestionEvent(coronaQuestions[7], 23),
+  new WeeklyBillEvent("billing time 1 :^)", 7),
+  new WeeklyBillEvent("billing time 2 :^)", 14),
+  new WeeklyBillEvent("billing time 3 :^)", 21),
   new NewsEvent("blacoronabla1", 0),
   new NewsEvent("blacoronabla2", 7),
   new NewsEvent("blacoronabla3", 14),
