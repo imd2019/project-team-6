@@ -40,7 +40,7 @@ let taxConsultant = new Button(
 );
 
 let backBtn = new Button(0, 300, 10, 10, true, "<", () => {
-  setCurrentScreen("getChild");
+  setCurrentScreen("getGender");
 });
 
 let taxConsulantPicture = new Pictures(200, 0, 100, 400, () => {

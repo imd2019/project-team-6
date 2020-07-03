@@ -40,7 +40,7 @@ let noChild = new Button(235, 250, 70, 20, true, "Alleine", () => {
   setCurrentScreen("getApartment");
 });
 
-let backBtn = new Button(0, 400, 120, 50, true, "<", () => {
+let backBtn = new Button(0, 300, 10, 10, true, "<", () => {
   setCurrentScreen("getJob");
 });
 
@@ -81,33 +81,33 @@ function draw() {
   if (player.sex === "f" && player.job.title === "Kellner*in") {
     hasChildPicture.mouseOver(femaleStroke);
     noChildPicture.mouseOver(femaleStroke);
-    hasChildPicture.display(femaleConsultant);
+    hasChildPicture.display(femaleWaiter);
     noChildPicture.display(femaleWaiter);
   } else if (player.sex === "m" && player.job.title === "Kellner*in") {
-    hasChildPicture.mouseOver(femaleStroke);
-    noChildPicture.mouseOver(femaleStroke);
-    hasChildPicture.display(femaleConsultant);
-    noChildPicture.display(femaleWaiter);
+    hasChildPicture.mouseOver(maleStroke);
+    noChildPicture.mouseOver(maleStroke);
+    hasChildPicture.display(maleWaiter);
+    noChildPicture.display(maleWaiter);
   } else if (player.sex === "d" && player.job.title === "Kellner*in") {
-    hasChildPicture.mouseOver(femaleStroke);
-    noChildPicture.mouseOver(femaleStroke);
-    hasChildPicture.display(femaleConsultant);
-    noChildPicture.display(femaleWaiter);
+    hasChildPicture.mouseOver(diverseStroke);
+    noChildPicture.mouseOver(diverseStroke);
+    hasChildPicture.display(diverseWaiter);
+    noChildPicture.display(diverseWaiter);
   } else if (player.sex === "f" && player.job.title === "Steuerberater*in") {
     hasChildPicture.mouseOver(femaleStroke);
     noChildPicture.mouseOver(femaleStroke);
     hasChildPicture.display(femaleConsultant);
-    noChildPicture.display(femaleWaiter);
+    noChildPicture.display(femaleConsultant);
   } else if (player.sex === "m" && player.job.title === "Steuerberater*in") {
-    hasChildPicture.mouseOver(femaleStroke);
-    noChildPicture.mouseOver(femaleStroke);
-    hasChildPicture.display(femaleConsultant);
-    noChildPicture.display(femaleWaiter);
+    hasChildPicture.mouseOver(maleStroke);
+    noChildPicture.mouseOver(maleStroke);
+    hasChildPicture.display(maleConsultant);
+    noChildPicture.display(maleConsultant);
   } else if (player.sex === "d" && player.job.title === "Steuerberater*in") {
-    hasChildPicture.mouseOver(femaleStroke);
-    noChildPicture.mouseOver(femaleStroke);
-    hasChildPicture.display(femaleConsultant);
-    noChildPicture.display(femaleWaiter);
+    hasChildPicture.mouseOver(diverseStroke);
+    noChildPicture.mouseOver(diverseStroke);
+    hasChildPicture.display(diverseConsultant);
+    noChildPicture.display(diverseConsultant);
   }
 }
 

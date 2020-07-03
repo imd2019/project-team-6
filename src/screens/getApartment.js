@@ -27,7 +27,7 @@ let city = new Button(245, 125, 90, 20, true, cityTitle, () => {
   setCurrentScreen("yourMoney");
 });
 
-let backBtn = new Button(0, 400, 120, 50, true, "<", () => {
+let backBtn = new Button(0, 300, 10, 10, true, "<", () => {
   if (player.hasChild) {
     deleteHasChildQuestions();
   }
