@@ -14,8 +14,15 @@ let button = new Button(50, 240, 100, 20, true, "open vindu", () => {
   gameScreen.onStart();
 });
 
+let loop = false;
+
 function draw() {
   clear();
+
+  if (!loop) {
+    loop = true;
+    bgMusic.loop();
+  }
 
   if (opened) {
     openVinduVid.size(windowWidth, windowHeight);
@@ -32,6 +39,7 @@ function mouseClicked() {
   button.mouseClicked();
 }
 let openVinduVid;
+let bgMusic;
 function preload() {
   openVinduVid = createVideo("../../assets/window_opening.mp4", () =>
     openVinduVid.pause()
@@ -39,6 +47,7 @@ function preload() {
 
   openVinduVid.position(0, 0);
   openVinduVid.hide();
+  bgMusic = loadSound("../../assets/sounds/bg1.mp3");
 }
 
 export default { draw, mouseClicked, preload };
