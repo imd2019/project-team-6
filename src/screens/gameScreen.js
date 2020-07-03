@@ -5,20 +5,11 @@ import {
   runNextEvent,
   getCurrentEvent,
   upcomingEvents,
+  getCurrentDay,
 } from "../game.js";
 import { Button } from "../model/button.js";
 
 let timeline = new Timeline(-windowWidth / 2.2, +windowHeight / 2.6);
-
-let runBtn = new Button(
-  width / 2,
-  height / 2,
-  100,
-  20,
-  false,
-  "run",
-  runNextEvent()
-);
 
 export let icons = new Icons(-550, -300, player.money);
 //let gif_createImg;
@@ -43,6 +34,10 @@ function draw() {
   if (!t) {
     t = true;
     console.log(upcomingEvents);
+
+    for (let e of upcomingEvents) {
+      console.log("Event on day " + e.daysUntil);
+    }
   }
   clear();
   // // gif_createImg.size(windowWidth, windowHeight);
@@ -52,6 +47,7 @@ function draw() {
   vid.show();
 
   icons.display();
+  showWeekDay();
   // timeline.display();
   let currentEvent = getCurrentEvent();
   if (currentEvent) {
@@ -64,6 +60,25 @@ function mouseClicked() {
   if (currentEvent) {
     currentEvent.mouseClicked();
   }
+}
+
+let weekDays = [
+  "Sonntag",
+  "Montag",
+  "Dienstag",
+  "Mittwoch",
+  "Donnerstag",
+  "Freitag",
+  "Samstag",
+];
+
+function showWeekDay() {
+  push();
+  let day = weekDays[getCurrentDay() % 7];
+  textSize(20);
+  fill(255);
+  text(day, windowWidth / 2, 250);
+  pop();
 }
 
 export default { draw, mouseClicked, onStart };

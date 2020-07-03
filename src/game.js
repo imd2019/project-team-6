@@ -3,6 +3,7 @@ import { Choice } from "./model/choice.js";
 import { Player } from "./model/player.js";
 import { QuestionEvent } from "./model/questionEvent.js";
 import { ConsequenceEvent } from "./model/consequenceEvent.js";
+import { NewsEvent } from "./model/newsEvent.js";
 
 export let player = new Player();
 
@@ -701,12 +702,16 @@ let currentDay = 0;
 export let upcomingEvents = [
   new QuestionEvent(coronaQuestions[0], 1),
   new QuestionEvent(coronaQuestions[1], 2),
-  new QuestionEvent(coronaQuestions[2], 3),
-  new QuestionEvent(coronaQuestions[3], 4),
+  new QuestionEvent(coronaQuestions[2], 8),
+  new QuestionEvent(coronaQuestions[3], 15),
   // new QuestionEvent(coronaQuestions[4], 5),
-  new QuestionEvent(coronaQuestions[5], 6),
+  new QuestionEvent(coronaQuestions[5], 22),
   // new QuestionEvent(coronaQuestions[6], 7),
-  new QuestionEvent(coronaQuestions[7], 8),
+  new QuestionEvent(coronaQuestions[7], 23),
+  new NewsEvent("blacoronabla1", 0),
+  new NewsEvent("blacoronabla2", 7),
+  new NewsEvent("blacoronabla3", 14),
+  new NewsEvent("blacoronabla4", 21),
 ];
 
 function getNextEvent() {
@@ -720,6 +725,7 @@ function getNextEvent() {
     }
     currentDay++;
   }
+
   for (let i in upcomingEvents) {
     let currentEvent = upcomingEvents[i];
     if (currentEvent.daysUntil === 0) {
@@ -774,17 +780,11 @@ export function deleteHasCarQuestions() {
 }
 
 export function pushHasChildQuestions() {
-  upcomingEvents.push(
-    new QuestionEvent(hasChildQuestions[0], randomFreeDayInWeek(1)),
-    new QuestionEvent(
-      hasChildQuestions[randomFreeDayInWeek(1)],
-      randomFreeDayInWeek(2)
-    ),
-    new QuestionEvent(hasChildQuestions[2], randomFreeDayInWeek(2)),
-    new QuestionEvent(hasChildQuestions[3], randomFreeDayInWeek(3)),
-    new QuestionEvent(hasChildQuestions[4], randomFreeDayInWeek(3)),
-    new QuestionEvent(hasChildQuestions[5], randomFreeDayInWeek(4))
-  );
+  addRandomQuestions(1, hasChildQuestions);
+  addRandomQuestions(2, hasChildQuestions);
+  addRandomQuestions(3, hasChildQuestions);
+  addRandomQuestions(3, hasChildQuestions);
+  addRandomQuestions(4, hasChildQuestions);
 
   week1QuestionsCount++;
   week2QuestionsCount++;
@@ -832,6 +832,18 @@ function addRandomQuestions(week, randomQuestions) {
 function randomFreeDayInWeek(week) {
   let firstDayOfWeek = 7 * (week - 1) + 1;
 
+  let hasWeekFreeDay = true;
+  for (let i = firstDayOfWeek; i <= firstDayOfWeek + 5; i++) {
+    if (!hasUpcomingEventOnDay(i)) {
+      hasWeekFreeDay = false;
+    }
+  }
+
+  if (hasWeekFreeDay) {
+    console.log(upcomingEvents);
+    throw new Error("Week " + week + " doesn't have any free days.");
+  }
+
   while (true) {
     let randomFreeDay = Math.round(random(firstDayOfWeek, firstDayOfWeek + 5));
 
@@ -853,4 +865,8 @@ function hasUpcomingEventOnDay(day) {
 
 export function getUpcomingEvents() {
   return upcomingEvents;
+}
+
+export function getCurrentDay() {
+  return currentDay;
 }
