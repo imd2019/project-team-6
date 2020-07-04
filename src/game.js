@@ -779,7 +779,14 @@ let currentEvent;
 export function runNextEvent() {
   // after making a choice, show animation before showing next event
 
-  currentEvent = getNextEvent();
+  let nextEvent = getNextEvent();
+
+  if (nextEvent.reuseBackground) {
+    nextEvent.backgroundPath = currentEvent.backgroundPath;
+    nextEvent.backgroundImage = currentEvent.backgroundImage;
+  }
+
+  currentEvent = nextEvent;
 }
 
 export function getCurrentEvent() {

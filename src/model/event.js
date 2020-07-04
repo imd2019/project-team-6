@@ -1,7 +1,12 @@
 export class VinduEvent {
-  constructor(daysUntil, backgroundPath = "") {
+  constructor(daysUntil, backgroundPath = "", reuseBackground = false) {
     this.daysUntil = daysUntil;
     this.backgroundPath = backgroundPath;
+    this.reuseBackground = reuseBackground;
+
+    if (this.hasBackgroundImage()) {
+      this.backgroundImage = loadImage(this.backgroundPath);
+    }
   }
 
   display() {

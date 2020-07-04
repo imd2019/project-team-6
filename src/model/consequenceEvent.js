@@ -5,8 +5,8 @@ import { mainFont } from "../screens/customizationScreen.js";
 import { Button } from "../model/button.js";
 
 export class ConsequenceEvent extends VinduEvent {
-  constructor(choice, x, y, backgroundPath) {
-    super(0, backgroundPath);
+  constructor(choice, x, y) {
+    super(0, "", true);
     this.choice = choice;
     this.x = x;
     this.y = y;

@@ -42,27 +42,20 @@ function draw() {
 
   if (!getCurrentEvent().hasBackgroundVideo()) {
     vid.hide();
-  }
-
-  if (!getCurrentEvent().hasBackgroundImage()) {
-    img = null;
-  }
-
-  if (
-    getCurrentEvent().hasBackgroundVideo &&
-    !vid.src.endsWith(getCurrentEvent().backgroundPath)
-  ) {
+  } else if (!vid.src.endsWith(getCurrentEvent().backgroundPath)) {
     vid.src = getCurrentEvent().backgroundPath;
     vid.loop();
     vid.show();
   }
 
-  if (getCurrentEvent().hasBackgroundImage() && !img) {
-    img = loadImage(getCurrentEvent().backgroundPath);
-  }
-
-  if (img) {
-    image(img, windowWidth / 2, windowHeight / 2, windowWidth, windowHeight);
+  if (getCurrentEvent().backgroundImage) {
+    image(
+      getCurrentEvent().backgroundImage,
+      windowWidth / 2,
+      windowHeight / 2,
+      windowWidth,
+      windowHeight
+    );
   }
 
   // // gif_createImg.size(windowWidth, windowHeight);
