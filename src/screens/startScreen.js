@@ -37,7 +37,7 @@ function mouseClicked() {
 let openVinduVid;
 let bgMusic;
 function preload() {
-  openVinduVid = createVideo("./assets/window_opening.mp4", () =>
+  openVinduVid = createVideo("./assets/ui/window_opening.mp4", () =>
     openVinduVid.pause()
   );
 

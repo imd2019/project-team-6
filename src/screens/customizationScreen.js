@@ -29,18 +29,16 @@ export let moneyLarge;
 export let moneyIcon;
 export let happinessIcon;
 export let healthIcon;
+export let timelinePic;
 
 export let mainFont;
-
-export let timelinePic;
+export let fallbackFont;
 
 export let tafelPic;
 export let caritasPic;
 
 export let closedVindu;
 export let openVindu;
-
-export let fallbackFont;
 
 let opacityText = 2;
 let opacityChange = +2;
@@ -94,46 +92,45 @@ function mouseClicked() {
 }
 
 function preload() {
-  maleStroke = loadImage("./assets/maleStroke.png");
-  femaleStroke = loadImage("./assets/femaleStroke.png");
-  diverseStroke = loadImage("./assets/diverseStroke.png");
-  childStroke = loadImage("./assets/childStroke.png");
+  maleStroke = loadImage("./assets/character/maleStroke.png");
+  femaleStroke = loadImage("./assets/character/femaleStroke.png");
+  diverseStroke = loadImage("./assets/character/diverseStroke.png");
+  childStroke = loadImage("./assets/character/childStroke.png");
 
-  male = loadImage("./assets/male.png");
-  female = loadImage("./assets/female.png");
-  diverse = loadImage("./assets/diverse.png");
+  male = loadImage("./assets/character/male.png");
+  female = loadImage("./assets/character/female.png");
+  diverse = loadImage("./assets/character/diverse.png");
 
-  child = loadImage("./assets/child.png");
+  child = loadImage("./assets/character/child.png");
 
-  maleConsultant = loadImage("./assets/maleConsultant.png");
-  femaleConsultant = loadImage("./assets/femaleConsultant.png");
-  diverseConsultant = loadImage("./assets/diverseConsultant.png");
+  maleConsultant = loadImage("./assets/character/maleConsultant.png");
+  femaleConsultant = loadImage("./assets/character/femaleConsultant.png");
+  diverseConsultant = loadImage("./assets/character/diverseConsultant.png");
 
-  maleWaiter = loadImage("./assets/maleWaiter.png");
-  femaleWaiter = loadImage("./assets/femaleWaiter.png");
-  diverseWaiter = loadImage("./assets/diverseWaiter.png");
+  maleWaiter = loadImage("./assets/character/maleWaiter.png");
+  femaleWaiter = loadImage("./assets/character/femaleWaiter.png");
+  diverseWaiter = loadImage("./assets/character/diverseWaiter.png");
 
-  cityPic = loadImage("./assets/cityPic.png");
-  townPic = loadImage("./assets/townPic.png");
+  cityPic = loadImage("./assets/character/cityPic.png");
+  townPic = loadImage("./assets/character/townPic.png");
 
-  noPic = loadImage("./assets/noPic.png");
+  noPic = loadImage("./assets/character/noPic.png");
 
-  moneyLarge = loadImage("./assets/moneyLarge.png");
+  moneyLarge = loadImage("./assets/ui/moneyLarge.png");
 
-  moneyIcon = loadImage("./assets/money.png");
-  happinessIcon = loadImage("./assets/happiness.png");
-  healthIcon = loadImage("./assets/health.png");
+  moneyIcon = loadImage("./assets/ui/money.png");
+  happinessIcon = loadImage("./assets/ui/happiness.png");
+  healthIcon = loadImage("./assets/ui/health.png");
 
-  mainFont = loadFont("./assets/Semplicita_Medium.otf");
+  mainFont = loadFont("./assets/fonts/Semplicita_Medium.otf");
+  fallbackFont = loadFont("./assets/fonts/seguiemj.ttf");
 
-  timelinePic = loadImage("./assets/timeline.png");
+  timelinePic = loadImage("./assets/ui/timeline.png");
 
-  caritasPic = loadImage("./assets/caritasPic.svg");
-  tafelPic = loadImage("./assets/tafelPic.svg");
+  caritasPic = loadImage("./assets/ui/caritasPic.svg");
+  tafelPic = loadImage("./assets/ui/tafelPic.svg");
 
-  closedVindu = loadImage("./assets/fenster_geschlossen.png");
-
-  fallbackFont = loadFont("./assets/seguiemj.ttf");
+  closedVindu = loadImage("./assets/ui/fenster_geschlossen.png");
 }
 
 export function drawPlayer() {
