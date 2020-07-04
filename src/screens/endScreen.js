@@ -22,8 +22,7 @@ function textContent() {
   pop();
 }
 function draw() {
-  clear();
-
+  push();
   background("#1e1f3f");
   textContent();
   if (opacityText <= 250) {
@@ -37,6 +36,7 @@ function draw() {
     image(caritasPic, windowWidth / 2 + 80, windowHeight / 2 + 40, 50, 50);
     image(tafelPic, windowWidth / 2 - 80, windowHeight / 2 + 40, 50, 50);
   }
+  pop();
 }
 
 function mouseClicked() {

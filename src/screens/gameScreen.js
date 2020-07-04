@@ -6,8 +6,10 @@ import {
   getCurrentEvent,
   upcomingEvents,
   getCurrentDay,
+  getUpcomingEvents,
 } from "../game.js";
 import { Button } from "../model/button.js";
+import { setCurrentScreen } from "../../sketch.js";
 
 let timeline = new Timeline(-windowWidth / 2.2, +windowHeight / 2.6);
 
@@ -52,6 +54,10 @@ function draw() {
   let currentEvent = getCurrentEvent();
   if (currentEvent) {
     currentEvent.display();
+  }
+
+  if (getUpcomingEvents().length === 0) {
+    setCurrentScreen("end");
   }
 }
 
