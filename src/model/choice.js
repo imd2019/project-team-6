@@ -28,7 +28,7 @@ export class Choice {
     // fill(0, 0, 0, 80);
     // rect(x, y, this.width, this.height, 8);
     fill("white");
-    text(this.text, x, y, this.width + 50, this.height - 10);
+    text(this.text, x, y, this.width + 20, this.height + 20);
     textFont(fallbackFont);
     text(this.textTriangle, x - (this.width / 3) * 2, y);
     pop();
