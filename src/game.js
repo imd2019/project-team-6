@@ -10,7 +10,7 @@ export let player = new Player();
 
 let coronaQuestions = [
   new Question(
-    "Du hattest einen Urlaub gebucht, allerdings wird gerade empfohlen alle Urlaube zu stornieren. \n \nStornierst du?",
+    "Du hattest einen Urlaub gebucht, allerdings wird gerade empfohlen alle Urlaube zu stornieren. \n \nDu hast lange darauf hingespart, stonierst du trotzdem?",
     [
       new Choice(
         "Ich storniere.",
@@ -191,7 +191,7 @@ let coronaQuestions = [
     windowHeight / 2 - 110
   ),
   new Question(
-    "Deine Freundin ruft dich an und erzählt dir von ihrem gewalttätigen Freund. \n \nLässt du sie bei dir eine Woche unterkommen?",
+    "Deine Freundin ruft dich verängstigt an und erzählt dir von ihrem gewalttätigen Freund. \n \nLässt du sie bei dir eine Woche unterkommen?",
     [
       new Choice(
         "Dafür sind Freunde doch da!",
@@ -544,7 +544,7 @@ let hasChildQuestions = [
     windowHeight / 2 + 110
   ),
   new Question(
-    "Das Essen der Kinder in der Betreuung fällt weg. Um eine weitere Mahlzeit zu stellen musst du mehr Geld ausgeben. \n \nWas tust du?",
+    "Die Nachmittagsbetreuung und damit auch das kostenlose Mittagessen des Kindes fällt weg. \n Du selbst isst nichts zu mittag. Um die Mahlzeit für dein Kind zu stellen musst du mehr Geld ausgeben. \n \nWas tust du?",
     [
       new Choice(
         "Ich lasse die Mahlzeit ausfallen.",
@@ -640,7 +640,7 @@ let hasCarQuestions = [
         1
       ),
       new Choice(
-        "Nein, sie können sich ein Taxi nehmen.",
+        "Ich muss leider arbeiten.",
         "Du hast ein schlechtes Gewissen, aber im Moment hast du dafür keine Zeit oder Geld dafür.",
         -5,
         0,
