@@ -2,7 +2,7 @@ import { VinduEvent } from "./event.js";
 
 export class QuestionEvent extends VinduEvent {
   constructor(question, daysUntil) {
-    super(daysUntil);
+    super(daysUntil, question.backgroundPath);
     this.question = question;
   }
 

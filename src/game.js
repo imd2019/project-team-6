@@ -2,7 +2,6 @@ import { Question } from "./model/question.js";
 import { Choice } from "./model/choice.js";
 import { Player } from "./model/player.js";
 import { QuestionEvent } from "./model/questionEvent.js";
-import { ConsequenceEvent } from "./model/consequenceEvent.js";
 import { NewsEvent } from "./model/newsEvent.js";
 import { WeeklyBillEvent } from "./model/weeklyBill.js";
 
@@ -23,7 +22,8 @@ let coronaQuestions = [
       new Choice("Ich storniere nicht.", "Du hoffst und wartest.", 0, 0, 0, 1),
     ],
     windowWidth / 2,
-    windowHeight / 2
+    windowHeight / 2,
+    "assets/questionBGs/mp4/frage_02.mp4"
   ),
   new Question(
     "Möchtest du dir eine Maske kaufen?",
@@ -57,7 +57,8 @@ let coronaQuestions = [
       ),
     ],
     windowWidth / 2 + 300,
-    windowHeight / 2 + 110
+    windowHeight / 2 + 110,
+    "assets/questionBGs/png/frage_04_grafik.png"
   ),
   new Question(
     "Viele Waren wie Toilettenpapier sind stark nachgefragt. Viele Leute kaufen in größeren Mengen ein, als sie es eigentlich brauchen. \n \nHamsterst du auch?",
@@ -81,7 +82,8 @@ let coronaQuestions = [
       ),
     ],
     windowWidth / 2 + 300,
-    windowHeight / 2 - 110
+    windowHeight / 2 - 110,
+    "assets/questionBGs/png/frage_09_grafik.png"
   ),
   new Question(
     "Die Restaurants haben geschlossen. Du bist jetzt auf Kurzarbeit. \n \nSuchst du dir einen Nebenjob?",
@@ -104,7 +106,8 @@ let coronaQuestions = [
       ),
     ],
     windowWidth / 2 - 300,
-    windowHeight / 2 + 110
+    windowHeight / 2 + 110,
+    "assets/questionBGs/mp4/frage_13.mp4"
   ), //falls nicht schon gekauft oder genäht wurde und es nicht geklaptt hat
   new Question(
     "Möchtest du dir eine Maske kaufen?",
@@ -138,7 +141,8 @@ let coronaQuestions = [
       ),
     ],
     windowWidth / 2 + 300,
-    windowHeight / 2 - 110
+    windowHeight / 2 - 110,
+    "assets/questionBGs/png/frage_26.png"
   ),
   new Question(
     "Freunde laden dich zum Spazieren gehen ein. \n \nGehst du mit?",
@@ -161,7 +165,8 @@ let coronaQuestions = [
       ),
     ],
     windowWidth / 2 - 300,
-    windowHeight / 2 + 110
+    windowHeight / 2 + 110,
+    "assets/questionBGs/mp4/frage_20.mp4"
   ),
   //nur falls obere ja
   new Question(
@@ -188,7 +193,8 @@ let coronaQuestions = [
       ),
     ],
     windowWidth / 2 - 300,
-    windowHeight / 2 - 110
+    windowHeight / 2 - 110,
+    "assets/questionBGs/png/frage_21_grafik.png"
   ),
   new Question(
     "Deine Freundin ruft dich an und erzählt dir von ihrem gewalttätigen Freund. \n \nLässt du sie bei dir eine Woche unterkommen?",
@@ -211,7 +217,8 @@ let coronaQuestions = [
       ),
     ],
     windowWidth / 2 + 300,
-    windowHeight / 2 - 110
+    windowHeight / 2 - 110,
+    "assets/questionBGs/png/frage_22_grafik.png"
   ),
 ];
 
@@ -237,7 +244,8 @@ let randomQuestionsWeek1to2 = [
       ),
     ],
     windowWidth / 2 + 300,
-    windowHeight / 2 - 110
+    windowHeight / 2 - 110,
+    "assets/questionBGs/png/frage_01_grafik.png"
   ),
 
   new Question(
@@ -267,7 +275,8 @@ let randomQuestionsWeek1to2 = [
       ),
     ],
     windowWidth / 2 - 300,
-    windowHeight / 2 - 110
+    windowHeight / 2 - 110,
+    "assets/questionBGs/png/frage_03_grafik.png"
   ),
 
   new Question(
@@ -291,7 +300,8 @@ let randomQuestionsWeek1to2 = [
       ),
     ],
     windowWidth / 2 + 300,
-    windowHeight / 2 - 110
+    windowHeight / 2 - 110,
+    "assets/questionBGs/mp4/frage_05.mp4"
   ),
   new Question(
     "Deine beste Freundin möchte mit dir mittagessen gehen. \n \nGehst du mit?",
@@ -320,7 +330,8 @@ let randomQuestionsWeek1to2 = [
       ),
     ],
     windowWidth / 2 - 300,
-    windowHeight / 2 - 110
+    windowHeight / 2 - 110,
+    "assets/questionBGs/mp4/frage_06.mp4"
   ),
   new Question(
     "Um deine Gesundheit zu verbessern überlegst du, Sport zu machen. Im Fitnessstudio erzielst du schneller Erfolge, es kostet aber auch mehr Geld. \n \nWofür entscheidest du dich?",
@@ -349,7 +360,8 @@ let randomQuestionsWeek1to2 = [
       ),
     ],
     windowWidth / 2 - 300,
-    windowHeight / 2 - 110
+    windowHeight / 2 - 110,
+    "assets/questionBGs/mp4/frage_08.mp4"
   ),
 ];
 
@@ -375,7 +387,8 @@ let randomQuestionsWeek3to4 = [
       ),
     ],
     windowWidth / 2 - 300,
-    windowHeight / 2 + 110
+    windowHeight / 2 + 110,
+    "assets/questionBGs/mp4/frage_07.mp4"
   ),
   new Question(
     "Möchtest du deine Mutter im Altersheim besuchen?",
@@ -398,7 +411,8 @@ let randomQuestionsWeek3to4 = [
       ),
     ],
     windowWidth / 2 + 300,
-    windowHeight / 2 - 110
+    windowHeight / 2 - 110,
+    "assets/questionBGs/mp4/frage_14.mp4"
   ),
   new Question(
     "Das Abflussrohr in deiner Küche ist verstopft. \n \nWas machst du?",
@@ -424,7 +438,8 @@ let randomQuestionsWeek3to4 = [
       ),
     ],
     windowWidth / 2 - 300,
-    windowHeight / 2 - 110
+    windowHeight / 2 - 110,
+    "assets/questionBGs/mp4/frage_16.mp4"
   ),
   new Question(
     "In deiner Stadt ist gerade eine Blutspendeaktion. \n \nGehst du Blutspenden?",
@@ -447,7 +462,8 @@ let randomQuestionsWeek3to4 = [
       ),
     ],
     0,
-    windowHeight / 2 + 110
+    windowHeight / 2 + 110,
+    "assets/questionBGs/png/frage_18_grafik.png"
   ),
   new Question(
     "Du hattest einen Fahrradunfall. \n \nGehst du zum Arzt?",
@@ -474,7 +490,8 @@ let randomQuestionsWeek3to4 = [
       ),
     ],
     windowWidth / 2 - 300,
-    windowHeight / 2 + 110
+    windowHeight / 2 + 110,
+    "assets/questionBGs/mp4/frage_12.mp4"
   ),
 ];
 
@@ -517,7 +534,8 @@ let hasChildQuestions = [
       ),
     ],
     windowWidth / 2 - 300,
-    windowHeight / 2 - 110
+    windowHeight / 2 - 110,
+    "assets/questionBGs/png/frage_10_grafik.png"
   ),
   new Question(
     "Die Schulen sind geschlossen und dein Kind ist daheim. Du musst allerdings arbeiten. \n \nNimmst du dir Urlaub?",
@@ -541,7 +559,8 @@ let hasChildQuestions = [
       ),
     ],
     windowWidth / 2 + 300,
-    windowHeight / 2 + 110
+    windowHeight / 2 + 110,
+    "assets/questionBGs/png/frage_11_grafik.png"
   ),
   new Question(
     "Das Essen der Kinder in der Betreuung fällt weg. Um eine weitere Mahlzeit zu stellen musst du mehr Geld ausgeben. \n \nWas tust du?",
@@ -557,7 +576,8 @@ let hasChildQuestions = [
       new Choice("Ich kaufe mehr ein und koche mehr.", " ", 0, 0, 0, 1),
     ],
     windowWidth / 2 - 300,
-    windowHeight / 2 + 110
+    windowHeight / 2 + 110,
+    "assets/questionBGs/png/frage_15_m_grafik.png"
   ),
   new Question(
     "Dein Kind kommt nicht mit dem Schulstoff zurecht. \n \nBesorgst du einen Nachhilfelehrer?",
@@ -583,7 +603,8 @@ let hasChildQuestions = [
       ),
     ],
     windowWidth / 2 - 300,
-    windowHeight / 2 + 110
+    windowHeight / 2 + 110,
+    "assets/questionBGs/png/frage_23_grafik.png"
   ),
   new Question(
     "Dein Kind muss von Zuhause aus mit einem Tablet arbeiten. Die Schule verteilt 10 Tablets an die Schüler pro Klasse.",
@@ -599,7 +620,8 @@ let hasChildQuestions = [
       ),
     ],
     windowWidth / 2 + 300,
-    windowHeight / 2 - 110
+    windowHeight / 2 - 110,
+    "assets/questionBGs/png/frage_24_grafik.png"
   ),
   //falls kein Tablet bekommen
   new Question(
@@ -623,7 +645,8 @@ let hasChildQuestions = [
       ),
     ],
     windowWidth / 2 + 300,
-    windowHeight / 2 - 110
+    windowHeight / 2 - 110,
+    "assets/questionBGs/png/frage_24_grafik.png"
   ),
 ];
 
@@ -649,7 +672,8 @@ let hasCarQuestions = [
       ),
     ],
     windowWidth / 2 + 300,
-    windowHeight / 2 - 110
+    windowHeight / 2 - 110,
+    "assets/questionBGs/mp4/frage_19.mp4"
   ),
   new Question(
     "Dein Auto geht kaputt, du brauchst es zum Einkaufen. \n \nLässt du es reparieren?",
@@ -672,7 +696,8 @@ let hasCarQuestions = [
       ),
     ],
     windowWidth / 2 - 300,
-    windowHeight / 2 + 110
+    windowHeight / 2 + 110,
+    "assets/questionBGs/mp4/frage_25.mp4"
   ),
   new Question(
     "Der Supermarkt um die Ecke ist teurer aber dafür näher. Der billige Supermarkt ist nur mit der Bahn zu erreichen, da dein Auto noch in der Werkstatt steht.\n \nWas tust du?",
@@ -695,7 +720,8 @@ let hasCarQuestions = [
       ),
     ],
     windowWidth / 2 - 300,
-    windowHeight / 2 - 110
+    windowHeight / 2 - 110,
+    "assets/questionBGs/mp4/frage_27.mp4"
   ),
 ];
 

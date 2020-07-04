@@ -1,6 +1,7 @@
 export class VinduEvent {
-  constructor(daysUntil) {
+  constructor(daysUntil, backgroundPath = "") {
     this.daysUntil = daysUntil;
+    this.backgroundPath = backgroundPath;
   }
 
   display() {
@@ -9,5 +10,13 @@ export class VinduEvent {
 
   mouseClicked() {
     console.log("not implemented");
+  }
+
+  hasBackgroundVideo() {
+    return this.backgroundPath.endsWith("mp4");
+  }
+
+  hasBackgroundImage() {
+    return this.backgroundPath.endsWith("png");
   }
 }

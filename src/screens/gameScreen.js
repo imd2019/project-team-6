@@ -21,20 +21,16 @@ function onStart() {
   // gif_createImg = createImg("../../assets/testScreen.gif", "test screen");
   // gif_createImg.position(0, 0);
   // gif_createImg.hide();
-  vid = createVideo("../../assets/questionBGs/mp4/frage_05.mp4", () =>
-    vid.loop()
-  );
+  vid = createVideo("assets/questionBGs/mp4/frage_05.mp4");
   vid.position(0, 0);
   vid.hide();
-
-  setTimeout(() => {
-    vid.src = "../../assets//questionsBGs/mp4/frage_27.mp4";
-    vid.loop();
-  }, 1000 * 10);
 }
 
 let t = false;
+let img;
 function draw() {
+  clear();
+
   if (!t) {
     t = true;
     console.log(upcomingEvents);
@@ -43,12 +39,36 @@ function draw() {
       console.log("Event on day " + e.daysUntil);
     }
   }
-  clear();
+
+  if (!getCurrentEvent().hasBackgroundVideo()) {
+    vid.hide();
+  }
+
+  if (!getCurrentEvent().hasBackgroundImage()) {
+    img = null;
+  }
+
+  if (
+    getCurrentEvent().hasBackgroundVideo &&
+    !vid.src.endsWith(getCurrentEvent().backgroundPath)
+  ) {
+    vid.src = getCurrentEvent().backgroundPath;
+    vid.loop();
+    vid.show();
+  }
+
+  if (getCurrentEvent().hasBackgroundImage() && !img) {
+    img = loadImage(getCurrentEvent().backgroundPath);
+  }
+
+  if (img) {
+    image(img, windowWidth / 2, windowHeight / 2, windowWidth, windowHeight);
+  }
+
   // // gif_createImg.size(windowWidth, windowHeight);
   // // gif_createImg.show();
 
   vid.size(windowWidth, windowHeight);
-  vid.show();
 
   icons.display();
   showWeekDay();

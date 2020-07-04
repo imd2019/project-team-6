@@ -37,7 +37,12 @@ export class Choice {
   mouseClicked(question, x, y) {
     if (this.hitTest(x, y, mouseX, mouseY)) {
       getUpcomingEvents().push(
-        new ConsequenceEvent(this, question.x, question.y)
+        new ConsequenceEvent(
+          this,
+          question.x,
+          question.y,
+          question.backgroundPath
+        )
       );
       runNextEvent();
     }
