@@ -21,12 +21,14 @@ function onStart() {
   // gif_createImg = createImg("../../assets/testScreen.gif", "test screen");
   // gif_createImg.position(0, 0);
   // gif_createImg.hide();
-  vid = createVideo("../../assets/questionBGs/frage_05.mp4", () => vid.loop());
+  vid = createVideo("../../assets/questionBGs/mp4/frage_05.mp4", () =>
+    vid.loop()
+  );
   vid.position(0, 0);
   vid.hide();
 
   setTimeout(() => {
-    vid.src = "../../assets//questionsBGs/frage_27.mp4";
+    vid.src = "../../assets//questionsBGs/mp4/frage_27.mp4";
     vid.loop();
   }, 1000 * 10);
 }
