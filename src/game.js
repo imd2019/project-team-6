@@ -9,7 +9,7 @@ export let player = new Player();
 
 let coronaQuestions = [
   new Question(
-    "Du hattest einen Urlaub gebucht, allerdings wird gerade empfohlen alle Urlaube zu stornieren. \n \nDu hast lange darauf hingespart, stonierst du trotzdem?",
+    "Du hattest einen Urlaub gebucht, allerdings wird gerade empfohlen alle Urlaube zu stornieren. \n \nDu hast lange darauf hingespart, stornierst du trotzdem?",
     [
       new Choice(
         "Ich storniere.",

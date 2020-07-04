@@ -1,6 +1,6 @@
 import { VinduEvent } from "./event.js";
 import { runNextEvent } from "../game.js";
-import { mainFont } from "../screens/customizationScreen.js";
+import { mainFont, newsPic } from "../screens/customizationScreen.js";
 import { Button } from "./button.js";
 
 export class NewsEvent extends VinduEvent {
@@ -11,7 +11,7 @@ export class NewsEvent extends VinduEvent {
     this.text = text;
     this.okBtn = new Button(
       this.x - windowWidth / 2,
-      this.y - 40 - windowHeight / 2,
+      this.y - 40,
       20,
       20,
       false,
@@ -27,10 +27,12 @@ export class NewsEvent extends VinduEvent {
     push();
     background(19, 19, 37, 220);
     noStroke();
+    image(newsPic, windowWidth / 2, windowHeight / 2);
+
     // fill(19, 19, 37, 220);
     // rectMode(CENTER);
     // rect(this.x, this.y, windowWidth, windowHeight + 200);
-    fill("white");
+    fill(0);
     textSize(16);
     textFont(mainFont);
     textAlign(CENTER);

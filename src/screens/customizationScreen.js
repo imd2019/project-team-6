@@ -30,6 +30,7 @@ export let moneyIcon;
 export let happinessIcon;
 export let healthIcon;
 export let timelinePic;
+export let newsPic;
 
 export let mainFont;
 export let fallbackFont;
@@ -121,6 +122,7 @@ function preload() {
   moneyIcon = loadImage("./assets/ui/money.png");
   happinessIcon = loadImage("./assets/ui/happiness.png");
   healthIcon = loadImage("./assets/ui/health.png");
+  newsPic = loadImage("./assets/ui/news.png");
 
   mainFont = loadFont("./assets/fonts/Semplicita_Medium.otf");
   fallbackFont = loadFont("./assets/fonts/seguiemj.ttf");
