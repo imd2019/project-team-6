@@ -9,7 +9,7 @@ import getApartment from "./src/screens/getApartment.js";
 import yourMoney from "./src/screens/yourMoney.js";
 import { Button } from "./src/model/button.js";
 
-let currentScreen = "end";
+let currentScreen = "start";
 
 let exitBtn = new Button(550, -325, 10, 5, true, "Exit", () =>
   window.location.reload()
