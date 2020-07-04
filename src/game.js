@@ -14,13 +14,13 @@ let coronaQuestions = [
     [
       new Choice(
         "Ich storniere.",
-        "Du ärgerst dich, dass du deinen Urlaub stornieren musstest",
+        "Du ärgerst dich, dass du deinen Urlaub stornieren musstest.",
         -5,
         0,
         0,
         1
       ),
-      new Choice("Ich storniere nicht.", "Du hoffst und wartest", 0, 0, 0, 1),
+      new Choice("Ich storniere nicht.", "Du hoffst und wartest.", 0, 0, 0, 1),
     ],
     windowWidth / 2,
     windowHeight / 2
@@ -217,7 +217,7 @@ let coronaQuestions = [
 
 let randomQuestionsWeek1to2 = [
   new Question(
-    "Deine Mutter liegt krank im Altersheim. Um sie zu besuchen musst du dich krankschreiben lassen. \n \nWas machst du?",
+    "Deine Mutter liegt krank im Altersheim. Um sie zu besuchen musst du dich krankschreiben lassen. \n \nBesuchst du sie?",
     [
       new Choice(
         "Ich besuche sie.",
@@ -246,7 +246,7 @@ let randomQuestionsWeek1to2 = [
       new Choice(
         "Ich gehe mit.",
         [
-          "Du musstest einen Babysitter besorgen. Der hat 80€ gekostet und du hast 60€ in der Bar gelassen.",
+          "Du musstest einen Babysitter besorgen. Der hat dich 80€ gekostet und du hast 60€ in der Bar gelassen.",
           "Du hast 60€ in der Bar gelassen und du hast deine Freunde wieder gesehen.",
         ],
         [0, 5],
@@ -258,7 +258,7 @@ let randomQuestionsWeek1to2 = [
         "Ich bleibe daheim.",
         [
           "Du bist glücklich den Abend mit dem Kind zu verbringen, vermisst aber deine Freunde.",
-          "Du fühlst dich alleine, aber sparst wenigstens ein Geld.",
+          "Du fühlst dich alleine, aber sparst wenigstens Geld.",
         ],
         [0, -5],
         0,
@@ -282,7 +282,7 @@ let randomQuestionsWeek1to2 = [
         1
       ),
       new Choice(
-        "Ich benutze weiterhin die alten.",
+        "Ich benutze weiterhin die Alten.",
         "Nach der Arbeit schmerzen deine Füße sehr.",
         -5,
         0,
@@ -294,13 +294,13 @@ let randomQuestionsWeek1to2 = [
     windowHeight / 2 - 110
   ),
   new Question(
-    "Deine beste Freundin möchte mit dir mittag essen gehen. \n \nGehst du mit?",
+    "Deine beste Freundin möchte mit dir mittagessen gehen. \n \nGehst du mit?",
     [
       new Choice(
         "Ich gehe mit.",
         [
-          "Endlich. Du siehst deine beste Freundin wieder, ihr habt einen schönen Tag, aber hast schon wieder Geld ausgegeben. ",
-          "Endlich. Du siehst deine beste Freundin wieder, ihr habt einen schönen Tag, aber hast schon wieder Geld ausgegeben.",
+          "Endlich. Du siehst deine beste Freundin wieder, ihr habt einen schönen Tag, aber du hast schon wieder Geld ausgegeben. ",
+          "Endlich. Du siehst deine beste Freundin wieder, ihr habt einen schönen Tag, aber du hast schon wieder Geld ausgegeben.",
         ],
         5,
         [-115, 35],
@@ -323,7 +323,7 @@ let randomQuestionsWeek1to2 = [
     windowHeight / 2 - 110
   ),
   new Question(
-    "Um deine Gesundheit zu verbessern überlegst du, Sport zu machen. Im Fitnessstudio erzielst du schneller Erfolge, es kostet aber auch mehr Geld. \n \nFür was entscheidest du dich?",
+    "Um deine Gesundheit zu verbessern überlegst du, Sport zu machen. Im Fitnessstudio erzielst du schneller Erfolge, es kostet aber auch mehr Geld. \n \nWofür entscheidest du dich?",
     [
       new Choice(
         "Ich mache Workouts daheim.",
@@ -340,7 +340,7 @@ let randomQuestionsWeek1to2 = [
         "Ich melde mich im Fitnessstudio an.",
         [
           "Du bist total motiviert und fühlst dich fit. Deine Investition hat sich gelohnt.",
-          "Du hast keine Disziplin, um regelmäßig ins Fitnessstudio zu gehen, bist enttäuscht von dir selbst und hast Geld aus dem Fenster geschmissen.",
+          "Du hast keine Disziplin, um regelmäßig ins Fitnessstudio zu gehen. Du bist enttäuscht von dir selbst und hast Geld aus dem Fenster geschmissen.",
         ],
         [5, -5],
         80,
@@ -359,7 +359,7 @@ let randomQuestionsWeek3to4 = [
     [
       new Choice(
         "Ich warte noch.",
-        "Du hast zwei Wochen Zeit, vergiss es nicht.",
+        "Du hast zwei Wochen Zeit, vergiss es nicht!",
         0,
         0,
         0,
@@ -367,7 +367,7 @@ let randomQuestionsWeek3to4 = [
       ),
       new Choice(
         "Ich bezahle sofort.",
-        "Du hast keine Schulden mehr, aber die Rechnung war sehr hoch.",
+        "Du hast keine Schulden mehr, aber die Rechnung war ziemlich hoch.",
         -5,
         -175,
         0,
@@ -390,7 +390,7 @@ let randomQuestionsWeek3to4 = [
       ),
       new Choice(
         "Ich besuche sie nicht.",
-        "Sie tut dir leid und du weißt nicht wann du sie das nächste mal wieder siehst. Sie vermisst dich.",
+        "Sie tut dir leid. Du weißt nicht, wann du sie das nächste mal wieder siehst. Sie vermisst dich.",
         -10,
         0,
         0,
@@ -412,10 +412,10 @@ let randomQuestionsWeek3to4 = [
         1
       ),
       new Choice(
-        "ch versuche es selbst.",
+        "Ich versuche es selbst.",
         [
           "Du bist stolz auf dich, es hat funktioniert. Das Rohr ist frei und du hast die den Handwerker gespart.",
-          "Du hast es versucht, es ha nicht geklappt. Das Rohr ist immer noch verstopft und es ist schlimmer als vorher. Du musst einen Handwerker rufen.",
+          "Du hast es versucht, es hat nicht geklappt. Das Rohr ist immer noch verstopft und es ist schlimmer als vorher. Du musst einen Handwerker rufen.",
         ],
         [15, -10],
         [0, 140],
@@ -439,7 +439,7 @@ let randomQuestionsWeek3to4 = [
       ),
       new Choice(
         "Nein.",
-        "Du hast momentan keine Zeit und kein Kopf dafür.",
+        "Du hast momentan keine Zeit und keinen Kopf dafür.",
         0,
         0,
         0,
@@ -464,8 +464,8 @@ let randomQuestionsWeek3to4 = [
         "Nein, ich gehe nicht zum Arzt.",
 
         [
-          "Es hat sich entzündet. Wärst du nur besser zum Arzt gegangen. Jetzt hast du schmerzen.",
-          "Du fühlst dich gut, du konntest arbeiten gehen und warst nicht unnötig beim Arzt.",
+          "Es hat sich entzündet. Wärst du nur besser zum Arzt gegangen. Jetzt hast du Schmerzen.",
+          "Du fühlst dich gut. Du konntest arbeiten gehen und warst nicht unnötig beim Arzt.",
         ],
         [-10, 10],
         0,
@@ -531,7 +531,7 @@ let hasChildQuestions = [
         1
       ),
       new Choice(
-        "Ich nehme mir Urlaub für die Woche, um auf mein Kind aufpassen zu können.",
+        "Ich nehme mir Urlaub für die Woche, um auf mein Kind aufzupassen.",
 
         "Du bist unzufrieden mit der Situation, dass die Schulen geschlossen haben.",
         -5,
@@ -560,7 +560,7 @@ let hasChildQuestions = [
     windowHeight / 2 + 110
   ),
   new Question(
-    "Dein Kind kommt nicht mit dem Schulstoff zurecht. \n \nHeuerst du einen Nachhilfelehrer an?",
+    "Dein Kind kommt nicht mit dem Schulstoff zurecht. \n \nBesorgst du einen Nachhilfelehrer?",
     [
       new Choice(
         "Ja, ich hole Online-Nachhilfe.",
@@ -571,10 +571,10 @@ let hasChildQuestions = [
         1
       ),
       new Choice(
-        "Nein, ich versuche selber zu helfen.",
+        "Nein, ich versuche selbst zu helfen.",
         [
           "Du sparst Geld und du bist froh, dass du helfen kannst.",
-          "Es tut dir leid, dass du deinem Kind nicht helfen kannst. Du machst dir Sorgen um die Schulbildung und ist für beide Parteien frustrierend.",
+          "Es tut dir leid, dass du deinem Kind nicht helfen kannst. Du machst dir Sorgen um die Schulbildung, es ist für beide Parteien frustrierend.",
         ],
         [10, -10],
         0,
@@ -633,7 +633,7 @@ let hasCarQuestions = [
     [
       new Choice(
         "Wofür ist Familie da?",
-        "Du erwartest das selbe von ihnen und freust dich sie wieder zu sehen, aber musst auftanken.",
+        "Du erwartest dasselbe von ihnen und freust dich sie wieder zu sehen. Dafür musstest du aber auftanken.",
         5,
         -20,
         -10,
@@ -641,7 +641,7 @@ let hasCarQuestions = [
       ),
       new Choice(
         "Nein, sie können sich ein Taxi nehmen.",
-        "Du hast ein schlechtes Gewissen, aber im Moment hast du dafür keine Zeit und Geld dafür.",
+        "Du hast ein schlechtes Gewissen, aber im Moment hast du dafür keine Zeit oder Geld dafür.",
         -5,
         0,
         0,
@@ -656,7 +656,7 @@ let hasCarQuestions = [
     [
       new Choice(
         "Ich bringe es in die Werkstatt.",
-        "Dein Auto ist in der Werkstatt. Aber dein Alltag lässt sich nun schlechter gestalten.",
+        "Dein Auto ist in der Werkstatt. Dein Alltag lässt sich nun schlechter gestalten.",
         5,
         -200,
         0,
@@ -664,7 +664,7 @@ let hasCarQuestions = [
       ),
       new Choice(
         "Ich bringe es nicht in die Werkstatt.",
-        "Dein Alltag wird schwieriger zu gestalten, da du nicht mehr mobil bist.",
+        "Dein Alltag wird schwieriger zu gestalten, da du nicht mehr so mobil bist.",
         -10,
         0,
         0,
