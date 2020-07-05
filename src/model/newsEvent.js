@@ -4,26 +4,24 @@ import { mainFont, newsPic } from "../screens/customizationScreen.js";
 import { Button } from "./button.js";
 
 export class NewsEvent extends VinduEvent {
-  constructor(text, daysUntil) {
+  constructor(text, daysUntil, xOffset, yOffset) {
     super(daysUntil);
-    this.x = windowWidth / 2;
-    this.y = windowHeight / 2;
+
+    this.x = 0;
+    this.y = 0;
     this.text = text;
-    this.okBtn = new Button(
-      this.x - windowWidth / 2,
-      this.y - 40,
-      20,
-      20,
-      false,
-      "Ok",
-      () => {
-        runNextEvent();
-      }
-    );
+    this.xOffset = xOffset;
+    this.yOffset = yOffset;
+    //button position ändern
+    this.okBtn = new Button(this.x, this.y, 20, 20, false, "Ok", () => {
+      runNextEvent();
+    });
     this.okBtn.textColor = color(255);
   }
 
   display() {
+    this.x = windowWidth / 2 + this.xOffset;
+    this.y = windowHeight / 2 + this.yOffset;
     push();
     background(19, 19, 37, 220);
     noStroke();
@@ -35,8 +33,8 @@ export class NewsEvent extends VinduEvent {
     fill(0);
     textSize(16);
     textFont(mainFont);
-    textAlign(CENTER);
-    text(this.text, this.x, this.y - 40);
+    textAlign(LEFT);
+    text(this.text, this.x - 60, this.y - 80);
 
     this.okBtn.mouseOver();
     this.okBtn.display();

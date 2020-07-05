@@ -738,10 +738,25 @@ export let upcomingEvents = [
   new WeeklyBillEvent("billing time 1 :^)", 7),
   new WeeklyBillEvent("billing time 2 :^)", 14),
   new WeeklyBillEvent("billing time 3 :^)", 21),
-  new NewsEvent("blacoronabla1", 0),
-  new NewsEvent("blacoronabla2", 7),
-  new NewsEvent("blacoronabla3", 14),
-  new NewsEvent("blacoronabla4", 21),
+  new NewsEvent(
+    "Corona ist als Pandemie in DE angekommen. \nPreise für Atemschutzmaske versechstfacht",
+    0,
+    0,
+    0
+  ),
+  new NewsEvent("Supermarktregale leer gefegt. \n Schulen schließen.", 7, 0, 0),
+  new NewsEvent(
+    "Geschäfte müssen schließen. \n Versammlungsverbote wurden beschlossen.",
+    14,
+    0,
+    0
+  ),
+  new NewsEvent(
+    "Besuchsverbot in Altersheimen. \n Kontaktverbote wurden beschlossen. \n Häusliche Gewalt so hoch wie nie.",
+    21,
+    0,
+    0
+  ),
 ];
 
 function getNextEvent() {
