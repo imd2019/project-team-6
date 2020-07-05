@@ -95,10 +95,11 @@ let weekDays = [
 
 function showWeekDay() {
   push();
+  textAlign(CENTER);
   let day = weekDays[getCurrentDay() % 7];
   textSize(20);
   fill(255);
-  text(day, windowWidth / 2, 250);
+  text(day, windowWidth / 2, 60);
   pop();
 }
 
