@@ -42,7 +42,7 @@ export class NewsEvent extends VinduEvent {
     textSize(16);
     textFont(boldFont);
     textAlign(LEFT);
-    text(this.text, this.x - 60, this.y - 80);
+    text(this.text, this.x - 60, this.y - 60);
 
     this.okBtn.mouseOver();
     this.okBtn.display();
