@@ -192,7 +192,7 @@ let coronaQuestions = [
         0.8
       ),
     ],
-    windowWidth / 2 - 300,
+    windowWidth / 2,
     windowHeight / 2 - 110,
     "assets/questionBGs/png/frage_21_grafik.png"
   ),
@@ -274,7 +274,7 @@ let randomQuestionsWeek1to2 = [
         1
       ),
     ],
-    windowWidth / 2 - 300,
+    windowWidth / 2,
     windowHeight / 2 - 110,
     "assets/questionBGs/png/frage_03_grafik.png"
   ),
@@ -329,7 +329,7 @@ let randomQuestionsWeek1to2 = [
         1
       ),
     ],
-    windowWidth / 2 - 300,
+    windowWidth / 2,
     windowHeight / 2 - 110,
     "assets/questionBGs/mp4/frage_06.mp4"
   ),
@@ -359,7 +359,7 @@ let randomQuestionsWeek1to2 = [
         0.5
       ),
     ],
-    windowWidth / 2 - 300,
+    windowWidth / 2,
     windowHeight / 2 - 110,
     "assets/questionBGs/mp4/frage_08.mp4"
   ),
@@ -437,7 +437,7 @@ let randomQuestionsWeek3to4 = [
         0.5
       ),
     ],
-    windowWidth / 2 - 300,
+    windowWidth / 2,
     windowHeight / 2 - 110,
     "assets/questionBGs/mp4/frage_16.mp4"
   ),
@@ -533,7 +533,7 @@ let hasChildQuestions = [
         0.8
       ),
     ],
-    windowWidth / 2 - 300,
+    windowWidth / 2,
     windowHeight / 2 - 110,
     "assets/questionBGs/png/frage_10_grafik.png"
   ),
@@ -719,7 +719,7 @@ let hasCarQuestions = [
         1
       ),
     ],
-    windowWidth / 2 - 300,
+    windowWidth / 2,
     windowHeight / 2 - 110,
     "assets/questionBGs/mp4/frage_27.mp4"
   ),
