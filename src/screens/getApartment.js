@@ -35,7 +35,7 @@ let backBtn = new Button(0, 300, 10, 10, true, "<", () => {
   setCurrentScreen("getChild");
 });
 
-let townPicture = new Pictures(-200, 0, 100, 400, () => {
+let townPicture = new Pictures(-200, 0, 310, 200, () => {
   player.apartment = new Apartment(530, 121, townTitle, true);
 
   pushHasCarQuestions();
@@ -43,7 +43,7 @@ let townPicture = new Pictures(-200, 0, 100, 400, () => {
   setCurrentScreen("yourMoney");
 });
 
-let cityPicture = new Pictures(200, 0, 150, 400, () => {
+let cityPicture = new Pictures(200, 0, 310, 200, () => {
   player.apartment = new Apartment(1030, 121, cityTitle, false);
 
   setCurrentScreen("yourMoney");
