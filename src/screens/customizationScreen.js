@@ -5,7 +5,9 @@ export let male;
 export let female;
 export let diverse;
 
-export let child;
+export let maleStroke;
+export let femaleStroke;
+export let diverseStroke;
 
 export let maleConsultant;
 export let femaleConsultant;
@@ -15,11 +17,6 @@ export let maleWaiter;
 export let femaleWaiter;
 export let diverseWaiter;
 
-export let maleStroke;
-export let femaleStroke;
-export let diverseStroke;
-export let childStroke;
-
 export let maleWaiterStroke;
 export let femaleWaiterStroke;
 export let diverseWaiterStroke;
@@ -27,6 +24,22 @@ export let diverseWaiterStroke;
 export let maleConsultantStroke;
 export let femaleConsultantStroke;
 export let diverseConsultantStroke;
+
+export let maleWaiterChild;
+export let femaleWaiterChild;
+export let diverseWaiterChild;
+
+export let maleConsultantChild;
+export let femaleConsultantChild;
+export let diverseConsultantChild;
+
+export let maleWaiterChildStroke;
+export let femaleWaiterChildStroke;
+export let diverseWaiterChildStroke;
+
+export let maleConsultantChildStroke;
+export let femaleConsultantChildStroke;
+export let diverseConsultantChildStroke;
 
 export let townPic;
 export let cityPic;
@@ -105,13 +118,42 @@ function preload() {
   maleStroke = loadImage("./assets/character/maleStroke.png");
   femaleStroke = loadImage("./assets/character/femaleStroke.png");
   diverseStroke = loadImage("./assets/character/diverseStroke.png");
-  childStroke = loadImage("./assets/character/childStroke.png");
 
   male = loadImage("./assets/character/male.png");
   female = loadImage("./assets/character/female.png");
   diverse = loadImage("./assets/character/diverse.png");
 
-  child = loadImage("./assets/character/child.png");
+  maleConsultantChild = loadImage("./assets/character/maleConsultantChild.png");
+  femaleConsultantChild = loadImage(
+    "./assets/character/femaleConsultantChild.png"
+  );
+  diverseConsultantChild = loadImage(
+    "./assets/character/diverseConsultantChild.png"
+  );
+
+  maleConsultantChildStroke = loadImage(
+    "./assets/character/maleConsultantChildStroke.png"
+  );
+  femaleConsultantChildStroke = loadImage(
+    "./assets/character/femaleConsultantChildStroke.png"
+  );
+  diverseConsultantChildStroke = loadImage(
+    "./assets/character/diverseConsultantChildStroke.png"
+  );
+
+  maleWaiterChild = loadImage("./assets/character/maleWaiterChild.png");
+  femaleWaiterChild = loadImage("./assets/character/femaleWaiterChild.png");
+  diverseWaiterChild = loadImage("./assets/character/diverseWaiterChild.png");
+
+  maleWaiterChildStroke = loadImage(
+    "./assets/character/maleWaiterChildStroke.png"
+  );
+  femaleWaiterChildStroke = loadImage(
+    "./assets/character/femaleWaiterChildStroke.png"
+  );
+  diverseWaiterChildStroke = loadImage(
+    "./assets/character/diverseWaiterChildStroke.png"
+  );
 
   maleConsultant = loadImage("./assets/character/maleConsultant.png");
   femaleConsultant = loadImage("./assets/character/femaleConsultant.png");
