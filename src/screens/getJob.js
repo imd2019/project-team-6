@@ -64,12 +64,12 @@ function draw() {
     waiterPicture.mouseOver(femaleWaiterStroke);
     taxConsulantPicture.display(femaleConsultant);
     waiterPicture.display(femaleWaiter);
-  } else if ((player.sex = "d")) {
+  } else if (player.sex === "d") {
     taxConsulantPicture.mouseOver(diverseConsultantStroke);
     waiterPicture.mouseOver(diverseWaiterStroke);
     taxConsulantPicture.display(diverseConsultant);
     waiterPicture.display(diverseWaiter);
-  } else if ((player.sex = "m")) {
+  } else if (player.sex === "m") {
     taxConsulantPicture.mouseOver(maleConsultantStroke);
     waiterPicture.mouseOver(maleWaiterStroke);
     taxConsulantPicture.display(maleConsultant);
