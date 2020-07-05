@@ -537,7 +537,7 @@ let hasChildQuestions = [
     ],
     windowWidth / 2 - 300,
     windowHeight / 2 + 110,
-    "png/frage_15_m_grafik.png"
+    "png/frage_15_grafik.png"
   ),
 
   new Question(
