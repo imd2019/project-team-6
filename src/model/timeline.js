@@ -1,19 +1,27 @@
-import { timelinePic } from "../screens/customizationScreen.js";
+import { mainFont } from "../screens/customizationScreen.js";
 
 export class Timeline {
-  constructor(xOffset, yOffset, date, day) {
+  constructor(xOffset, yOffset) {
     this.xOffset = xOffset;
     this.yOffset = yOffset;
-    this.date = date;
-    this.day = day;
+    this.weekDays = [
+      "Sonntag",
+      "Montag",
+      "Dienstag",
+      "Mittwoch",
+      "Donnerstag",
+      "Freitag",
+      "Samstag",
+    ];
     this.distance = 2;
     this.x = 0;
     this.y = 0;
   }
-  display() {
+  display(day, date) {
     this.x = windowWidth / 2 + this.xOffset;
     this.y = windowHeight / 2 + this.yOffset;
     push();
+    textFont(mainFont);
     noStroke();
     rectMode(CENTER);
     fill(245, 189, 197);
@@ -23,10 +31,10 @@ export class Timeline {
     textAlign(CENTER);
     textSize(11);
     fill(245, 189, 197);
-    text(this.day, this.x, this.y - 16);
+    text(day, this.x, this.y - 16);
     fill(222, 70, 90);
     textSize(24);
-    text(this.date, this.x, this.y + 16);
+    text(date, this.x, this.y + 16);
 
     pop();
   }
@@ -209,9 +217,11 @@ export class Timeline {
         this.x + 580 * this.distance,
         this.y + 10 * this.distance
       );
-      fill(222, 70, 90);
-      noStroke();
-      ellipse(this.x + (40 + dotChange) * this.distance, this.y, 10, 10);
+      if (this.date > 0) {
+        fill(222, 70, 90);
+        noStroke();
+        ellipse(this.x + (40 + dotChange) * this.distance, this.y, 10, 10);
+      }
       pop();
     }
   }

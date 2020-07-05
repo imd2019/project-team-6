@@ -21,9 +21,7 @@ let weekDays = [
   "Samstag",
 ];
 
-let day = weekDays[getCurrentDay() % 7];
-let date = getCurrentDay();
-let timeline = new Timeline(-550, 300, date, day);
+let timeline = new Timeline(-550, 300);
 
 export let icons = new Icons(-550, -300, player.money);
 //let gif_createImg;
@@ -42,7 +40,7 @@ let t = false;
 let img;
 function draw() {
   clear();
-
+  console.log(timeline.date + getCurrentDay());
   if (!t) {
     t = true;
     console.log(upcomingEvents);
@@ -78,8 +76,10 @@ function draw() {
   icons.display();
   showWeekDay();
 
-  timeline.display();
+  let day = weekDays[getCurrentDay() % 7];
+  timeline.display(day, getCurrentDay());
   timeline.mouseOver();
+
   let currentEvent = getCurrentEvent();
   if (currentEvent) {
     currentEvent.display();
@@ -96,7 +96,6 @@ function mouseClicked() {
     currentEvent.mouseClicked();
   }
 }
-
 function showWeekDay() {
   push();
   textAlign(CENTER);
