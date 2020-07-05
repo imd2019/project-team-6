@@ -7,9 +7,12 @@ import {
   femaleConsultant,
   diverseWaiter,
   diverseConsultant,
-  femaleStroke,
-  maleStroke,
-  diverseStroke,
+  maleWaiterStroke,
+  femaleWaiterStroke,
+  diverseWaiterStroke,
+  maleConsultantStroke,
+  femaleConsultantStroke,
+  diverseConsultantStroke,
 } from "./customizationScreen.js";
 import { player } from "../game.js";
 import { Job } from "../model/job.js";
@@ -57,20 +60,20 @@ let waiterPicture = new Pictures(-200, 0, 100, 400, () => {
 function draw() {
   background("#1e1f3f");
   if (player.sex === "f") {
-    taxConsulantPicture.mouseOver(femaleStroke);
-    waiterPicture.mouseOver(femaleStroke);
+    taxConsulantPicture.mouseOver(femaleConsultantStroke);
+    waiterPicture.mouseOver(femaleWaiterStroke);
     taxConsulantPicture.display(femaleConsultant);
     waiterPicture.display(femaleWaiter);
-  } else if ((player.sex = "m")) {
-    taxConsulantPicture.mouseOver(maleStroke);
-    waiterPicture.mouseOver(maleStroke);
-    taxConsulantPicture.display(maleConsultant);
-    waiterPicture.display(maleWaiter);
   } else if ((player.sex = "d")) {
-    taxConsulantPicture.mouseOver(diverseStroke);
-    waiterPicture.mouseOver(diverseStroke);
+    taxConsulantPicture.mouseOver(diverseConsultantStroke);
+    waiterPicture.mouseOver(diverseWaiterStroke);
     taxConsulantPicture.display(diverseConsultant);
     waiterPicture.display(diverseWaiter);
+  } else if ((player.sex = "m")) {
+    taxConsulantPicture.mouseOver(maleConsultantStroke);
+    waiterPicture.mouseOver(maleWaiterStroke);
+    taxConsulantPicture.display(maleConsultant);
+    waiterPicture.display(maleWaiter);
   }
   headline.display();
   waiter.display();
