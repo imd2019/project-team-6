@@ -6,7 +6,6 @@ import {
   getCurrentEvent,
   upcomingEvents,
   getCurrentDay,
-  currentDay,
   getUpcomingEvents,
 } from "../game.js";
 import { Button } from "../model/button.js";
@@ -23,7 +22,7 @@ let weekDays = [
 ];
 
 let day = weekDays[getCurrentDay() % 7];
-let date = currentDay;
+let date = getCurrentDay();
 let timeline = new Timeline(-550, 300, date, day);
 
 export let icons = new Icons(-550, -300, player.money);
