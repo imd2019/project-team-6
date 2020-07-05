@@ -497,47 +497,6 @@ let randomQuestionsWeek3to4 = [
 
 let hasChildQuestions = [
   new Question(
-    "Dein Kind hat Geburtstag. \n \nWas schenkst du ihm?",
-    [
-      new Choice(
-        "Ein Buch.",
-        [
-          "Deinem Kind gefällt das Buch.",
-          "Deinem Kind gefällt das Buch nicht.",
-        ],
-        [5, -5],
-        -20,
-        0,
-        0.25
-      ),
-      new Choice(
-        "Markenklamotten",
-        [
-          "Dein Kind freut sich über die neuen Klamotten.",
-          "Deinem Kind gefallen die neuen Klamotten gar nicht.",
-        ],
-        [10, -10],
-        -50,
-        0,
-        0.5
-      ),
-      new Choice(
-        "Eine Bluetooth-Box",
-        [
-          "Dein Kind freut sich riesig über das Geschenk und du freust dich mit.",
-          "Dein Kind freut sich nicht über die Box, das macht dich traurig.",
-        ],
-        [15, -15],
-        -80,
-        0,
-        0.8
-      ),
-    ],
-    windowWidth / 2,
-    windowHeight / 2 - 110,
-    "assets/questionBGs/png/frage_10_grafik.png"
-  ),
-  new Question(
     "Die Schulen sind geschlossen und dein Kind ist daheim. Du musst allerdings arbeiten. \n \nNimmst du dir Urlaub?",
     [
       new Choice(
@@ -579,33 +538,7 @@ let hasChildQuestions = [
     windowHeight / 2 + 110,
     "assets/questionBGs/png/frage_15_m_grafik.png"
   ),
-  new Question(
-    "Dein Kind kommt nicht mit dem Schulstoff zurecht. \n \nBesorgst du einen Nachhilfelehrer?",
-    [
-      new Choice(
-        "Ja, ich hole Online-Nachhilfe.",
-        "Die Bildung deines Kindes ist dir sehr wichtig und zahlst für einen Online-Nachhilfelehrer zweimal die Woche.",
-        5,
-        -30,
-        0,
-        1
-      ),
-      new Choice(
-        "Nein, ich versuche selbst zu helfen.",
-        [
-          "Du sparst Geld und du bist froh, dass du helfen kannst.",
-          "Es tut dir leid, dass du deinem Kind nicht helfen kannst. Du machst dir Sorgen um die Schulbildung, es ist für beide Parteien frustrierend.",
-        ],
-        [10, -10],
-        0,
-        0,
-        1
-      ),
-    ],
-    windowWidth / 2 - 300,
-    windowHeight / 2 + 110,
-    "assets/questionBGs/png/frage_23_grafik.png"
-  ),
+
   new Question(
     "Dein Kind muss von Zuhause aus mit einem Tablet arbeiten. Die Schule verteilt 10 Tablets an die Schüler pro Klasse.",
     [
@@ -647,6 +580,77 @@ let hasChildQuestions = [
     windowWidth / 2 + 300,
     windowHeight / 2 - 110,
     "assets/questionBGs/png/frage_24_grafik.png"
+  ),
+];
+
+let randomHasChildQuestions = [
+  new Question(
+    "Dein Kind hat Geburtstag. \n \nWas schenkst du ihm?",
+    [
+      new Choice(
+        "Ein Buch.",
+        [
+          "Deinem Kind gefällt das Buch.",
+          "Deinem Kind gefällt das Buch nicht.",
+        ],
+        [5, -5],
+        -20,
+        0,
+        0.25
+      ),
+      new Choice(
+        "Markenklamotten",
+        [
+          "Dein Kind freut sich über die neuen Klamotten.",
+          "Deinem Kind gefallen die neuen Klamotten gar nicht.",
+        ],
+        [10, -10],
+        -50,
+        0,
+        0.5
+      ),
+      new Choice(
+        "Eine Bluetooth-Box",
+        [
+          "Dein Kind freut sich riesig über das Geschenk und du freust dich mit.",
+          "Dein Kind freut sich nicht über die Box, das macht dich traurig.",
+        ],
+        [15, -15],
+        -80,
+        0,
+        0.8
+      ),
+    ],
+    windowWidth / 2,
+    windowHeight / 2 - 110,
+    "assets/questionBGs/png/frage_10_grafik.png"
+  ),
+  new Question(
+    "Dein Kind kommt nicht mit dem Schulstoff zurecht. \n \nBesorgst du einen Nachhilfelehrer?",
+    [
+      new Choice(
+        "Ja, ich hole Online-Nachhilfe.",
+        "Die Bildung deines Kindes ist dir sehr wichtig und zahlst für einen Online-Nachhilfelehrer zweimal die Woche.",
+        5,
+        -30,
+        0,
+        1
+      ),
+      new Choice(
+        "Nein, ich versuche selbst zu helfen.",
+        [
+          "Du sparst Geld und du bist froh, dass du helfen kannst.",
+          "Es tut dir leid, dass du deinem Kind nicht helfen kannst. Du machst dir Sorgen um die Schulbildung, es ist für beide Parteien frustrierend.",
+        ],
+        [10, -10],
+        0,
+        0,
+        1
+      ),
+    ],
+    windowWidth / 2 - 300,
+    windowHeight / 2 + 110,
+    "assets/questionBGs/png/frage_23_grafik.png"
   ),
 ];
 
@@ -725,7 +729,7 @@ let hasCarQuestions = [
   ),
 ];
 
-export let currentDay = 0;
+let currentDay = 0;
 export let upcomingEvents = [
   new QuestionEvent(coronaQuestions[0], 1),
   new QuestionEvent(coronaQuestions[1], 2),
@@ -734,7 +738,7 @@ export let upcomingEvents = [
   // new QuestionEvent(coronaQuestions[4], 5),
   new QuestionEvent(coronaQuestions[5], 22),
   // new QuestionEvent(coronaQuestions[6], 7),
-  new QuestionEvent(coronaQuestions[7], 23),
+  new QuestionEvent(coronaQuestions[7], 25),
   new WeeklyBillEvent(7, 80, 0),
   new WeeklyBillEvent(14, 40, 0),
   new WeeklyBillEvent(21, 0, 0),
@@ -810,18 +814,15 @@ export function runNextEvent() {
   currentEvent = nextEvent;
 }
 
-export function getCurrentEvent() {
-  return currentEvent;
-}
-
 let week1QuestionsCount = 2;
 let week2QuestionsCount = 1;
 let week3QuestionsCount = 1;
 let week4QuestionsCount = 2;
 
 export function pushHasCarQuestions() {
-  addRandomQuestions(2, hasCarQuestions);
-  addRandomQuestions(4, hasCarQuestions);
+  upcomingEvents.push(new QuestionEvent(hasCarQuestions[0], 10));
+  upcomingEvents.push(new QuestionEvent(hasCarQuestions[1], 23));
+  upcomingEvents.push(new QuestionEvent(hasCarQuestions[1], 26));
 
   week2QuestionsCount++;
   week4QuestionsCount++;
@@ -838,11 +839,13 @@ export function deleteHasCarQuestions() {
 }
 
 export function pushHasChildQuestions() {
-  addRandomQuestions(1, hasChildQuestions);
-  addRandomQuestions(2, hasChildQuestions);
-  addRandomQuestions(3, hasChildQuestions);
-  addRandomQuestions(3, hasChildQuestions);
-  addRandomQuestions(4, hasChildQuestions);
+  addRandomQuestions(1, randomHasChildQuestions);
+  addRandomQuestions(3, randomHasChildQuestions);
+
+  upcomingEvents.push(new QuestionEvent(hasChildQuestions[0], 9));
+  upcomingEvents.push(new QuestionEvent(hasChildQuestions[2], 16));
+  //upcomingEvents.push(new QuestionEvent(hasChildQuestions[3], 17));
+  upcomingEvents.push(new QuestionEvent(hasChildQuestions[1], 24));
 
   week1QuestionsCount++;
   week2QuestionsCount++;
@@ -927,4 +930,8 @@ export function getUpcomingEvents() {
 
 export function getCurrentDay() {
   return currentDay;
+}
+
+export function getCurrentEvent() {
+  return currentEvent;
 }
