@@ -13,15 +13,15 @@ import { Pictures } from "../model/imagePosition.js";
 
 let headline = new Button(100, -320, 200, 20, true, "Wähle dein Geschlecht:");
 
-let maleBtn = new Button(-310, 230, 80, 20, true, "Männlich", () => {
+let maleBtn = new Button(-310, 250, 80, 20, true, "Männlich", () => {
   setCurrentScreen("getJob");
   player.sex = "m";
 });
-let femaleBtn = new Button(40, 230, 80, 20, true, "Weiblich", () => {
+let femaleBtn = new Button(40, 250, 80, 20, true, "Weiblich", () => {
   setCurrentScreen("getJob");
   player.sex = "f";
 });
-let diverseBtn = new Button(380, 230, 60, 20, true, "Divers", () => {
+let diverseBtn = new Button(380, 250, 60, 20, true, "Divers", () => {
   setCurrentScreen("getJob");
   player.sex = "d";
 });
