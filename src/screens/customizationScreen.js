@@ -68,7 +68,7 @@ function content() {
   fill(222, 70, 90, opacityText);
   textSize(20);
   text(
-    "Pandemien wie Corona betreffen alle Menschen.\n Aber manche trifft es härter als andere.\n\nSchlüpfe in VINDU in die Schuhe eines Anderen und versuche vier Wochen \ndurch eine simulierte Pandemie durchzukommen.\nDu wirst auf Situationen treffen, bei denen du vielleicht schwere Entscheidungen treffen musst. \nBehalte dabei dein Geld, deine Gesundheit und deine Zufriedenheit im Auge.",
+    "Pandemien wie Corona betreffen alle Menschen.\n Aber manche trifft es härter als andere.\n\nSchlüpfe mit VINDU in die Schuhe eines Anderen und versuche dich vier Wochen lang \ndurch eine simulierte Pandemie zu kämpfen.\nDu wirst auf Situationen treffen, bei denen du vielleicht schwere Entscheidungen treffen musst. \nBehalte dabei dein Geld, deine Gesundheit und deine Zufriedenheit im Auge.",
     windowWidth / 2,
     windowHeight / 2 - 100
   );
