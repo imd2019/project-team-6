@@ -13,9 +13,17 @@ export class NewsEvent extends VinduEvent {
     this.xOffset = xOffset;
     this.yOffset = yOffset;
     //button position ändern
-    this.okBtn = new Button(this.x, this.y, 20, 20, false, "Ok", () => {
-      runNextEvent();
-    });
+    this.okBtn = new Button(
+      this.x - 140,
+      this.y - 30,
+      20,
+      20,
+      false,
+      "Ok",
+      () => {
+        runNextEvent();
+      }
+    );
     this.okBtn.textColor = color(255);
   }
 
