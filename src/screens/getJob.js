@@ -69,7 +69,9 @@ function draw() {
     waiterPicture.mouseOver(diverseWaiterStroke);
     taxConsulantPicture.display(diverseConsultant);
     waiterPicture.display(diverseWaiter);
-  } else if ((player.sex = "m")) {
+  } 
+  
+  else if ((player.sex = "m")) {
     taxConsulantPicture.mouseOver(maleConsultantStroke);
     waiterPicture.mouseOver(maleWaiterStroke);
     taxConsulantPicture.display(maleConsultant);
