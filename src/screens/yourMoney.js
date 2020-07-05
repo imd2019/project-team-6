@@ -105,9 +105,9 @@ function draw() {
     stroke("black");
     line(
       windowWidth / 2 - 75,
-      windowHeight / 2 + 10,
+      windowHeight / 2 + 15,
       windowWidth / 2 + 180,
-      windowHeight / 2 + 10
+      windowHeight / 2 + 15
     );
   }
   pop();

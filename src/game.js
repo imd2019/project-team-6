@@ -735,24 +735,30 @@ export let upcomingEvents = [
   new QuestionEvent(coronaQuestions[5], 22),
   // new QuestionEvent(coronaQuestions[6], 7),
   new QuestionEvent(coronaQuestions[7], 23),
-  new WeeklyBillEvent("billing time 1 :^)", 7),
-  new WeeklyBillEvent("billing time 2 :^)", 14),
-  new WeeklyBillEvent("billing time 3 :^)", 21),
+  new WeeklyBillEvent(7, 80, 0),
+  new WeeklyBillEvent(14, 40, 0),
+  new WeeklyBillEvent(21, 0, 0),
+  new WeeklyBillEvent(28, 0, 0),
   new NewsEvent(
-    "Corona ist als Pandemie in DE angekommen. \nPreise für Atemschutzmaske versechstfacht.",
+    "Corona ist als Pandemie in \nDeutschland angekommen. \n\nPreise für \nAtemschutzmaske versechstfacht.",
     0,
     0,
     0
   ),
-  new NewsEvent("Supermarktregale leer gefegt. \n Schulen schließen.", 7, 0, 0),
   new NewsEvent(
-    "Geschäfte müssen schließen. \n Versammlungsverbote wurden beschlossen.",
+    "Supermarktregale leer gefegt. \n\n Schulen schließen.",
+    7,
+    0,
+    0
+  ),
+  new NewsEvent(
+    "Geschäfte müssen schließen. \n\n Versammlungsverbote wurden \nbeschlossen.",
     14,
     0,
     0
   ),
   new NewsEvent(
-    "Besuchsverbot in Altersheimen. \n Kontaktverbote wurden beschlossen. \n Häusliche Gewalt so hoch wie nie.",
+    "Besuchsverbot in Altersheimen. \n\n Kontaktverbote wurden \nbeschlossen. \n\n Häusliche Gewalt \nso hoch wie nie.",
     21,
     0,
     0

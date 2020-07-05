@@ -12,7 +12,7 @@ export class NewsEvent extends VinduEvent {
     this.text = text;
     this.xOffset = xOffset;
     this.yOffset = yOffset;
-    //button position ändern
+
     this.okBtn = new Button(
       this.x - 140,
       this.y - 30,
