@@ -19,6 +19,7 @@ export class WeeklyBillEvent extends VinduEvent {
     });
     this.okBtn.textColor = color(255);
     this.childCosts = 30;
+    this.foodWithChild = 65;
     this.foodCosts = 35 + this.hamsterCosts;
   }
 
@@ -30,10 +31,11 @@ export class WeeklyBillEvent extends VinduEvent {
     image(moneyLarge, windowWidth / 2 - 200, windowHeight / 2);
 
     fill(222, 70, 90);
-    textAlign(RIGHT);
+    textAlign(CENTER);
     textSize(24);
-    text("Deine Finanzen: ", windowWidth / 2 + 65, windowHeight / 2 - 300);
+    text("Deine Finanzen: ", windowWidth / 2 + 65, windowHeight / 2 - 80);
     fill("black");
+    textAlign(RIGHT);
     textSize(20);
     textFont(mainFont);
     text("letzter Kontostand: ", windowWidth / 2 + 105, windowHeight / 2 - 60);
@@ -48,10 +50,15 @@ export class WeeklyBillEvent extends VinduEvent {
     );
 
     text("+" + this.tips + "€", windowWidth / 2 + 175, windowHeight / 2 - 30);
-    text("-" + this.foodCosts + "€", windowWidth / 2 + 175, windowHeight / 2);
+    if (player.hasChild === false) {
+      text("-" + this.foodCosts + "€", windowWidth / 2 + 175, windowHeight / 2);
+    }
     if (player.hasChild === true) {
-      let foodWithChild = this.childCosts + this.foodCosts;
-      text("-" + foodWithChild + "€", windowWidth / 2 + 175, windowHeight / 2);
+      text(
+        "-" + this.foodWithChild + "€",
+        windowWidth / 2 + 175,
+        windowHeight / 2
+      );
     }
 
     text(player.money + "€", windowWidth / 2 + 175, windowHeight / 2 + 30);
