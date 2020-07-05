@@ -643,9 +643,9 @@ let randomHasChildQuestions = [
           "Es tut dir leid, dass du deinem Kind nicht helfen kannst. Du machst dir Sorgen um die Schulbildung, es ist für beide Parteien frustrierend.",
         ],
         [10, -10],
-        0,
-        0,
-        1
+        [0, 0],
+        [0, 0],
+        0.75
       ),
     ],
     windowWidth / 2 - 300,
