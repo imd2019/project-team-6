@@ -6,12 +6,25 @@ import {
   getCurrentEvent,
   upcomingEvents,
   getCurrentDay,
+  currentDay,
   getUpcomingEvents,
 } from "../game.js";
 import { Button } from "../model/button.js";
 import { setCurrentScreen } from "../../sketch.js";
 
-let timeline = new Timeline(-windowWidth / 2.2, +windowHeight / 2.6);
+let weekDays = [
+  "Sonntag",
+  "Montag",
+  "Dienstag",
+  "Mittwoch",
+  "Donnerstag",
+  "Freitag",
+  "Samstag",
+];
+
+let day = weekDays[getCurrentDay() % 7];
+let date = currentDay;
+let timeline = new Timeline(-550, 300, date, day);
 
 export let icons = new Icons(-550, -300, player.money);
 //let gif_createImg;
@@ -65,7 +78,9 @@ function draw() {
 
   icons.display();
   showWeekDay();
-  // timeline.display();
+
+  timeline.display();
+  timeline.mouseOver();
   let currentEvent = getCurrentEvent();
   if (currentEvent) {
     currentEvent.display();
@@ -82,16 +97,6 @@ function mouseClicked() {
     currentEvent.mouseClicked();
   }
 }
-
-let weekDays = [
-  "Sonntag",
-  "Montag",
-  "Dienstag",
-  "Mittwoch",
-  "Donnerstag",
-  "Freitag",
-  "Samstag",
-];
 
 function showWeekDay() {
   push();
