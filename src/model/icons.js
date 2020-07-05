@@ -10,7 +10,7 @@ export class Icons {
     this.xOffset = xOffset;
     this.yOffset = yOffset;
     this.width = 100;
-    this.height = 20;
+    this.height = 15;
     this.money = money;
     this.health = 0;
     this.happiness = 0;
@@ -31,32 +31,32 @@ export class Icons {
     imageMode(CENTER);
     noStroke();
 
-    image(moneyIcon, this.x, this.y);
-    image(healthIcon, this.x, this.y + 100);
-    image(happinessIcon, this.x, this.y + 200);
+    image(moneyIcon, this.x, this.y, 50, 50);
+    image(healthIcon, this.x, this.y + 60, 50, 50);
+    image(happinessIcon, this.x, this.y + 120, 50, 50);
     fill(245, 189, 197);
     textFont(mainFont);
     textAlign(LEFT);
     textSize(16);
-    text("Gesundheit", this.x + 50, this.y + 90);
-    text("Zufriedenheit", this.x + 50, this.y + 190);
+    text("Gesundheit", this.x + 50, this.y + 50);
+    text("Zufriedenheit", this.x + 50, this.y + 110);
 
     rectMode(CORNER);
-    rect(this.x + 50, this.y + 110, this.width, this.height, 10);
-    rect(this.x + 50, this.y + 210, this.width, this.height, 10);
+    rect(this.x + 50, this.y + 62, this.width, this.height, 10);
+    rect(this.x + 50, this.y + 122, this.width, this.height, 10);
 
     fill("#1e1f3f");
     strokeWeight(5);
     stroke("#1e1f3f");
-    rect(this.x + 50, this.y + 110, this.width, this.height, 10);
-    rect(this.x + 50, this.y + 210, this.width, this.height, 10);
+    rect(this.x + 50, this.y + 62, this.width, this.height, 10);
+    rect(this.x + 50, this.y + 122, this.width, this.height, 10);
 
     this.changeValues();
 
     noStroke();
     fill(245, 189, 197);
     textSize(20);
-    text(this.money + "€", this.x + 50, this.y + 5);
+    text(this.money + "€", this.x + 50, this.y);
 
     if (this.health === 100) {
       this.healthRound = 10;
@@ -71,7 +71,7 @@ export class Icons {
 
     rect(
       this.x + 50,
-      this.y + 110,
+      this.y + 62,
       this.health,
       this.height,
       10,
@@ -81,7 +81,7 @@ export class Icons {
     );
     rect(
       this.x + 50,
-      this.y + 210,
+      this.y + 122,
       this.happiness,
       this.height,
       10,

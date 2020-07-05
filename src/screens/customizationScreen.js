@@ -42,6 +42,7 @@ export let newsPic;
 
 export let mainFont;
 export let fallbackFont;
+export let boldFont;
 
 export let tafelPic;
 export let caritasPic;
@@ -148,6 +149,7 @@ function preload() {
 
   mainFont = loadFont("./assets/fonts/Semplicita_Medium.otf");
   fallbackFont = loadFont("./assets/fonts/seguiemj.ttf");
+  boldFont = loadFont("./assets/fonts/Semplicita_Bold.otf");
 
   timelinePic = loadImage("./assets/ui/timeline.png");
 

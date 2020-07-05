@@ -739,7 +739,7 @@ export let upcomingEvents = [
   new WeeklyBillEvent("billing time 2 :^)", 14),
   new WeeklyBillEvent("billing time 3 :^)", 21),
   new NewsEvent(
-    "Corona ist als Pandemie in DE angekommen. \nPreise für Atemschutzmaske versechstfacht",
+    "Corona ist als Pandemie in DE angekommen. \nPreise für Atemschutzmaske versechstfacht.",
     0,
     0,
     0
