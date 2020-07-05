@@ -11,7 +11,7 @@ import { Button } from "./src/model/button.js";
 
 let currentScreen = "start";
 
-let exitBtn = new Button(550, -325, 10, 5, true, "Exit", () =>
+let exitBtn = new Button(550, -325, 30, 10, true, "Exit", () =>
   window.location.reload()
 );
 
