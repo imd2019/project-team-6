@@ -725,7 +725,7 @@ let hasCarQuestions = [
   ),
 ];
 
-export let currentDay = 0;
+let currentDay = 0;
 export let upcomingEvents = [
   new QuestionEvent(coronaQuestions[0], 1),
   new QuestionEvent(coronaQuestions[1], 2),
