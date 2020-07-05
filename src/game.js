@@ -23,7 +23,7 @@ let coronaQuestions = [
     ],
     windowWidth / 2,
     windowHeight / 2,
-    "assets/questionBGs/mp4/frage_02.mp4"
+    "mp4/frage_02.mp4"
   ),
   new Question(
     "Möchtest du dir eine Maske kaufen?",
@@ -58,7 +58,7 @@ let coronaQuestions = [
     ],
     windowWidth / 2 + 300,
     windowHeight / 2 + 110,
-    "assets/questionBGs/png/frage_04_grafik.png"
+    "png/frage_04_grafik.png"
   ),
   new Question(
     "Viele Waren wie Toilettenpapier sind stark nachgefragt. Viele Leute kaufen in größeren Mengen ein, als sie es eigentlich brauchen. \n \nHamsterst du auch?",
@@ -83,7 +83,7 @@ let coronaQuestions = [
     ],
     windowWidth / 2 + 300,
     windowHeight / 2 - 110,
-    "assets/questionBGs/png/frage_09_grafik.png"
+    "png/frage_09_grafik.png"
   ),
   new Question(
     "Die Restaurants haben geschlossen. Du bist jetzt auf Kurzarbeit. \n \nSuchst du dir einen Nebenjob?",
@@ -107,7 +107,7 @@ let coronaQuestions = [
     ],
     windowWidth / 2 - 300,
     windowHeight / 2 + 110,
-    "assets/questionBGs/mp4/frage_13.mp4"
+    "mp4/frage_13.mp4"
   ), //falls nicht schon gekauft oder genäht wurde und es nicht geklaptt hat
   new Question(
     "Möchtest du dir eine Maske kaufen?",
@@ -142,7 +142,7 @@ let coronaQuestions = [
     ],
     windowWidth / 2 + 300,
     windowHeight / 2 - 110,
-    "assets/questionBGs/png/frage_26.png"
+    "png/frage_26.png"
   ),
   new Question(
     "Freunde laden dich zum Spazieren gehen ein. \n \nGehst du mit?",
@@ -166,7 +166,7 @@ let coronaQuestions = [
     ],
     windowWidth / 2 - 300,
     windowHeight / 2 + 110,
-    "assets/questionBGs/mp4/frage_20.mp4"
+    "mp4/frage_20.mp4"
   ),
   //nur falls obere ja
   new Question(
@@ -194,7 +194,7 @@ let coronaQuestions = [
     ],
     windowWidth / 2,
     windowHeight / 2 - 110,
-    "assets/questionBGs/png/frage_21_grafik.png"
+    "png/frage_21_grafik.png"
   ),
   new Question(
     "Deine Freundin ruft dich verängstigt an und erzählt dir von ihrem gewalttätigen Freund. \n \nLässt du sie bei dir eine Woche unterkommen?",
@@ -218,9 +218,10 @@ let coronaQuestions = [
     ],
     windowWidth / 2 + 300,
     windowHeight / 2 - 110,
-    "assets/questionBGs/png/frage_22_grafik.png"
+    "png/frage_22_grafik.png"
   ),
 ];
+let coronaQuestionsCount = coronaQuestions.length;
 
 let randomQuestionsWeek1to2 = [
   new Question(
@@ -245,7 +246,7 @@ let randomQuestionsWeek1to2 = [
     ],
     windowWidth / 2 + 300,
     windowHeight / 2 - 110,
-    "assets/questionBGs/png/frage_01_grafik.png"
+    "png/frage_01_grafik.png"
   ),
 
   new Question(
@@ -276,7 +277,7 @@ let randomQuestionsWeek1to2 = [
     ],
     windowWidth / 2,
     windowHeight / 2 - 110,
-    "assets/questionBGs/png/frage_03_grafik.png"
+    "png/frage_03_grafik.png"
   ),
 
   new Question(
@@ -301,7 +302,7 @@ let randomQuestionsWeek1to2 = [
     ],
     windowWidth / 2 + 300,
     windowHeight / 2 - 110,
-    "assets/questionBGs/mp4/frage_05.mp4"
+    "mp4/frage_05.mp4"
   ),
   new Question(
     "Deine beste Freundin möchte mit dir mittagessen gehen. \n \nGehst du mit?",
@@ -331,7 +332,7 @@ let randomQuestionsWeek1to2 = [
     ],
     windowWidth / 2,
     windowHeight / 2 - 110,
-    "assets/questionBGs/mp4/frage_06.mp4"
+    "mp4/frage_06.mp4"
   ),
   new Question(
     "Um deine Gesundheit zu verbessern überlegst du, Sport zu machen. Im Fitnessstudio erzielst du schneller Erfolge, es kostet aber auch mehr Geld. \n \nWofür entscheidest du dich?",
@@ -361,7 +362,7 @@ let randomQuestionsWeek1to2 = [
     ],
     windowWidth / 2,
     windowHeight / 2 - 110,
-    "assets/questionBGs/mp4/frage_08.mp4"
+    "mp4/frage_08.mp4"
   ),
 ];
 
@@ -388,7 +389,7 @@ let randomQuestionsWeek3to4 = [
     ],
     windowWidth / 2 - 300,
     windowHeight / 2 + 110,
-    "assets/questionBGs/mp4/frage_07.mp4"
+    "mp4/frage_07.mp4"
   ),
   new Question(
     "Möchtest du deine Mutter im Altersheim besuchen?",
@@ -412,7 +413,7 @@ let randomQuestionsWeek3to4 = [
     ],
     windowWidth / 2 + 300,
     windowHeight / 2 - 110,
-    "assets/questionBGs/mp4/frage_14.mp4"
+    "mp4/frage_14.mp4"
   ),
   new Question(
     "Das Abflussrohr in deiner Küche ist verstopft. \n \nWas machst du?",
@@ -439,7 +440,7 @@ let randomQuestionsWeek3to4 = [
     ],
     windowWidth / 2,
     windowHeight / 2 - 110,
-    "assets/questionBGs/mp4/frage_16.mp4"
+    "mp4/frage_16.mp4"
   ),
   new Question(
     "In deiner Stadt ist gerade eine Blutspendeaktion. \n \nGehst du Blutspenden?",
@@ -463,7 +464,7 @@ let randomQuestionsWeek3to4 = [
     ],
     0,
     windowHeight / 2 + 110,
-    "assets/questionBGs/png/frage_18_grafik.png"
+    "png/frage_18_grafik.png"
   ),
   new Question(
     "Du hattest einen Fahrradunfall. \n \nGehst du zum Arzt?",
@@ -491,7 +492,7 @@ let randomQuestionsWeek3to4 = [
     ],
     windowWidth / 2 - 300,
     windowHeight / 2 + 110,
-    "assets/questionBGs/mp4/frage_12.mp4"
+    "mp4/frage_12.mp4"
   ),
 ];
 
@@ -519,7 +520,7 @@ let hasChildQuestions = [
     ],
     windowWidth / 2 + 300,
     windowHeight / 2 + 110,
-    "assets/questionBGs/png/frage_11_grafik.png"
+    "png/frage_11_grafik.png"
   ),
   new Question(
     "Die Nachmittagsbetreuung und damit auch das kostenlose Mittagessen des Kindes fällt weg. \n Du selbst isst nichts zu mittag. Um die Mahlzeit für dein Kind zu stellen musst du mehr Geld ausgeben. \n \nWas tust du?",
@@ -536,7 +537,7 @@ let hasChildQuestions = [
     ],
     windowWidth / 2 - 300,
     windowHeight / 2 + 110,
-    "assets/questionBGs/png/frage_15_m_grafik.png"
+    "png/frage_15_m_grafik.png"
   ),
 
   new Question(
@@ -554,7 +555,7 @@ let hasChildQuestions = [
     ],
     windowWidth / 2 + 300,
     windowHeight / 2 - 110,
-    "assets/questionBGs/png/frage_24_grafik.png"
+    "png/frage_24_grafik.png"
   ),
   //falls kein Tablet bekommen
   new Question(
@@ -579,9 +580,10 @@ let hasChildQuestions = [
     ],
     windowWidth / 2 + 300,
     windowHeight / 2 - 110,
-    "assets/questionBGs/png/frage_24_grafik.png"
+    "png/frage_24_grafik.png"
   ),
 ];
+let hasChildQuestionsCount = hasChildQuestions.length + 2;
 
 let randomHasChildQuestions = [
   new Question(
@@ -623,7 +625,7 @@ let randomHasChildQuestions = [
     ],
     windowWidth / 2,
     windowHeight / 2 - 110,
-    "assets/questionBGs/png/frage_10_grafik.png"
+    "png/frage_10_grafik.png"
   ),
   new Question(
     "Dein Kind kommt nicht mit dem Schulstoff zurecht. \n \nBesorgst du einen Nachhilfelehrer?",
@@ -650,7 +652,7 @@ let randomHasChildQuestions = [
     ],
     windowWidth / 2 - 300,
     windowHeight / 2 + 110,
-    "assets/questionBGs/png/frage_23_grafik.png"
+    "png/frage_23_grafik.png"
   ),
 ];
 
@@ -677,7 +679,7 @@ let hasCarQuestions = [
     ],
     windowWidth / 2 + 300,
     windowHeight / 2 - 110,
-    "assets/questionBGs/mp4/frage_19.mp4"
+    "mp4/frage_19.mp4"
   ),
   new Question(
     "Dein Auto geht kaputt, du brauchst es zum Einkaufen. \n \nLässt du es reparieren?",
@@ -701,7 +703,7 @@ let hasCarQuestions = [
     ],
     windowWidth / 2 - 300,
     windowHeight / 2 + 110,
-    "assets/questionBGs/mp4/frage_25.mp4"
+    "mp4/frage_25.mp4"
   ),
   new Question(
     "Der Supermarkt um die Ecke ist teurer aber dafür näher. Der billige Supermarkt ist nur mit der Bahn zu erreichen, da dein Auto noch in der Werkstatt steht.\n \nWas tust du?",
@@ -725,20 +727,13 @@ let hasCarQuestions = [
     ],
     windowWidth / 2,
     windowHeight / 2 - 110,
-    "assets/questionBGs/mp4/frage_27.mp4"
+    "mp4/frage_27.mp4"
   ),
 ];
+let hasCarQuestionsCount = hasCarQuestions.length;
 
 let currentDay = 0;
 export let upcomingEvents = [
-  new QuestionEvent(coronaQuestions[0], 1),
-  new QuestionEvent(coronaQuestions[1], 2),
-  new QuestionEvent(coronaQuestions[2], 8),
-  new QuestionEvent(coronaQuestions[3], 15),
-  // new QuestionEvent(coronaQuestions[4], 5),
-  new QuestionEvent(coronaQuestions[5], 22),
-  // new QuestionEvent(coronaQuestions[6], 7),
-  new QuestionEvent(coronaQuestions[7], 25),
   new WeeklyBillEvent(7, 80, 0),
   new WeeklyBillEvent(14, 40, 0),
   new WeeklyBillEvent(21, 0, 0),
@@ -814,11 +809,40 @@ export function runNextEvent() {
   currentEvent = nextEvent;
 }
 
-let week1QuestionsCount = 2;
-let week2QuestionsCount = 1;
-let week3QuestionsCount = 1;
-let week4QuestionsCount = 2;
+let week1QuestionsCount = 0;
+let week2QuestionsCount = 0;
+let week3QuestionsCount = 0;
+let week4QuestionsCount = 0;
 
+export function pushCoronaQuestions() {
+  upcomingEvents.push(
+    new QuestionEvent(coronaQuestions[0], 1),
+    new QuestionEvent(coronaQuestions[1], 2),
+    new QuestionEvent(coronaQuestions[2], 8),
+    new QuestionEvent(coronaQuestions[3], 15),
+    // new QuestionEvent(coronaQuestions[4], 5),
+    new QuestionEvent(coronaQuestions[5], 22),
+    // new QuestionEvent(coronaQuestions[6], 7),
+    new QuestionEvent(coronaQuestions[7], 25)
+  );
+
+  week1QuestionsCount += 2;
+  week2QuestionsCount++;
+  week3QuestionsCount++;
+  week4QuestionsCount += 2;
+}
+
+export function deleteCoronaQuestions() {
+  upcomingEvents.splice(
+    upcomingEvents.length - coronaQuestionsCount - 1,
+    hasChildQuestions.length
+  );
+
+  week1QuestionsCount--;
+  week2QuestionsCount--;
+  week3QuestionsCount -= 2;
+  week4QuestionsCount--;
+}
 export function pushHasCarQuestions() {
   upcomingEvents.push(new QuestionEvent(hasCarQuestions[0], 10));
   upcomingEvents.push(new QuestionEvent(hasCarQuestions[1], 23));
@@ -830,7 +854,7 @@ export function pushHasCarQuestions() {
 
 export function deleteHasCarQuestions() {
   upcomingEvents.splice(
-    upcomingEvents.length - hasCarQuestions.length - 1,
+    upcomingEvents.length - hasCarQuestionsCount - 1,
     hasCarQuestions.length
   );
 
@@ -855,7 +879,7 @@ export function pushHasChildQuestions() {
 
 export function deleteHasChildQuestions() {
   upcomingEvents.splice(
-    upcomingEvents.length - hasChildQuestions.length - 1,
+    upcomingEvents.length - hasChildQuestionsCount - 1,
     hasChildQuestions.length
   );
 

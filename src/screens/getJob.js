@@ -14,7 +14,7 @@ import {
   femaleConsultantStroke,
   diverseConsultantStroke,
 } from "./customizationScreen.js";
-import { player } from "../game.js";
+import { player, deleteCoronaQuestions } from "../game.js";
 import { Job } from "../model/job.js";
 import { Pictures } from "../model/imagePosition.js";
 
@@ -44,6 +44,7 @@ let taxConsultant = new Button(
 
 let backBtn = new Button(0, 300, 10, 10, true, "<", () => {
   setCurrentScreen("getGender");
+  deleteCoronaQuestions();
 });
 
 let taxConsulantPicture = new Pictures(200, 0, 100, 400, () => {

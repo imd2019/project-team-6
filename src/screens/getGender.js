@@ -8,7 +8,7 @@ import {
   maleStroke,
   diverseStroke,
 } from "./customizationScreen.js";
-import { player } from "../game.js";
+import { player, pushCoronaQuestions } from "../game.js";
 import { Pictures } from "../model/imagePosition.js";
 
 let headline = new Button(100, -320, 200, 20, true, "Wähle dein Geschlecht:");
@@ -16,6 +16,7 @@ let headline = new Button(100, -320, 200, 20, true, "Wähle dein Geschlecht:");
 let maleBtn = new Button(-310, 250, 80, 20, true, "Männlich", () => {
   setCurrentScreen("getJob");
   player.sex = "m";
+  pushCoronaQuestions();
 });
 let femaleBtn = new Button(40, 250, 80, 20, true, "Weiblich", () => {
   setCurrentScreen("getJob");
@@ -24,6 +25,7 @@ let femaleBtn = new Button(40, 250, 80, 20, true, "Weiblich", () => {
 let diverseBtn = new Button(380, 250, 60, 20, true, "Divers", () => {
   setCurrentScreen("getJob");
   player.sex = "d";
+  pushCoronaQuestions();
 });
 
 let backBtn = new Button(0, 300, 10, 10, true, "<", () => {
@@ -33,14 +35,17 @@ let backBtn = new Button(0, 300, 10, 10, true, "<", () => {
 let malePicture = new Pictures(-350, 0, 100, 400, () => {
   setCurrentScreen("getJob");
   player.sex = "m";
+  pushCoronaQuestions();
 });
 let femalePicture = new Pictures(0, 0, 100, 400, () => {
   setCurrentScreen("getJob");
   player.sex = "f";
+  pushCoronaQuestions();
 });
 let diversePicture = new Pictures(350, 0, 150, 400, () => {
   setCurrentScreen("getJob");
   player.sex = "d";
+  pushCoronaQuestions();
 });
 
 function draw() {
