@@ -10,9 +10,12 @@ import {
   child,
   childStroke,
   noPic,
-  femaleStroke,
-  maleStroke,
-  diverseStroke,
+  diverseConsultantStroke,
+  maleConsultantStroke,
+  femaleConsultantStroke,
+  maleWaiterStroke,
+  femaleWaiterStroke,
+  diverseWaiterStroke,
 } from "./customizationScreen.js";
 import { player, pushHasChildQuestions } from "../game.js";
 import { Pictures } from "../model/imagePosition.js";
@@ -69,43 +72,42 @@ let childPicture = new Pictures(-120, 100, 90, 400, () => {
 function draw() {
   background("#1e1f3f");
   headline.display();
+  childPicture.mouseOver(childStroke);
+  childPicture.display(child);
   hasChild.display();
   noChild.display();
   hasChild.mouseOver();
   noChild.mouseOver();
   backBtn.display();
 
-  childPicture.mouseOver(childStroke);
-  childPicture.display(child);
-
   if (player.sex === "f" && player.job.title === "Kellner*in") {
-    hasChildPicture.mouseOver(femaleStroke);
-    noChildPicture.mouseOver(femaleStroke);
+    hasChildPicture.mouseOver(femaleWaiterStroke);
+    noChildPicture.mouseOver(femaleWaiterStroke);
     hasChildPicture.display(femaleWaiter);
     noChildPicture.display(femaleWaiter);
   } else if (player.sex === "m" && player.job.title === "Kellner*in") {
-    hasChildPicture.mouseOver(maleStroke);
-    noChildPicture.mouseOver(maleStroke);
+    hasChildPicture.mouseOver(maleWaiterStroke);
+    noChildPicture.mouseOver(maleWaiterStroke);
     hasChildPicture.display(maleWaiter);
     noChildPicture.display(maleWaiter);
   } else if (player.sex === "d" && player.job.title === "Kellner*in") {
-    hasChildPicture.mouseOver(diverseStroke);
-    noChildPicture.mouseOver(diverseStroke);
+    hasChildPicture.mouseOver(diverseWaiterStroke);
+    noChildPicture.mouseOver(diverseWaiterStroke);
     hasChildPicture.display(diverseWaiter);
     noChildPicture.display(diverseWaiter);
   } else if (player.sex === "f" && player.job.title === "Steuerberater*in") {
-    hasChildPicture.mouseOver(femaleStroke);
-    noChildPicture.mouseOver(femaleStroke);
+    hasChildPicture.mouseOver(femaleConsultantStroke);
+    noChildPicture.mouseOver(femaleConsultantStroke);
     hasChildPicture.display(femaleConsultant);
     noChildPicture.display(femaleConsultant);
   } else if (player.sex === "m" && player.job.title === "Steuerberater*in") {
-    hasChildPicture.mouseOver(maleStroke);
-    noChildPicture.mouseOver(maleStroke);
+    hasChildPicture.mouseOver(maleConsultantStroke);
+    noChildPicture.mouseOver(maleConsultantStroke);
     hasChildPicture.display(maleConsultant);
     noChildPicture.display(maleConsultant);
   } else if (player.sex === "d" && player.job.title === "Steuerberater*in") {
-    hasChildPicture.mouseOver(diverseStroke);
-    noChildPicture.mouseOver(diverseStroke);
+    hasChildPicture.mouseOver(diverseConsultantStroke);
+    noChildPicture.mouseOver(diverseConsultantStroke);
     hasChildPicture.display(diverseConsultant);
     noChildPicture.display(diverseConsultant);
   }

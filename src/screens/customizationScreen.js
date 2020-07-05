@@ -20,6 +20,14 @@ export let femaleStroke;
 export let diverseStroke;
 export let childStroke;
 
+export let maleWaiterStroke;
+export let femaleWaiterStroke;
+export let diverseWaiterStroke;
+
+export let maleConsultantStroke;
+export let femaleConsultantStroke;
+export let diverseConsultantStroke;
+
 export let townPic;
 export let cityPic;
 
@@ -34,6 +42,7 @@ export let newsPic;
 
 export let mainFont;
 export let fallbackFont;
+export let boldFont;
 
 export let tafelPic;
 export let caritasPic;
@@ -108,9 +117,23 @@ function preload() {
   femaleConsultant = loadImage("./assets/character/femaleConsultant.png");
   diverseConsultant = loadImage("./assets/character/diverseConsultant.png");
 
+  maleConsultantStroke = loadImage(
+    "./assets/character/maleConsultantStroke.png"
+  );
+  femaleConsultantStroke = loadImage(
+    "./assets/character/femaleConsultantStroke.png"
+  );
+  diverseConsultantStroke = loadImage(
+    "./assets/character/diverseConsultantStroke.png"
+  );
+
   maleWaiter = loadImage("./assets/character/maleWaiter.png");
   femaleWaiter = loadImage("./assets/character/femaleWaiter.png");
   diverseWaiter = loadImage("./assets/character/diverseWaiter.png");
+
+  maleWaiterStroke = loadImage("./assets/character/maleWaiterStroke.png");
+  femaleWaiterStroke = loadImage("./assets/character/femaleWaiterStroke.png");
+  diverseWaiterStroke = loadImage("./assets/character/diverseWaiterStroke.png");
 
   cityPic = loadImage("./assets/character/cityPic.png");
   townPic = loadImage("./assets/character/townPic.png");
@@ -126,6 +149,7 @@ function preload() {
 
   mainFont = loadFont("./assets/fonts/Semplicita_Medium.otf");
   fallbackFont = loadFont("./assets/fonts/seguiemj.ttf");
+  boldFont = loadFont("./assets/fonts/Semplicita_Bold.otf");
 
   timelinePic = loadImage("./assets/ui/timeline.png");
 
