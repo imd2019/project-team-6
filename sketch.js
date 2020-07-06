@@ -7,10 +7,11 @@ import getJob from "./src/screens/getJob.js";
 import getChild from "./src/screens/getChild.js";
 import getApartment from "./src/screens/getApartment.js";
 import yourMoney from "./src/screens/yourMoney.js";
-import { Button } from "./src/model/button.js";
 import resultScreen from "./src/screens/resultScreen.js";
+import choseTaxConsultantScreen from "./src/screens/choseTaxConsultant.js";
+import { Button } from "./src/model/button.js";
 
-let currentScreen = "start";
+let currentScreen = "choseTC";
 
 let exitBtn = new Button(620, -350, 30, 10, true, "Exit", () =>
   window.location.reload()
@@ -19,6 +20,7 @@ let exitBtn = new Button(620, -350, 30, 10, true, "Exit", () =>
 window.preload = function () {
   customizationScreen.preload();
   startScreen.preload();
+  choseTaxConsultantScreen.preload();
 };
 
 function getScreen(screenName) {
@@ -36,6 +38,8 @@ function getScreen(screenName) {
     return getApartment;
   } else if (screenName === "yourMoney") {
     return yourMoney;
+  } else if (screenName === "choseTC") {
+    return choseTaxConsultantScreen;
   } else if (screenName === "game") {
     return gameScreen;
   } else if (screenName === "result") {
