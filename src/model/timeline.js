@@ -13,7 +13,7 @@ export class Timeline {
       "Freitag",
       "Samstag",
     ];
-    this.distance = 2;
+    this.distance = 1.8;
     this.x = 0;
     this.y = 0;
   }
@@ -38,9 +38,9 @@ export class Timeline {
 
     pop();
   }
-  mouseOver() {
+  mouseOver(date) {
     if (this.hitTest(mouseX, mouseY)) {
-      let dotChange = (this.date - 1) * 20;
+      let dotChange = (date - 1) * 20;
       push();
       stroke(245, 189, 197);
       strokeWeight(2);
@@ -217,7 +217,7 @@ export class Timeline {
         this.x + 580 * this.distance,
         this.y + 10 * this.distance
       );
-      if (this.date > 0) {
+      if (date > 0) {
         fill(222, 70, 90);
         noStroke();
         ellipse(this.x + (40 + dotChange) * this.distance, this.y, 10, 10);
