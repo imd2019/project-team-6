@@ -31,7 +31,7 @@ function onStart() {
   // gif_createImg = createImg("../../assets/testScreen.gif", "test screen");
   // gif_createImg.position(0, 0);
   // gif_createImg.hide();
-  vid = createVideo("assets/questionBGs/mp4/frage_05.mp4");
+  vid = createVideo("assets/questionBGs/d/mp4/frage_05.mp4");
   vid.position(0, 0);
   vid.hide();
 }
