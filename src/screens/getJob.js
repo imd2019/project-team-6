@@ -47,12 +47,12 @@ let backBtn = new Button(0, 300, 10, 10, true, "<", () => {
   deleteCoronaQuestions();
 });
 
-let taxConsulantPicture = new Pictures(200, 0, 100, 400, () => {
+let taxConsulantPicture = new Pictures(200, 0, 120, 400, () => {
   player.job = new Job(taxConsultantTitle, 3240);
 
   setCurrentScreen("getChild");
 });
-let waiterPicture = new Pictures(-200, 0, 100, 400, () => {
+let waiterPicture = new Pictures(-200, 0, 120, 400, () => {
   player.job = new Job(waiterTitle, 1660);
 
   setCurrentScreen("getChild");

@@ -71,7 +71,7 @@ let noChildPicture = new Pictures(200, 0, 100, 400, () => {
   setCurrentScreen("getApartment");
 });
 
-let childPicture = new Pictures(-120, 100, 90, 400, () => {
+let childPicture = new Pictures(-120, 150, 90, 400, () => {
   player.hasChild = true;
 
   pushHasChildQuestions();
