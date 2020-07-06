@@ -16,14 +16,8 @@ let timeline = new Timeline(-600, 320);
 
 export let tutorial = new Tutorial(0, 0, false);
 
-export let icons = new Icons(
-  -600,
-  -320,
-  player.money,
-  player.health,
-  player.happiness
-);
-//let gif_createImg;
+export let icons = new Icons(-600, -320, player);
+
 let vid;
 
 function onStart() {
