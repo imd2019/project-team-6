@@ -491,7 +491,7 @@ let randomQuestionsWeek3to4 = [
       ),
     ],
     100,
-    220,
+    -220,
     "mp4/frage_12.mp4"
   ),
 ];
