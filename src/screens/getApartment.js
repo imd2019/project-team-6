@@ -11,8 +11,8 @@ import { Pictures } from "../model/imagePosition.js";
 
 let headline = new Button(100, -320, 200, 20, true, "Wähle deine Wohnung:");
 
-let townTitle = "Vorstadt";
-let town = new Button(-160, 125, 80, 20, true, townTitle, () => {
+let townTitle = "Vorstadt mit Auto";
+let town = new Button(-80, 125, 160, 20, true, townTitle, () => {
   player.apartment = new Apartment(530, 121, townTitle, true);
 
   pushHasCarQuestions();
@@ -20,8 +20,8 @@ let town = new Button(-160, 125, 80, 20, true, townTitle, () => {
   setCurrentScreen("yourMoney");
 });
 
-let cityTitle = "Innenstadt";
-let city = new Button(245, 125, 90, 20, true, cityTitle, () => {
+let cityTitle = "Innenstadt ohne Auto";
+let city = new Button(285, 125, 180, 20, true, cityTitle, () => {
   player.apartment = new Apartment(1030, 121, cityTitle, false);
 
   setCurrentScreen("yourMoney");
