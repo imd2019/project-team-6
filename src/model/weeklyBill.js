@@ -31,15 +31,15 @@ export class WeeklyBillEvent extends VinduEvent {
     imageMode(CENTER);
     image(moneyLarge, windowWidth / 2 - 200, windowHeight / 2);
 
-    fill(222, 70, 90);
+    textFont(mainFont);
+    fill(245, 189, 197, 180);
     textAlign(CENTER);
-    textSize(24);
-    text("Deine Finanzen: ", windowWidth / 2 + 65, windowHeight / 2 - 90);
+    textSize(20);
+    text("Deine Finanzen ", windowWidth / 2 + 65, windowHeight / 2 + 70);
     fill("black");
     textAlign(RIGHT);
     textSize(20);
-    textFont(mainFont);
-    text("letzter Kontostand: ", windowWidth / 2 + 105, windowHeight / 2 - 60);
+    text("Letzter Kontostand: ", windowWidth / 2 + 105, windowHeight / 2 - 60);
     text("Trinkgeld: ", windowWidth / 2 + 105, windowHeight / 2 - 30);
     text("Wöchentl. Einkauf: ", windowWidth / 2 + 105, windowHeight / 2);
     text("Dein Kontostand: ", windowWidth / 2 + 105, windowHeight / 2 + 30);
