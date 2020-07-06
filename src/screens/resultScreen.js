@@ -36,25 +36,32 @@ import {
   zM,
   zS,
 } from "./customizationScreen.js";
-import { player } from "../game.js";
+import {
+  getPlayerHappiness,
+  getPlayerMoney,
+  getPlayerHealth,
+  getPlayerSex,
+  icons,
+} from "../screens/gameScreen.js";
+import { setCurrentScreen } from "../../sketch.js";
 
-let nextBtn = new Button(0, 200, 40, 20, true, "Weiter", () => {
+let nextBtn = new Button(-250, 200, 80, 20, true, "Weiter", () => {
   setCurrentScreen("end");
 });
 
 let firstCoronaSalary = 1570;
 let secondCoronaSalary = 895;
 
-function backgroundImg() {
+export function backgroundImg() {
   push();
   imageMode(CENTER);
   image(endbg, windowWidth / 2, windowHeight / 2, 1300, 732);
   pop();
 }
 
-function money() {
+export function money(money) {
   push();
-
+  let maiMoney = money - secondCoronaSalary;
   imageMode(CENTER);
   image(moneyIcon, windowWidth / 2 - 500, windowHeight / 2 - 200);
 
@@ -63,7 +70,7 @@ function money() {
   textSize(16);
   fill("#f5bdc5");
 
-  if (player.money - secondCoronaSalary < 0) {
+  if (maiMoney > 150) {
     text(
       "Du hast es durch diesen Monat geschafft, aber du musstest an einigen Stellen viel zurückstecken. Das geht nicht mehr lange so weiter ohne deine Gesundheit und Zufriedenheit zu beeinträchtigen.",
       windowWidth / 2 - 600,
@@ -71,7 +78,7 @@ function money() {
       200
     );
   }
-  if (player.money - secondCoronaSalary === 0) {
+  if (maiMoney >= 0 && maiMoney <= 150) {
     text(
       "Das Geld ist knapp. Du hast es gerade so durch den Monat geschafft aber musstest auch oft auf Dinge verzichten. Auf längere Zeit geht das nicht gut. Außerdem kannst du kaum Geld zu Seite legen weil so wenig übrig bleibt. Eine unerwartete Ausgabe und du bist im Minus.",
       windowWidth / 2 - 600,
@@ -79,7 +86,7 @@ function money() {
       200
     );
   }
-  if (player.money - secondCoronaSalary > 0) {
+  if (maiMoney > 0) {
     text(
       "Das Geld war schon vorher knapp aber jetzt kommst du kaum noch über die Runden. Wenn du nicht bald wieder dein normales Gehalt bekommst musst du dir vielleicht einen zweiten Job suche - wenn du einen findest. Die Geldsorgen werden sich zukünftig auch auf deine Zufriedenheit und schließlich deine Gesundheit auswirken.",
       windowWidth / 2 - 600,
@@ -89,7 +96,7 @@ function money() {
   }
   pop();
 }
-function health() {
+export function health(health) {
   push();
 
   imageMode(CENTER);
@@ -99,7 +106,7 @@ function health() {
   textFont(mainFont);
   textSize(16);
   fill("#f5bdc5");
-  if (player.health > 70) {
+  if (health > 70) {
     text(
       "Trotz der Pandemie hast du es geschafft auf deine Gesundheit zu achten. Aber wie geht es dir sonst?  Die Simulation endet nach vier Wochen, aber das Leben geht weiter. Geld und andere -sorgen können dir in Zukunft schlaflose Nächte bereiten. Auf Dauer bekommst du das körperlich zu spüren vor allem wenn sich die Einschränkungen nicht lockern.",
       windowWidth / 2 - 350,
@@ -107,7 +114,7 @@ function health() {
       200
     );
   }
-  if (player.health >= 40 && player.health <= 70) {
+  if (health >= 40 && health <= 70) {
     text(
       "Du bist geschwächt, die letzen Wochen waren anstrengend und du hast dich ziemlich strapaziert. Wenn du nicht aufpasst könntest du krank werden. Das kannst du dir aber genauso wenig leisten wie eine Auszeit. Hoffentlich gerätst du nicht in einen Teufelskreis.",
       windowWidth / 2 - 350,
@@ -115,7 +122,7 @@ function health() {
       200
     );
   }
-  if (player.health < 40) {
+  if (health < 40) {
     text(
       "Bereits in dieser kurzen Zeit hast du deine Gesundheit stark strapaziert. Es ist nur eine Frage der Zeit bis sich das auch auf andere Aspekte deines Lebens auswirkt. Krankheitsanfällig und gestresst/besorgt sein kann sich auch schnell auf deine mentale Gesundheit auswirken! Das ist ein Teufelskreis  aus dem du nur schwer wieder heraus kommst, vor allem ohne Geld und keinem Ende der Pandemie in Sicht.",
       windowWidth / 2 - 350,
@@ -126,7 +133,7 @@ function health() {
 
   pop();
 }
-function happiness() {
+export function happiness(happiness) {
   push();
 
   imageMode(CENTER);
@@ -136,7 +143,7 @@ function happiness() {
   textFont(mainFont);
   fill("#f5bdc5");
   textSize(16);
-  if (player.happiness > 70) {
+  if (happiness > 70) {
     text(
       "Du konntest deine Stimmung trotz der Situation aufrecht erhalten. Aber das kostet auf Dauer Zeit und Geld. Außerdem setzt du öfter deine Gesundheit aufs Spiel. Du solltest die anderen Parameter im Blick behalten. Pass gut auf!",
       windowWidth / 2 - 100,
@@ -144,7 +151,7 @@ function happiness() {
       200
     );
   }
-  if (player.happiness >= 40 && player.happiness <= 70) {
+  if (happiness >= 40 && happiness <= 70) {
     text(
       "Dir geht es okay. Allerdings war das erst der Anfang. Wie wird es dir in den nächsten Wochen gehen? Dein Geld wird knapper aber die Anforderungen um deine Zufriedenheit aufrecht zu erhalten bleiben. Wie lange geht das noch gut?",
       windowWidth / 2 - 100,
@@ -152,7 +159,7 @@ function happiness() {
       200
     );
   }
-  if (player.happiness < 40) {
+  if (happiness < 40) {
     text(
       "Dir geht es nicht gut. Es war schon vorher nicht einfach, aber durch die Pandemie und die zusätzlichen Geldsorgen hast du es kaum geschafft dich um dein Wohlergehen zu kümmern. Deine mentale und schlussendlich auch körperliche Gesundheit sind in Gefahr. Da wieder rauszukommen wird schwer. Dein Zustand könnte sich sogar neben deiner Gesundheit auch auf deine Arbeitsfähigkeit auswirken, ein Kreislauf aus dem du nur schwer entkommen kannst.",
       windowWidth / 2 - 100,
@@ -163,34 +170,170 @@ function happiness() {
   pop();
 }
 
-function character() {
+export function character(sex, money, happiness, health) {
   push();
   imageMode(CENTER);
-  image(dGgHg, windowWidth / 2 + 324, windowHeight / 2 + 92, 652.2, 555.84);
-  image(
-    zG,
-    windowWidth / 2 + 324 - 103.2 / 2,
-    windowHeight / 2 + 92 - 94.56,
-    103.2,
-    94.56
-  );
+
+  if (sex === "f" && health > 70 && money > 70) {
+    image(fGgHg, windowWidth / 2 + 324, windowHeight / 2 + 92, 652.2, 555.84);
+  }
+  if (sex === "f" && health > 70 && money <= 70 && money >= 40) {
+    image(fGgHm, windowWidth / 2 + 324, windowHeight / 2 + 92, 652.2, 555.84);
+  }
+  if (sex === "f" && health > 70 && money < 40) {
+    image(fGgHs, windowWidth / 2 + 324, windowHeight / 2 + 92, 652.2, 555.84);
+  }
+
+  if (
+    sex === "f" &&
+    health <= 70 &&
+    health >= 40 &&
+    money <= 70 &&
+    money >= 40
+  ) {
+    image(fGmHm, windowWidth / 2 + 324, windowHeight / 2 + 92, 652.2, 555.84);
+  }
+  if (sex === "f" && health <= 70 && health >= 40 && money > 70) {
+    image(fGmHg, windowWidth / 2 + 324, windowHeight / 2 + 92, 652.2, 555.84);
+  }
+  if (sex === "f" && health <= 70 && health >= 40 && money < 40) {
+    image(fGmHs, windowWidth / 2 + 324, windowHeight / 2 + 92, 652.2, 555.84);
+  }
+
+  if (sex === "f" && health < 40 && money < 40) {
+    image(fGsHs, windowWidth / 2 + 324, windowHeight / 2 + 92, 652.2, 555.84);
+  }
+  if (sex === "f" && health < 40 && money < 40) {
+    image(fGsHg, windowWidth / 2 + 324, windowHeight / 2 + 92, 652.2, 555.84);
+  }
+  if (sex === "f" && health < 40 && money >= 40 && money >= 70) {
+    image(fGsHm, windowWidth / 2 + 324, windowHeight / 2 + 92, 652.2, 555.84);
+  }
+
+  if (sex === "m" && health > 70 && money > 70) {
+    image(mGgHg, windowWidth / 2 + 324, windowHeight / 2 + 92, 652.2, 555.84);
+  }
+  if (sex === "m" && health > 70 && money <= 70 && money >= 40) {
+    image(mGgHm, windowWidth / 2 + 324, windowHeight / 2 + 92, 652.2, 555.84);
+  }
+  if (sex === "m" && health > 70 && money < 40) {
+    image(mGgHs, windowWidth / 2 + 324, windowHeight / 2 + 92, 652.2, 555.84);
+  }
+
+  if (
+    sex === "m" &&
+    health <= 70 &&
+    health >= 40 &&
+    money <= 70 &&
+    money >= 40
+  ) {
+    image(mGmHm, windowWidth / 2 + 324, windowHeight / 2 + 92, 652.2, 555.84);
+  }
+  if (sex === "m" && health <= 70 && health >= 40 && money > 70) {
+    image(mGmHg, windowWidth / 2 + 324, windowHeight / 2 + 92, 652.2, 555.84);
+  }
+  if (sex === "m" && health <= 70 && health >= 40 && money < 40) {
+    image(mGmHs, windowWidth / 2 + 324, windowHeight / 2 + 92, 652.2, 555.84);
+  }
+
+  if (sex === "m" && health < 40 && money < 40) {
+    image(mGsHs, windowWidth / 2 + 324, windowHeight / 2 + 92, 652.2, 555.84);
+  }
+  if (sex === "m" && health < 40 && money < 40) {
+    image(mGsHg, windowWidth / 2 + 324, windowHeight / 2 + 92, 652.2, 555.84);
+  }
+  if (sex === "m" && health < 40 && money >= 40 && money >= 70) {
+    image(mGsHm, windowWidth / 2 + 324, windowHeight / 2 + 92, 652.2, 555.84);
+  }
+
+  if (sex === "d" && health > 70 && money > 70) {
+    image(dGgHg, windowWidth / 2 + 324, windowHeight / 2 + 92, 652.2, 555.84);
+  }
+  if (sex === "d" && health > 70 && money <= 70 && money >= 40) {
+    image(dGgHm, windowWidth / 2 + 324, windowHeight / 2 + 92, 652.2, 555.84);
+  }
+  if (sex === "d" && health > 70 && money < 40) {
+    image(dGgHs, windowWidth / 2 + 324, windowHeight / 2 + 92, 652.2, 555.84);
+  }
+
+  if (
+    sex === "d" &&
+    health <= 70 &&
+    health >= 40 &&
+    money <= 70 &&
+    money >= 40
+  ) {
+    image(dGmHm, windowWidth / 2 + 324, windowHeight / 2 + 92, 652.2, 555.84);
+  }
+  if (sex === "d" && health <= 70 && health >= 40 && money > 70) {
+    image(dGmHg, windowWidth / 2 + 324, windowHeight / 2 + 92, 652.2, 555.84);
+  }
+  if (sex === "d" && health <= 70 && health >= 40 && money < 40) {
+    image(dGmHs, windowWidth / 2 + 324, windowHeight / 2 + 92, 652.2, 555.84);
+  }
+
+  if (sex === "d" && health < 40 && money < 40) {
+    image(dGsHs, windowWidth / 2 + 324, windowHeight / 2 + 92, 652.2, 555.84);
+  }
+  if (sex === "d" && health < 40 && money < 40) {
+    image(dGsHg, windowWidth / 2 + 324, windowHeight / 2 + 92, 652.2, 555.84);
+  }
+  if (sex === "d" && health < 40 && money >= 40 && money >= 70) {
+    image(dGsHm, windowWidth / 2 + 324, windowHeight / 2 + 92, 652.2, 555.84);
+  }
+
+  if (happiness > 70) {
+    image(
+      zG,
+      windowWidth / 2 + 324 - 103.2 / 2,
+      windowHeight / 2 + 92 - 94.56,
+      103.2,
+      94.56
+    );
+  }
+
+  if (happiness < 40) {
+    image(
+      zS,
+      windowWidth / 2 + 324 - 103.2 / 2,
+      windowHeight / 2 + 92 - 94.56,
+      103.2,
+      94.56
+    );
+  }
+  if (happiness <= 70 && happiness >= 40) {
+    image(
+      zM,
+      windowWidth / 2 + 324 - 103.2 / 2,
+      windowHeight / 2 + 92 - 94.56,
+      103.2,
+      94.56
+    );
+  }
 
   pop();
 }
 
-function draw() {
+export function draw() {
   push();
   background("#1e1f3f");
   backgroundImg();
-  character();
-  happiness();
-  health();
-  money();
+
+  let playerSex = getPlayerSex();
+  console.log(playerSex + " try");
+  let playerMoney = icons.money;
+  let playerHealth = icons.health;
+  let playerHappiness = icons.happiness;
+  character(playerSex, playerMoney, playerHappiness, playerHealth);
+  happiness(playerHappiness);
+  health(playerHappiness);
+  money(playerMoney);
   nextBtn.display();
+  nextBtn.mouseOver();
   pop();
 }
 
-function mouseClicked() {
+export function mouseClicked() {
   nextBtn.mouseClicked();
 }
 
