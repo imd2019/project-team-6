@@ -10,10 +10,13 @@ import {
 } from "../game.js";
 import { Button } from "../model/button.js";
 import { setCurrentScreen } from "../../sketch.js";
+import { Tutorial } from "../model/tutorial.js";
 
 let weekDays = ["SO", "MO", "DI", "MI", "DO", "FR", "SA"];
 
 let timeline = new Timeline(-600, 320);
+
+let tutorial = new Tutorial(0, 0);
 
 export let icons = new Icons(-600, -320, player.money);
 //let gif_createImg;
@@ -78,6 +81,7 @@ function draw() {
   if (getUpcomingEvents().length === 0) {
     setCurrentScreen("result");
   }
+  tutorial.display();
 }
 
 function mouseClicked() {
