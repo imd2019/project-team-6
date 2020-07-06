@@ -3,10 +3,11 @@ import {
   healthIcon,
   moneyIcon,
   mainFont,
+  boldFont,
 } from "../screens/customizationScreen.js";
 
 export class Icons {
-  constructor(xOffset, yOffset, money) {
+  constructor(xOffset, yOffset, money, playerHealth, playerHappiness) {
     this.xOffset = xOffset;
     this.yOffset = yOffset;
     this.width = 100;
@@ -20,6 +21,12 @@ export class Icons {
     this.healthRound = 0;
     this.happinessRound = 0;
 
+    this.playerHealth = playerHealth;
+    this.playerHappiness = playerHappiness;
+
+    this.healthText = "";
+    this.happinessText = "";
+
     this.x = 0;
     this.y = 0;
   }
@@ -32,25 +39,26 @@ export class Icons {
     noStroke();
 
     rectMode(CORNER);
-    fill(17, 21, 37, 200);
+    fill(17, 21, 37, 220);
     //fill(255);
-    rect(this.x - 40, this.y - 40, 200, 200, 0, 0, 30, 0);
+    rect(this.x - 40, this.y - 40, 210, 190, 0, 0, 30, 0);
 
     image(moneyIcon, this.x, this.y, 40, 40);
     image(healthIcon, this.x, this.y + 50, 40, 40);
     image(happinessIcon, this.x, this.y + 100, 40, 40);
     fill(245, 189, 197);
     textFont(mainFont);
-    textSize(16);
-    // text("Gesundheit", this.x + 50, this.y + 50);
-    // text("Zufriedenheit", this.x + 50, this.y + 110);
+    textSize(13);
+    textAlign(CENTER);
+    text(this.healthText, this.x + 90, this.y + 32);
+    text(this.happinessText, this.x + 90, this.y + 82);
 
     // rect(this.x + 40, this.y + 62, this.width, this.height, 10);
     // rect(this.x + 40, this.y + 122, this.width, this.height, 10);
 
-    fill("#1e1f3f");
+    fill("#28294f");
     strokeWeight(5);
-    stroke("#1e1f3f");
+    stroke("#28294f");
     rect(this.x + 40, this.y + 45, this.width, this.height, 10);
     rect(this.x + 40, this.y + 95, this.width, this.height, 10);
 
@@ -59,6 +67,7 @@ export class Icons {
     noStroke();
     fill(245, 189, 197);
     textSize(20);
+    textAlign(CORNER);
     text(this.money + "€", this.x + 40, this.y);
 
     if (this.health === 100) {
@@ -128,6 +137,31 @@ export class Icons {
         this.money--;
         this.moneyChange++;
       }
+    }
+  }
+  hitTest(x, y) {
+    return (
+      x >= this.x - 40 &&
+      x <= this.x - 40 + 210 &&
+      y >= this.y - 40 &&
+      y <= this.y - 40 + 190
+    );
+  }
+  mouseOver() {
+    if (this.hitTest(mouseX, mouseY)) {
+      this.healthText = "Gesundheit";
+      this.happinessText = "Zufriedenheit";
+      push();
+      fill(222, 70, 90);
+      textAlign(CENTER);
+      textSize(11);
+      textFont(boldFont);
+      text(this.playerHealth + "/100", this.x + 90, this.y + 52);
+      text(this.playerHappiness + "/100", this.x + 90, this.y + 102);
+      pop();
+    } else {
+      this.healthText = "";
+      this.happinessText = "";
     }
   }
 }
