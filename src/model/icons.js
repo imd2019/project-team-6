@@ -31,6 +31,11 @@ export class Icons {
     imageMode(CENTER);
     noStroke();
 
+    rectMode(CORNER);
+    fill(17, 21, 37, 200);
+    //fill(255);
+    rect(this.x - 40, this.y - 40, 200, 200, 0, 0, 30, 0);
+
     image(moneyIcon, this.x, this.y, 40, 40);
     image(healthIcon, this.x, this.y + 50, 40, 40);
     image(happinessIcon, this.x, this.y + 100, 40, 40);
@@ -40,7 +45,6 @@ export class Icons {
     // text("Gesundheit", this.x + 50, this.y + 50);
     // text("Zufriedenheit", this.x + 50, this.y + 110);
 
-    rectMode(CORNER);
     // rect(this.x + 40, this.y + 62, this.width, this.height, 10);
     // rect(this.x + 40, this.y + 122, this.width, this.height, 10);
 

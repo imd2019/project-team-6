@@ -15,7 +15,7 @@ let finance = new Button(65, -320, 130, 20, true, "Deine Finanzen");
 let startBtn = new Button(0, 200, 40, 20, true, "Start", () => {
   pushRandomQuestions();
 
-  icons.animate(100, 100, player.money);
+  icons.animate(80, 80, player.money);
   runNextEvent();
   customizationClickSound.play();
 

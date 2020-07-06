@@ -2,13 +2,11 @@ import { Icons } from "../model/icons.js";
 import { Timeline } from "../model/timeline.js";
 import {
   player,
-  runNextEvent,
   getCurrentEvent,
   upcomingEvents,
   getCurrentDay,
   getUpcomingEvents,
 } from "../game.js";
-import { Button } from "../model/button.js";
 import { setCurrentScreen } from "../../sketch.js";
 import { Tutorial } from "../model/tutorial.js";
 
