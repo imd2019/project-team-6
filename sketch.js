@@ -9,6 +9,7 @@ import getApartment from "./src/screens/getApartment.js";
 import yourMoney from "./src/screens/yourMoney.js";
 import resultScreen from "./src/screens/resultScreen.js";
 import choseTaxConsultantScreen from "./src/screens/choseTaxConsultant.js";
+import chooseWaiterScreen from "./src/screens/chooseWaiter.js";
 import { Button } from "./src/model/button.js";
 
 let currentScreen = "start";
@@ -40,6 +41,8 @@ function getScreen(screenName) {
     return yourMoney;
   } else if (screenName === "choseTC") {
     return choseTaxConsultantScreen;
+  } else if (screenName === "chooseWaiter") {
+    return chooseWaiterScreen;
   } else if (screenName === "game") {
     return gameScreen;
   } else if (screenName === "result") {

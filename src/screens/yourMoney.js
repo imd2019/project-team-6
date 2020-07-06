@@ -19,7 +19,11 @@ let startBtn = new Button(0, 200, 40, 20, true, "Start", () => {
   runNextEvent();
   customizationClickSound.play();
 
-  setCurrentScreen("game");
+  if (player.job.title === "Steuerberater*in") {
+    setCurrentScreen("choseTC");
+  } else {
+    setCurrentScreen("game");
+  }
 });
 
 let childBenefit = 204;

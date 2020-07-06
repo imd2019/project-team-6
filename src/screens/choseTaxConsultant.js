@@ -1,6 +1,7 @@
 import { Button } from "../model/button.js";
 import { setCurrentScreen } from "../../sketch.js";
 import { mainFont } from "./customizationScreen.js";
+import { customizationClickSound } from "./startScreen.js";
 
 let frames = [];
 let currentFrame = 0;
@@ -69,8 +70,10 @@ function mouseClicked() {
 function nextFrame() {
   if (currentFrame < frames.length - 1) {
     currentFrame++;
+    customizationClickSound.play();
   } else {
-    setCurrentScreen("game");
+    setCurrentScreen("chooseWaiter");
+    customizationClickSound.play();
   }
 }
 
@@ -94,6 +97,7 @@ class Frame {
 
   display() {
     push();
+    imageMode(CORNER);
     image(this.img, 0, 0, windowWidth, windowHeight);
     strokeWeight(3);
     stroke(255);
