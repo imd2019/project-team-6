@@ -11,8 +11,8 @@ let nextBtn = new Button(0, 200, 40, 20, true, "Weiter", () => {
   setCurrentScreen("end");
 });
 
-let firstCoronaSallery = 1570;
-let secondCoronaSallery = 895;
+let firstCoronaSalary = 1570;
+let secondCoronaSalary = 895;
 
 function money() {
   push();
@@ -25,13 +25,13 @@ function money() {
   textSize(16);
   fill("#f5bdc5");
 
-  if (player.money - secondCoronaSallery < 0) {
+  if (player.money - secondCoronaSalary < 0) {
     text("gut", windowWidth / 2 - 250, windowHeight / 2 - 20, 100);
   }
-  if (player.money - secondCoronaSallery === 0) {
+  if (player.money - secondCoronaSalary === 0) {
     text("mittel", windowWidth / 2 - 250, windowHeight / 2 - 20, 100);
   }
-  if (player.money - secondCoronaSallery > 0) {
+  if (player.money - secondCoronaSalary > 0) {
     text("schlecht", windowWidth / 2 - 250, windowHeight / 2 - 20, 100);
   }
   pop();

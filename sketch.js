@@ -47,6 +47,7 @@ function getScreen(screenName) {
 
 window.draw = function () {
   getScreen(currentScreen).draw();
+
   if (
     currentScreen === "getGender" ||
     currentScreen === "getJob" ||
@@ -55,8 +56,9 @@ window.draw = function () {
     currentScreen === "getMoney" ||
     currentScreen === "game" ||
     currentScreen === "end"
-  )
+  ) {
     exitBtn.display();
+  }
 };
 
 window.mouseClicked = function () {
