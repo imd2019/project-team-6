@@ -73,7 +73,7 @@ function draw() {
   vid.size(windowWidth, windowHeight);
 
   icons.display();
-  showWeekDay();
+  // showWeekDay();
 
   let day = weekDays[getCurrentDay() % 7];
   timeline.display(day, getCurrentDay());
@@ -95,14 +95,14 @@ function mouseClicked() {
     currentEvent.mouseClicked();
   }
 }
-function showWeekDay() {
-  push();
-  textAlign(CENTER);
-  let day = weekDays[getCurrentDay() % 7];
-  textSize(20);
-  fill(255);
-  text(day, windowWidth / 2, 60);
-  pop();
-}
+// function showWeekDay() {
+//   push();
+//   textAlign(CENTER);
+//   let day = weekDays[getCurrentDay() % 7];
+//   textSize(20);
+//   fill(255);
+//   text(day, windowWidth / 2, 60);
+//   pop();
+// }
 
 export default { draw, mouseClicked, onStart };

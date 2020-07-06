@@ -33,7 +33,7 @@ export class WeeklyBillEvent extends VinduEvent {
     fill(222, 70, 90);
     textAlign(CENTER);
     textSize(24);
-    text("Deine Finanzen: ", windowWidth / 2 + 65, windowHeight / 2 - 80);
+    text("Deine Finanzen: ", windowWidth / 2 + 65, windowHeight / 2 - 90);
     fill("black");
     textAlign(RIGHT);
     textSize(20);

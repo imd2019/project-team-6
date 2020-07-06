@@ -959,4 +959,3 @@ export function getCurrentDay() {
 export function getCurrentEvent() {
   return currentEvent;
 }
-//versuch
