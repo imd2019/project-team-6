@@ -43,7 +43,6 @@ function draw() {
       console.log("Event on day " + e.daysUntil);
     }
   }
-
   if (!getCurrentEvent().hasBackgroundVideo()) {
     vid.hide();
   } else if (!vid.src.endsWith(getCurrentEvent().backgroundPath)) {
