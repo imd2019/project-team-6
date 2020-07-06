@@ -1,8 +1,11 @@
+import { notificationSound } from "../screens/startScreen.js";
+
 export class VinduEvent {
   constructor(daysUntil, backgroundPath = "", reuseBackground = false) {
     this.daysUntil = daysUntil;
     this.backgroundPath = backgroundPath;
     this.reuseBackground = reuseBackground;
+    this.firstTime = true;
 
     if (this.hasBackgroundImage()) {
       this.backgroundImage = loadImage(this.backgroundPath);
@@ -10,7 +13,10 @@ export class VinduEvent {
   }
 
   display() {
-    console.log("not implemented");
+    if (this.firstTime) {
+      this.firstTime = false;
+      notificationSound.play();
+    }
   }
 
   mouseClicked() {

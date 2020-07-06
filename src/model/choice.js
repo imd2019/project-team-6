@@ -2,6 +2,7 @@ import { icons } from "../screens/gameScreen.js";
 import { runNextEvent, getUpcomingEvents } from "../game.js";
 import { ConsequenceEvent } from "./consequenceEvent.js";
 import { fallbackFont } from "../screens/customizationScreen.js";
+import { choiceClickSound } from "../screens/startScreen.js";
 
 export class Choice {
   constructor(
@@ -54,6 +55,7 @@ export class Choice {
       getUpcomingEvents().push(
         new ConsequenceEvent(this, question.x, question.y)
       );
+      choiceClickSound.play();
       runNextEvent();
     }
   }

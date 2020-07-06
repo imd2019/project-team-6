@@ -1,5 +1,6 @@
 import { Button } from "../model/button.js";
 import { setCurrentScreen } from "../../sketch.js";
+import { customizationClickSound } from "./startScreen.js";
 
 export let male;
 export let female;
@@ -68,13 +69,15 @@ export let openVindu;
 let opacityText = 2;
 let opacityChange = +2;
 
-let yes = new Button(-80, 40, 20, 20, true, "Ja", () =>
-  setCurrentScreen("getGender")
-);
+let yes = new Button(-80, 40, 20, 20, true, "Ja", () => {
+  setCurrentScreen("getGender");
+  customizationClickSound.play();
+});
 
-let no = new Button(80, 40, 40, 20, true, "Nein", () =>
-  window.location.reload()
-);
+let no = new Button(80, 40, 40, 20, true, "Nein", () => {
+  window.location.reload();
+  customizationClickSound.play();
+});
 
 function content() {
   push();

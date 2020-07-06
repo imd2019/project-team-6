@@ -15,6 +15,7 @@ import {
 } from "../game.js";
 import { Apartment } from "../model/apartment.js";
 import { Pictures } from "../model/imagePosition.js";
+import { customizationClickSound } from "./startScreen.js";
 
 let headline = new Button(100, -320, 200, 20, true, "Wähle deine Wohnung:");
 
@@ -23,6 +24,7 @@ let town = new Button(-80, 125, 160, 20, true, townTitle, () => {
   player.apartment = new Apartment(530, 121, townTitle, true);
 
   pushHasCarQuestions();
+  customizationClickSound.play();
 
   setCurrentScreen("yourMoney");
 });
@@ -30,12 +32,14 @@ let town = new Button(-80, 125, 160, 20, true, townTitle, () => {
 let cityTitle = "Innenstadt ohne Auto";
 let city = new Button(285, 125, 180, 20, true, cityTitle, () => {
   player.apartment = new Apartment(1030, 121, cityTitle, false);
+  customizationClickSound.play();
 
   setCurrentScreen("yourMoney");
 });
 
 let backBtn = new Button(0, 300, 10, 10, true, "<", () => {
   if (player.hasChild) {
+    customizationClickSound.play();
     deleteHasChildQuestions();
   }
 
@@ -46,12 +50,14 @@ let townPicture = new Pictures(-200, 0, 310, 200, () => {
   player.apartment = new Apartment(530, 121, townTitle, true);
 
   pushHasCarQuestions();
+  customizationClickSound.play();
 
   setCurrentScreen("yourMoney");
 });
 
 let cityPicture = new Pictures(200, 0, 310, 200, () => {
   player.apartment = new Apartment(1030, 121, cityTitle, false);
+  customizationClickSound.play();
 
   setCurrentScreen("yourMoney");
 });

@@ -3,6 +3,7 @@ import { icons } from "../screens/gameScreen.js";
 import { runNextEvent } from "../game.js";
 import { mainFont } from "../screens/customizationScreen.js";
 import { Button } from "../model/button.js";
+import { choiceClickSound } from "../screens/startScreen.js";
 
 export class ConsequenceEvent extends VinduEvent {
   constructor(choice, x, y) {
@@ -51,5 +52,6 @@ export class ConsequenceEvent extends VinduEvent {
 
   mouseClicked() {
     this.okBtn.mouseClicked();
+    choiceClickSound.play();
   }
 }

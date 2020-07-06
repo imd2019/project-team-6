@@ -8,6 +8,7 @@ import {
 } from "../game.js";
 import { moneyLarge, mainFont } from "./customizationScreen.js";
 import { icons } from "./gameScreen.js";
+import { customizationClickSound } from "./startScreen.js";
 
 let finance = new Button(65, -320, 130, 20, true, "Deine Finanzen");
 
@@ -16,6 +17,7 @@ let startBtn = new Button(0, 200, 40, 20, true, "Start", () => {
 
   icons.animate(100, 100, player.money);
   runNextEvent();
+  customizationClickSound.play();
 
   setCurrentScreen("game");
 });
