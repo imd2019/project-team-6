@@ -81,7 +81,6 @@ function draw() {
   if (getUpcomingEvents().length === 0) {
     setCurrentScreen("result");
   }
-  tutorial.display();
 }
 
 function mouseClicked() {
