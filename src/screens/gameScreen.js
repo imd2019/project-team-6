@@ -84,10 +84,16 @@ function draw() {
 }
 
 function mouseClicked() {
-  let currentEvent = getCurrentEvent();
-  if (currentEvent) {
-    currentEvent.mouseClicked();
+  if (tutorial.mode === false) {
+    console.log("vor: " + getCurrentDay());
+    let currentEvent = getCurrentEvent();
+
+    if (currentEvent) {
+      currentEvent.mouseClicked();
+      console.log("nach: " + getCurrentDay());
+    }
   }
+
   tutorial.mouseClicked();
 }
 // function showWeekDay() {
