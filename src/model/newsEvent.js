@@ -28,6 +28,7 @@ export class NewsEvent extends VinduEvent {
   }
 
   display() {
+    super.display();
     this.x = windowWidth / 2 + this.xOffset;
     this.y = windowHeight / 2 + this.yOffset;
     push();
