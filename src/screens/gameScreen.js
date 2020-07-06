@@ -77,7 +77,6 @@ function draw() {
 
   let day = weekDays[getCurrentDay() % 7];
   timeline.display(day, getCurrentDay());
-  timeline.mouseOver();
 
   let currentEvent = getCurrentEvent();
   if (currentEvent) {
