@@ -7,22 +7,18 @@ import {
 } from "../screens/customizationScreen.js";
 
 export class Icons {
-  constructor(xOffset, yOffset, money, playerHealth, playerHappiness) {
+  constructor(xOffset, yOffset, player) {
     this.xOffset = xOffset;
     this.yOffset = yOffset;
     this.width = 100;
     this.height = 15;
-    this.money = money;
-    this.health = 0;
-    this.happiness = 0;
     this.moneyChange = 0;
     this.healthChange = 0;
     this.happinessChange = 0;
     this.healthRound = 0;
     this.happinessRound = 0;
 
-    this.playerHealth = playerHealth;
-    this.playerHappiness = playerHappiness;
+    this.player = player;
 
     this.healthText = "";
     this.happinessText = "";
@@ -31,6 +27,7 @@ export class Icons {
     this.y = 0;
   }
   display() {
+    this.changeValues();
     this.x = windowWidth / 2 + this.xOffset;
     this.y = windowHeight / 2 + this.yOffset;
 
@@ -62,29 +59,27 @@ export class Icons {
     rect(this.x + 40, this.y + 45, this.width, this.height, 10);
     rect(this.x + 40, this.y + 95, this.width, this.height, 10);
 
-    this.changeValues();
-
     noStroke();
     fill(245, 189, 197);
     textSize(20);
     textAlign(CORNER);
-    text(this.money + "€", this.x + 40, this.y);
+    text(this.player.money + "€", this.x + 40, this.y);
 
-    if (this.health === 100) {
+    if (this.player.health === 100) {
       this.healthRound = 10;
-    } else if (this.health < 99) {
+    } else if (this.player.health < 99) {
       this.healthRound = 0;
     }
-    if (this.happiness === 100) {
+    if (this.player.happiness === 100) {
       this.happinessRound = 10;
-    } else if (this.happiness < 99) {
+    } else if (this.player.happiness < 99) {
       this.happinessRound = 0;
     }
 
     rect(
       this.x + 40,
       this.y + 45,
-      this.health,
+      this.player.health,
       this.height,
       10,
       this.healthRound,
@@ -94,7 +89,7 @@ export class Icons {
     rect(
       this.x + 40,
       this.y + 95,
-      this.happiness,
+      this.player.happiness,
       this.height,
       10,
       this.happinessRound,
@@ -112,29 +107,29 @@ export class Icons {
 
   changeValues() {
     if (this.healthChange > 0) {
-      this.health++;
+      this.player.health++;
       this.healthChange--;
     }
     if (this.healthChange < 0) {
-      this.health--;
+      this.player.health--;
       this.healthChange++;
     }
 
     if (this.happinessChange > 0) {
-      this.happiness++;
+      this.player.happiness++;
       this.happinessChange--;
     }
     if (this.happinessChange < 0) {
-      this.happiness--;
+      this.player.happiness--;
       this.happinessChange++;
     }
 
     for (let i = 0; i < Math.round(Math.abs(this.moneyChange) / 10) + 1; i++) {
       if (this.moneyChange > 0) {
-        this.money++;
+        this.player.money++;
         this.moneyChange--;
       } else if (this.moneyChange < 0) {
-        this.money--;
+        this.player.money--;
         this.moneyChange++;
       }
     }
@@ -156,8 +151,8 @@ export class Icons {
       textAlign(CENTER);
       textSize(11);
       textFont(boldFont);
-      text(this.playerHealth + "/100", this.x + 90, this.y + 52);
-      text(this.playerHappiness + "/100", this.x + 90, this.y + 102);
+      text(this.player.health + "/100", this.x + 90, this.y + 52);
+      text(this.player.happiness + "/100", this.x + 90, this.y + 102);
       pop();
     } else {
       this.healthText = "";
