@@ -84,10 +84,14 @@ function draw() {
 }
 
 function mouseClicked() {
-  let currentEvent = getCurrentEvent();
-  if (currentEvent) {
-    currentEvent.mouseClicked();
+  if (tutorial.mode === false) {
+    let currentEvent = getCurrentEvent();
+
+    if (currentEvent) {
+      currentEvent.mouseClicked();
+    }
   }
+
   tutorial.mouseClicked();
 }
 // function showWeekDay() {
