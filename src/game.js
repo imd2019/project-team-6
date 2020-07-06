@@ -669,8 +669,8 @@ let hasChildQuestions = [
         1
       ),
     ],
-    300,
-    -110,
+    -300,
+    -220,
     "png/frage_24_grafik.png"
   ),
   new Question(
