@@ -49,7 +49,7 @@ function health() {
   if (player.health > 70) {
     text("gut", windowWidth / 2 - 50, windowHeight / 2 - 20, 100);
   }
-  if (player.health >= 40 && player.health >= 70) {
+  if (player.health >= 40 && player.health <= 70) {
     text("mittel", windowWidth / 2 - 50, windowHeight / 2 - 20, 100);
   }
   if (player.health < 40) {
@@ -71,7 +71,7 @@ function happiness() {
   if (player.happiness > 70) {
     text("gut", windowWidth / 2 + 150, windowHeight / 2 - 20, 100);
   }
-  if (player.happiness >= 40 && player.happiness >= 70) {
+  if (player.happiness >= 40 && player.happiness <= 70) {
     text("mittel", windowWidth / 2 + 150, windowHeight / 2 - 20, 100);
   }
   if (player.happiness < 40) {
