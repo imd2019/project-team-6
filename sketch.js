@@ -8,8 +8,9 @@ import getChild from "./src/screens/getChild.js";
 import getApartment from "./src/screens/getApartment.js";
 import yourMoney from "./src/screens/yourMoney.js";
 import { Button } from "./src/model/button.js";
+import resultScreen from "./src/screens/resultScreen.js";
 
-let currentScreen = "start";
+let currentScreen = "result";
 
 let exitBtn = new Button(550, -325, 30, 10, true, "Exit", () =>
   window.location.reload()
@@ -37,6 +38,8 @@ function getScreen(screenName) {
     return yourMoney;
   } else if (screenName === "game") {
     return gameScreen;
+  } else if (screenName === "result") {
+    return resultScreen;
   } else if (screenName === "end") {
     return endScreen;
   }

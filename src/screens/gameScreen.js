@@ -40,7 +40,6 @@ let t = false;
 let img;
 function draw() {
   clear();
-  console.log(timeline.date + getCurrentDay());
   if (!t) {
     t = true;
     console.log(upcomingEvents);
@@ -86,7 +85,7 @@ function draw() {
   }
 
   if (getUpcomingEvents().length === 0) {
-    setCurrentScreen("end");
+    setCurrentScreen("result");
   }
 }
 
