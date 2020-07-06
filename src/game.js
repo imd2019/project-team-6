@@ -21,8 +21,8 @@ let coronaQuestions = [
       ),
       new Choice("Ich storniere nicht.", "Du hoffst und wartest.", 0, 0, 0, 1),
     ],
-    windowWidth / 2,
-    windowHeight / 2,
+    300,
+    120,
     "mp4/frage_02.mp4"
   ),
   new Question(
@@ -56,8 +56,8 @@ let coronaQuestions = [
         0.5
       ),
     ],
-    windowWidth / 2 + 300,
-    windowHeight / 2 + 110,
+    300,
+    210,
     "png/frage_04_grafik.png"
   ),
   new Question(
@@ -81,8 +81,8 @@ let coronaQuestions = [
         1
       ),
     ],
-    windowWidth / 2 + 300,
-    windowHeight / 2 - 110,
+    -100,
+    120,
     "png/frage_09_grafik.png"
   ),
   new Question(
@@ -105,8 +105,8 @@ let coronaQuestions = [
         1
       ),
     ],
-    windowWidth / 2 - 300,
-    windowHeight / 2 + 110,
+    -50,
+    -220,
     "mp4/frage_13.mp4"
   ), //falls nicht schon gekauft oder genäht wurde und es nicht geklaptt hat
   new Question(
@@ -140,8 +140,8 @@ let coronaQuestions = [
         0.5
       ),
     ],
-    windowWidth / 2 + 300,
-    windowHeight / 2 - 110,
+    300,
+    -110,
     "png/frage_26.png"
   ),
   new Question(
@@ -164,8 +164,8 @@ let coronaQuestions = [
         1
       ),
     ],
-    windowWidth / 2 - 300,
-    windowHeight / 2 + 110,
+    100,
+    -220,
     "mp4/frage_20.mp4"
   ),
   //nur falls obere ja
@@ -192,8 +192,8 @@ let coronaQuestions = [
         0.8
       ),
     ],
-    windowWidth / 2,
-    windowHeight / 2 - 110,
+    0,
+    -110,
     "png/frage_21_grafik.png"
   ),
   new Question(
@@ -216,8 +216,8 @@ let coronaQuestions = [
         1
       ),
     ],
-    windowWidth / 2 + 300,
-    windowHeight / 2 - 110,
+    300,
+    120,
     "png/frage_22_grafik.png"
   ),
 ];
@@ -244,8 +244,8 @@ let randomQuestionsWeek1to2 = [
         1
       ),
     ],
-    windowWidth / 2 + 300,
-    windowHeight / 2 - 110,
+    300,
+    120,
     "png/frage_01_grafik.png"
   ),
 
@@ -275,8 +275,8 @@ let randomQuestionsWeek1to2 = [
         1
       ),
     ],
-    windowWidth / 2,
-    windowHeight / 2 - 110,
+    300,
+    220,
     "png/frage_03_grafik.png"
   ),
 
@@ -300,8 +300,8 @@ let randomQuestionsWeek1to2 = [
         1
       ),
     ],
-    windowWidth / 2 + 300,
-    windowHeight / 2 - 110,
+    -200,
+    120,
     "mp4/frage_05.mp4"
   ),
   new Question(
@@ -330,8 +330,8 @@ let randomQuestionsWeek1to2 = [
         1
       ),
     ],
-    windowWidth / 2,
-    windowHeight / 2 - 110,
+    300,
+    120,
     "mp4/frage_06.mp4"
   ),
   new Question(
@@ -360,8 +360,8 @@ let randomQuestionsWeek1to2 = [
         0.5
       ),
     ],
-    windowWidth / 2,
-    windowHeight / 2 - 110,
+    300,
+    120,
     "mp4/frage_08.mp4"
   ),
 ];
@@ -387,8 +387,8 @@ let randomQuestionsWeek3to4 = [
         1
       ),
     ],
-    windowWidth / 2 - 300,
-    windowHeight / 2 + 110,
+    -300,
+    110,
     "mp4/frage_07.mp4"
   ),
   new Question(
@@ -411,8 +411,8 @@ let randomQuestionsWeek3to4 = [
         1
       ),
     ],
-    windowWidth / 2 + 300,
-    windowHeight / 2 - 110,
+    300,
+    120,
     "mp4/frage_14.mp4"
   ),
   new Question(
@@ -438,8 +438,8 @@ let randomQuestionsWeek3to4 = [
         0.5
       ),
     ],
-    windowWidth / 2,
-    windowHeight / 2 - 110,
+    0,
+    -220,
     "mp4/frage_16.mp4"
   ),
   new Question(
@@ -462,8 +462,8 @@ let randomQuestionsWeek3to4 = [
         1
       ),
     ],
-    0,
-    windowHeight / 2 + 110,
+    300,
+    120,
     "png/frage_18_grafik.png"
   ),
   new Question(
@@ -490,8 +490,8 @@ let randomQuestionsWeek3to4 = [
         1
       ),
     ],
-    windowWidth / 2 - 300,
-    windowHeight / 2 + 110,
+    100,
+    220,
     "mp4/frage_12.mp4"
   ),
 ];
@@ -518,8 +518,8 @@ let hasChildQuestions = [
         1
       ),
     ],
-    windowWidth / 2 + 300,
-    windowHeight / 2 + 110,
+    -200,
+    120,
     "png/frage_11_grafik.png"
   ),
   new Question(
@@ -535,8 +535,8 @@ let hasChildQuestions = [
       ),
       new Choice("Ich kaufe mehr ein und koche mehr.", " ", 0, 0, 0, 1),
     ],
-    windowWidth / 2 - 300,
-    windowHeight / 2 + 110,
+    -300,
+    110,
     "png/frage_15_grafik.png"
   ),
 
@@ -553,8 +553,8 @@ let hasChildQuestions = [
         0.7
       ),
     ],
-    windowWidth / 2 + 300,
-    windowHeight / 2 - 110,
+    -200,
+    120,
     "png/frage_24_grafik.png"
   ),
   //falls kein Tablet bekommen
@@ -578,8 +578,8 @@ let hasChildQuestions = [
         1
       ),
     ],
-    windowWidth / 2 + 300,
-    windowHeight / 2 - 110,
+    300,
+    -110,
     "png/frage_24_grafik.png"
   ),
 ];
@@ -623,8 +623,8 @@ let randomHasChildQuestions = [
         0.8
       ),
     ],
-    windowWidth / 2,
-    windowHeight / 2 - 110,
+    300,
+    120,
     "png/frage_10_grafik.png"
   ),
   new Question(
@@ -650,8 +650,8 @@ let randomHasChildQuestions = [
         0.75
       ),
     ],
-    windowWidth / 2 - 300,
-    windowHeight / 2 + 110,
+    300,
+    -110,
     "png/frage_23_grafik.png"
   ),
 ];
@@ -677,8 +677,8 @@ let hasCarQuestions = [
         1
       ),
     ],
-    windowWidth / 2 + 300,
-    windowHeight / 2 - 110,
+    -300,
+    -120,
     "mp4/frage_19.mp4"
   ),
   new Question(
@@ -701,8 +701,8 @@ let hasCarQuestions = [
         1
       ),
     ],
-    windowWidth / 2 - 300,
-    windowHeight / 2 + 110,
+    0,
+    -220,
     "mp4/frage_25.mp4"
   ),
   new Question(
@@ -725,8 +725,8 @@ let hasCarQuestions = [
         1
       ),
     ],
-    windowWidth / 2,
-    windowHeight / 2 - 110,
+    0,
+    -110,
     "mp4/frage_27.mp4"
   ),
 ];
@@ -734,10 +734,10 @@ let hasCarQuestionsCount = hasCarQuestions.length;
 
 let currentDay = 0;
 export let upcomingEvents = [
-  new WeeklyBillEvent(7, 80, 0),
-  new WeeklyBillEvent(14, 40, 0),
+  new WeeklyBillEvent(1, 80, 0),
+  new WeeklyBillEvent(7, 40, 0),
+  new WeeklyBillEvent(14, 0, 0),
   new WeeklyBillEvent(21, 0, 0),
-  new WeeklyBillEvent(28, 0, 0),
   new NewsEvent(
     "Corona ist als Pandemie in \nDeutschland angekommen. \n\nPreise für \nAtemschutzmaske versechstfacht.",
     0,
@@ -751,13 +751,13 @@ export let upcomingEvents = [
     0
   ),
   new NewsEvent(
-    "Geschäfte müssen schließen. \n\n Versammlungsverbote wurden \nbeschlossen.",
+    "Geschäfte müssen schließen. \n\nVersammlungsverbote wurden \nbeschlossen.",
     14,
     0,
     0
   ),
   new NewsEvent(
-    "Besuchsverbot in Altersheimen. \n\n Kontaktverbote wurden \nbeschlossen. \n\n Häusliche Gewalt \nso hoch wie nie.",
+    "Besuchsverbot in Altersheimen. \n\nKontaktverbote wurden beschlossen. \n\nHäusliche Gewalt so hoch wie nie.",
     21,
     0,
     0
@@ -959,3 +959,4 @@ export function getCurrentDay() {
 export function getCurrentEvent() {
   return currentEvent;
 }
+//versuch
