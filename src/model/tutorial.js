@@ -2,7 +2,6 @@ import { VinduEvent } from "./event.js";
 import { runNextEvent, player } from "../game.js";
 import { mainFont } from "../screens/customizationScreen.js";
 import { Button } from "./button.js";
-import { icons } from "../screens/gameScreen.js";
 import { moneyLarge } from "../screens/customizationScreen.js";
 
 export class Tutorial {

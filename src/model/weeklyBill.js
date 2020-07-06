@@ -2,8 +2,7 @@ import { VinduEvent } from "./event.js";
 import { runNextEvent, player, getCurrentDay } from "../game.js";
 import { mainFont } from "../screens/customizationScreen.js";
 import { Button } from "./button.js";
-import { tutorial } from "../screens/gameScreen.js";
-import { icons } from "../screens/gameScreen.js";
+import { tutorial, icons } from "../screens/gameScreen.js";
 import { moneyLarge } from "../screens/customizationScreen.js";
 
 export class WeeklyBillEvent extends VinduEvent {

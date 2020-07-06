@@ -1,4 +1,3 @@
-import { icons } from "../screens/gameScreen.js";
 import { runNextEvent, getUpcomingEvents } from "../game.js";
 import { ConsequenceEvent } from "./consequenceEvent.js";
 import { fallbackFont } from "../screens/customizationScreen.js";
