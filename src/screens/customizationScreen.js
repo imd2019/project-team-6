@@ -66,6 +66,42 @@ export let caritasPic;
 export let closedVindu;
 export let openVindu;
 
+export let endbg;
+
+export let dGgHg;
+export let dGgHm;
+export let dGgHs;
+export let dGmHg;
+export let dGmHm;
+export let dGmHs;
+export let dGsHg;
+export let dGsHm;
+export let dGsHs;
+
+export let fGgHg;
+export let fGgHm;
+export let fGgHs;
+export let fGmHg;
+export let fGmHm;
+export let fGmHs;
+export let fGsHg;
+export let fGsHm;
+export let fGsHs;
+
+export let mGgHg;
+export let mGgHm;
+export let mGgHs;
+export let mGmHg;
+export let mGmHm;
+export let mGmHs;
+export let mGsHg;
+export let mGsHm;
+export let mGsHs;
+
+export let zG;
+export let zM;
+export let zS;
+
 let opacityText = 2;
 let opacityChange = +2;
 
@@ -206,6 +242,42 @@ function preload() {
   tafelPic = loadImage("./assets/ui/tafelPic.svg");
 
   closedVindu = loadImage("./assets/ui/fenster_geschlossen.png");
+
+  endbg = loadImage("./assets/endBGs/end_bg.png");
+
+  dGgHg = loadImage("./assets/endBGs/diverse/D_Gg-Hg-02.png");
+  dGgHm = loadImage("./assets/endBGs/diverse/D_Gg-Hm-02.png");
+  dGgHs = loadImage("./assets/endBGs/diverse/D_Gg-Hs-02.png");
+  dGmHg = loadImage("./assets/endBGs/diverse/D_Gm-Hg-02.png");
+  dGmHm = loadImage("./assets/endBGs/diverse/D_Gm-Hm-02.png");
+  dGmHs = loadImage("./assets/endBGs/diverse/D_Gm-Hs-02.png");
+  dGsHg = loadImage("./assets/endBGs/diverse/D_Gs-Hg-02.png");
+  dGsHm = loadImage("./assets/endBGs/diverse/D_Gs-Hm-02.png");
+  dGsHs = loadImage("./assets/endBGs/diverse/D_Gs-Hs-02.png");
+
+  fGgHg = loadImage("./assets/endBGs/female/W_Gg-Hg-02.png");
+  fGgHm = loadImage("./assets/endBGs/female/W_Gg-Hm-02.png");
+  fGgHs = loadImage("./assets/endBGs/female/W_Gg-Hs-02.png");
+  fGmHg = loadImage("./assets/endBGs/female/W_Gm-Hg-02.png");
+  fGmHm = loadImage("./assets/endBGs/female/W_Gm-Hm-02.png");
+  fGmHs = loadImage("./assets/endBGs/female/W_Gm-Hs-02.png");
+  fGsHg = loadImage("./assets/endBGs/female/W_Gs-Hg-02.png");
+  fGsHm = loadImage("./assets/endBGs/female/W_Gs-Hm-02.png");
+  fGsHs = loadImage("./assets/endBGs/female/W_Gs-Hs-02.png");
+
+  mGgHg = loadImage("./assets/endBGs/male/M_Gg-Hg-02.png");
+  mGgHm = loadImage("./assets/endBGs/male/M_Gg-Hm-02.png");
+  mGgHs = loadImage("./assets/endBGs/male/M_Gg-Hs-02.png");
+  mGmHg = loadImage("./assets/endBGs/male/M_Gm-Hg-02.png");
+  mGmHm = loadImage("./assets/endBGs/male/M_Gm-Hm-02.png");
+  mGmHs = loadImage("./assets/endBGs/male/M_Gm-Hs-02.png");
+  mGsHg = loadImage("./assets/endBGs/male/M_Gs-Hg-02.png");
+  mGsHm = loadImage("./assets/endBGs/male/M_Gs-Hm-02.png");
+  mGsHs = loadImage("./assets/endBGs/male/M_Gs-Hs-02.png");
+
+  zG = loadImage("./assets/endBGs/happiness/Zg-03.png");
+  zM = loadImage("./assets/endBGs/happiness/Zm-03.png");
+  zS = loadImage("./assets/endBGs/happiness/Zs-03.png");
 }
 
 export function drawPlayer() {
