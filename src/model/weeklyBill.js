@@ -1,7 +1,8 @@
 import { VinduEvent } from "./event.js";
-import { runNextEvent, player } from "../game.js";
+import { runNextEvent, player, getCurrentDay } from "../game.js";
 import { mainFont } from "../screens/customizationScreen.js";
 import { Button } from "./button.js";
+import { tutorial } from "../screens/gameScreen.js";
 import { icons } from "../screens/gameScreen.js";
 import { moneyLarge } from "../screens/customizationScreen.js";
 
@@ -16,6 +17,9 @@ export class WeeklyBillEvent extends VinduEvent {
     this.okBtn = new Button(0, 200, 40, 20, true, "Ok", () => {
       runNextEvent();
       icons.animate(0, 0, -100);
+      if (getCurrentDay() === 1) {
+        tutorial.mode = true;
+      }
     });
     this.okBtn.textColor = color(255);
     this.childCosts = 30;
