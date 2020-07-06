@@ -11,7 +11,7 @@ import resultScreen from "./src/screens/resultScreen.js";
 import choseTaxConsultantScreen from "./src/screens/choseTaxConsultant.js";
 import { Button } from "./src/model/button.js";
 
-let currentScreen = "choseTC";
+let currentScreen = "start";
 
 let exitBtn = new Button(620, -350, 30, 10, true, "Exit", () =>
   window.location.reload()
