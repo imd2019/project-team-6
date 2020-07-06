@@ -1,6 +1,13 @@
 import { Button } from "../model/button.js";
 import { setCurrentScreen } from "../../sketch.js";
-import { cityPic, townPic, drawPlayer, noPic } from "./customizationScreen.js";
+import {
+  cityPic,
+  townPic,
+  drawPlayer,
+  noPic,
+  townPicStroke,
+  cityPicStroke,
+} from "./customizationScreen.js";
 import {
   player,
   pushHasCarQuestions,
@@ -60,10 +67,10 @@ function draw() {
   town.mouseOver();
   city.mouseOver();
 
-  townPicture.mouseOver(townPic);
+  townPicture.mouseOver(townPicStroke);
   townPicture.display(townPic);
 
-  cityPicture.mouseOver(cityPic);
+  cityPicture.mouseOver(cityPicStroke);
   cityPicture.display(cityPic);
 }
 

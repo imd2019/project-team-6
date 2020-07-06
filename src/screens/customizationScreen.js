@@ -43,6 +43,8 @@ export let diverseConsultantChildStroke;
 
 export let townPic;
 export let cityPic;
+export let townPicStroke;
+export let cityPicStroke;
 
 export let noPic;
 export let moneyLarge;
@@ -179,6 +181,8 @@ function preload() {
 
   cityPic = loadImage("./assets/character/cityPic.png");
   townPic = loadImage("./assets/character/townPic.png");
+  cityPicStroke = loadImage("./assets/character/cityPicStroke.png");
+  townPicStroke = loadImage("./assets/character/townPicStroke.png");
 
   noPic = loadImage("./assets/character/noPic.png");
 
