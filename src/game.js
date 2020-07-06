@@ -187,8 +187,8 @@ let coronaQuestions = [
           "Du wurdest von der Polizei erwischt und musst die Strafe zahlen. Du ärgerst dich darüber.",
         ],
         [5, 10],
-        0,
-        -10,
+        [0, 0],
+        [-10, -10],
         0.8
       ),
     ],
@@ -260,7 +260,7 @@ let randomQuestionsWeek1to2 = [
         ],
         [0, 5],
         [-140, -60],
-        -10,
+        [-10, -10],
         1
       ),
       new Choice(
@@ -270,8 +270,8 @@ let randomQuestionsWeek1to2 = [
           "Du fühlst dich alleine, aber sparst wenigstens Geld.",
         ],
         [0, -5],
-        0,
-        0,
+        [0, 0],
+        [0, 0],
         1
       ),
     ],
@@ -313,9 +313,9 @@ let randomQuestionsWeek1to2 = [
           "Endlich. Du siehst deine beste Freundin wieder, ihr habt einen schönen Tag, aber du hast schon wieder Geld ausgegeben. ",
           "Endlich. Du siehst deine beste Freundin wieder, ihr habt einen schönen Tag, aber du hast schon wieder Geld ausgegeben.",
         ],
-        5,
+        [5, 5],
         [-115, 35],
-        -10,
+        [-10, -10],
         1
       ),
       new Choice(
@@ -325,8 +325,8 @@ let randomQuestionsWeek1to2 = [
           "Du hast deine Freundin lange nicht mehr gesehen, und hättest dich gefreut sie wieder zu sehen.",
         ],
         [0, -5],
-        0,
-        0,
+        [0, 0],
+        [0, 0],
         1
       ),
     ],
@@ -344,7 +344,7 @@ let randomQuestionsWeek1to2 = [
           "Du hast keine Disziplin, um regelmäßig Heim-Workouts zu machen, und bist enttäuscht von dir selbst.",
         ],
         [5, -5],
-        0,
+        [0, 0],
         [10, 0],
         0.5
       ),
@@ -355,7 +355,7 @@ let randomQuestionsWeek1to2 = [
           "Du hast keine Disziplin, um regelmäßig ins Fitnessstudio zu gehen. Du bist enttäuscht von dir selbst und hast Geld aus dem Fenster geschmissen.",
         ],
         [5, -5],
-        80,
+        [80, 80],
         [10, 0],
         0.5
       ),
@@ -434,7 +434,7 @@ let randomQuestionsWeek3to4 = [
         ],
         [15, -10],
         [0, 140],
-        0,
+        [0, 0],
         0.5
       ),
     ],
@@ -485,9 +485,9 @@ let randomQuestionsWeek3to4 = [
           "Du fühlst dich gut. Du konntest arbeiten gehen und warst nicht unnötig beim Arzt.",
         ],
         [-10, 10],
-        0,
+        [0, 0],
         [-10, 0],
-        1
+        0.5
       ),
     ],
     100,
@@ -548,8 +548,8 @@ let hasChildQuestions = [
         "Einschreiben",
         ["Dein Kind bekommt keins.", "Dein Kind bekommt ein Tablet."],
         [-10, 10],
-        0,
-        0,
+        [0, 0],
+        [0, 0],
         0.7
       ),
     ],
@@ -596,9 +596,9 @@ let randomHasChildQuestions = [
           "Deinem Kind gefällt das Buch nicht.",
         ],
         [5, -5],
-        -20,
-        0,
-        0.25
+        [-20, -20],
+        [0, 0],
+        0.75
       ),
       new Choice(
         "Markenklamotten",
@@ -607,8 +607,8 @@ let randomHasChildQuestions = [
           "Deinem Kind gefallen die neuen Klamotten gar nicht.",
         ],
         [10, -10],
-        -50,
-        0,
+        [-50, -50],
+        [0, 0],
         0.5
       ),
       new Choice(
@@ -618,8 +618,8 @@ let randomHasChildQuestions = [
           "Dein Kind freut sich nicht über die Box, das macht dich traurig.",
         ],
         [15, -15],
-        -80,
-        0,
+        [-80, -80],
+        [0, 0],
         0.8
       ),
     ],
@@ -678,7 +678,7 @@ let hasCarQuestions = [
       ),
     ],
     -300,
-    -120,
+    0,
     "mp4/frage_19.mp4"
   ),
   new Question(
