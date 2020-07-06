@@ -12,7 +12,7 @@ import resultScreen from "./src/screens/resultScreen.js";
 
 let currentScreen = "start";
 
-let exitBtn = new Button(550, -325, 30, 10, true, "Exit", () =>
+let exitBtn = new Button(620, -350, 30, 10, true, "Exit", () =>
   window.location.reload()
 );
 

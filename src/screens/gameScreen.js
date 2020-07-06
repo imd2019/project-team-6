@@ -21,9 +21,9 @@ let weekDays = [
   "Samstag",
 ];
 
-let timeline = new Timeline(-550, 300);
+let timeline = new Timeline(-600, 320);
 
-export let icons = new Icons(-550, -300, player.money);
+export let icons = new Icons(-600, -320, player.money);
 //let gif_createImg;
 let vid;
 
