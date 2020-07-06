@@ -24,39 +24,38 @@ export class Icons {
     this.y = 0;
   }
   display() {
-    push();
     this.x = windowWidth / 2 + this.xOffset;
     this.y = windowHeight / 2 + this.yOffset;
 
+    push();
     imageMode(CENTER);
     noStroke();
 
-    image(moneyIcon, this.x, this.y, 50, 50);
-    image(healthIcon, this.x, this.y + 60, 50, 50);
-    image(happinessIcon, this.x, this.y + 120, 50, 50);
+    image(moneyIcon, this.x, this.y, 40, 40);
+    image(healthIcon, this.x, this.y + 60, 40, 40);
+    image(happinessIcon, this.x, this.y + 120, 40, 40);
     fill(245, 189, 197);
     textFont(mainFont);
-    textAlign(LEFT);
     textSize(16);
-    text("Gesundheit", this.x + 50, this.y + 50);
-    text("Zufriedenheit", this.x + 50, this.y + 110);
+    // text("Gesundheit", this.x + 50, this.y + 50);
+    // text("Zufriedenheit", this.x + 50, this.y + 110);
 
     rectMode(CORNER);
-    rect(this.x + 50, this.y + 62, this.width, this.height, 10);
-    rect(this.x + 50, this.y + 122, this.width, this.height, 10);
+    // rect(this.x + 40, this.y + 62, this.width, this.height, 10);
+    // rect(this.x + 40, this.y + 122, this.width, this.height, 10);
 
     fill("#1e1f3f");
     strokeWeight(5);
     stroke("#1e1f3f");
-    rect(this.x + 50, this.y + 62, this.width, this.height, 10);
-    rect(this.x + 50, this.y + 122, this.width, this.height, 10);
+    rect(this.x + 40, this.y + 55, this.width, this.height, 10);
+    rect(this.x + 40, this.y + 115, this.width, this.height, 10);
 
     this.changeValues();
 
     noStroke();
     fill(245, 189, 197);
     textSize(20);
-    text(this.money + "€", this.x + 50, this.y);
+    text(this.money + "€", this.x + 40, this.y);
 
     if (this.health === 100) {
       this.healthRound = 10;
@@ -70,8 +69,8 @@ export class Icons {
     }
 
     rect(
-      this.x + 50,
-      this.y + 62,
+      this.x + 40,
+      this.y + 55,
       this.health,
       this.height,
       10,
@@ -80,8 +79,8 @@ export class Icons {
       10
     );
     rect(
-      this.x + 50,
-      this.y + 122,
+      this.x + 40,
+      this.y + 115,
       this.happiness,
       this.height,
       10,
