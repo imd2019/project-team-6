@@ -85,12 +85,10 @@ function draw() {
 
 function mouseClicked() {
   if (tutorial.mode === false) {
-    console.log("vor: " + getCurrentDay());
     let currentEvent = getCurrentEvent();
 
     if (currentEvent) {
       currentEvent.mouseClicked();
-      console.log("nach: " + getCurrentDay());
     }
   }
 
