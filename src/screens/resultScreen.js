@@ -5,10 +5,14 @@ import {
   healthIcon,
   moneyIcon,
 } from "./customizationScreen.js";
+import { player } from "../game.js";
 
 let nextBtn = new Button(0, 200, 40, 20, true, "Weiter", () => {
   setCurrentScreen("end");
 });
+
+let firstCoronaSallery = 1570;
+let secondCoronaSallery = 895;
 
 function money() {
   push();
@@ -20,12 +24,16 @@ function money() {
   textFont(mainFont);
   textSize(16);
   fill("#f5bdc5");
-  text(
-    "jabfvkjfbdlvbdsv bduhvbhsdbvhsbdv sdvsudbv lisdbvhsbdv bdvlhsd gvlsbdv",
-    windowWidth / 2 - 250,
-    windowHeight / 2 - 20,
-    100
-  );
+
+  if (player.money - secondCoronaSallery < 0) {
+    text("gut", windowWidth / 2 - 250, windowHeight / 2 - 20, 100);
+  }
+  if (player.money - secondCoronaSallery === 0) {
+    text("mittel", windowWidth / 2 - 250, windowHeight / 2 - 20, 100);
+  }
+  if (player.money - secondCoronaSallery > 0) {
+    text("schlecht", windowWidth / 2 - 250, windowHeight / 2 - 20, 100);
+  }
   pop();
 }
 function health() {
@@ -38,12 +46,16 @@ function health() {
   textFont(mainFont);
   textSize(16);
   fill("#f5bdc5");
-  text(
-    "jabfvkjfbdlvbdsv bduhvbhsdbvhsbdv sdvsudbv lisdbvhsbdv bdvlhsd gvlsbdv",
-    windowWidth / 2 - 50,
-    windowHeight / 2 - 20,
-    100
-  );
+  if (player.health > 70) {
+    text("gut", windowWidth / 2 - 50, windowHeight / 2 - 20, 100);
+  }
+  if (player.health >= 40 && player.health >= 70) {
+    text("mittel", windowWidth / 2 - 50, windowHeight / 2 - 20, 100);
+  }
+  if (player.health < 40) {
+    text("schlecht", windowWidth / 2 - 50, windowHeight / 2 - 20, 100);
+  }
+
   pop();
 }
 function happiness() {
@@ -56,12 +68,15 @@ function happiness() {
   textFont(mainFont);
   fill("#f5bdc5");
   textSize(16);
-  text(
-    "jabfvkjfbdlvbdsv bduhvbhsdbvhsbdv sdvsudbv lisdbvhsbdv bdvlhsd gvlsbdv",
-    windowWidth / 2 + 150,
-    windowHeight / 2 - 20,
-    100
-  );
+  if (player.happiness > 70) {
+    text("gut", windowWidth / 2 + 150, windowHeight / 2 - 20, 100);
+  }
+  if (player.happiness >= 40 && player.happiness >= 70) {
+    text("mittel", windowWidth / 2 + 150, windowHeight / 2 - 20, 100);
+  }
+  if (player.happiness < 40) {
+    text("schlecht", windowWidth / 2 + 150, windowHeight / 2 - 20, 100);
+  }
   pop();
 }
 
