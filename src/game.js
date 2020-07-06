@@ -254,24 +254,18 @@ let randomQuestionsWeek1to2 = [
     [
       new Choice(
         "Ich gehe mit.",
-        [
-          "Du musstest einen Babysitter besorgen. Der hat dich 80€ gekostet und du hast 60€ in der Bar gelassen.",
-          "Du hast 60€ in der Bar gelassen und du hast deine Freunde wieder gesehen.",
-        ],
-        [0, 5],
-        [-140, -60],
-        [-10, -10],
+        "Du hast 60€ in der Bar gelassen und du hast deine Freunde wieder gesehen.",
+        5,
+        -60,
+        -10,
         1
       ),
       new Choice(
         "Ich bleibe daheim.",
-        [
-          "Du bist glücklich den Abend mit dem Kind zu verbringen, vermisst aber deine Freunde.",
-          "Du fühlst dich alleine, aber sparst wenigstens Geld.",
-        ],
-        [0, -5],
-        [0, 0],
-        [0, 0],
+        "Du fühlst dich alleine, aber sparst wenigstens Geld.",
+        -5,
+        0,
+        0,
         1
       ),
     ],
@@ -582,6 +576,33 @@ let hasChildQuestions = [
     -110,
     "png/frage_24_grafik.png"
   ),
+  new Question(
+    "Dein Kind kommt nicht mit dem Schulstoff zurecht. \n \nBesorgst du einen Nachhilfelehrer?",
+    [
+      new Choice(
+        "Ja, ich hole Online-Nachhilfe.",
+        "Die Bildung deines Kindes ist dir sehr wichtig und zahlst für einen Online-Nachhilfelehrer zweimal die Woche.",
+        5,
+        -30,
+        0,
+        1
+      ),
+      new Choice(
+        "Nein, ich versuche selbst zu helfen.",
+        [
+          "Du sparst Geld und du bist froh, dass du helfen kannst.",
+          "Es tut dir leid, dass du deinem Kind nicht helfen kannst. Du machst dir Sorgen um die Schulbildung, es ist für beide Parteien frustrierend.",
+        ],
+        [10, -10],
+        [0, 0],
+        [0, 0],
+        0.75
+      ),
+    ],
+    300,
+    -110,
+    "png/frage_23_grafik.png"
+  ),
 ];
 let hasChildQuestionsCount = hasChildQuestions.length + 2;
 
@@ -628,31 +649,52 @@ let randomHasChildQuestions = [
     "png/frage_10_grafik.png"
   ),
   new Question(
-    "Dein Kind kommt nicht mit dem Schulstoff zurecht. \n \nBesorgst du einen Nachhilfelehrer?",
+    "Freunde haben dich in eine Bar eingeladen. \n \nGehst du mit?",
     [
       new Choice(
-        "Ja, ich hole Online-Nachhilfe.",
-        "Die Bildung deines Kindes ist dir sehr wichtig und zahlst für einen Online-Nachhilfelehrer zweimal die Woche.",
-        5,
-        -30,
+        "Ich gehe mit.",
+        "Du musstest einen Babysitter besorgen. Der hat dich 80€ gekostet und du hast 60€ in der Bar gelassen.",
         0,
+        -140,
+        -10,
         1
       ),
       new Choice(
-        "Nein, ich versuche selbst zu helfen.",
-        [
-          "Du sparst Geld und du bist froh, dass du helfen kannst.",
-          "Es tut dir leid, dass du deinem Kind nicht helfen kannst. Du machst dir Sorgen um die Schulbildung, es ist für beide Parteien frustrierend.",
-        ],
-        [10, -10],
-        [0, 0],
-        [0, 0],
-        0.75
+        "Ich bleibe daheim.",
+        "Du bist glücklich den Abend mit dem Kind zu verbringen, vermisst aber deine Freunde.",
+        0,
+        0,
+        0,
+        1
       ),
     ],
     300,
-    -110,
-    "png/frage_23_grafik.png"
+    220,
+    "png/frage_03_grafik.png"
+  ),
+  new Question(
+    "Deine beste Freundin möchte mit dir mittagessen gehen. \n \nGehst du mit?",
+    [
+      new Choice(
+        "Ich gehe mit.",
+        "Endlich. Du siehst deine beste Freundin wieder, ihr habt einen schönen Tag, aber du hast schon wieder Geld ausgegeben. ",
+        5,
+        -115,
+        -10,
+        1
+      ),
+      new Choice(
+        "Ich beibe daheim",
+        "Du verbringst einen schönen Spielemittag mit deinem Kind, aber deine Freunde haben dich lange nicht mehr gesehen.",
+        0,
+        0,
+        0,
+        1
+      ),
+    ],
+    300,
+    120,
+    "mp4/frage_06.mp4"
   ),
 ];
 
@@ -846,7 +888,7 @@ export function deleteCoronaQuestions() {
 export function pushHasCarQuestions() {
   upcomingEvents.push(new QuestionEvent(hasCarQuestions[0], 10));
   upcomingEvents.push(new QuestionEvent(hasCarQuestions[1], 23));
-  upcomingEvents.push(new QuestionEvent(hasCarQuestions[1], 26));
+  upcomingEvents.push(new QuestionEvent(hasCarQuestions[2], 26));
 
   week2QuestionsCount++;
   week4QuestionsCount++;
@@ -861,15 +903,24 @@ export function deleteHasCarQuestions() {
   week2QuestionsCount--;
   week4QuestionsCount--;
 }
+let deletedQuestion1 = randomQuestionsWeek1to2[1];
+let deletedQuestion2 = randomQuestionsWeek1to2[3];
 
 export function pushHasChildQuestions() {
   addRandomQuestions(1, randomHasChildQuestions);
-  addRandomQuestions(3, randomHasChildQuestions);
 
   upcomingEvents.push(new QuestionEvent(hasChildQuestions[0], 9));
-  upcomingEvents.push(new QuestionEvent(hasChildQuestions[2], 16));
-  //upcomingEvents.push(new QuestionEvent(hasChildQuestions[3], 17));
-  upcomingEvents.push(new QuestionEvent(hasChildQuestions[1], 24));
+  upcomingEvents.push(new QuestionEvent(hasChildQuestions[1], 16));
+  upcomingEvents.push(new QuestionEvent(hasChildQuestions[4], 17));
+  upcomingEvents.push(new QuestionEvent(hasChildQuestions[2], 22));
+  upcomingEvents.push(new QuestionEvent(hasChildQuestions[3], 24));
+
+  randomQuestionsWeek1to2.splice(deletedQuestion1, 1);
+  randomQuestionsWeek1to2.splice(deletedQuestion2, 1);
+  randomQuestionsWeek1to2.push(
+    randomHasChildQuestions[1],
+    randomHasChildQuestions[2]
+  );
 
   week1QuestionsCount++;
   week2QuestionsCount++;
@@ -882,7 +933,7 @@ export function deleteHasChildQuestions() {
     upcomingEvents.length - hasChildQuestionsCount - 1,
     hasChildQuestions.length
   );
-
+  randomQuestionsWeek1to2.push(deletedQuestion1, deletedQuestion2);
   week1QuestionsCount--;
   week2QuestionsCount--;
   week3QuestionsCount -= 2;
