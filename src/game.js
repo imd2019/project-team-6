@@ -220,6 +220,10 @@ let coronaQuestions = [
     120,
     "png/frage_22_grafik.png"
   ),
+];
+let coronaQuestionsCount = coronaQuestions.length;
+
+let consequenceEvents = [
   //falls urlaub noch nicht storniert wurde.
   new Question(
     "Dein Reiseanbieter hat dir geschrieben. Alle Urlaube wurden storniert.",
@@ -231,6 +235,43 @@ let coronaQuestions = [
           "Der Reiseanbieter hat dir keine Informationen über eventuelle Rückerstattungen gegeben. Du machst dir Sorgen, dein Geld zu verlieren für das du lange gespart hast.",
         ],
         [5, -10],
+        [0, 0],
+        [0, 0],
+        0.5
+      ),
+    ],
+    -300,
+    110,
+    "mp4/frage_07.mp4"
+  ),
+  //bewerbung geschrieben
+  new Question(
+    "Du hast Rückmeldungen für deine Bewerbungen bekommen.",
+    [
+      new Choice(
+        "Ok.",
+        "Du hast nur Absagen bekommen. Du ärgerst dich über deine jetzige Situation.",
+        -10,
+        0,
+        0,
+        1
+      ),
+    ],
+    -300,
+    110,
+    "mp4/frage_07.mp4"
+  ),
+  //nicht gehamster
+  new Question(
+    "Du hattest dich entschieden nicht zu hamstern.",
+    [
+      new Choice(
+        "Ok.",
+        [
+          "Die Supermarktregale sind immer noch voll. Du hattest das richtige Gespür.",
+          "Die Supermarktregale sind leer. Du hattest das falsche Gespür und ärgerst dich über deine Fehlentscheidung.",
+        ],
+        [-10, 10],
         [0, 0],
         [0, 0],
         0.5
@@ -260,45 +301,24 @@ let coronaQuestions = [
     110,
     "mp4/frage_07.mp4"
   ),
-  //nicht gehamster
+  //rechnung vergessen zu bezahlen
   new Question(
-    "Du hattest dich entschieden nicht zu hamstern.",
+    "Du hast vergessen deine Rechnung zu bezahlen.",
     [
       new Choice(
         "Ok.",
-        [
-          "Die Supermarktregale sind immer noch voll. Du hattest das richtige Gespür.",
-          "Die Supermarktregale sind leer. Du hattest das falsche Gespür und ärgerst dich über deine Fehlentscheidung.",
-        ],
-        [-10, 10],
-        [0, 0],
-        [0, 0],
-        0.5
+        "Du musstest Mahngebühren und die Rechnung in voller höhe begleichen.",
+        -10,
+        -200,
+        0,
+        1
       ),
     ],
-    -300,
-    110,
-    "mp4/frage_07.mp4"
-  ),
-  //bewerbung geschrieben
-  new Question(
-    "Du hast Rückmeldungen für deine Bewerbungen bekommen.",
-    [
-      new Choice(
-        "Ok.",
-        "Du hast nur Absagen bekommen. Du ärgerst dich über deine jetzige Situation.",
-        [-10, 10],
-        [0, 0],
-        [0, 0],
-        0.5
-      ),
-    ],
-    -300,
-    110,
+    0,
+    0,
     "mp4/frage_07.mp4"
   ),
 ];
-let coronaQuestionsCount = coronaQuestions.length;
 
 let randomQuestionsWeek1to2 = [
   new Question(
@@ -564,23 +584,6 @@ let randomQuestionsWeek3to4 = [
     100,
     -220,
     "mp4/frage_12.mp4"
-  ),
-  //rechnung vergessen eingefügt
-  new Question(
-    "Du hast vergessen deine Rechnung zu bezahlen.",
-    [
-      new Choice(
-        "Ok.",
-        "Du musstest Mahngebühren und die Rechnung in voller höhe begleichen.",
-        -10,
-        -200,
-        0,
-        1
-      ),
-    ],
-    0,
-    0,
-    "mp4/frage_07.mp4"
   ),
 ];
 
