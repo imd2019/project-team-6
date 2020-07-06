@@ -37,7 +37,7 @@ let malePicture = new Pictures(-350, 0, 100, 400, () => {
   player.sex = "m";
   pushCoronaQuestions();
 });
-let femalePicture = new Pictures(0, 0, 100, 400, () => {
+let femalePicture = new Pictures(0, 0, 120, 400, () => {
   setCurrentScreen("getJob");
   player.sex = "f";
   pushCoronaQuestions();
