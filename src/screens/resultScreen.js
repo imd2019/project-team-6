@@ -36,13 +36,6 @@ import {
   zM,
   zS,
 } from "./customizationScreen.js";
-import {
-  getPlayerHappiness,
-  getPlayerMoney,
-  getPlayerHealth,
-  getPlayerSex,
-  icons,
-} from "../screens/gameScreen.js";
 import { setCurrentScreen } from "../../sketch.js";
 
 let nextBtn = new Button(-250, 200, 80, 20, true, "Weiter", () => {
@@ -62,6 +55,7 @@ export function backgroundImg() {
 export function money(money) {
   push();
   let maiMoney = money - secondCoronaSalary;
+  console.log(maiMoney);
   imageMode(CENTER);
   image(moneyIcon, windowWidth / 2 - 500, windowHeight / 2 - 200);
 
@@ -319,11 +313,20 @@ export function draw() {
   background("#1e1f3f");
   backgroundImg();
 
-  let playerSex = getPlayerSex();
+  let playerSex = player.sex;
   console.log(playerSex + " try");
-  let playerMoney = icons.money;
-  let playerHealth = icons.health;
-  let playerHappiness = icons.happiness;
+  let playerMoney = player.money;
+  let playerHealth = player.health;
+  let playerHappiness = player.happiness;
+
+  console.log(
+    "Geld: " +
+      player.money +
+      "Gesund: " +
+      player.health +
+      "Zufri: " +
+      player.happiness
+  );
   character(playerSex, playerMoney, playerHappiness, playerHealth);
   happiness(playerHappiness);
   health(playerHappiness);
