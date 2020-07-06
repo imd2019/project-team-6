@@ -4,15 +4,6 @@ export class Timeline {
   constructor(xOffset, yOffset) {
     this.xOffset = xOffset;
     this.yOffset = yOffset;
-    this.weekDays = [
-      "Sonntag",
-      "Montag",
-      "Dienstag",
-      "Mittwoch",
-      "Donnerstag",
-      "Freitag",
-      "Samstag",
-    ];
     this.x = 0;
     this.y = 0;
   }
@@ -28,12 +19,12 @@ export class Timeline {
     fill(222, 70, 90);
     rect(this.x, this.y - 20, 60, 20, 5, 5, 0);
     textAlign(CENTER);
-    textSize(11);
+    textSize(14);
     fill(245, 189, 197);
-    text(day, this.x, this.y - 16);
+    text(day, this.x, this.y - 20);
     fill(222, 70, 90);
-    textSize(24);
-    text(date, this.x, this.y + 16);
+    textSize(26);
+    text(date, this.x, this.y + 10);
 
     pop();
   }

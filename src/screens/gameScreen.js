@@ -11,15 +11,7 @@ import {
 import { Button } from "../model/button.js";
 import { setCurrentScreen } from "../../sketch.js";
 
-let weekDays = [
-  "Sonntag",
-  "Montag",
-  "Dienstag",
-  "Mittwoch",
-  "Donnerstag",
-  "Freitag",
-  "Samstag",
-];
+let weekDays = ["SO", "MO", "DI", "MI", "DO", "FR", "SA"];
 
 let timeline = new Timeline(-600, 320);
 

@@ -32,11 +32,11 @@ export class WeeklyBillEvent extends VinduEvent {
     image(moneyLarge, windowWidth / 2 - 200, windowHeight / 2);
 
     textFont(mainFont);
-    fill(245, 189, 197, 180);
+    fill("black");
     textAlign(CENTER);
     textSize(20);
     text("Deine Finanzen ", windowWidth / 2 + 65, windowHeight / 2 - 90);
-    fill("black");
+
     textAlign(RIGHT);
     textSize(20);
     text("Letzter Kontostand: ", windowWidth / 2 + 105, windowHeight / 2 - 60);
