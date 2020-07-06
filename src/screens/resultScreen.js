@@ -19,10 +19,10 @@ function money() {
   textAlign(CENTER);
   textFont(mainFont);
   textSize(16);
-
+  fill("#f5bdc5");
   text(
     "jabfvkjfbdlvbdsv bduhvbhsdbvhsbdv sdvsudbv lisdbvhsbdv bdvlhsd gvlsbdv",
-    windowWidth / 2 - 300,
+    windowWidth / 2 - 250,
     windowHeight / 2 - 20,
     100
   );
@@ -37,9 +37,10 @@ function health() {
   textAlign(CENTER);
   textFont(mainFont);
   textSize(16);
+  fill("#f5bdc5");
   text(
     "jabfvkjfbdlvbdsv bduhvbhsdbvhsbdv sdvsudbv lisdbvhsbdv bdvlhsd gvlsbdv",
-    windowWidth / 2 - 100,
+    windowWidth / 2 - 50,
     windowHeight / 2 - 20,
     100
   );
@@ -53,10 +54,11 @@ function happiness() {
 
   textAlign(CENTER);
   textFont(mainFont);
+  fill("#f5bdc5");
   textSize(16);
   text(
     "jabfvkjfbdlvbdsv bduhvbhsdbvhsbdv sdvsudbv lisdbvhsbdv bdvlhsd gvlsbdv",
-    windowWidth / 2 + 100,
+    windowWidth / 2 + 150,
     windowHeight / 2 - 20,
     100
   );
