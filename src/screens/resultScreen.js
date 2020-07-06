@@ -94,4 +94,4 @@ function mouseClicked() {
   nextBtn.mouseClicked();
 }
 
-export default { health, happiness, money, draw, mouseClicked };
+export default { draw, mouseClicked };

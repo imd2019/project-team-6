@@ -10,7 +10,7 @@ import yourMoney from "./src/screens/yourMoney.js";
 import { Button } from "./src/model/button.js";
 import resultScreen from "./src/screens/resultScreen.js";
 
-let currentScreen = "result";
+let currentScreen = "start";
 
 let exitBtn = new Button(550, -325, 30, 10, true, "Exit", () =>
   window.location.reload()

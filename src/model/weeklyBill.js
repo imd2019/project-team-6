@@ -24,6 +24,7 @@ export class WeeklyBillEvent extends VinduEvent {
   }
 
   display() {
+    push();
     fill(245, 189, 197, 180);
     rectMode(CENTER);
     rect(windowWidth / 2 + 30, windowHeight / 2, 500, 227, 35);
