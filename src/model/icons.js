@@ -32,8 +32,8 @@ export class Icons {
     noStroke();
 
     image(moneyIcon, this.x, this.y, 40, 40);
-    image(healthIcon, this.x, this.y + 60, 40, 40);
-    image(happinessIcon, this.x, this.y + 120, 40, 40);
+    image(healthIcon, this.x, this.y + 50, 40, 40);
+    image(happinessIcon, this.x, this.y + 100, 40, 40);
     fill(245, 189, 197);
     textFont(mainFont);
     textSize(16);
@@ -47,8 +47,8 @@ export class Icons {
     fill("#1e1f3f");
     strokeWeight(5);
     stroke("#1e1f3f");
-    rect(this.x + 40, this.y + 55, this.width, this.height, 10);
-    rect(this.x + 40, this.y + 115, this.width, this.height, 10);
+    rect(this.x + 40, this.y + 45, this.width, this.height, 10);
+    rect(this.x + 40, this.y + 95, this.width, this.height, 10);
 
     this.changeValues();
 
@@ -70,7 +70,7 @@ export class Icons {
 
     rect(
       this.x + 40,
-      this.y + 55,
+      this.y + 45,
       this.health,
       this.height,
       10,
@@ -80,7 +80,7 @@ export class Icons {
     );
     rect(
       this.x + 40,
-      this.y + 115,
+      this.y + 95,
       this.happiness,
       this.height,
       10,
