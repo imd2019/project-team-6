@@ -16,13 +16,22 @@ export class WeeklyBillEvent extends VinduEvent {
     this.boxWidth = 650;
     this.okBtn = new Button(0, 200, 40, 20, true, "Ok", () => {
       runNextEvent();
-      icons.animate(0, 0, -100);
+      if (player.hasChild === false) {
+        let totalDeduction = 0;
+        totalDeduction += this.tips - this.foodCosts;
+        icons.animate(0, 0, totalDeduction);
+      }
+      if (player.hasChild === true) {
+        let totalDeduction = 0;
+        totalDeduction += this.tips - this.foodWithChild;
+        icons.animate(0, 0, totalDeduction);
+      }
+
       if (getCurrentDay() === 1) {
         tutorial.mode = true;
       }
     });
     this.okBtn.textColor = color(255);
-    this.childCosts = 30;
     this.foodWithChild = 65;
     this.foodCosts = 35 + this.hamsterCosts;
   }
@@ -39,20 +48,17 @@ export class WeeklyBillEvent extends VinduEvent {
     fill("black");
     textAlign(CENTER);
     textSize(20);
-    text("Deine Finanzen ", windowWidth / 2 + 65, windowHeight / 2 - 90);
+    text(
+      "Deine wöchentl. Ausgaben",
+      windowWidth / 2 + 65,
+      windowHeight / 2 - 90
+    );
 
     textAlign(RIGHT);
     textSize(20);
-    text("Letzter Kontostand: ", windowWidth / 2 + 105, windowHeight / 2 - 60);
-    text("Trinkgeld: ", windowWidth / 2 + 105, windowHeight / 2 - 30);
-    text("Wöchentl. Einkauf: ", windowWidth / 2 + 105, windowHeight / 2);
-    text("Dein Kontostand: ", windowWidth / 2 + 105, windowHeight / 2 + 30);
 
-    text(
-      "+" + player.money + "€",
-      windowWidth / 2 + 175,
-      windowHeight / 2 - 60
-    );
+    text("Trinkgeld: ", windowWidth / 2 + 105, windowHeight / 2 - 30);
+    text("Einkauf: ", windowWidth / 2 + 105, windowHeight / 2);
 
     text("+" + this.tips + "€", windowWidth / 2 + 175, windowHeight / 2 - 30);
     if (player.hasChild === false) {
@@ -65,16 +71,6 @@ export class WeeklyBillEvent extends VinduEvent {
         windowHeight / 2
       );
     }
-
-    text(player.money + "€", windowWidth / 2 + 175, windowHeight / 2 + 30);
-    strokeWeight(2);
-    stroke("black");
-    line(
-      windowWidth / 2 - 75,
-      windowHeight / 2 + 20,
-      windowWidth / 2 + 180,
-      windowHeight / 2 + 20
-    );
 
     this.okBtn.mouseOver();
     this.okBtn.display();
