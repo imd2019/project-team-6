@@ -47,7 +47,6 @@ export let cityPic;
 export let townPicStroke;
 export let cityPicStroke;
 
-export let noPic;
 export let moneyLarge;
 
 export let moneyIcon;
@@ -61,7 +60,9 @@ export let fallbackFont;
 export let boldFont;
 
 export let tafelPic;
+export let tafelStroke;
 export let caritasPic;
+export let caritasStroke;
 
 export let closedVindu;
 export let openVindu;
@@ -223,8 +224,6 @@ function preload() {
   cityPicStroke = loadImage("./assets/character/cityPicStroke.png");
   townPicStroke = loadImage("./assets/character/townPicStroke.png");
 
-  noPic = loadImage("./assets/character/noPic.png");
-
   moneyLarge = loadImage("./assets/ui/moneyLarge.png");
 
   moneyIcon = loadImage("./assets/ui/money.png");
@@ -239,9 +238,11 @@ function preload() {
   timelinePic = loadImage("./assets/ui/timeline.png");
 
   caritasPic = loadImage("./assets/ui/caritasPic.png");
+  caritasStroke = loadImage("./assets/ui/caritasPicStroke.png");
   tafelPic = loadImage("./assets/ui/tafelPic.png");
+  tafelStroke = loadImage("./assets/ui/tafelPicStroke.png");
 
-  closedVindu = loadImage("./assets/ui/fenster_geschlossen.png");
+  closedVindu = loadImage("./assets/ui/Startscreen.png");
 
   endbg = loadImage("./assets/endBGs/end_bg.png");
 

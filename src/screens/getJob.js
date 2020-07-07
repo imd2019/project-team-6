@@ -27,6 +27,11 @@ let waiter = new Button(-155, 250, 90, 20, true, waiterTitle, () => {
   customizationClickSound.play();
   setCurrentScreen("getChild");
 });
+let waiterPicture = new Pictures(-200, 0, 120, 400, () => {
+  player.job = new Job(waiterTitle, 1660);
+  customizationClickSound.play();
+  setCurrentScreen("getChild");
+});
 
 let taxConsultantTitle = "Steuerberater*in";
 let taxConsultant = new Button(
@@ -42,22 +47,16 @@ let taxConsultant = new Button(
     setCurrentScreen("getChild");
   }
 );
-
-let backBtn = new Button(0, 300, 10, 10, true, "<", () => {
-  setCurrentScreen("getGender");
-  deleteCoronaQuestions();
-  customizationClickSound.play();
-});
-
 let taxConsulantPicture = new Pictures(200, 0, 120, 400, () => {
   player.job = new Job(taxConsultantTitle, 3240);
   customizationClickSound.play();
   setCurrentScreen("getChild");
 });
-let waiterPicture = new Pictures(-200, 0, 120, 400, () => {
-  player.job = new Job(waiterTitle, 1660);
+
+let backBtn = new Button(0, 300, 10, 10, true, "<", () => {
+  setCurrentScreen("getGender");
+  deleteCoronaQuestions();
   customizationClickSound.play();
-  setCurrentScreen("getChild");
 });
 
 function draw() {

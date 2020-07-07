@@ -8,7 +8,7 @@ import {
   maleStroke,
   diverseStroke,
 } from "./customizationScreen.js";
-import { player, pushCoronaQuestions } from "../game.js";
+import { player, pushCoronaQuestions, deleteCoronaQuestions } from "../game.js";
 import { Pictures } from "../model/imagePosition.js";
 import { customizationClickSound } from "./startScreen.js";
 
@@ -20,26 +20,16 @@ let maleBtn = new Button(-310, 250, 80, 20, true, "Männlich", () => {
   pushCoronaQuestions();
   customizationClickSound.play();
 });
-let femaleBtn = new Button(40, 250, 80, 20, true, "Weiblich", () => {
+let malePicture = new Pictures(-350, 0, 100, 400, () => {
   setCurrentScreen("getJob");
-  player.sex = "f";
-  customizationClickSound.play();
-});
-let diverseBtn = new Button(380, 250, 60, 20, true, "Divers", () => {
-  setCurrentScreen("getJob");
-  player.sex = "d";
+  player.sex = "m";
   pushCoronaQuestions();
   customizationClickSound.play();
 });
 
-let backBtn = new Button(0, 300, 10, 10, true, "<", () => {
-  setCurrentScreen("customization");
-  customizationClickSound.play();
-});
-
-let malePicture = new Pictures(-350, 0, 100, 400, () => {
+let femaleBtn = new Button(40, 250, 80, 20, true, "Weiblich", () => {
   setCurrentScreen("getJob");
-  player.sex = "m";
+  player.sex = "f";
   pushCoronaQuestions();
   customizationClickSound.play();
 });
@@ -49,10 +39,22 @@ let femalePicture = new Pictures(0, 0, 120, 400, () => {
   pushCoronaQuestions();
   customizationClickSound.play();
 });
+
+let diverseBtn = new Button(380, 250, 60, 20, true, "Divers", () => {
+  setCurrentScreen("getJob");
+  player.sex = "d";
+  pushCoronaQuestions();
+  customizationClickSound.play();
+});
 let diversePicture = new Pictures(350, 0, 150, 400, () => {
   setCurrentScreen("getJob");
   player.sex = "d";
   pushCoronaQuestions();
+  customizationClickSound.play();
+});
+
+let backBtn = new Button(0, 300, 10, 10, true, "<", () => {
+  setCurrentScreen("customization");
   customizationClickSound.play();
 });
 

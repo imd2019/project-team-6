@@ -6,29 +6,31 @@ import { icons } from "../screens/gameScreen.js";
 import { moneyLarge } from "../screens/customizationScreen.js";
 
 export class WeeklyBillEvent extends VinduEvent {
-  constructor(daysUntil, tips, hamsterCosts) {
+  constructor(daysUntil, tips) {
     super(daysUntil);
     this.tips = tips;
-    this.hamsterCosts = hamsterCosts;
     this.x = windowWidth / 2;
     this.y = windowHeight / 2;
     this.boxWidth = 650;
+    this.foodWithChild = 65;
+    this.foodCosts = 35;
+
     this.okBtn = new Button(0, 200, 40, 20, true, "Ok", () => {
       runNextEvent();
-      if (!player.hasChild) {
-        let totalDeduction = 0;
-        totalDeduction += this.tips - this.foodCosts;
-        icons.animate(0, 0, totalDeduction);
-      }
+
+      let totalDeduction = 0;
+      totalDeduction += this.tips;
+
       if (player.hasChild) {
-        let totalDeduction = 0;
-        totalDeduction += this.tips - this.foodWithChild;
-        icons.animate(0, 0, totalDeduction);
+        totalDeduction -= this.foodWithChild;
+      } else {
+        totalDeduction -= this.foodCosts;
       }
+
+      icons.animate(0, 0, totalDeduction);
     });
+
     this.okBtn.textColor = color(255);
-    this.foodWithChild = 65;
-    this.foodCosts = 35 + this.hamsterCosts;
   }
 
   display() {

@@ -93,7 +93,7 @@ let coronaQuestions = [
         "Ja, ich hamstere.",
         "Du hamsterst ab jetzt. Hoffen wir, dass es sich lohnt.",
         0,
-        0,
+        -20,
         0,
         1,
         new Question(
@@ -106,7 +106,7 @@ let coronaQuestions = [
                 "Die Supermarktregale sind leer. Du hattest das richtige Gespür und freust dich darüber.",
               ],
               [-10, 10],
-              [-35, -35],
+              [0, 0],
               [0, 0],
               0.5
             ),
@@ -473,7 +473,7 @@ let randomQuestionsWeek3to4 = [
     ],
     -300,
     110,
-    "mp4/frage_07.mp4"
+    "png/frage_17_grafik.png"
   ),
   new Question(
     "Möchtest du deine Mutter im Altersheim besuchen?",
@@ -738,6 +738,9 @@ let randomHasChildQuestions = [
     120,
     "png/frage_10_grafik.png"
   ),
+];
+
+let week1to2HasChildQuestions = [
   new Question(
     "Freunde haben dich in eine Bar eingeladen. \n \nGehst du mit?",
     [
@@ -822,7 +825,31 @@ let hasCarQuestions = [
         5,
         -200,
         0,
-        1
+        1,
+        new Question(
+          "Der Supermarkt um die Ecke ist teurer aber dafür näher. Der billige Supermarkt ist nur mit der Bahn zu erreichen, da dein Auto noch in der Werkstatt steht.\n \nWas tust du?",
+          [
+            new Choice(
+              "Ich gehe in den billigeren Supermarkt.",
+              "Du brauchst länger zum Einkaufen und du musst alle Einkäufe mit der Hand tragen.",
+              -5,
+              -10,
+              -10,
+              1
+            ),
+            new Choice(
+              "Ich gehe in den teuren Supermarkt.",
+              "Du musst alle Einkäufe mit der Hand tragen und du musst mehr bezahlen, aber Weg ist nicht so weit.",
+              -10,
+              -10,
+              0,
+              1
+            ),
+          ],
+          0,
+          -110,
+          "mp4/frage_27.mp4"
+        )
       ),
       new Choice(
         "Ich bringe es nicht in die Werkstatt.",
@@ -836,30 +863,6 @@ let hasCarQuestions = [
     0,
     -220,
     "mp4/frage_25.mp4"
-  ),
-  new Question(
-    "Der Supermarkt um die Ecke ist teurer aber dafür näher. Der billige Supermarkt ist nur mit der Bahn zu erreichen, da dein Auto noch in der Werkstatt steht.\n \nWas tust du?",
-    [
-      new Choice(
-        "Ich gehe in den billigeren Supermarkt.",
-        "Du brauchst länger zum Einkaufen und du musst alle Einkäufe mit der Hand tragen.",
-        -5,
-        -10,
-        -10,
-        1
-      ),
-      new Choice(
-        "Ich gehe in den teuren Supermarkt.",
-        "Du musst alle Einkäufe mit der Hand tragen und du musst mehr bezahlen, aber Weg ist nicht so weit.",
-        -10,
-        -10,
-        0,
-        1
-      ),
-    ],
-    0,
-    -110,
-    "mp4/frage_27.mp4"
   ),
 ];
 let hasCarQuestionsCount = hasCarQuestions.length;
@@ -958,7 +961,6 @@ export function deleteCoronaQuestions() {
 export function pushHasCarQuestions() {
   upcomingEvents.push(new QuestionEvent(hasCarQuestions[0], 10));
   upcomingEvents.push(new QuestionEvent(hasCarQuestions[1], 23));
-  upcomingEvents.push(new QuestionEvent(hasCarQuestions[2], 26));
 
   week2QuestionsCount++;
   week4QuestionsCount++;
@@ -984,11 +986,10 @@ export function pushHasChildQuestions() {
   upcomingEvents.push(new QuestionEvent(hasChildQuestions[4], 17));
   upcomingEvents.push(new QuestionEvent(hasChildQuestions[2], 22));
 
-  randomQuestionsWeek1to2.splice(3, 1);
-  randomQuestionsWeek1to2.splice(4, 1);
+  randomQuestionsWeek1to2.splice(3, 2);
   randomQuestionsWeek1to2.push(
-    randomHasChildQuestions[1],
-    randomHasChildQuestions[2]
+    week1to2HasChildQuestions[0],
+    week1to2HasChildQuestions[1]
   );
 
   week1QuestionsCount++;
@@ -1002,7 +1003,7 @@ export function deleteHasChildQuestions() {
     upcomingEvents.length - hasChildQuestionsCount - 1,
     hasChildQuestions.length
   );
-  randomQuestionsWeek1to2.splice(randomQuestionsWeek1to2.length - 2, 2);
+  randomQuestionsWeek1to2.splice(randomQuestionsWeek1to2.length - 2, 3);
   randomQuestionsWeek1to2.push(deletedQuestion1, deletedQuestion2);
   week1QuestionsCount--;
   week2QuestionsCount--;

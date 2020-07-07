@@ -2,6 +2,8 @@ body {
   padding: 0;
   margin: 0;
   overflow: hidden;
+  display: block;
+  background: #191d3d;
 }
 
 video {
@@ -10,11 +12,16 @@ video {
 }
 
 #p5_loading {
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: relative;
+
+  margin-left: auto;
+  margin-right: auto;
   width: 100vw;
-  height: 100vh;
+}
+
+#img {
+  position: absolute;
+  width: 100%;
 }
 
 /* html {

@@ -9,21 +9,22 @@ import {
 import { moneyLarge, mainFont } from "./customizationScreen.js";
 import { icons } from "./gameScreen.js";
 import { customizationClickSound } from "./startScreen.js";
+import { Job } from "../model/job.js";
 
 let finance = new Button(65, -200, 170, 20, true, "Deine Finanzen");
 
 let startBtn = new Button(0, 200, 40, 20, true, "Start", () => {
   pushRandomQuestions();
 
-  let playerMoney = player.money;
-  player.money = 0;
+  player.health = 100;
+  player.happiness = 80;
 
-  icons.animate(80, 80, playerMoney);
   runNextEvent();
   customizationClickSound.play();
 
   if (player.job.title === "Steuerberater*in") {
     setCurrentScreen("choseTC");
+    player.job = new Job("Kellner*in", 1660);
   } else {
     setCurrentScreen("game");
   }

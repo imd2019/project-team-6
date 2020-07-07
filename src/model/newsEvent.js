@@ -2,6 +2,7 @@ import { VinduEvent } from "./event.js";
 import { runNextEvent, getCurrentDay } from "../game.js";
 import { Button } from "./button.js";
 import { tutorial } from "../screens/gameScreen.js";
+import { customizationClickSound } from "../screens/startScreen.js";
 
 export class NewsEvent extends VinduEvent {
   constructor(imgPath, daysUntil, xOffset, yOffset) {
@@ -27,6 +28,7 @@ export class NewsEvent extends VinduEvent {
           tutorial.mode = true;
         }
         runNextEvent();
+        customizationClickSound.play();
       }
     );
     this.okBtn.textColor = color(222, 70, 90);
