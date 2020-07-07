@@ -93,7 +93,7 @@ let coronaQuestions = [
         "Ja, ich hamstere.",
         "Du hamsterst ab jetzt. Hoffen wir, dass es sich lohnt.",
         0,
-        0,
+        -20,
         0,
         1,
         new Question(
@@ -106,7 +106,7 @@ let coronaQuestions = [
                 "Die Supermarktregale sind leer. Du hattest das richtige Gespür und freust dich darüber.",
               ],
               [-10, 10],
-              [-35, -35],
+              [0, 0],
               [0, 0],
               0.5
             ),
@@ -1025,6 +1025,8 @@ function addRandomQuestionsToEachWeek(week, weekCount, randomQuestions) {
 }
 
 function addRandomQuestions(week, randomQuestions) {
+  console.log(randomQuestions.map((q) => typeof q));
+
   let i = Math.round(random(0, randomQuestions.length - 1));
   let question = randomQuestions[i];
   randomQuestions.splice(i, 1);
