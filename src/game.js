@@ -60,7 +60,44 @@ let coronaQuestions = [
         0,
         0,
         -10,
-        1
+        1,
+        [
+          new Question(
+            "Möchtest du dir eine Maske kaufen?",
+            [
+              new Choice(
+                "Nein, ich brauche keine.",
+                "Du siehst die Gefahr noch nicht und tust das als unnötig ab.",
+                0,
+                0,
+                -10,
+                1
+              ),
+              new Choice(
+                "Ich kaufe mir eine.",
+                "Du fühlst dich sicher, aber die Masken waren sehr teuer.",
+                5,
+                -35,
+                0,
+                1
+              ),
+              new Choice(
+                "Nein, ich werde mir eine nähen.",
+                [
+                  "Du bist stolz auf dich, weil du es geschafft hast, Geld gespart hast und geschützt bist.",
+                  "Du bist enttäuscht: Es hat nicht geklappt, du hast Zeit verschwendet und bist nicht geschützt.",
+                ],
+                [10, -10],
+                [0, 0],
+                [0, -10],
+                0.5
+              ),
+            ],
+            300,
+            -110,
+            "png/frage_26.png"
+          ),
+        ]
       ),
       new Choice(
         "Ich kaufe mir eine.",
@@ -73,13 +110,48 @@ let coronaQuestions = [
       new Choice(
         "Nein, ich werde mir eine nähen.",
         [
-          "Du bist stolz auf dich, weil du es geschafft hast, Geld gespart hast und geschützt bist.",
           "Du bist enttäuscht: Es hat nicht geklappt, du hast Zeit verschwendet und bist nicht geschützt.",
+          "Du bist stolz auf dich, weil du es geschafft hast, Geld gespart hast und geschützt bist.",
         ],
-        [10, -10],
+        [-10, 10],
         [0, 0],
-        [0, -10],
-        0.5
+        [-10, 0],
+        0.5,
+        new Question(
+          "Möchtest du dir eine Maske kaufen?",
+          [
+            new Choice(
+              "Nein, ich brauche keine.",
+              "Du siehst die Gefahr noch nicht und tust das als unnötig ab.",
+              0,
+              0,
+              -10,
+              1
+            ),
+            new Choice(
+              "Ich kaufe mir eine.",
+              "Du fühlst dich sicher, aber die Masken waren sehr teuer.",
+              5,
+              -35,
+              0,
+              1
+            ),
+            new Choice(
+              "Nein, ich werde mir eine nähen.",
+              [
+                "Du bist stolz auf dich, weil du es geschafft hast, Geld gespart hast und geschützt bist.",
+                "Du bist enttäuscht: Es hat nicht geklappt, du hast Zeit verschwendet und bist nicht geschützt.",
+              ],
+              [10, -10],
+              [0, 0],
+              [0, -10],
+              0.5
+            ),
+          ],
+          300,
+          -110,
+          "png/frage_26.png"
+        )
       ),
     ],
     300,
@@ -133,7 +205,7 @@ let coronaQuestions = [
                 "Die Supermarktregale sind immer noch voll. Du hattest das richtige Gespür.",
                 "Die Supermarktregale sind leer. Du hattest das falsche Gespür und ärgerst dich über deine Fehlentscheidung.",
               ],
-              [-10, 10],
+              [10, -10],
               [0, 0],
               [0, 0],
               0.5
@@ -190,41 +262,7 @@ let coronaQuestions = [
     "mp4/frage_13.mp4"
   ),
   //falls nicht schon gekauft oder genäht wurde und es nicht geklaptt hat
-  new Question(
-    "Möchtest du dir eine Maske kaufen?",
-    [
-      new Choice(
-        "Nein, ich brauche keine.",
-        "Du siehst die Gefahr noch nicht und tust das als unnötig ab.",
-        0,
-        0,
-        -10,
-        1
-      ),
-      new Choice(
-        "Ich kaufe mir eine.",
-        "Du fühlst dich sicher, aber die Masken waren sehr teuer.",
-        5,
-        -35,
-        0,
-        1
-      ),
-      new Choice(
-        "Nein, ich werde mir eine nähen.",
-        [
-          "Du bist stolz auf dich, weil du es geschafft hast, Geld gespart hast und geschützt bist.",
-          "Du bist enttäuscht: Es hat nicht geklappt, du hast Zeit verschwendet und bist nicht geschützt.",
-        ],
-        [10, -10],
-        [0, 0],
-        [0, -10],
-        0.5
-      ),
-    ],
-    300,
-    -110,
-    "png/frage_26.png"
-  ),
+
   new Question(
     "Freunde laden dich zum Spazieren gehen ein. \n \nGehst du mit?",
     [
@@ -234,7 +272,36 @@ let coronaQuestions = [
         10,
         0,
         -10,
-        1
+        1,
+        [
+          new Question(
+            "Du triffst dich mit deinen Freunden. Sie wollen dich umarmen. \n \nLässt du es zu?",
+            [
+              new Choice(
+                "Ich lehne ab.",
+                "Dir ist die Situation unangenehm, aber du willst auf Nummer sicher gehen.",
+                -5,
+                0,
+                0,
+                1
+              ),
+              new Choice(
+                "Ich lasse mich umarmen.",
+                [
+                  "Dir hat menschliche Nähe gefehlt.",
+                  "Du wurdest von der Polizei erwischt und musst die Strafe zahlen. Du ärgerst dich darüber.",
+                ],
+                [5, 10],
+                [0, 0],
+                [-10, -10],
+                0.8
+              ),
+            ],
+            0,
+            -110,
+            "png/frage_21_grafik.png"
+          ),
+        ]
       ),
       new Choice(
         "Ich bleibe daheim.",
@@ -248,34 +315,6 @@ let coronaQuestions = [
     100,
     -220,
     "mp4/frage_20.mp4"
-  ),
-  //nur falls obere ja
-  new Question(
-    "Du triffst dich mit deinen Freunden. Sie wollen dich umarmen. \n \nLässt du es zu?",
-    [
-      new Choice(
-        "Ich lehne ab.",
-        "Dir ist die Situation unangenehm, aber du willst auf Nummer sicher gehen.",
-        -5,
-        0,
-        0,
-        1
-      ),
-      new Choice(
-        "Ich lasse mich umarmen.",
-        [
-          "Dir hat menschliche Nähe gefehlt.",
-          "Du wurdest von der Polizei erwischt und musst die Strafe zahlen. Du ärgerst dich darüber.",
-        ],
-        [5, 10],
-        [0, 0],
-        [-10, -10],
-        0.8
-      ),
-    ],
-    0,
-    -110,
-    "png/frage_21_grafik.png"
   ),
   new Question(
     "Deine Freundin ruft dich verängstigt an und erzählt dir von ihrem gewalttätigen Freund. \n \nLässt du sie bei dir eine Woche unterkommen?",
@@ -634,36 +673,37 @@ let hasChildQuestions = [
         [-10, 10],
         [0, 0],
         [0, 0],
-        0.7
+        0.7,
+        [
+          new Question(
+            "Dein Kind hat kein Tablet bekommen. \n \nKaufst du eins?",
+            [
+              new Choice(
+                "Mein Kind kann mein Handy benutzen.",
+                "Du hast Angst, dass dein Kind über das Handy nicht so gut mitarbeiten kann und bist genervt, dass du dein Handy in der Zeit nicht benutzen kannst.",
+                -5,
+                0,
+                0,
+                1
+              ),
+              new Choice(
+                "Ich kaufe ein Tablet.",
+                "Dein Kind kann wieder mitarbeiten, aber du ärgerst dich über die Finanzen.",
+                0,
+                -45,
+                0,
+                1
+              ),
+            ],
+            -300,
+            -220,
+            "png/frage_24n_grafik.png"
+          ),
+        ]
       ),
     ],
     -200,
     120,
-    "png/frage_24_grafik.png"
-  ),
-  //falls kein Tablet bekommen
-  new Question(
-    "Dein Kind hat kein Tablet bekommen. \n \nKaufst du eins?",
-    [
-      new Choice(
-        "Mein Kind kann mein Handy benutzen.",
-        "Du hast Angst, dass dein Kind über das Handy nicht so gut mitarbeiten kann und bist genervt, dass du dein Handy in der Zeit nicht benutzen kannst.",
-        -5,
-        0,
-        0,
-        1
-      ),
-      new Choice(
-        "Ich kaufe ein Tablet.",
-        "Dein Kind kann wieder mitarbeiten, aber du ärgerst dich über die Finanzen.",
-        0,
-        -45,
-        0,
-        1
-      ),
-    ],
-    -300,
-    -220,
     "png/frage_24_grafik.png"
   ),
   new Question(
