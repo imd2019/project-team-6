@@ -310,7 +310,7 @@ let coronaQuestions = [
         1
       ),
     ],
-    280,
+    260,
     -220,
     "mp4/frage_20.mp4"
   ),
