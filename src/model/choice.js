@@ -19,7 +19,7 @@ export class Choice {
       if (!followUpQuestion) {
         followUpQuestion = [];
       }
-      if (random(0, 1) <= this.chance) {
+      if (random(0, 1) <= chance) {
         this.consequence = consequence[0];
         this.happiness = happiness[0];
         this.money = money[0];
