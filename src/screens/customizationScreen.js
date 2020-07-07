@@ -238,8 +238,8 @@ function preload() {
 
   timelinePic = loadImage("./assets/ui/timeline.png");
 
-  caritasPic = loadImage("./assets/ui/caritasPic.svg");
-  tafelPic = loadImage("./assets/ui/tafelPic.svg");
+  caritasPic = loadImage("./assets/ui/caritasPic.png");
+  tafelPic = loadImage("./assets/ui/tafelPic.png");
 
   closedVindu = loadImage("./assets/ui/fenster_geschlossen.png");
 
