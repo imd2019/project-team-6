@@ -6,7 +6,7 @@ export class Player {
     this.money = 0;
     this.apartment = null;
     this.hasChild = false;
-    this.happiness = 100;
-    this.health = 100;
+    this.happiness = 0;
+    this.health = 0;
   }
 }

@@ -7,17 +7,21 @@ import getJob from "./src/screens/getJob.js";
 import getChild from "./src/screens/getChild.js";
 import getApartment from "./src/screens/getApartment.js";
 import yourMoney from "./src/screens/yourMoney.js";
+import resultScreen from "./src/screens/resultScreen.js";
+import choseTaxConsultantScreen from "./src/screens/choseTaxConsultant.js";
+import chooseWaiterScreen from "./src/screens/chooseWaiter.js";
 import { Button } from "./src/model/button.js";
 
 let currentScreen = "start";
 
-let exitBtn = new Button(550, -325, 10, 5, true, "Exit", () =>
+let exitBtn = new Button(620, -350, 30, 10, true, "Exit", () =>
   window.location.reload()
 );
 
 window.preload = function () {
   customizationScreen.preload();
   startScreen.preload();
+  choseTaxConsultantScreen.preload();
 };
 
 function getScreen(screenName) {
@@ -35,8 +39,14 @@ function getScreen(screenName) {
     return getApartment;
   } else if (screenName === "yourMoney") {
     return yourMoney;
+  } else if (screenName === "choseTC") {
+    return choseTaxConsultantScreen;
+  } else if (screenName === "chooseWaiter") {
+    return chooseWaiterScreen;
   } else if (screenName === "game") {
     return gameScreen;
+  } else if (screenName === "result") {
+    return resultScreen;
   } else if (screenName === "end") {
     return endScreen;
   }
@@ -44,6 +54,7 @@ function getScreen(screenName) {
 
 window.draw = function () {
   getScreen(currentScreen).draw();
+
   if (
     currentScreen === "getGender" ||
     currentScreen === "getJob" ||
@@ -52,8 +63,9 @@ window.draw = function () {
     currentScreen === "getMoney" ||
     currentScreen === "game" ||
     currentScreen === "end"
-  )
+  ) {
     exitBtn.display();
+  }
 };
 
 window.mouseClicked = function () {

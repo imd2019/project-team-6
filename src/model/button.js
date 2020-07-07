@@ -13,6 +13,7 @@ export class Button {
     this.clicked = clicked;
     this.textTriangle = "";
     this.textColor = "#f5bdc5";
+    this.textSize = 16;
   }
 
   display() {
@@ -26,10 +27,10 @@ export class Button {
     rect(this.x - this.width, this.y, this.width, this.height, 30);
 
     if (this.headline === false) {
-      textSize(16);
+      textSize(this.textSize);
     }
     if (this.headline === true) {
-      textSize(20);
+      textSize(this.textSize + 4);
     }
     textAlign(LEFT, CENTER);
     fill(this.textColor);

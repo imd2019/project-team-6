@@ -1,6 +1,13 @@
 import { Button } from "../model/button.js";
 import { setCurrentScreen } from "../../sketch.js";
-import { cityPic, townPic, drawPlayer, noPic } from "./customizationScreen.js";
+import {
+  cityPic,
+  townPic,
+  drawPlayer,
+  noPic,
+  townPicStroke,
+  cityPicStroke,
+} from "./customizationScreen.js";
 import {
   player,
   pushHasCarQuestions,
@@ -8,43 +15,49 @@ import {
 } from "../game.js";
 import { Apartment } from "../model/apartment.js";
 import { Pictures } from "../model/imagePosition.js";
+import { customizationClickSound } from "./startScreen.js";
 
 let headline = new Button(100, -320, 200, 20, true, "Wähle deine Wohnung:");
 
-let townTitle = "Vorstadt";
-let town = new Button(-160, 125, 80, 20, true, townTitle, () => {
+let townTitle = "Vorstadt mit Auto";
+let town = new Button(-80, 125, 160, 20, true, townTitle, () => {
   player.apartment = new Apartment(530, 121, townTitle, true);
 
   pushHasCarQuestions();
+  customizationClickSound.play();
 
   setCurrentScreen("yourMoney");
 });
 
-let cityTitle = "Innenstadt";
-let city = new Button(245, 125, 90, 20, true, cityTitle, () => {
+let cityTitle = "Innenstadt ohne Auto";
+let city = new Button(285, 125, 180, 20, true, cityTitle, () => {
   player.apartment = new Apartment(1030, 121, cityTitle, false);
+  customizationClickSound.play();
 
   setCurrentScreen("yourMoney");
 });
 
 let backBtn = new Button(0, 300, 10, 10, true, "<", () => {
   if (player.hasChild) {
+    customizationClickSound.play();
     deleteHasChildQuestions();
   }
 
   setCurrentScreen("getChild");
 });
 
-let townPicture = new Pictures(-200, 0, 100, 400, () => {
+let townPicture = new Pictures(-200, 0, 310, 200, () => {
   player.apartment = new Apartment(530, 121, townTitle, true);
 
   pushHasCarQuestions();
+  customizationClickSound.play();
 
   setCurrentScreen("yourMoney");
 });
 
-let cityPicture = new Pictures(200, 0, 150, 400, () => {
+let cityPicture = new Pictures(200, 0, 310, 200, () => {
   player.apartment = new Apartment(1030, 121, cityTitle, false);
+  customizationClickSound.play();
 
   setCurrentScreen("yourMoney");
 });
@@ -60,10 +73,10 @@ function draw() {
   town.mouseOver();
   city.mouseOver();
 
-  townPicture.mouseOver(townPic);
+  townPicture.mouseOver(townPicStroke);
   townPicture.display(townPic);
 
-  cityPicture.mouseOver(cityPic);
+  cityPicture.mouseOver(cityPicStroke);
   cityPicture.display(cityPic);
 }
 

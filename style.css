@@ -9,6 +9,14 @@ video {
   /* user-select: none; */
 }
 
+#p5_loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
 /* html {
   font-family: "Semplicita", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   src: url("./assets/Semplicita_Medium.otf");

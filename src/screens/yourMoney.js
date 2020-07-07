@@ -8,16 +8,25 @@ import {
 } from "../game.js";
 import { moneyLarge, mainFont } from "./customizationScreen.js";
 import { icons } from "./gameScreen.js";
+import { customizationClickSound } from "./startScreen.js";
 
-let finance = new Button(65, -320, 130, 20, true, "Deine Finanzen");
+let finance = new Button(65, -200, 170, 20, true, "Deine Finanzen");
 
 let startBtn = new Button(0, 200, 40, 20, true, "Start", () => {
   pushRandomQuestions();
 
-  icons.animate(100, 100, player.money);
-  runNextEvent();
+  let playerMoney = player.money;
+  player.money = 0;
 
-  setCurrentScreen("game");
+  icons.animate(80, 80, playerMoney);
+  runNextEvent();
+  customizationClickSound.play();
+
+  if (player.job.title === "Steuerberater*in") {
+    setCurrentScreen("choseTC");
+  } else {
+    setCurrentScreen("game");
+  }
 });
 
 let childBenefit = 204;
@@ -52,7 +61,7 @@ function draw() {
   image(moneyLarge, windowWidth / 2 - 200, windowHeight / 2);
   setPlayerMoney();
 
-  fill("black");
+  fill("#1e1f3f");
   textAlign(RIGHT);
   textSize(20);
   textFont(mainFont);
@@ -91,7 +100,7 @@ function draw() {
     );
     text(player.money + "€", windowWidth / 2 + 175, windowHeight / 2 + 65);
     strokeWeight(2);
-    stroke("black");
+    stroke("#1e1f3f");
     line(
       windowWidth / 2 - 75,
       windowHeight / 2 + 47,
@@ -102,16 +111,16 @@ function draw() {
   if (player.hasChild === false) {
     text(player.money + "€", windowWidth / 2 + 175, windowHeight / 2 + 35);
     strokeWeight(2);
-    stroke("black");
+    stroke("#1e1f3f");
     line(
       windowWidth / 2 - 75,
-      windowHeight / 2 + 10,
+      windowHeight / 2 + 15,
       windowWidth / 2 + 180,
-      windowHeight / 2 + 10
+      windowHeight / 2 + 15
     );
   }
   pop();
-
+  finance.textSize = 24;
   finance.display();
   startBtn.display();
   backBtn.display();

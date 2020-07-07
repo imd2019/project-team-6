@@ -1,16 +1,21 @@
 import { mainFont } from "../screens/customizationScreen.js";
 
 export class Question {
-  constructor(text, choices, x, y, backgroundPath = "") {
-    this.x = x;
-    this.y = y;
+  constructor(text, choices, xOffset, yOffset, backgroundPath = "") {
+    this.xOffset = xOffset;
+    this.yOffset = yOffset;
+    this.x = 0;
+    this.y = 0;
     this.text = text;
     this.choices = choices;
     this.boxWidth = 650;
-    this.choiceY = this.y + 50;
+    this.choiceY = 0;
     this.backgroundPath = backgroundPath;
   }
   display() {
+    this.x = windowWidth / 2 + this.xOffset;
+    this.y = windowHeight / 2 + this.yOffset;
+    this.choiceY = this.y + 50;
     push();
 
     //frage

@@ -1,7 +1,7 @@
-import { icons } from "../screens/gameScreen.js";
 import { runNextEvent, getUpcomingEvents } from "../game.js";
 import { ConsequenceEvent } from "./consequenceEvent.js";
 import { fallbackFont } from "../screens/customizationScreen.js";
+import { choiceClickSound } from "../screens/startScreen.js";
 
 export class Choice {
   constructor(
@@ -10,14 +10,32 @@ export class Choice {
     happiness = 0,
     money = 0,
     health = 0,
-    chance = 1
+    chance = 1,
+    followUpQuestion = null
   ) {
     this.text = text;
-    this.consequence = consequence;
-    this.happiness = happiness;
-    this.money = money;
-    this.health = health;
-    this.chance = chance;
+
+    if (chance != 1) {
+      if (random(0, 1) <= this.chance) {
+        this.consequence = consequence[0];
+        this.happiness = happiness[0];
+        this.money = money[0];
+        this.health = health[0];
+      } else {
+        this.consequence = consequence[1];
+        this.happiness = happiness[1];
+        this.money = money[1];
+        this.health = health[1];
+      }
+    } else {
+      this.consequence = consequence;
+      this.happiness = happiness;
+      this.money = money;
+      this.health = health;
+    }
+
+    this.followUpQuestion = followUpQuestion;
+
     this.width = 140;
     this.height = 50;
     this.textTriangle = "";
@@ -39,6 +57,7 @@ export class Choice {
       getUpcomingEvents().push(
         new ConsequenceEvent(this, question.x, question.y)
       );
+      choiceClickSound.play();
       runNextEvent();
     }
   }

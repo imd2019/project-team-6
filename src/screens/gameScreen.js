@@ -2,26 +2,29 @@ import { Icons } from "../model/icons.js";
 import { Timeline } from "../model/timeline.js";
 import {
   player,
-  runNextEvent,
   getCurrentEvent,
   upcomingEvents,
   getCurrentDay,
   getUpcomingEvents,
 } from "../game.js";
-import { Button } from "../model/button.js";
 import { setCurrentScreen } from "../../sketch.js";
+import { Tutorial } from "../model/tutorial.js";
 
-let timeline = new Timeline(-windowWidth / 2.2, +windowHeight / 2.6);
+let weekDays = ["SO", "MO", "DI", "MI", "DO", "FR", "SA"];
 
-export let icons = new Icons(-550, -300, player.money);
-//let gif_createImg;
+let timeline = new Timeline(-600, 320);
+
+export let tutorial = new Tutorial(0, 0, false);
+
+export let icons = new Icons(-600, -320, player);
+
 let vid;
 
 function onStart() {
   // gif_createImg = createImg("../../assets/testScreen.gif", "test screen");
   // gif_createImg.position(0, 0);
   // gif_createImg.hide();
-  vid = createVideo("assets/questionBGs/mp4/frage_05.mp4");
+  vid = createVideo("assets/questionBGs/d/mp4/frage_05.mp4");
   vid.position(0, 0);
   vid.hide();
 }
@@ -30,7 +33,6 @@ let t = false;
 let img;
 function draw() {
   clear();
-
   if (!t) {
     t = true;
     console.log(upcomingEvents);
@@ -39,7 +41,6 @@ function draw() {
       console.log("Event on day " + e.daysUntil);
     }
   }
-
   if (!getCurrentEvent().hasBackgroundVideo()) {
     vid.hide();
   } else if (!vid.src.endsWith(getCurrentEvent().backgroundPath)) {
@@ -64,42 +65,42 @@ function draw() {
   vid.size(windowWidth, windowHeight);
 
   icons.display();
-  showWeekDay();
-  // timeline.display();
+  icons.mouseOver();
+  // showWeekDay();
+
+  let day = weekDays[getCurrentDay() % 7];
+  timeline.display(day, getCurrentDay());
+
   let currentEvent = getCurrentEvent();
   if (currentEvent) {
     currentEvent.display();
   }
 
   if (getUpcomingEvents().length === 0) {
-    setCurrentScreen("end");
+    setCurrentScreen("result");
   }
+  tutorial.display();
 }
 
 function mouseClicked() {
-  let currentEvent = getCurrentEvent();
-  if (currentEvent) {
-    currentEvent.mouseClicked();
+  if (tutorial.mode === false) {
+    let currentEvent = getCurrentEvent();
+
+    if (currentEvent) {
+      currentEvent.mouseClicked();
+    }
   }
-}
 
-let weekDays = [
-  "Sonntag",
-  "Montag",
-  "Dienstag",
-  "Mittwoch",
-  "Donnerstag",
-  "Freitag",
-  "Samstag",
-];
-
-function showWeekDay() {
-  push();
-  let day = weekDays[getCurrentDay() % 7];
-  textSize(20);
-  fill(255);
-  text(day, windowWidth / 2, 250);
-  pop();
+  tutorial.mouseClicked();
 }
+// function showWeekDay() {
+//   push();
+//   textAlign(CENTER);
+//   let day = weekDays[getCurrentDay() % 7];
+//   textSize(20);
+//   fill(255);
+//   text(day, windowWidth / 2, 60);
+//   pop();
+// }
 
 export default { draw, mouseClicked, onStart };
