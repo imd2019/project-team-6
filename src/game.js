@@ -4,6 +4,7 @@ import { Player } from "./model/player.js";
 import { QuestionEvent } from "./model/questionEvent.js";
 import { NewsEvent } from "./model/newsEvent.js";
 import { WeeklyBillEvent } from "./model/weeklyBill.js";
+import { setCurrentScreen } from "../sketch.js";
 
 export let player = new Player();
 
@@ -957,8 +958,13 @@ let currentEvent;
 
 export function runNextEvent() {
   // after making a choice, show animation before showing next event
-
   let nextEvent = getNextEvent();
+  console.log(nextEvent);
+
+  if (!nextEvent) {
+    setTimeout(() => setCurrentScreen("result"), 450);
+    return;
+  }
 
   if (nextEvent.reuseBackground) {
     nextEvent.backgroundPath = currentEvent.backgroundPath;

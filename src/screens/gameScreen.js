@@ -5,9 +5,7 @@ import {
   getCurrentEvent,
   upcomingEvents,
   getCurrentDay,
-  getUpcomingEvents,
 } from "../game.js";
-import { setCurrentScreen } from "../../sketch.js";
 import { Tutorial } from "../model/tutorial.js";
 
 let weekDays = ["SO", "MO", "DI", "MI", "DO", "FR", "SA"];
@@ -76,9 +74,6 @@ function draw() {
     currentEvent.display();
   }
 
-  if (getUpcomingEvents().length === 0) {
-    setCurrentScreen("result");
-  }
   tutorial.display();
 }
 
