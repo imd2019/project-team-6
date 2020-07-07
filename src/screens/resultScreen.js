@@ -261,11 +261,11 @@ export function character(sex, happiness, health) {
   }
 
   if (happiness > 70) {
-    image(zG, windowWidth / 2 + 282, windowHeight / 2 + 10, 103.2, 94.56);
+    image(zG, windowWidth / 2 + 282, windowHeight / 2 + 9, 103.2, 94.56);
   } else if (happiness < 40) {
-    image(zS, windowWidth / 2 + 277, windowHeight / 2 + 10, 103.2, 94.56);
+    image(zS, windowWidth / 2 + 280, windowHeight / 2 + 12, 103.2, 94.56);
   } else if (happiness <= 70 && happiness >= 40) {
-    image(zM, windowWidth / 2 + 277, windowHeight / 2 + 10, 103.2, 94.56);
+    image(zM, windowWidth / 2 + 280, windowHeight / 2 + 10, 103.2, 94.56);
   }
 
   pop();
