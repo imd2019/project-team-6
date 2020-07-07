@@ -66,14 +66,6 @@ let noChildPicture = new Pictures(200, 0, 100, 400, () => {
   setCurrentScreen("getApartment");
 });
 
-let childPicture = new Pictures(-120, 150, 90, 400, () => {
-  player.hasChild = true;
-  customizationClickSound.play();
-  pushHasChildQuestions();
-
-  setCurrentScreen("getApartment");
-});
-
 let backBtn = new Button(0, 300, 10, 10, true, "<", () => {
   setCurrentScreen("getJob");
   customizationClickSound.play();
@@ -128,7 +120,6 @@ function mouseClicked() {
 
   hasChildPicture.mouseClicked();
   noChildPicture.mouseClicked();
-  childPicture.mouseClicked();
 }
 
 export default { draw, mouseClicked };
