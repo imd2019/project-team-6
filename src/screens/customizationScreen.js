@@ -47,7 +47,6 @@ export let cityPic;
 export let townPicStroke;
 export let cityPicStroke;
 
-export let noPic;
 export let moneyLarge;
 
 export let moneyIcon;
@@ -224,8 +223,6 @@ function preload() {
   townPic = loadImage("./assets/character/townPic.png");
   cityPicStroke = loadImage("./assets/character/cityPicStroke.png");
   townPicStroke = loadImage("./assets/character/townPicStroke.png");
-
-  noPic = loadImage("./assets/character/noPic.png");
 
   moneyLarge = loadImage("./assets/ui/moneyLarge.png");
 
