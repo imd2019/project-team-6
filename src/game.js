@@ -866,34 +866,14 @@ let hasCarQuestionsCount = hasCarQuestions.length;
 
 let currentDay = 0;
 export let upcomingEvents = [
-  new WeeklyBillEvent(1, 80, 0),
+  new WeeklyBillEvent(0, 80, 0),
   new WeeklyBillEvent(7, 40, 0),
   new WeeklyBillEvent(14, 0, 0),
   new WeeklyBillEvent(21, 0, 0),
-  new NewsEvent(
-    "Corona ist als Pandemie in \nDeutschland angekommen. \n\nPreise für \nAtemschutzmaske versechstfacht.",
-    0,
-    0,
-    0
-  ),
-  new NewsEvent(
-    "Supermarktregale leer gefegt. \n\n Schulen schließen.",
-    7,
-    0,
-    0
-  ),
-  new NewsEvent(
-    "Geschäfte müssen schließen. \n\nVersammlungsverbote wurden \nbeschlossen.",
-    14,
-    0,
-    0
-  ),
-  new NewsEvent(
-    "Besuchsverbot in Altersheimen. \n\nKontaktverbote wurden beschlossen. \n\nHäusliche Gewalt so hoch wie nie.",
-    21,
-    0,
-    0
-  ),
+  new NewsEvent("assets/news/1.png", 0, 0, 0),
+  new NewsEvent("assets/news/2.png", 7, 0, 0),
+  new NewsEvent("assets/news/3.png", 14, 0, 0),
+  new NewsEvent("assets/news/4.png", 21, 0, 0),
 ];
 
 function getNextEvent() {

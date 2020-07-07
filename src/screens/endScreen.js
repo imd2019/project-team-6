@@ -4,9 +4,20 @@ import { mainFont, caritasPic, tafelPic } from "./customizationScreen.js";
 let opacityText = 0;
 let opacityChange = +5;
 
-let tafel = new Button(-80, 0, 50, 30, false, "TAFEL");
+let nochmalBtn = new Button(0, 0, 30, 10, true, "Nochmal?", () =>
+  window.location.reload()
+);
 
-let caritas = new Button(80, 0, 60, 30, false, "CARITAS");
+let tafel = new Button(-80, 20, 50, 30, true, "T A F E L", () => {
+  // createA("http://www.tafel.de/spenden/", TAFEL, _self);
+  window.open("http://www.tafel.de/spenden/", "_blank");
+});
+let caritas = new Button(80, 20, 60, 30, true, "C A R I T A S", () => {
+  window.open(
+    "https://www.caritas.de/spendeundengagement/sie-wollen-helfen",
+    "_blank"
+  );
+});
 
 function textContent() {
   push();
@@ -21,7 +32,10 @@ function textContent() {
   );
   pop();
 }
+
 function draw() {
+  nochmalBtn.display();
+  nochmalBtn.mouseOver();
   push();
   background("#1e1f3f");
   textContent();
@@ -32,9 +46,11 @@ function draw() {
   if (opacityText >= 251) {
     tafel.display();
     caritas.display();
+    tafel.mouseOver();
+    caritas.mouseOver();
     imageMode(CENTER);
-    image(caritasPic, windowWidth / 2 + 80, windowHeight / 2 + 40, 50, 50);
-    image(tafelPic, windowWidth / 2 - 80, windowHeight / 2 + 40, 50, 50);
+    image(tafelPic, windowWidth / 2 - 95, windowHeight / 2 + 100, 70, 70);
+    image(caritasPic, windowWidth / 2 + 75, windowHeight / 2 + 100, 70, 70);
   }
   pop();
 }
@@ -42,6 +58,7 @@ function draw() {
 function mouseClicked() {
   tafel.mouseClicked();
   caritas.mouseClicked();
+  nochmalBtn.mouseClicked();
 }
 
 export default { textContent, draw, mouseClicked };
