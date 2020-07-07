@@ -43,7 +43,7 @@ let coronaQuestions = [
           ],
           -300,
           110,
-          "mp4/frage_07.mp4"
+          "png/frage_02.png"
         )
       ),
     ],
@@ -113,7 +113,7 @@ let coronaQuestions = [
           ],
           -300,
           110,
-          "mp4/frage_07.mp4"
+          "png/frage_09hamster.png"
         )
       ),
 
@@ -141,7 +141,7 @@ let coronaQuestions = [
           ],
           -300,
           110,
-          "mp4/frage_07.mp4"
+          "png/frage_09nichthamster.png"
         )
       ),
     ],
@@ -173,7 +173,7 @@ let coronaQuestions = [
           ],
           -300,
           110,
-          "mp4/frage_07.mp4"
+          "png/frage_13.png"
         )
       ),
       new Choice(
@@ -188,7 +188,8 @@ let coronaQuestions = [
     -50,
     -220,
     "mp4/frage_13.mp4"
-  ), //falls nicht schon gekauft oder genäht wurde und es nicht geklaptt hat
+  ),
+  //falls nicht schon gekauft oder genäht wurde und es nicht geklaptt hat
   new Question(
     "Möchtest du dir eine Maske kaufen?",
     [
@@ -458,7 +459,7 @@ let randomQuestionsWeek3to4 = [
           ],
           0,
           0,
-          "mp4/frage_07.mp4"
+          "png/frage_07.png"
         )
       ),
       new Choice(
