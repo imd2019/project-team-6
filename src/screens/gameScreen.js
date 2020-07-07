@@ -55,7 +55,7 @@ function draw() {
       windowWidth / 2,
       windowHeight / 2,
       windowWidth,
-      windowHeight
+      windowWidth * 0.8282793
     );
   }
 
