@@ -76,10 +76,12 @@ export class Icons {
 
     let playerHealthBar;
     if (this.player.health > 100) {
+      fill(222, 70, 90);
       playerHealthBar = 100;
     } else if (this.player.health < 0) {
       playerHealthBar = 0;
     } else {
+      fill(245, 189, 197);
       playerHealthBar = this.player.health;
     }
 
@@ -88,9 +90,9 @@ export class Icons {
       fill(222, 70, 90);
       playerHappinessBar = 100;
     } else if (this.player.happiness < 0) {
-      fill(222, 70, 90);
       playerHappinessBar = 0;
     } else {
+      fill(245, 189, 197);
       playerHappinessBar = this.player.happiness;
     }
 
