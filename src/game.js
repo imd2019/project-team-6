@@ -149,14 +149,14 @@ let coronaQuestions = [
               ),
             ],
             300,
-            -110,
+            220,
             "png/frage_26_grafik.png"
           ),
         ]
       ),
     ],
     300,
-    210,
+    220,
     "png/frage_04_grafik.png"
   ),
   new Question(
