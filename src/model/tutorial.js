@@ -1,8 +1,5 @@
-import { VinduEvent } from "./event.js";
-import { runNextEvent, player } from "../game.js";
 import { mainFont } from "../screens/customizationScreen.js";
 import { Button } from "./button.js";
-import { moneyLarge } from "../screens/customizationScreen.js";
 
 export class Tutorial {
   constructor(xOffset, yOffset, mode) {

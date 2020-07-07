@@ -54,7 +54,7 @@ export class Choice {
 
   mouseClicked(question, x, y) {
     if (this.hitTest(x, y, mouseX, mouseY)) {
-      getUpcomingEvents().push(
+      getUpcomingEvents().unshift(
         new ConsequenceEvent(this, question.x, question.y)
       );
       choiceClickSound.play();
