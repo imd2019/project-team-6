@@ -52,6 +52,19 @@ export let moneyLarge;
 export let moneyIcon;
 export let happinessIcon;
 export let healthIcon;
+
+export let moneyResultG;
+export let moneyResultM;
+export let moneyResultS;
+
+export let healthResultG;
+export let healthResultM;
+export let healthResultS;
+
+export let happinessResultG;
+export let happinessResultM;
+export let happinessResultS;
+
 export let timelinePic;
 export let newsPic;
 
@@ -229,6 +242,19 @@ function preload() {
   moneyIcon = loadImage("./assets/ui/money.png");
   happinessIcon = loadImage("./assets/ui/happiness.png");
   healthIcon = loadImage("./assets/ui/health.png");
+
+  moneyResultG = loadImage("./assets/ui/result/moneyResultG.png");
+  moneyResultM = loadImage("./assets/ui/result/moneyResultM.png");
+  moneyResultS = loadImage("./assets/ui/result/mmoneyResultGS.png");
+
+  healthResultG = loadImage("./assets/ui/result/mhealthResultG.png");
+  healthResultM = loadImage("./assets/ui/result/mhealthResultM.png");
+  healthResultS = loadImage("./assets/ui/result/mhealthResultS.png");
+
+  happinessResultG = loadImage("./assets/ui/result/mhappinessResultG.png");
+  happinessResultM = loadImage("./assets/ui/result/mhappinessResultM.png");
+  happinessResultS = loadImage("./assets/ui/result/mhappinessResultS.png");
+
   newsPic = loadImage("./assets/ui/news.png");
 
   mainFont = loadFont("./assets/fonts/Semplicita_Medium.otf");
