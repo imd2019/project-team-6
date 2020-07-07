@@ -77,7 +77,7 @@ export function money() {
   fill("#f5bdc5");
 
   text(
-    "Ausgaben: " + costs + "€",
+    "Ausgaben: -" + costs + "€",
     windowWidth / 2 - 600,
     windowHeight / 2 - 170
   );
