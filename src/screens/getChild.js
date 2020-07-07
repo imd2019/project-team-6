@@ -47,22 +47,16 @@ let hasChild = new Button(-160, 250, 80, 20, true, "Mit Kind", () => {
   customizationClickSound.play();
   setCurrentScreen("getApartment");
 });
-
-let noChild = new Button(235, 250, 70, 20, true, "Alleine", () => {
-  player.hasChild = false;
-  customizationClickSound.play();
-  setCurrentScreen("getApartment");
-});
-
-let backBtn = new Button(0, 300, 10, 10, true, "<", () => {
-  setCurrentScreen("getJob");
-  customizationClickSound.play();
-});
-
 let hasChildPicture = new Pictures(-200, 0, 100, 400, () => {
   player.hasChild = true;
 
   pushHasChildQuestions();
+  customizationClickSound.play();
+  setCurrentScreen("getApartment");
+});
+
+let noChild = new Button(235, 250, 70, 20, true, "Alleine", () => {
+  player.hasChild = false;
   customizationClickSound.play();
   setCurrentScreen("getApartment");
 });
@@ -79,6 +73,11 @@ let childPicture = new Pictures(-120, 150, 90, 400, () => {
   pushHasChildQuestions();
 
   setCurrentScreen("getApartment");
+});
+
+let backBtn = new Button(0, 300, 10, 10, true, "<", () => {
+  setCurrentScreen("getJob");
+  customizationClickSound.play();
 });
 
 function draw() {

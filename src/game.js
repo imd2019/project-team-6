@@ -473,7 +473,7 @@ let randomQuestionsWeek3to4 = [
     ],
     -300,
     110,
-    "mp4/frage_07.mp4"
+    "png/frage_17_grafik.png"
   ),
   new Question(
     "Möchtest du deine Mutter im Altersheim besuchen?",
