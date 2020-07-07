@@ -1,24 +1,45 @@
 import { Button } from "../model/button.js";
-import { mainFont, caritasPic, tafelPic } from "./customizationScreen.js";
+import {
+  mainFont,
+  caritasPic,
+  tafelPic,
+  caritasStroke,
+  tafelStroke,
+} from "./customizationScreen.js";
+import { setCurrentScreen } from "../../sketch.js";
+import { Pictures } from "../model/imagePosition.js";
 
 let opacityText = 0;
 let opacityChange = +5;
 
-let nochmalBtn = new Button(0, 0, 30, 10, true, "Nochmal?", () =>
+let againBtn = new Button(150, 250, 80, 20, true, "Nochmal?", () =>
   window.location.reload()
 );
+let backBtn = new Button(-70, 250, 60, 20, true, "Zurück", () => {
+  setCurrentScreen("result");
+});
 
-let tafel = new Button(-80, 20, 50, 30, true, "T A F E L", () => {
+let tafel = new Button(-60, 20, 80, 30, true, "T A F E L", () => {
   // createA("http://www.tafel.de/spenden/", TAFEL, _self);
   window.open("http://www.tafel.de/spenden/", "_blank");
 });
-let caritas = new Button(80, 20, 60, 30, true, "C A R I T A S", () => {
+let caritas = new Button(135, 20, 110, 30, true, "C A R I T A S", () => {
+  window.open(
+    "https://www.caritas.de/spendeundengagement/sie-wollen-helfen",
+    "_blank"
+  );
+});
+let caritasImg = new Pictures(75, 100, 70, 70, () => {
   window.open(
     "https://www.caritas.de/spendeundengagement/sie-wollen-helfen",
     "_blank"
   );
 });
 
+let tafelImg = new Pictures(-95, 100, 70, 70, () => {
+  // createA("http://www.tafel.de/spenden/", TAFEL, _self);
+  window.open("http://www.tafel.de/spenden/", "_blank");
+});
 function textContent() {
   push();
   textAlign(CENTER);
@@ -33,11 +54,10 @@ function textContent() {
   pop();
 }
 
-function draw() {
-  nochmalBtn.display();
-  nochmalBtn.mouseOver();
+export function draw() {
   push();
   background("#1e1f3f");
+
   textContent();
   if (opacityText <= 250) {
     opacityText += opacityChange;
@@ -48,9 +68,22 @@ function draw() {
     caritas.display();
     tafel.mouseOver();
     caritas.mouseOver();
-    imageMode(CENTER);
-    image(tafelPic, windowWidth / 2 - 95, windowHeight / 2 + 100, 70, 70);
-    image(caritasPic, windowWidth / 2 + 75, windowHeight / 2 + 100, 70, 70);
+
+    caritasImg.mouseOver(caritasStroke);
+    tafelImg.mouseOver(tafelStroke);
+    caritasImg.display(caritasPic);
+    tafelImg.display(tafelPic);
+
+    textFont(mainFont);
+    textSize(20);
+    fill("#f5bdc5");
+    textAlign(CENTER);
+    text("oder", windowWidth / 2, windowHeight / 2 + 270);
+
+    againBtn.display();
+    againBtn.mouseOver();
+    backBtn.display();
+    backBtn.mouseOver();
   }
   pop();
 }
@@ -58,7 +91,10 @@ function draw() {
 function mouseClicked() {
   tafel.mouseClicked();
   caritas.mouseClicked();
-  nochmalBtn.mouseClicked();
+  caritasImg.mouseClicked();
+  tafelPic.mouseClicked();
+  againBtn.mouseClicked();
+  backBtn.mouseClicked();
 }
 
 export default { textContent, draw, mouseClicked };
