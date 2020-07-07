@@ -60,7 +60,12 @@ export function backgroundImg() {
 }
 
 export function money() {
-  let mayMoney = player.money - secondCoronaSalary;
+  let costs = 1660 - player.money;
+  if (player.hasChild === true) {
+    costs += 264;
+  }
+
+  let mayMoney = secondCoronaSalary - costs;
   push();
 
   imageMode(CENTER);
@@ -72,7 +77,7 @@ export function money() {
   fill("#f5bdc5");
 
   text(
-    "Finanzen: " + player.money + "€",
+    "Ausgaben: " + costs + "€",
     windowWidth / 2 - 600,
     windowHeight / 2 - 170
   );
@@ -299,7 +304,6 @@ export function draw() {
   //     player.happiness
   // );
 
-  console.log("2. Gesund: " + playerHealth + " Zufri: " + playerHappiness);
   character(playerSex, playerHappiness, playerHealth);
   happiness(playerHappiness);
   health(playerHealth);
