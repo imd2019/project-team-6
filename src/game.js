@@ -261,7 +261,6 @@ let coronaQuestions = [
     -220,
     "mp4/frage_13.mp4"
   ),
-  //falls nicht schon gekauft oder genäht wurde und es nicht geklaptt hat
 
   new Question(
     "Freunde laden dich zum Spazieren gehen ein. \n \nGehst du mit?",
@@ -975,9 +974,7 @@ export function pushCoronaQuestions() {
     new QuestionEvent(coronaQuestions[1], 2),
     new QuestionEvent(coronaQuestions[2], 8),
     new QuestionEvent(coronaQuestions[3], 15),
-    // new QuestionEvent(coronaQuestions[4], 5),
-    new QuestionEvent(coronaQuestions[5], 22),
-    // new QuestionEvent(coronaQuestions[6], 7),
+    new QuestionEvent(coronaQuestions[4], 22),
     new QuestionEvent(coronaQuestions[7], 25)
   );
 
@@ -1023,7 +1020,7 @@ export function pushHasChildQuestions() {
 
   upcomingEvents.push(new QuestionEvent(hasChildQuestions[0], 9));
   upcomingEvents.push(new QuestionEvent(hasChildQuestions[1], 16));
-  upcomingEvents.push(new QuestionEvent(hasChildQuestions[4], 17));
+  upcomingEvents.push(new QuestionEvent(hasChildQuestions[3], 17));
   upcomingEvents.push(new QuestionEvent(hasChildQuestions[2], 22));
 
   randomQuestionsWeek1to2.splice(3, 2);
