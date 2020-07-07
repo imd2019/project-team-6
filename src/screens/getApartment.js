@@ -4,7 +4,6 @@ import {
   cityPic,
   townPic,
   drawPlayer,
-  noPic,
   townPicStroke,
   cityPicStroke,
 } from "./customizationScreen.js";

@@ -7,7 +7,6 @@ import {
   maleConsultant,
   diverseWaiter,
   diverseConsultant,
-  noPic,
   diverseConsultantStroke,
   maleConsultantStroke,
   femaleConsultantStroke,
