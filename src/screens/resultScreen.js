@@ -49,7 +49,7 @@ let secondCoronaSalary = 895;
 export function backgroundImg() {
   push();
   imageMode(CENTER);
-  image(endbg, windowWidth / 2, windowHeight / 2, 1300, 732);
+  image(endbg, windowWidth / 2, windowHeight / 2, windowWidth, windowHeight);
   pop();
 }
 
@@ -58,12 +58,18 @@ export function money() {
   push();
 
   imageMode(CENTER);
-  image(moneyIcon, windowWidth / 2 - 500, windowHeight / 2 - 200);
+  image(moneyIcon, windowWidth / 2 - 500, windowHeight / 2 - 250);
 
   textAlign(LEFT);
   textFont(mainFont);
   textSize(16);
   fill("#f5bdc5");
+
+  text(
+    "Finanzen: " + player.money + "€",
+    windowWidth / 2 - 600,
+    windowHeight / 2 - 170
+  );
 
   if (mayMoney > 150) {
     console.log("gut " + mayMoney);
@@ -96,12 +102,17 @@ export function health(health) {
   push();
 
   imageMode(CENTER);
-  image(healthIcon, windowWidth / 2 - 250, windowHeight / 2 - 200);
+  image(healthIcon, windowWidth / 2 - 250, windowHeight / 2 - 250);
 
   textAlign(LEFT);
   textFont(mainFont);
   textSize(16);
   fill("#f5bdc5");
+  text(
+    "Gesundheit: " + health + " / 100",
+    windowWidth / 2 - 350,
+    windowHeight / 2 - 170
+  );
   if (health > 70) {
     text(
       "Trotz der Pandemie hast du es geschafft auf deine Gesundheit zu achten. Aber wie geht es dir sonst?  Die Simulation endet nach vier Wochen, aber das Leben geht weiter. Geld und andere -sorgen können dir in Zukunft schlaflose Nächte bereiten. Auf Dauer bekommst du das körperlich zu spüren vor allem wenn sich die Einschränkungen nicht lockern.",
@@ -131,12 +142,19 @@ export function happiness(happiness) {
   push();
 
   imageMode(CENTER);
-  image(happinessIcon, windowWidth / 2, windowHeight / 2 - 200);
+  image(happinessIcon, windowWidth / 2, windowHeight / 2 - 250);
 
   textAlign(LEFT);
   textFont(mainFont);
   fill("#f5bdc5");
   textSize(16);
+
+  text(
+    "Zufriedenheit: " + happiness + " / 100",
+    windowWidth / 2 - 100,
+    windowHeight / 2 - 170
+  );
+
   if (happiness > 70) {
     text(
       "Du konntest deine Stimmung trotz der Situation aufrecht erhalten. Aber das kostet auf Dauer Zeit und Geld. Außerdem setzt du öfter deine Gesundheit aufs Spiel. Du solltest die anderen Parameter im Blick behalten. Pass gut auf!",
@@ -163,7 +181,8 @@ export function happiness(happiness) {
 }
 
 export function character(sex, happiness, health) {
-  let money = player.money - secondCoronaSalary;
+  // let money = player.money - secondCoronaSalary;
+  let money = 1000 - secondCoronaSalary;
   push();
   imageMode(CENTER);
 
@@ -187,8 +206,8 @@ export function character(sex, happiness, health) {
     image(fGsHm, windowWidth / 2 + 324, windowHeight / 2 + 92, 652.2, 555.84);
   } else if (sex === "f" && health < 40 && money < 40) {
     image(fGsHs, windowWidth / 2 + 324, windowHeight / 2 + 92, 652.2, 555.84);
-  } else if (sex === "f" && health < 40 && money < 40) {
-    image(fGsHs, windowWidth / 2 + 324, windowHeight / 2 + 92, 652.2, 555.84);
+  } else if (sex === "f" && health < 40 && money > 70) {
+    image(fGgHs, windowWidth / 2 + 324, windowHeight / 2 + 92, 652.2, 555.84);
   } else if (sex === "f" && health < 40 && money >= 40 && money >= 70) {
     image(fGmHs, windowWidth / 2 + 324, windowHeight / 2 + 92, 652.2, 555.84);
   } else if (sex === "m" && health > 70 && money > 70) {
@@ -211,8 +230,8 @@ export function character(sex, happiness, health) {
     image(mGsHm, windowWidth / 2 + 324, windowHeight / 2 + 92, 652.2, 555.84);
   } else if (sex === "m" && health < 40 && money < 40) {
     image(mGsHs, windowWidth / 2 + 324, windowHeight / 2 + 92, 652.2, 555.84);
-  } else if (sex === "m" && health < 40 && money < 40) {
-    image(mGsHs, windowWidth / 2 + 324, windowHeight / 2 + 92, 652.2, 555.84);
+  } else if (sex === "m" && health < 40 && money > 70) {
+    image(mGgHs, windowWidth / 2 + 324, windowHeight / 2 + 92, 652.2, 555.84);
   } else if (sex === "m" && health < 40 && money >= 40 && money >= 70) {
     image(mGmHs, windowWidth / 2 + 324, windowHeight / 2 + 92, 652.2, 555.84);
   } else if (sex === "d" && health > 70 && money > 70) {
@@ -230,13 +249,13 @@ export function character(sex, happiness, health) {
   ) {
     image(dGmHm, windowWidth / 2 + 324, windowHeight / 2 + 92, 652.2, 555.84);
   } else if (sex === "d" && health <= 70 && health >= 40 && money > 70) {
-    image(dGmHm, windowWidth / 2 + 324, windowHeight / 2 + 92, 652.2, 555.84);
+    image(dGgHm, windowWidth / 2 + 324, windowHeight / 2 + 92, 652.2, 555.84);
   } else if (sex === "d" && health <= 70 && health >= 40 && money < 40) {
     image(dGsHm, windowWidth / 2 + 324, windowHeight / 2 + 92, 652.2, 555.84);
   } else if (sex === "d" && health < 40 && money < 40) {
     image(dGsHs, windowWidth / 2 + 324, windowHeight / 2 + 92, 652.2, 555.84);
-  } else if (sex === "d" && health < 40 && money < 40) {
-    image(dGsHs, windowWidth / 2 + 324, windowHeight / 2 + 92, 652.2, 555.84);
+  } else if (sex === "d" && health < 40 && money > 70) {
+    image(dGgHs, windowWidth / 2 + 324, windowHeight / 2 + 92, 652.2, 555.84);
   } else if (sex === "d" && health < 40 && money >= 40 && money >= 70) {
     image(dGmHs, windowWidth / 2 + 324, windowHeight / 2 + 92, 652.2, 555.84);
   }
@@ -278,6 +297,10 @@ export function draw() {
   let playerSex = player.sex;
   let playerHealth = player.health;
   let playerHappiness = player.happiness;
+
+  // let playerSex = "f";
+  // let playerHealth = 50;
+  // let playerHappiness = 50;
 
   // console.log(
   //   "Geld: " +
