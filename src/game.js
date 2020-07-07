@@ -43,7 +43,7 @@ let coronaQuestions = [
             ),
           ],
           -300,
-          110,
+          210,
           "png/frage_02.png"
         )
       ),
@@ -94,7 +94,7 @@ let coronaQuestions = [
             ),
           ],
           300,
-          -110,
+          220,
           "png/frage_26_grafik.png"
         )
       ),
@@ -335,7 +335,7 @@ let coronaQuestions = [
       ),
     ],
     -300,
-    180,
+    160,
     "png/frage_22_grafik.png"
   ),
 ];
@@ -388,7 +388,7 @@ let randomQuestionsWeek1to2 = [
       ),
     ],
     -200,
-    120,
+    220,
     "mp4/frage_05.mp4"
   ),
   new Question(
@@ -494,8 +494,8 @@ let randomQuestionsWeek3to4 = [
               1
             ),
           ],
-          0,
-          0,
+          300,
+          200,
           "png/frage_07.png"
         )
       ),
@@ -533,7 +533,7 @@ let randomQuestionsWeek3to4 = [
       ),
     ],
     300,
-    120,
+    220,
     "mp4/frage_14.mp4"
   ),
   new Question(
