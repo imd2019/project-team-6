@@ -16,7 +16,7 @@ let finance = new Button(65, -200, 170, 20, true, "Deine Finanzen");
 let startBtn = new Button(0, 200, 40, 20, true, "Start", () => {
   pushRandomQuestions();
 
-  player.health = 80;
+  player.health = 100;
   player.happiness = 80;
 
   runNextEvent();
