@@ -46,7 +46,7 @@ let hasChild = new Button(-160, 250, 80, 20, true, "Mit Kind", () => {
   customizationClickSound.play();
   setCurrentScreen("getApartment");
 });
-let hasChildPicture = new Pictures(-200, 0, 100, 400, () => {
+let hasChildPicture = new Pictures(-200, 0, 200, 400, () => {
   player.hasChild = true;
 
   pushHasChildQuestions();
