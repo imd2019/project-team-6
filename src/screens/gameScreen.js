@@ -83,7 +83,7 @@ function draw() {
 }
 
 function mouseClicked() {
-  if (tutorial.mode === false) {
+  if (!tutorial.mode) {
     let currentEvent = getCurrentEvent();
 
     if (currentEvent) {

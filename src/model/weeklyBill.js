@@ -2,7 +2,7 @@ import { VinduEvent } from "./event.js";
 import { runNextEvent, player, getCurrentDay } from "../game.js";
 import { mainFont, boldFont } from "../screens/customizationScreen.js";
 import { Button } from "./button.js";
-import { tutorial, icons } from "../screens/gameScreen.js";
+import { icons } from "../screens/gameScreen.js";
 import { moneyLarge } from "../screens/customizationScreen.js";
 
 export class WeeklyBillEvent extends VinduEvent {
@@ -15,19 +15,15 @@ export class WeeklyBillEvent extends VinduEvent {
     this.boxWidth = 650;
     this.okBtn = new Button(0, 200, 40, 20, true, "Ok", () => {
       runNextEvent();
-      if (player.hasChild === false) {
+      if (!player.hasChild) {
         let totalDeduction = 0;
         totalDeduction += this.tips - this.foodCosts;
         icons.animate(0, 0, totalDeduction);
       }
-      if (player.hasChild === true) {
+      if (player.hasChild) {
         let totalDeduction = 0;
         totalDeduction += this.tips - this.foodWithChild;
         icons.animate(0, 0, totalDeduction);
-      }
-
-      if (getCurrentDay() === 1) {
-        tutorial.mode = true;
       }
     });
     this.okBtn.textColor = color(255);
@@ -50,7 +46,7 @@ export class WeeklyBillEvent extends VinduEvent {
     textSize(22);
     text(
       "Deine wöchentl. Ausgaben",
-      windowWidth / 2 + 70,
+      windowWidth / 2 + 80,
       windowHeight / 2 - 70
     );
 
@@ -58,21 +54,21 @@ export class WeeklyBillEvent extends VinduEvent {
     textAlign(RIGHT);
     textSize(20);
 
-    text("Trinkgeld: ", windowWidth / 2 + 105, windowHeight / 2 - 10);
-    text("Einkauf: ", windowWidth / 2 + 105, windowHeight / 2 + 20);
+    text("Trinkgeld: ", windowWidth / 2 + 150, windowHeight / 2 - 10);
+    text("Einkauf: ", windowWidth / 2 + 150, windowHeight / 2 + 20);
 
-    text("+" + this.tips + "€", windowWidth / 2 + 175, windowHeight / 2 - 10);
-    if (player.hasChild === false) {
+    text("+" + this.tips + "€", windowWidth / 2 + 220, windowHeight / 2 - 10);
+    if (!player.hasChild) {
       text(
         "-" + this.foodCosts + "€",
-        windowWidth / 2 + 175,
+        windowWidth / 2 + 220,
         windowHeight / 2 + 20
       );
     }
-    if (player.hasChild === true) {
+    if (player.hasChild) {
       text(
         "-" + this.foodWithChild + "€",
-        windowWidth / 2 + 175,
+        windowWidth / 2 + 220,
         windowHeight / 2 + 20
       );
     }
