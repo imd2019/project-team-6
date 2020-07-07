@@ -94,7 +94,6 @@ function mouseClicked() {
   tafelImg.mouseClicked();
   caritas.mouseClicked();
   caritasImg.mouseClicked();
-  tafelPic.mouseClicked();
   againBtn.mouseClicked();
   backBtn.mouseClicked();
 }
