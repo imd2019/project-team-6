@@ -1077,6 +1077,11 @@ function addRandomQuestionsToEachWeek(week, weekCount, randomQuestions) {
 function addRandomQuestions(week, randomQuestions) {
   let i = Math.round(random(0, randomQuestions.length - 1));
   let question = randomQuestions[i];
+
+  if (!question) {
+    return;
+  }
+
   randomQuestions.splice(i, 1);
 
   let freeDay = randomFreeDayInWeek(week);
