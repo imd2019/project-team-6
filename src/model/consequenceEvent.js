@@ -3,7 +3,7 @@ import { icons } from "../screens/gameScreen.js";
 import { runNextEvent, getCurrentDay, getUpcomingEvents } from "../game.js";
 import { mainFont } from "../screens/customizationScreen.js";
 import { Button } from "../model/button.js";
-import { choiceClickSound } from "../screens/startScreen.js";
+import { choiceClickSound, moneySound } from "../screens/startScreen.js";
 import { QuestionEvent } from "./questionEvent.js";
 
 export class ConsequenceEvent extends VinduEvent {
@@ -35,6 +35,9 @@ export class ConsequenceEvent extends VinduEvent {
           getUpcomingEvents().push(
             new QuestionEvent(this.choice.followUpQuestion, daysUntil)
           );
+        }
+        if (this.choice.money != 0) {
+          moneySound.play();
         }
         runNextEvent();
       }

@@ -43,6 +43,7 @@ export let startClickSound;
 export let notificationSound;
 export let customizationClickSound;
 export let choiceClickSound;
+export let moneySound;
 
 function preload() {
   openVinduVid = createVideo("./assets/ui/vindu.mp4", () =>
@@ -58,6 +59,7 @@ function preload() {
   notificationSound = loadSound("assets/sounds/notification.mp3");
   customizationClickSound = loadSound("assets/sounds/cust_click.mp3");
   choiceClickSound = loadSound("assets/sounds/choice_click.mp3");
+  moneySound = loadSound("assets/sounds/moneySound.mp3");
 }
 
 export default { draw, mouseClicked, preload };
