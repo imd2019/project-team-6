@@ -33,13 +33,11 @@ export class Icons {
 
     push();
     imageMode(CENTER);
-
+    noStroke();
     rectMode(CORNER);
     fill(17, 21, 37, 220);
-    stroke(255);
-    strokeWeight(3);
     rect(this.x - 40, this.y - 40, 210, 190, 0, 0, 30, 0);
-    noStroke();
+
     image(moneyIcon, this.x, this.y, 40, 40);
     image(healthIcon, this.x, this.y + 50, 40, 40);
     image(happinessIcon, this.x, this.y + 100, 40, 40);
