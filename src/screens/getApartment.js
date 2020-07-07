@@ -19,7 +19,16 @@ import { customizationClickSound } from "./startScreen.js";
 let headline = new Button(100, -320, 200, 20, true, "Wähle deine Wohnung:");
 
 let townTitle = "Vorstadt mit Auto";
-let town = new Button(-80, 125, 160, 20, true, townTitle, () => {
+let townBtn = new Button(-80, 125, 160, 20, true, townTitle, () => {
+  player.apartment = new Apartment(530, 121, townTitle, true);
+
+  pushHasCarQuestions();
+  customizationClickSound.play();
+
+  setCurrentScreen("yourMoney");
+});
+
+let townPicture = new Pictures(-200, 0, 310, 200, () => {
   player.apartment = new Apartment(530, 121, townTitle, true);
 
   pushHasCarQuestions();
@@ -29,7 +38,14 @@ let town = new Button(-80, 125, 160, 20, true, townTitle, () => {
 });
 
 let cityTitle = "Innenstadt ohne Auto";
-let city = new Button(285, 125, 180, 20, true, cityTitle, () => {
+let cityBtn = new Button(285, 125, 180, 20, true, cityTitle, () => {
+  player.apartment = new Apartment(1030, 121, cityTitle, false);
+  customizationClickSound.play();
+
+  setCurrentScreen("yourMoney");
+});
+
+let cityPicture = new Pictures(200, 0, 310, 200, () => {
   player.apartment = new Apartment(1030, 121, cityTitle, false);
   customizationClickSound.play();
 
@@ -45,32 +61,16 @@ let backBtn = new Button(0, 300, 10, 10, true, "<", () => {
   setCurrentScreen("getChild");
 });
 
-let townPicture = new Pictures(-200, 0, 310, 200, () => {
-  player.apartment = new Apartment(530, 121, townTitle, true);
-
-  pushHasCarQuestions();
-  customizationClickSound.play();
-
-  setCurrentScreen("yourMoney");
-});
-
-let cityPicture = new Pictures(200, 0, 310, 200, () => {
-  player.apartment = new Apartment(1030, 121, cityTitle, false);
-  customizationClickSound.play();
-
-  setCurrentScreen("yourMoney");
-});
-
 function draw() {
   background("#1e1f3f");
 
   headline.display();
-  city.display();
-  town.display();
+  cityBtn.display();
+  townBtn.display();
 
   backBtn.display();
-  town.mouseOver();
-  city.mouseOver();
+  townBtn.mouseOver();
+  cityBtn.mouseOver();
 
   townPicture.mouseOver(townPicStroke);
   townPicture.display(townPic);
@@ -80,8 +80,8 @@ function draw() {
 }
 
 function mouseClicked() {
-  city.mouseClicked();
-  town.mouseClicked();
+  cityBtn.mouseClicked();
+  townBtn.mouseClicked();
   backBtn.mouseClicked();
 
   cityPicture.mouseClicked();

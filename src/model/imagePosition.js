@@ -1,5 +1,3 @@
-import { mainFont, fallbackFont } from "../screens/customizationScreen.js";
-
 export class Pictures {
   constructor(xOffset, yOffset, width, height, clicked) {
     this.xOffset = xOffset;
