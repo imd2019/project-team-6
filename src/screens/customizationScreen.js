@@ -245,15 +245,15 @@ function preload() {
 
   moneyResultG = loadImage("./assets/ui/result/moneyResultG.png");
   moneyResultM = loadImage("./assets/ui/result/moneyResultM.png");
-  moneyResultS = loadImage("./assets/ui/result/mmoneyResultGS.png");
+  moneyResultS = loadImage("./assets/ui/result/moneyResultGS.png");
 
-  healthResultG = loadImage("./assets/ui/result/mhealthResultG.png");
-  healthResultM = loadImage("./assets/ui/result/mhealthResultM.png");
-  healthResultS = loadImage("./assets/ui/result/mhealthResultS.png");
+  healthResultG = loadImage("./assets/ui/result/healthResultG.png");
+  healthResultM = loadImage("./assets/ui/result/healthResultM.png");
+  healthResultS = loadImage("./assets/ui/result/healthResultS.png");
 
-  happinessResultG = loadImage("./assets/ui/result/mhappinessResultG.png");
-  happinessResultM = loadImage("./assets/ui/result/mhappinessResultM.png");
-  happinessResultS = loadImage("./assets/ui/result/mhappinessResultS.png");
+  happinessResultG = loadImage("./assets/ui/result/happinessResultG.png");
+  happinessResultM = loadImage("./assets/ui/result/happinessResultM.png");
+  happinessResultS = loadImage("./assets/ui/result/happinessResultS.png");
 
   newsPic = loadImage("./assets/ui/news.png");
 
