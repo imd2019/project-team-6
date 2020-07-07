@@ -975,7 +975,7 @@ export function pushCoronaQuestions() {
     new QuestionEvent(coronaQuestions[2], 8),
     new QuestionEvent(coronaQuestions[3], 15),
     new QuestionEvent(coronaQuestions[4], 22),
-    new QuestionEvent(coronaQuestions[7], 25)
+    new QuestionEvent(coronaQuestions[5], 25)
   );
 
   week1QuestionsCount += 2;
