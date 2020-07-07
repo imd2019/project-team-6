@@ -212,8 +212,8 @@ let coronaQuestions = [
               0.5
             ),
           ],
-          -300,
-          110,
+          300,
+          210,
           "png/frage_09nichthamster.png"
         )
       ),
@@ -310,7 +310,7 @@ let coronaQuestions = [
         1
       ),
     ],
-    100,
+    280,
     -220,
     "mp4/frage_20.mp4"
   ),
@@ -363,7 +363,7 @@ let randomQuestionsWeek1to2 = [
       ),
     ],
     300,
-    120,
+    220,
     "png/frage_01_grafik.png"
   ),
 
@@ -639,7 +639,7 @@ let hasChildQuestions = [
         1
       ),
     ],
-    -200,
+    -300,
     120,
     "png/frage_11_grafik.png"
   ),
@@ -663,8 +663,8 @@ let hasChildQuestions = [
         1
       ),
     ],
-    -300,
-    110,
+    300,
+    -150,
     "png/frage_15_grafik.png"
   ),
 
@@ -735,7 +735,7 @@ let hasChildQuestions = [
       ),
     ],
     300,
-    -110,
+    -210,
     "png/frage_23_grafik.png"
   ),
 ];
@@ -891,7 +891,7 @@ let hasCarQuestions = [
               1
             ),
           ],
-          0,
+          100,
           -210,
           "mp4/frage_27.mp4"
         )
