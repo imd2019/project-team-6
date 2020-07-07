@@ -7,7 +7,7 @@ let opacityText = 2;
 let opacityChange = +2;
 
 let yes = new Button(-80, 40, 20, 20, true, "Ja", () => {
-  setCurrentScreen("yourMoney");
+  setCurrentScreen("game");
   customizationClickSound.play();
 });
 
