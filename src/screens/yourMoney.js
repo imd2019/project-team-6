@@ -14,18 +14,17 @@ import { Job } from "../model/job.js";
 let finance = new Button(65, -200, 170, 20, true, "Deine Finanzen");
 
 let startBtn = new Button(0, 200, 40, 20, true, "Start", () => {
-  pushRandomQuestions();
-
   player.health = 100;
   player.happiness = 80;
 
-  runNextEvent();
   customizationClickSound.play();
 
   if (player.job.title === "Steuerberater*in") {
     setCurrentScreen("choseTC");
     player.job = new Job("Kellner*in", 1660);
   } else {
+    pushRandomQuestions();
+    runNextEvent();
     setCurrentScreen("game");
   }
 });
@@ -60,6 +59,7 @@ function draw() {
   rect(windowWidth / 2 + 30, windowHeight / 2, 500, 227, 35);
   imageMode(CENTER);
   image(moneyLarge, windowWidth / 2 - 200, windowHeight / 2);
+
   setPlayerMoney();
 
   fill("#1e1f3f");
