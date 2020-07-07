@@ -75,6 +75,7 @@ export function money() {
   }
 
   let mayMoney = secondCoronaSalary - costs;
+
   push();
 
   textAlign(LEFT);
@@ -134,7 +135,7 @@ export function health(health) {
     imageMode(CENTER);
     image(healthResultG, windowWidth / 2 - 250, windowHeight / 2 - 250);
     text(
-      "Trotz der Pandemie hast du es geschafft auf deine Gesundheit zu achten. Aber wie geht es dir sonst?  Die Simulation endet nach vier Wochen, aber das Leben geht weiter. Geld und andere -sorgen können dir in Zukunft schlaflose Nächte bereiten. Auf Dauer bekommst du das körperlich zu spüren vor allem wenn sich die Einschränkungen nicht lockern.",
+      "Trotz der Pandemie hast du es geschafft auf deine Gesundheit zu achten. Aber wie geht es dir sonst?  Die Simulation endet nach vier Wochen, aber das Leben geht weiter. Geld und andere - sorgen können dir in Zukunft schlaflose Nächte bereiten. Auf Dauer bekommst du das körperlich zu spüren vor allem wenn sich die Einschränkungen nicht lockern.",
       windowWidth / 2 - 350,
       windowHeight / 2 - 120,
       200
@@ -312,8 +313,8 @@ export function draw() {
   let playerHappiness = player.happiness;
 
   // let playerSex = "f";
-  // let playerHealth = 50;
-  // let playerHappiness = 50;
+  // let playerHealth = 0;
+  // let playerHappiness = 0;
 
   // console.log(
   //   "1. Geld: " +

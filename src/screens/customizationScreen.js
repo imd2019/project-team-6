@@ -245,7 +245,7 @@ function preload() {
 
   moneyResultG = loadImage("./assets/ui/result/moneyResultG.png");
   moneyResultM = loadImage("./assets/ui/result/moneyResultM.png");
-  moneyResultS = loadImage("./assets/ui/result/moneyResultGS.png");
+  moneyResultS = loadImage("./assets/ui/result/moneyResultS.png");
 
   healthResultG = loadImage("./assets/ui/result/healthResultG.png");
   healthResultM = loadImage("./assets/ui/result/healthResultM.png");
