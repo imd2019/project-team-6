@@ -701,7 +701,7 @@ let hasChildQuestions = [
               ),
             ],
             -300,
-            -220,
+            220,
             "png/frage_24n_grafik.png"
           ),
         ]
