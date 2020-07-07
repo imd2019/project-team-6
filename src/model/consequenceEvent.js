@@ -1,6 +1,6 @@
 import { VinduEvent } from "./event.js";
 import { icons } from "../screens/gameScreen.js";
-import { runNextEvent, getCurrentDay } from "../game.js";
+import { runNextEvent, getCurrentDay, getUpcomingEvents } from "../game.js";
 import { mainFont } from "../screens/customizationScreen.js";
 import { Button } from "../model/button.js";
 import { choiceClickSound } from "../screens/startScreen.js";

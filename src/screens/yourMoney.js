@@ -10,7 +10,7 @@ import { moneyLarge, mainFont } from "./customizationScreen.js";
 import { icons } from "./gameScreen.js";
 import { customizationClickSound } from "./startScreen.js";
 
-let finance = new Button(65, -320, 130, 20, true, "Deine Finanzen");
+let finance = new Button(65, -200, 170, 20, true, "Deine Finanzen");
 
 let startBtn = new Button(0, 200, 40, 20, true, "Start", () => {
   pushRandomQuestions();
@@ -61,7 +61,7 @@ function draw() {
   image(moneyLarge, windowWidth / 2 - 200, windowHeight / 2);
   setPlayerMoney();
 
-  fill("black");
+  fill("#1e1f3f");
   textAlign(RIGHT);
   textSize(20);
   textFont(mainFont);
@@ -100,7 +100,7 @@ function draw() {
     );
     text(player.money + "€", windowWidth / 2 + 175, windowHeight / 2 + 65);
     strokeWeight(2);
-    stroke("black");
+    stroke("#1e1f3f");
     line(
       windowWidth / 2 - 75,
       windowHeight / 2 + 47,
@@ -111,7 +111,7 @@ function draw() {
   if (player.hasChild === false) {
     text(player.money + "€", windowWidth / 2 + 175, windowHeight / 2 + 35);
     strokeWeight(2);
-    stroke("black");
+    stroke("#1e1f3f");
     line(
       windowWidth / 2 - 75,
       windowHeight / 2 + 15,
@@ -120,7 +120,7 @@ function draw() {
     );
   }
   pop();
-
+  finance.textSize = 24;
   finance.display();
   startBtn.display();
   backBtn.display();

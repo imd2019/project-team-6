@@ -1,6 +1,6 @@
 import { VinduEvent } from "./event.js";
 import { runNextEvent, player, getCurrentDay } from "../game.js";
-import { mainFont } from "../screens/customizationScreen.js";
+import { mainFont, boldFont } from "../screens/customizationScreen.js";
 import { Button } from "./button.js";
 import { tutorial, icons } from "../screens/gameScreen.js";
 import { moneyLarge } from "../screens/customizationScreen.js";
@@ -37,37 +37,43 @@ export class WeeklyBillEvent extends VinduEvent {
 
   display() {
     push();
+    background("#1e1f3f");
     fill(245, 189, 197, 180);
     rectMode(CENTER);
     rect(windowWidth / 2 + 30, windowHeight / 2, 500, 227, 35);
     imageMode(CENTER);
     image(moneyLarge, windowWidth / 2 - 200, windowHeight / 2);
 
-    textFont(mainFont);
-    fill("black");
+    textFont(boldFont);
+    fill("#1e1f3f");
     textAlign(CENTER);
-    textSize(20);
+    textSize(22);
     text(
       "Deine wöchentl. Ausgaben",
-      windowWidth / 2 + 65,
-      windowHeight / 2 - 90
+      windowWidth / 2 + 70,
+      windowHeight / 2 - 70
     );
 
+    textFont(mainFont);
     textAlign(RIGHT);
     textSize(20);
 
-    text("Trinkgeld: ", windowWidth / 2 + 105, windowHeight / 2 - 30);
-    text("Einkauf: ", windowWidth / 2 + 105, windowHeight / 2);
+    text("Trinkgeld: ", windowWidth / 2 + 105, windowHeight / 2 - 10);
+    text("Einkauf: ", windowWidth / 2 + 105, windowHeight / 2 + 20);
 
-    text("+" + this.tips + "€", windowWidth / 2 + 175, windowHeight / 2 - 30);
+    text("+" + this.tips + "€", windowWidth / 2 + 175, windowHeight / 2 - 10);
     if (player.hasChild === false) {
-      text("-" + this.foodCosts + "€", windowWidth / 2 + 175, windowHeight / 2);
+      text(
+        "-" + this.foodCosts + "€",
+        windowWidth / 2 + 175,
+        windowHeight / 2 + 20
+      );
     }
     if (player.hasChild === true) {
       text(
         "-" + this.foodWithChild + "€",
         windowWidth / 2 + 175,
-        windowHeight / 2
+        windowHeight / 2 + 20
       );
     }
 
