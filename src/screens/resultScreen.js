@@ -85,7 +85,7 @@ export function money() {
   if (mayMoney > 150) {
     console.log("gut " + mayMoney);
     text(
-      "Du hast es durch diesen Monat geschafft, aber du musstest an einigen Stellen viel zurückstecken. Das geht nicht mehr lange so weiter ohne deine Gesundheit und Zufriedenheit zu beeinträchtigen.",
+      "Du achtest sehr auf deine Finanzen. Zwar bist du auf der sicheren Seite, wenn du Kurzarbeitergeld erhältst, aber du musst an einigen Stellen viel zurückstecken. Das geht nicht mehr lange so weiter ohne deine Gesundheit und Zufriedenheit zu beeinträchtigen.",
       windowWidth / 2 - 600,
       windowHeight / 2 - 120,
       200
@@ -93,7 +93,7 @@ export function money() {
   } else if (mayMoney >= 0 && mayMoney <= 150) {
     console.log("mitter " + mayMoney);
     text(
-      "Das Geld ist knapp. Du hast es gerade so durch den Monat geschafft aber musstest auch oft auf Dinge verzichten. Auf längere Zeit geht das nicht gut. Außerdem kannst du kaum Geld zu Seite legen weil so wenig übrig bleibt. Eine unerwartete Ausgabe und du bist im Minus.",
+      "Das Geld ist knapp. Durch das Kurzarbeitergeld, das du in den nächsten Monaten erhalten wirst, musst du jetzt genau auf deine Ausgaben achten. Auf längere Zeit geht das nicht gut. Außerdem kannst du dir kaum Geld zu Seite legen, weil so wenig übrig bleiben wird. Eine unerwartete Ausgabe und du bist im Minus.",
       windowWidth / 2 - 600,
       windowHeight / 2 - 120,
       200
@@ -101,7 +101,7 @@ export function money() {
   } else if (mayMoney < 0) {
     console.log("schlecht " + mayMoney);
     text(
-      "Das Geld war schon vorher knapp aber jetzt kommst du kaum noch über die Runden. Wenn du nicht bald wieder dein normales Gehalt bekommst musst du dir vielleicht einen zweiten Job suche - wenn du einen findest. Die Geldsorgen werden sich zukünftig auch auf deine Zufriedenheit und schließlich deine Gesundheit auswirken.",
+      "Du kommst nicht mehr über die Runden. Durch das Kurzarbeitergeld, das du in den nächsten Monaten erhalten wirst, kannst du dir deinen normalen Lebensstandard nicht mehr leisten. Du musst dir einen zweiten Job suchen - wenn du einen findest. Die Geldsorgen werden sich zukünftig auch auf deine Zufriedenheit und schließlich deine Gesundheit auswirken.",
       windowWidth / 2 - 600,
       windowHeight / 2 - 120,
       200
