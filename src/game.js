@@ -822,7 +822,31 @@ let hasCarQuestions = [
         5,
         -200,
         0,
-        1
+        1,
+        new Question(
+          "Der Supermarkt um die Ecke ist teurer aber dafür näher. Der billige Supermarkt ist nur mit der Bahn zu erreichen, da dein Auto noch in der Werkstatt steht.\n \nWas tust du?",
+          [
+            new Choice(
+              "Ich gehe in den billigeren Supermarkt.",
+              "Du brauchst länger zum Einkaufen und du musst alle Einkäufe mit der Hand tragen.",
+              -5,
+              -10,
+              -10,
+              1
+            ),
+            new Choice(
+              "Ich gehe in den teuren Supermarkt.",
+              "Du musst alle Einkäufe mit der Hand tragen und du musst mehr bezahlen, aber Weg ist nicht so weit.",
+              -10,
+              -10,
+              0,
+              1
+            ),
+          ],
+          0,
+          -110,
+          "mp4/frage_27.mp4"
+        )
       ),
       new Choice(
         "Ich bringe es nicht in die Werkstatt.",
@@ -836,30 +860,6 @@ let hasCarQuestions = [
     0,
     -220,
     "mp4/frage_25.mp4"
-  ),
-  new Question(
-    "Der Supermarkt um die Ecke ist teurer aber dafür näher. Der billige Supermarkt ist nur mit der Bahn zu erreichen, da dein Auto noch in der Werkstatt steht.\n \nWas tust du?",
-    [
-      new Choice(
-        "Ich gehe in den billigeren Supermarkt.",
-        "Du brauchst länger zum Einkaufen und du musst alle Einkäufe mit der Hand tragen.",
-        -5,
-        -10,
-        -10,
-        1
-      ),
-      new Choice(
-        "Ich gehe in den teuren Supermarkt.",
-        "Du musst alle Einkäufe mit der Hand tragen und du musst mehr bezahlen, aber Weg ist nicht so weit.",
-        -10,
-        -10,
-        0,
-        1
-      ),
-    ],
-    0,
-    -110,
-    "mp4/frage_27.mp4"
   ),
 ];
 let hasCarQuestionsCount = hasCarQuestions.length;
@@ -958,7 +958,6 @@ export function deleteCoronaQuestions() {
 export function pushHasCarQuestions() {
   upcomingEvents.push(new QuestionEvent(hasCarQuestions[0], 10));
   upcomingEvents.push(new QuestionEvent(hasCarQuestions[1], 23));
-  upcomingEvents.push(new QuestionEvent(hasCarQuestions[2], 26));
 
   week2QuestionsCount++;
   week4QuestionsCount++;
