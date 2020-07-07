@@ -245,7 +245,7 @@ let coronaQuestions = [
             ),
           ],
           -300,
-          110,
+          160,
           "png/frage_13.png"
         )
       ),
@@ -296,8 +296,8 @@ let coronaQuestions = [
               0.8
             ),
           ],
-          0,
-          -220,
+          300,
+          220,
           "png/frage_21_grafik.png"
         )
       ),
@@ -335,7 +335,7 @@ let coronaQuestions = [
       ),
     ],
     -300,
-    120,
+    180,
     "png/frage_22_grafik.png"
   ),
 ];
@@ -892,7 +892,7 @@ let hasCarQuestions = [
             ),
           ],
           0,
-          -110,
+          -210,
           "mp4/frage_27.mp4"
         )
       ),
