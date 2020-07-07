@@ -296,7 +296,7 @@ let coronaQuestions = [
             ),
           ],
           0,
-          -110,
+          -220,
           "png/frage_21_grafik.png"
         )
       ),
@@ -333,7 +333,7 @@ let coronaQuestions = [
         1
       ),
     ],
-    300,
+    -300,
     120,
     "png/frage_22_grafik.png"
   ),
