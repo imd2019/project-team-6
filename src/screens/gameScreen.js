@@ -89,6 +89,7 @@ function mouseClicked() {
     if (currentEvent) {
       currentEvent.mouseClicked();
     }
+    console.log(player);
   }
 
   tutorial.mouseClicked();

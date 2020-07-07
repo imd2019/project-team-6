@@ -9,6 +9,7 @@ import {
 import { moneyLarge, mainFont } from "./customizationScreen.js";
 import { icons } from "./gameScreen.js";
 import { customizationClickSound } from "./startScreen.js";
+import { Job } from "../model/job.js";
 
 let finance = new Button(65, -200, 170, 20, true, "Deine Finanzen");
 
@@ -24,6 +25,7 @@ let startBtn = new Button(0, 200, 40, 20, true, "Start", () => {
 
   if (player.job.title === "Steuerberater*in") {
     setCurrentScreen("choseTC");
+    player.job = new Job("Kellner*in", 1660);
   } else {
     setCurrentScreen("game");
   }
