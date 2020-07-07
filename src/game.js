@@ -19,7 +19,33 @@ let coronaQuestions = [
         0,
         1
       ),
-      new Choice("Ich storniere nicht.", "Du hoffst und wartest.", 0, 0, 0, 1),
+      new Choice(
+        "Ich storniere nicht.",
+        "Du hoffst und wartest.",
+        0,
+        0,
+        0,
+        1,
+        new Question(
+          "Dein Reiseanbieter hat dir geschrieben. Alle Urlaube wurden storniert.",
+          [
+            new Choice(
+              "Ok.",
+              [
+                "Du hast einen Gutschein zurück bekommen. Zwar findest du es schade, dass dein Urlaub storniert wurde, aber immerhin verlierst du kein Geld.",
+                "Der Reiseanbieter hat dir keine Informationen über eventuelle Rückerstattungen gegeben. Du machst dir Sorgen, dein Geld zu verlieren für das du lange gespart hast.",
+              ],
+              [5, -10],
+              [0, 0],
+              [0, 0],
+              0.5
+            ),
+          ],
+          -300,
+          110,
+          "mp4/frage_07.mp4"
+        )
+      ),
     ],
     300,
     120,
@@ -69,7 +95,26 @@ let coronaQuestions = [
         0,
         0,
         0,
-        1
+        1,
+        new Question(
+          "Du hattest dich entschieden zu hamstern.",
+          [
+            new Choice(
+              "Ok.",
+              [
+                "Die Supermarktregale sind immer noch voll. Du hattest das falsche Gespür und hast umsonst mehr Geld ausgegeben.",
+                "Die Supermarktregale sind leer. Du hattest das richtige Gespür und freust dich darüber.",
+              ],
+              [-10, 10],
+              [-35, -35],
+              [0, 0],
+              0.5
+            ),
+          ],
+          -300,
+          110,
+          "mp4/frage_07.mp4"
+        )
       ),
 
       new Choice(
@@ -78,7 +123,26 @@ let coronaQuestions = [
         0,
         0,
         0,
-        1
+        1,
+        new Question(
+          "Du hattest dich entschieden nicht zu hamstern.",
+          [
+            new Choice(
+              "Ok.",
+              [
+                "Die Supermarktregale sind immer noch voll. Du hattest das richtige Gespür.",
+                "Die Supermarktregale sind leer. Du hattest das falsche Gespür und ärgerst dich über deine Fehlentscheidung.",
+              ],
+              [-10, 10],
+              [0, 0],
+              [0, 0],
+              0.5
+            ),
+          ],
+          -300,
+          110,
+          "mp4/frage_07.mp4"
+        )
       ),
     ],
     -100,
@@ -94,7 +158,23 @@ let coronaQuestions = [
         0,
         -5,
         0,
-        1
+        1,
+        new Question(
+          "Du hast Rückmeldungen für deine Bewerbungen bekommen.",
+          [
+            new Choice(
+              "Ok.",
+              "Du hast nur Absagen bekommen. Du ärgerst dich über deine jetzige Situation.",
+              -10,
+              0,
+              0,
+              1
+            ),
+          ],
+          -300,
+          110,
+          "mp4/frage_07.mp4"
+        )
       ),
       new Choice(
         "Nein, dafür habe ich keine Zeit.",
@@ -223,103 +303,6 @@ let coronaQuestions = [
 ];
 let coronaQuestionsCount = coronaQuestions.length;
 
-let consequenceEvents = [
-  //falls urlaub noch nicht storniert wurde.
-  new Question(
-    "Dein Reiseanbieter hat dir geschrieben. Alle Urlaube wurden storniert.",
-    [
-      new Choice(
-        "Ok.",
-        [
-          "Du hast einen Gutschein zurück bekommen. Zwar findest du es schade, dass dein Urlaub storniert wurde, aber immerhin verlierst du kein Geld.",
-          "Der Reiseanbieter hat dir keine Informationen über eventuelle Rückerstattungen gegeben. Du machst dir Sorgen, dein Geld zu verlieren für das du lange gespart hast.",
-        ],
-        [5, -10],
-        [0, 0],
-        [0, 0],
-        0.5
-      ),
-    ],
-    -300,
-    110,
-    "mp4/frage_07.mp4"
-  ),
-  //bewerbung geschrieben
-  new Question(
-    "Du hast Rückmeldungen für deine Bewerbungen bekommen.",
-    [
-      new Choice(
-        "Ok.",
-        "Du hast nur Absagen bekommen. Du ärgerst dich über deine jetzige Situation.",
-        -10,
-        0,
-        0,
-        1
-      ),
-    ],
-    -300,
-    110,
-    "mp4/frage_07.mp4"
-  ),
-  //nicht gehamster
-  new Question(
-    "Du hattest dich entschieden nicht zu hamstern.",
-    [
-      new Choice(
-        "Ok.",
-        [
-          "Die Supermarktregale sind immer noch voll. Du hattest das richtige Gespür.",
-          "Die Supermarktregale sind leer. Du hattest das falsche Gespür und ärgerst dich über deine Fehlentscheidung.",
-        ],
-        [-10, 10],
-        [0, 0],
-        [0, 0],
-        0.5
-      ),
-    ],
-    -300,
-    110,
-    "mp4/frage_07.mp4"
-  ),
-  //gehamster
-  new Question(
-    "Du hattest dich entschieden zu hamstern.",
-    [
-      new Choice(
-        "Ok.",
-        [
-          "Die Supermarktregale sind immer noch voll. Du hattest das falsche Gespür und hast umsonst mehr Geld ausgegeben.",
-          "Die Supermarktregale sind leer. Du hattest das richtige Gespür und freust dich darüber.",
-        ],
-        [-10, 10],
-        [-35, -35],
-        [0, 0],
-        0.5
-      ),
-    ],
-    -300,
-    110,
-    "mp4/frage_07.mp4"
-  ),
-  //rechnung vergessen zu bezahlen
-  new Question(
-    "Du hast vergessen deine Rechnung zu bezahlen.",
-    [
-      new Choice(
-        "Ok.",
-        "Du musstest Mahngebühren und die Rechnung in voller höhe begleichen.",
-        -10,
-        -200,
-        0,
-        1
-      ),
-    ],
-    0,
-    0,
-    "mp4/frage_07.mp4"
-  ),
-];
-
 let randomQuestionsWeek1to2 = [
   new Question(
     "Deine Mutter liegt krank im Altersheim. Um sie zu besuchen musst du dich krankschreiben lassen. \n \nBesuchst du sie?",
@@ -347,31 +330,6 @@ let randomQuestionsWeek1to2 = [
   ),
 
   new Question(
-    "Freunde haben dich in eine Bar eingeladen. \n \nGehst du mit?",
-    [
-      new Choice(
-        "Ich gehe mit.",
-        "Du hast 60€ in der Bar gelassen und du hast deine Freunde wieder gesehen.",
-        5,
-        -60,
-        -10,
-        1
-      ),
-      new Choice(
-        "Ich bleibe daheim.",
-        "Du fühlst dich alleine, aber sparst wenigstens Geld.",
-        -5,
-        0,
-        0,
-        1
-      ),
-    ],
-    300,
-    220,
-    "png/frage_03_grafik.png"
-  ),
-
-  new Question(
     "Deine Arbeitsschuhe sind kaputt. Neue würden deinen Arbeitsalltag erleichtern. \n \nKaufst du dir neue?",
     [
       new Choice(
@@ -394,36 +352,6 @@ let randomQuestionsWeek1to2 = [
     -200,
     120,
     "mp4/frage_05.mp4"
-  ),
-  new Question(
-    "Deine beste Freundin möchte mit dir mittagessen gehen. \n \nGehst du mit?",
-    [
-      new Choice(
-        "Ich gehe mit.",
-        [
-          "Endlich. Du siehst deine beste Freundin wieder, ihr habt einen schönen Tag, aber du hast schon wieder Geld ausgegeben. ",
-          "Endlich. Du siehst deine beste Freundin wieder, ihr habt einen schönen Tag, aber du hast schon wieder Geld ausgegeben.",
-        ],
-        [5, 5],
-        [-115, 35],
-        [-10, -10],
-        1
-      ),
-      new Choice(
-        "Ich beibe daheim",
-        [
-          "Du verbringst einen schönen Spielemittag mit deinem Kind, aber deine Freunde haben dich lange nicht mehr gesehen.",
-          "Du hast deine Freundin lange nicht mehr gesehen, und hättest dich gefreut sie wieder zu sehen.",
-        ],
-        [0, -5],
-        [0, 0],
-        [0, 0],
-        1
-      ),
-    ],
-    300,
-    120,
-    "mp4/frage_06.mp4"
   ),
   new Question(
     "Um deine Gesundheit zu verbessern überlegst du, Sport zu machen. Im Fitnessstudio erzielst du schneller Erfolge, es kostet aber auch mehr Geld. \n \nWofür entscheidest du dich?",
@@ -455,6 +383,54 @@ let randomQuestionsWeek1to2 = [
     120,
     "mp4/frage_08.mp4"
   ),
+  new Question(
+    "Freunde haben dich in eine Bar eingeladen. \n \nGehst du mit?",
+    [
+      new Choice(
+        "Ich gehe mit.",
+        "Du hast 60€ in der Bar gelassen und du hast deine Freunde wieder gesehen.",
+        5,
+        -60,
+        -10,
+        1
+      ),
+      new Choice(
+        "Ich bleibe daheim.",
+        "Du fühlst dich alleine, aber sparst wenigstens Geld.",
+        -5,
+        0,
+        0,
+        1
+      ),
+    ],
+    300,
+    220,
+    "png/frage_03_grafik.png"
+  ),
+  new Question(
+    "Deine beste Freundin möchte mit dir mittagessen gehen. \n \nGehst du mit?",
+    [
+      new Choice(
+        "Ich gehe mit.",
+        "Endlich. Du siehst deine beste Freundin wieder, ihr habt einen schönen Tag, aber du hast schon wieder Geld ausgegeben. ",
+        5,
+        35,
+        -10,
+        1
+      ),
+      new Choice(
+        "Ich beibe daheim",
+        "Du hast deine Freundin lange nicht mehr gesehen, und hättest dich gefreut sie wieder zu sehen.",
+        -5,
+        0,
+        0,
+        1
+      ),
+    ],
+    300,
+    120,
+    "mp4/frage_06.mp4"
+  ),
 ];
 
 let randomQuestionsWeek3to4 = [
@@ -467,7 +443,23 @@ let randomQuestionsWeek3to4 = [
         0,
         0,
         0,
-        1
+        1,
+        new Question(
+          "Du hast vergessen deine Rechnung zu bezahlen.",
+          [
+            new Choice(
+              "Ok.",
+              "Du musstest Mahngebühren und die Rechnung in voller höhe begleichen.",
+              -10,
+              -200,
+              0,
+              1
+            ),
+          ],
+          0,
+          0,
+          "mp4/frage_07.mp4"
+        )
       ),
       new Choice(
         "Ich bezahle sofort.",
@@ -1000,8 +992,8 @@ export function deleteHasCarQuestions() {
   week2QuestionsCount--;
   week4QuestionsCount--;
 }
-let deletedQuestion1 = randomQuestionsWeek1to2[1];
-let deletedQuestion2 = randomQuestionsWeek1to2[3];
+let deletedQuestion1 = randomQuestionsWeek1to2[3];
+let deletedQuestion2 = randomQuestionsWeek1to2[4];
 
 export function pushHasChildQuestions() {
   addRandomQuestions(1, randomHasChildQuestions);
@@ -1010,10 +1002,9 @@ export function pushHasChildQuestions() {
   upcomingEvents.push(new QuestionEvent(hasChildQuestions[1], 16));
   upcomingEvents.push(new QuestionEvent(hasChildQuestions[4], 17));
   upcomingEvents.push(new QuestionEvent(hasChildQuestions[2], 22));
-  upcomingEvents.push(new QuestionEvent(hasChildQuestions[3], 24));
 
-  randomQuestionsWeek1to2.splice(deletedQuestion1, 1);
-  randomQuestionsWeek1to2.splice(deletedQuestion2, 1);
+  randomQuestionsWeek1to2.splice(3, 1);
+  randomQuestionsWeek1to2.splice(4, 1);
   randomQuestionsWeek1to2.push(
     randomHasChildQuestions[1],
     randomHasChildQuestions[2]
@@ -1030,6 +1021,7 @@ export function deleteHasChildQuestions() {
     upcomingEvents.length - hasChildQuestionsCount - 1,
     hasChildQuestions.length
   );
+  randomQuestionsWeek1to2.splice(randomQuestionsWeek1to2.length - 2, 2);
   randomQuestionsWeek1to2.push(deletedQuestion1, deletedQuestion2);
   week1QuestionsCount--;
   week2QuestionsCount--;

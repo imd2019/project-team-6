@@ -1,9 +1,10 @@
 import { VinduEvent } from "./event.js";
 import { icons } from "../screens/gameScreen.js";
-import { runNextEvent } from "../game.js";
+import { runNextEvent, getCurrentDay } from "../game.js";
 import { mainFont } from "../screens/customizationScreen.js";
 import { Button } from "../model/button.js";
 import { choiceClickSound } from "../screens/startScreen.js";
+import { QuestionEvent } from "./questionEvent.js";
 
 export class ConsequenceEvent extends VinduEvent {
   constructor(choice, x, y) {
@@ -25,6 +26,16 @@ export class ConsequenceEvent extends VinduEvent {
           this.choice.happiness,
           this.choice.money
         );
+        if (this.choice.followUpQuestion) {
+          let daysUntil = 2;
+          if ((getCurrentDay() + daysUntil) % 7 === 0) {
+            daysUntil++;
+          }
+
+          getUpcomingEvents().push(
+            new QuestionEvent(this.choice.followUpQuestion, daysUntil)
+          );
+        }
         runNextEvent();
       }
     );

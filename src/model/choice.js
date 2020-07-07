@@ -10,7 +10,8 @@ export class Choice {
     happiness = 0,
     money = 0,
     health = 0,
-    chance = 1
+    chance = 1,
+    followUpQuestion = null
   ) {
     this.text = text;
 
@@ -32,6 +33,8 @@ export class Choice {
       this.money = money;
       this.health = health;
     }
+
+    this.followUpQuestion = followUpQuestion;
 
     this.width = 140;
     this.height = 50;
