@@ -53,7 +53,7 @@ function preload() {
   openVinduVid.position(0, 0);
   openVinduVid.hide();
   bgMusic = loadSound("assets/sounds/bg1.mp3");
-  bgMusic.setVolume(0.7);
+  bgMusic.setVolume(0.8);
 
   startClickSound = loadSound("assets/sounds/start_click.mp3");
   notificationSound = loadSound("assets/sounds/notification.mp3");

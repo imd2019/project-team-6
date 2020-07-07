@@ -242,7 +242,7 @@ function preload() {
   tafelPic = loadImage("./assets/ui/tafelPic.png");
   tafelStroke = loadImage("./assets/ui/tafelPicStroke.png");
 
-  closedVindu = loadImage("./assets/ui/fenster_geschlossen.png");
+  closedVindu = loadImage("./assets/ui/Startscreen.png");
 
   endbg = loadImage("./assets/endBGs/end_bg.png");
 
