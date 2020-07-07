@@ -187,8 +187,8 @@ export function happiness(happiness) {
 }
 
 export function character(sex, happiness, health) {
-  // let money = player.money - secondCoronaSalary;
-  let money = 1000 - secondCoronaSalary;
+  let money = player.money - secondCoronaSalary;
+
   push();
   imageMode(CENTER);
 
