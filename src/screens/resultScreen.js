@@ -62,7 +62,7 @@ export function backgroundImg() {
 export function money() {
   let costs = 1660 - player.money;
   if (player.hasChild === true) {
-    costs += 264;
+    costs -= 264;
   }
 
   let mayMoney = secondCoronaSalary - costs;
@@ -194,7 +194,7 @@ export function happiness(happiness) {
 export function character(sex, happiness, health) {
   let costs = 1660 - player.money;
   if (player.hasChild === true) {
-    costs += 264;
+    costs -= 264;
   }
 
   let money = secondCoronaSalary - costs;
