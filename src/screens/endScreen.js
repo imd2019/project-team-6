@@ -9,9 +9,15 @@ let nochmalBtn = new Button(0, 0, 30, 10, true, "Nochmal?", () =>
 );
 
 let tafel = new Button(-80, 20, 50, 30, true, "T A F E L", () => {
-  createA("http://www.tafel.de/spenden/", TAFEL, _self);
+  // createA("http://www.tafel.de/spenden/", TAFEL, _self);
+  window.open("http://www.tafel.de/spenden/", "_blank");
 });
-let caritas = new Button(80, 20, 60, 30, true, "C A R I T A S");
+let caritas = new Button(80, 20, 60, 30, true, "C A R I T A S", () => {
+  window.open(
+    "https://www.caritas.de/spendeundengagement/sie-wollen-helfen",
+    "_blank"
+  );
+});
 
 function textContent() {
   push();
