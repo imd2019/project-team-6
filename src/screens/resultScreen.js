@@ -49,7 +49,13 @@ let secondCoronaSalary = 895;
 export function backgroundImg() {
   push();
   imageMode(CENTER);
-  image(endbg, windowWidth / 2, windowHeight / 2, windowWidth, windowHeight);
+  image(
+    endbg,
+    windowWidth / 2,
+    windowHeight / 2,
+    windowWidth,
+    windowWidth * 0.5603322
+  );
   pop();
 }
 
