@@ -192,7 +192,12 @@ export function happiness(happiness) {
 }
 
 export function character(sex, happiness, health) {
-  let money = player.money - secondCoronaSalary;
+  let costs = 1660 - player.money;
+  if (player.hasChild === true) {
+    costs += 264;
+  }
+
+  let money = secondCoronaSalary - costs;
 
   push();
   imageMode(CENTER);
