@@ -16,25 +16,29 @@ export class Choice {
     this.text = text;
 
     if (chance != 1) {
-      if (random(0, 1) <= this.chance) {
+      if (!followUpQuestion) {
+        followUpQuestion = [];
+      }
+      if (random(0, 1) <= chance) {
         this.consequence = consequence[0];
         this.happiness = happiness[0];
         this.money = money[0];
         this.health = health[0];
+        this.followUpQuestion = followUpQuestion[0];
       } else {
         this.consequence = consequence[1];
         this.happiness = happiness[1];
         this.money = money[1];
         this.health = health[1];
+        this.followUpQuestion = followUpQuestion[1];
       }
     } else {
       this.consequence = consequence;
       this.happiness = happiness;
       this.money = money;
       this.health = health;
+      this.followUpQuestion = followUpQuestion;
     }
-
-    this.followUpQuestion = followUpQuestion;
 
     this.width = 140;
     this.height = 50;

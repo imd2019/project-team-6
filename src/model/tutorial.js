@@ -1,5 +1,6 @@
 import { mainFont } from "../screens/customizationScreen.js";
 import { Button } from "./button.js";
+import { customizationClickSound } from "../screens/startScreen.js";
 
 export class Tutorial {
   constructor(xOffset, yOffset, mode) {
@@ -9,6 +10,7 @@ export class Tutorial {
     this.x = 0;
     this.y = 0;
     this.okBtn = new Button(0, 300, 100, 20, true, "Verstanden", () => {
+      customizationClickSound.play();
       this.mode = false;
     });
   }

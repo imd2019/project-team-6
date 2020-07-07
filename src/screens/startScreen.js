@@ -2,10 +2,23 @@ import gameScreen from "./gameScreen.js";
 import { Button } from "../model/button.js";
 import { setCurrentScreen } from "../../sketch.js";
 import { closedVindu } from "./customizationScreen.js";
+import { Pictures } from "../model/imagePosition.js";
 
 let opened = false;
 
-let button = new Button(50, 240, 100, 20, true, "open vindu", () => {
+let button = new Button(50, 240, 110, 20, true, "open vindu", () => {
+  setTimeout(() => setCurrentScreen("customization"), 1000 * 5);
+  openVinduVid.play();
+  openVinduVid.speed(2);
+  openVinduVid.show();
+  opened = true;
+  document.body.requestFullscreen();
+  gameScreen.onStart();
+  bgMusic.loop();
+  customizationClickSound.play();
+});
+
+let closedVinduImg = new Pictures(0, 0, 400, 500, () => {
   setTimeout(() => setCurrentScreen("customization"), 1000 * 5);
   openVinduVid.play();
   openVinduVid.speed(2);
@@ -19,22 +32,22 @@ let button = new Button(50, 240, 100, 20, true, "open vindu", () => {
 
 let loop = false;
 
-function draw() {
+export function draw() {
   clear();
 
   if (opened) {
     openVinduVid.size(windowWidth, windowHeight);
   } else {
     background("#1e1f3f");
-    imageMode(CENTER);
-    image(closedVindu, windowWidth / 2, windowHeight / 2);
+    closedVinduImg.display(closedVindu);
     button.display();
     button.mouseOver();
   }
 }
 
-function mouseClicked() {
+export function mouseClicked() {
   button.mouseClicked();
+  closedVinduImg.mouseClicked();
 }
 
 let openVinduVid;

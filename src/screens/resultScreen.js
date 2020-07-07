@@ -49,7 +49,13 @@ let secondCoronaSalary = 895;
 export function backgroundImg() {
   push();
   imageMode(CENTER);
-  image(endbg, windowWidth / 2, windowHeight / 2, windowWidth, windowHeight);
+  image(
+    endbg,
+    windowWidth / 2,
+    windowHeight / 2,
+    windowWidth,
+    windowWidth * 0.5603322
+  );
   pop();
 }
 
@@ -181,8 +187,8 @@ export function happiness(happiness) {
 }
 
 export function character(sex, happiness, health) {
-  // let money = player.money - secondCoronaSalary;
-  let money = 1000 - secondCoronaSalary;
+  let money = player.money - secondCoronaSalary;
+
   push();
   imageMode(CENTER);
 
@@ -285,16 +291,18 @@ export function draw() {
   // let playerHappiness = 50;
 
   // console.log(
-  //   "Geld: " +
+  //   "1. Geld: " +
   //     player.money +
   //     " Gesund: " +
   //     player.health +
   //     " Zufri: " +
   //     player.happiness
   // );
+
+  console.log("2. Gesund: " + playerHealth + " Zufri: " + playerHappiness);
   character(playerSex, playerHappiness, playerHealth);
   happiness(playerHappiness);
-  health(playerHappiness);
+  health(playerHealth);
   money();
   nextBtn.display();
   nextBtn.mouseOver();

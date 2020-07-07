@@ -4,6 +4,7 @@ import { Player } from "./model/player.js";
 import { QuestionEvent } from "./model/questionEvent.js";
 import { NewsEvent } from "./model/newsEvent.js";
 import { WeeklyBillEvent } from "./model/weeklyBill.js";
+import { setCurrentScreen } from "../sketch.js";
 
 export let player = new Player();
 
@@ -42,7 +43,7 @@ let coronaQuestions = [
             ),
           ],
           -300,
-          110,
+          210,
           "png/frage_02.png"
         )
       ),
@@ -60,7 +61,42 @@ let coronaQuestions = [
         0,
         0,
         -10,
-        1
+        1,
+        new Question(
+          "Möchtest du dir eine Maske kaufen?",
+          [
+            new Choice(
+              "Nein, ich brauche keine.",
+              "Du siehst die Gefahr noch nicht und tust das als unnötig ab.",
+              0,
+              0,
+              -10,
+              1
+            ),
+            new Choice(
+              "Ich kaufe mir eine.",
+              "Du fühlst dich sicher, aber die Masken waren sehr teuer.",
+              5,
+              -35,
+              0,
+              1
+            ),
+            new Choice(
+              "Nein, ich werde mir eine nähen.",
+              [
+                "Du bist stolz auf dich, weil du es geschafft hast, Geld gespart hast und geschützt bist.",
+                "Du bist enttäuscht: Es hat nicht geklappt, du hast Zeit verschwendet und bist nicht geschützt.",
+              ],
+              [10, -10],
+              [0, 0],
+              [0, -10],
+              0.5
+            ),
+          ],
+          300,
+          220,
+          "png/frage_26_grafik.png"
+        )
       ),
       new Choice(
         "Ich kaufe mir eine.",
@@ -73,17 +109,54 @@ let coronaQuestions = [
       new Choice(
         "Nein, ich werde mir eine nähen.",
         [
-          "Du bist stolz auf dich, weil du es geschafft hast, Geld gespart hast und geschützt bist.",
           "Du bist enttäuscht: Es hat nicht geklappt, du hast Zeit verschwendet und bist nicht geschützt.",
+          "Du bist stolz auf dich, weil du es geschafft hast, Geld gespart hast und geschützt bist.",
         ],
-        [10, -10],
+        [-10, 10],
         [0, 0],
-        [0, -10],
-        0.5
+        [-10, 0],
+        0.5,
+        [
+          new Question(
+            "Möchtest du dir eine Maske kaufen?",
+            [
+              new Choice(
+                "Nein, ich brauche keine.",
+                "Du siehst die Gefahr noch nicht und tust das als unnötig ab.",
+                0,
+                0,
+                -10,
+                1
+              ),
+              new Choice(
+                "Ich kaufe mir eine.",
+                "Du fühlst dich sicher, aber die Masken waren sehr teuer.",
+                5,
+                -35,
+                0,
+                1
+              ),
+              new Choice(
+                "Nein, ich werde mir eine nähen.",
+                [
+                  "Du bist stolz auf dich, weil du es geschafft hast, Geld gespart hast und geschützt bist.",
+                  "Du bist enttäuscht: Es hat nicht geklappt, du hast Zeit verschwendet und bist nicht geschützt.",
+                ],
+                [10, -10],
+                [0, 0],
+                [0, -10],
+                0.5
+              ),
+            ],
+            300,
+            220,
+            "png/frage_26_grafik.png"
+          ),
+        ]
       ),
     ],
     300,
-    210,
+    220,
     "png/frage_04_grafik.png"
   ),
   new Question(
@@ -133,14 +206,14 @@ let coronaQuestions = [
                 "Die Supermarktregale sind immer noch voll. Du hattest das richtige Gespür.",
                 "Die Supermarktregale sind leer. Du hattest das falsche Gespür und ärgerst dich über deine Fehlentscheidung.",
               ],
-              [-10, 10],
+              [10, -10],
               [0, 0],
               [0, 0],
               0.5
             ),
           ],
-          -300,
-          110,
+          300,
+          210,
           "png/frage_09nichthamster.png"
         )
       ),
@@ -172,7 +245,7 @@ let coronaQuestions = [
             ),
           ],
           -300,
-          110,
+          160,
           "png/frage_13.png"
         )
       ),
@@ -189,42 +262,7 @@ let coronaQuestions = [
     -220,
     "mp4/frage_13.mp4"
   ),
-  //falls nicht schon gekauft oder genäht wurde und es nicht geklaptt hat
-  new Question(
-    "Möchtest du dir eine Maske kaufen?",
-    [
-      new Choice(
-        "Nein, ich brauche keine.",
-        "Du siehst die Gefahr noch nicht und tust das als unnötig ab.",
-        0,
-        0,
-        -10,
-        1
-      ),
-      new Choice(
-        "Ich kaufe mir eine.",
-        "Du fühlst dich sicher, aber die Masken waren sehr teuer.",
-        5,
-        -35,
-        0,
-        1
-      ),
-      new Choice(
-        "Nein, ich werde mir eine nähen.",
-        [
-          "Du bist stolz auf dich, weil du es geschafft hast, Geld gespart hast und geschützt bist.",
-          "Du bist enttäuscht: Es hat nicht geklappt, du hast Zeit verschwendet und bist nicht geschützt.",
-        ],
-        [10, -10],
-        [0, 0],
-        [0, -10],
-        0.5
-      ),
-    ],
-    300,
-    -110,
-    "png/frage_26.png"
-  ),
+
   new Question(
     "Freunde laden dich zum Spazieren gehen ein. \n \nGehst du mit?",
     [
@@ -234,7 +272,34 @@ let coronaQuestions = [
         10,
         0,
         -10,
-        1
+        1,
+        new Question(
+          "Du triffst dich mit deinen Freunden. Sie wollen dich umarmen. \n \nLässt du es zu?",
+          [
+            new Choice(
+              "Ich lehne ab.",
+              "Dir ist die Situation unangenehm, aber du willst auf Nummer sicher gehen.",
+              -5,
+              0,
+              0,
+              1
+            ),
+            new Choice(
+              "Ich lasse mich umarmen.",
+              [
+                "Dir hat menschliche Nähe gefehlt.",
+                "Du wurdest von der Polizei erwischt und musst die Strafe zahlen. Du ärgerst dich darüber.",
+              ],
+              [5, 10],
+              [0, 0],
+              [-10, -10],
+              0.8
+            ),
+          ],
+          300,
+          220,
+          "png/frage_21_grafik.png"
+        )
       ),
       new Choice(
         "Ich bleibe daheim.",
@@ -245,37 +310,9 @@ let coronaQuestions = [
         1
       ),
     ],
-    100,
+    260,
     -220,
     "mp4/frage_20.mp4"
-  ),
-  //nur falls obere ja
-  new Question(
-    "Du triffst dich mit deinen Freunden. Sie wollen dich umarmen. \n \nLässt du es zu?",
-    [
-      new Choice(
-        "Ich lehne ab.",
-        "Dir ist die Situation unangenehm, aber du willst auf Nummer sicher gehen.",
-        -5,
-        0,
-        0,
-        1
-      ),
-      new Choice(
-        "Ich lasse mich umarmen.",
-        [
-          "Dir hat menschliche Nähe gefehlt.",
-          "Du wurdest von der Polizei erwischt und musst die Strafe zahlen. Du ärgerst dich darüber.",
-        ],
-        [5, 10],
-        [0, 0],
-        [-10, -10],
-        0.8
-      ),
-    ],
-    0,
-    -110,
-    "png/frage_21_grafik.png"
   ),
   new Question(
     "Deine Freundin ruft dich verängstigt an und erzählt dir von ihrem gewalttätigen Freund. \n \nLässt du sie bei dir eine Woche unterkommen?",
@@ -297,8 +334,8 @@ let coronaQuestions = [
         1
       ),
     ],
-    300,
-    120,
+    -300,
+    160,
     "png/frage_22_grafik.png"
   ),
 ];
@@ -326,7 +363,7 @@ let randomQuestionsWeek1to2 = [
       ),
     ],
     300,
-    120,
+    220,
     "png/frage_01_grafik.png"
   ),
 
@@ -351,7 +388,7 @@ let randomQuestionsWeek1to2 = [
       ),
     ],
     -200,
-    120,
+    220,
     "mp4/frage_05.mp4"
   ),
   new Question(
@@ -457,8 +494,8 @@ let randomQuestionsWeek3to4 = [
               1
             ),
           ],
-          0,
-          0,
+          300,
+          200,
           "png/frage_07.png"
         )
       ),
@@ -496,7 +533,7 @@ let randomQuestionsWeek3to4 = [
       ),
     ],
     300,
-    120,
+    220,
     "mp4/frage_14.mp4"
   ),
   new Question(
@@ -602,7 +639,7 @@ let hasChildQuestions = [
         1
       ),
     ],
-    -200,
+    -300,
     120,
     "png/frage_11_grafik.png"
   ),
@@ -617,10 +654,17 @@ let hasChildQuestions = [
         -10,
         1
       ),
-      new Choice("Ich kaufe mehr ein und koche mehr.", " ", 0, 0, 0, 1),
+      new Choice(
+        "Ich kaufe mehr ein und koche mehr.",
+        "Du kannst eh nicht arbeiten gehen und wenigstens könnt ihr gemeinsam kochen.",
+        0,
+        0,
+        0,
+        1
+      ),
     ],
-    -300,
-    110,
+    300,
+    -150,
     "png/frage_15_grafik.png"
   ),
 
@@ -634,36 +678,37 @@ let hasChildQuestions = [
         [-10, 10],
         [0, 0],
         [0, 0],
-        0.7
+        0.7,
+        [
+          new Question(
+            "Dein Kind hat kein Tablet bekommen. \n \nKaufst du eins?",
+            [
+              new Choice(
+                "Mein Kind kann mein Handy benutzen.",
+                "Du hast Angst, dass dein Kind über das Handy nicht so gut mitarbeiten kann und bist genervt, dass du dein Handy in der Zeit nicht benutzen kannst.",
+                -5,
+                0,
+                0,
+                1
+              ),
+              new Choice(
+                "Ich kaufe ein Tablet.",
+                "Dein Kind kann wieder mitarbeiten, aber du ärgerst dich über die Finanzen.",
+                0,
+                -45,
+                0,
+                1
+              ),
+            ],
+            -300,
+            220,
+            "png/frage_24n_grafik.png"
+          ),
+        ]
       ),
     ],
     -200,
     120,
-    "png/frage_24_grafik.png"
-  ),
-  //falls kein Tablet bekommen
-  new Question(
-    "Dein Kind hat kein Tablet bekommen. \n \nKaufst du eins?",
-    [
-      new Choice(
-        "Mein Kind kann mein Handy benutzen.",
-        "Du hast Angst, dass dein Kind über das Handy nicht so gut mitarbeiten kann und bist genervt, dass du dein Handy in der Zeit nicht benutzen kannst.",
-        -5,
-        0,
-        0,
-        1
-      ),
-      new Choice(
-        "Ich kaufe ein Tablet.",
-        "Dein Kind kann wieder mitarbeiten, aber du ärgerst dich über die Finanzen.",
-        0,
-        -45,
-        0,
-        1
-      ),
-    ],
-    -300,
-    -220,
     "png/frage_24_grafik.png"
   ),
   new Question(
@@ -690,7 +735,7 @@ let hasChildQuestions = [
       ),
     ],
     300,
-    -110,
+    -210,
     "png/frage_23_grafik.png"
   ),
 ];
@@ -846,8 +891,8 @@ let hasCarQuestions = [
               1
             ),
           ],
-          0,
-          -110,
+          100,
+          -210,
           "mp4/frage_27.mp4"
         )
       ),
@@ -913,8 +958,13 @@ let currentEvent;
 
 export function runNextEvent() {
   // after making a choice, show animation before showing next event
-
   let nextEvent = getNextEvent();
+  console.log(nextEvent);
+
+  if (!nextEvent) {
+    setTimeout(() => setCurrentScreen("result"), 450);
+    return;
+  }
 
   if (nextEvent.reuseBackground) {
     nextEvent.backgroundPath = currentEvent.backgroundPath;
@@ -935,10 +985,8 @@ export function pushCoronaQuestions() {
     new QuestionEvent(coronaQuestions[1], 2),
     new QuestionEvent(coronaQuestions[2], 8),
     new QuestionEvent(coronaQuestions[3], 15),
-    // new QuestionEvent(coronaQuestions[4], 5),
-    new QuestionEvent(coronaQuestions[5], 22),
-    // new QuestionEvent(coronaQuestions[6], 7),
-    new QuestionEvent(coronaQuestions[7], 25)
+    new QuestionEvent(coronaQuestions[4], 22),
+    new QuestionEvent(coronaQuestions[5], 25)
   );
 
   week1QuestionsCount += 2;
@@ -983,7 +1031,7 @@ export function pushHasChildQuestions() {
 
   upcomingEvents.push(new QuestionEvent(hasChildQuestions[0], 9));
   upcomingEvents.push(new QuestionEvent(hasChildQuestions[1], 16));
-  upcomingEvents.push(new QuestionEvent(hasChildQuestions[4], 17));
+  upcomingEvents.push(new QuestionEvent(hasChildQuestions[3], 17));
   upcomingEvents.push(new QuestionEvent(hasChildQuestions[2], 22));
 
   randomQuestionsWeek1to2.splice(3, 2);
@@ -1029,6 +1077,11 @@ function addRandomQuestionsToEachWeek(week, weekCount, randomQuestions) {
 function addRandomQuestions(week, randomQuestions) {
   let i = Math.round(random(0, randomQuestions.length - 1));
   let question = randomQuestions[i];
+
+  if (!question) {
+    return;
+  }
+
   randomQuestions.splice(i, 1);
 
   let freeDay = randomFreeDayInWeek(week);

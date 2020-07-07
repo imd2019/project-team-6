@@ -74,26 +74,50 @@ export class Icons {
       this.happinessRound = 0;
     }
 
+    let playerHealthBar;
+    if (this.player.health > 100) {
+      fill(222, 70, 90);
+      playerHealthBar = 100;
+    } else if (this.player.health < 0) {
+      playerHealthBar = 0;
+    } else {
+      fill(245, 189, 197);
+      playerHealthBar = this.player.health;
+    }
+
+    let playerHappinessBar;
+    if (this.player.happiness > 100) {
+      fill(222, 70, 90);
+      playerHappinessBar = 100;
+    } else if (this.player.happiness < 0) {
+      playerHappinessBar = 0;
+    } else {
+      fill(245, 189, 197);
+      playerHappinessBar = this.player.happiness;
+    }
+
     rect(
       this.x + 40,
       this.y + 45,
-      this.player.health,
+      playerHealthBar,
       this.height,
       10,
       this.healthRound,
       this.healthRound,
       10
     );
+
     rect(
       this.x + 40,
       this.y + 95,
-      this.player.happiness,
+      playerHappinessBar,
       this.height,
       10,
       this.happinessRound,
       this.happinessRound,
       10
     );
+
     pop();
   }
 
