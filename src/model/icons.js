@@ -36,7 +36,7 @@ export class Icons {
     noStroke();
     rectMode(CORNER);
     fill(17, 21, 37, 220);
-    rect(this.x - 40, this.y - 40, 210, 190, 0, 0, 30, 0);
+    rect(this.x - 40, this.y - 40, 210, 190, 30);
 
     image(moneyIcon, this.x, this.y, 40, 40);
     image(healthIcon, this.x, this.y + 50, 40, 40);
