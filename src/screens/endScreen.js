@@ -15,6 +15,7 @@ let opacityChange = +5;
 let againBtn = new Button(150, 250, 80, 20, true, "Nochmal?", () =>
   window.location.reload()
 );
+
 let backBtn = new Button(-70, 250, 60, 20, true, "Zurück", () => {
   setCurrentScreen("result");
 });
@@ -90,6 +91,7 @@ export function draw() {
 
 function mouseClicked() {
   tafel.mouseClicked();
+  tafelImg.mouseClicked();
   caritas.mouseClicked();
   caritasImg.mouseClicked();
   tafelPic.mouseClicked();
