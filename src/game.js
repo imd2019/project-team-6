@@ -61,6 +61,60 @@ let coronaQuestions = [
         0,
         -10,
         1,
+        new Question(
+          "Möchtest du dir eine Maske kaufen?",
+          [
+            new Choice(
+              "Nein, ich brauche keine.",
+              "Du siehst die Gefahr noch nicht und tust das als unnötig ab.",
+              0,
+              0,
+              -10,
+              1
+            ),
+            new Choice(
+              "Ich kaufe mir eine.",
+              "Du fühlst dich sicher, aber die Masken waren sehr teuer.",
+              5,
+              -35,
+              0,
+              1
+            ),
+            new Choice(
+              "Nein, ich werde mir eine nähen.",
+              [
+                "Du bist stolz auf dich, weil du es geschafft hast, Geld gespart hast und geschützt bist.",
+                "Du bist enttäuscht: Es hat nicht geklappt, du hast Zeit verschwendet und bist nicht geschützt.",
+              ],
+              [10, -10],
+              [0, 0],
+              [0, -10],
+              0.5
+            ),
+          ],
+          300,
+          -110,
+          "png/frage_26.png"
+        )
+      ),
+      new Choice(
+        "Ich kaufe mir eine.",
+        "Du fühlst dich sicher, aber die Masken waren sehr teuer.",
+        5,
+        -35,
+        0,
+        1
+      ),
+      new Choice(
+        "Nein, ich werde mir eine nähen.",
+        [
+          "Du bist enttäuscht: Es hat nicht geklappt, du hast Zeit verschwendet und bist nicht geschützt.",
+          "Du bist stolz auf dich, weil du es geschafft hast, Geld gespart hast und geschützt bist.",
+        ],
+        [-10, 10],
+        [0, 0],
+        [-10, 0],
+        0.5,
         [
           new Question(
             "Möchtest du dir eine Maske kaufen?",
@@ -98,60 +152,6 @@ let coronaQuestions = [
             "png/frage_26.png"
           ),
         ]
-      ),
-      new Choice(
-        "Ich kaufe mir eine.",
-        "Du fühlst dich sicher, aber die Masken waren sehr teuer.",
-        5,
-        -35,
-        0,
-        1
-      ),
-      new Choice(
-        "Nein, ich werde mir eine nähen.",
-        [
-          "Du bist enttäuscht: Es hat nicht geklappt, du hast Zeit verschwendet und bist nicht geschützt.",
-          "Du bist stolz auf dich, weil du es geschafft hast, Geld gespart hast und geschützt bist.",
-        ],
-        [-10, 10],
-        [0, 0],
-        [-10, 0],
-        0.5,
-        new Question(
-          "Möchtest du dir eine Maske kaufen?",
-          [
-            new Choice(
-              "Nein, ich brauche keine.",
-              "Du siehst die Gefahr noch nicht und tust das als unnötig ab.",
-              0,
-              0,
-              -10,
-              1
-            ),
-            new Choice(
-              "Ich kaufe mir eine.",
-              "Du fühlst dich sicher, aber die Masken waren sehr teuer.",
-              5,
-              -35,
-              0,
-              1
-            ),
-            new Choice(
-              "Nein, ich werde mir eine nähen.",
-              [
-                "Du bist stolz auf dich, weil du es geschafft hast, Geld gespart hast und geschützt bist.",
-                "Du bist enttäuscht: Es hat nicht geklappt, du hast Zeit verschwendet und bist nicht geschützt.",
-              ],
-              [10, -10],
-              [0, 0],
-              [0, -10],
-              0.5
-            ),
-          ],
-          300,
-          -110,
-          "png/frage_26.png"
-        )
       ),
     ],
     300,
@@ -272,35 +272,33 @@ let coronaQuestions = [
         0,
         -10,
         1,
-        [
-          new Question(
-            "Du triffst dich mit deinen Freunden. Sie wollen dich umarmen. \n \nLässt du es zu?",
-            [
-              new Choice(
-                "Ich lehne ab.",
-                "Dir ist die Situation unangenehm, aber du willst auf Nummer sicher gehen.",
-                -5,
-                0,
-                0,
-                1
-              ),
-              new Choice(
-                "Ich lasse mich umarmen.",
-                [
-                  "Dir hat menschliche Nähe gefehlt.",
-                  "Du wurdest von der Polizei erwischt und musst die Strafe zahlen. Du ärgerst dich darüber.",
-                ],
-                [5, 10],
-                [0, 0],
-                [-10, -10],
-                0.8
-              ),
-            ],
-            0,
-            -110,
-            "png/frage_21_grafik.png"
-          ),
-        ]
+        new Question(
+          "Du triffst dich mit deinen Freunden. Sie wollen dich umarmen. \n \nLässt du es zu?",
+          [
+            new Choice(
+              "Ich lehne ab.",
+              "Dir ist die Situation unangenehm, aber du willst auf Nummer sicher gehen.",
+              -5,
+              0,
+              0,
+              1
+            ),
+            new Choice(
+              "Ich lasse mich umarmen.",
+              [
+                "Dir hat menschliche Nähe gefehlt.",
+                "Du wurdest von der Polizei erwischt und musst die Strafe zahlen. Du ärgerst dich darüber.",
+              ],
+              [5, 10],
+              [0, 0],
+              [-10, -10],
+              0.8
+            ),
+          ],
+          0,
+          -110,
+          "png/frage_21_grafik.png"
+        )
       ),
       new Choice(
         "Ich bleibe daheim.",
