@@ -39,7 +39,7 @@ import {
 import { setCurrentScreen } from "../../sketch.js";
 import { player } from "../game.js";
 
-let nextBtn = new Button(-250, 200, 80, 20, true, "Weiter", () => {
+let nextBtn = new Button(-300, 200, 80, 20, true, "Weiter", () => {
   setCurrentScreen("end");
 });
 
