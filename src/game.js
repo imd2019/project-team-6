@@ -94,7 +94,7 @@ let coronaQuestions = [
           ],
           300,
           -110,
-          "png/frage_26.png"
+          "png/frage_26_grafik.png"
         )
       ),
       new Choice(
@@ -149,7 +149,7 @@ let coronaQuestions = [
             ],
             300,
             -110,
-            "png/frage_26.png"
+            "png/frage_26_grafik.png"
           ),
         ]
       ),
