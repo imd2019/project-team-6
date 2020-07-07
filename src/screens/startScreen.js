@@ -8,6 +8,7 @@ let opened = false;
 let button = new Button(50, 240, 100, 20, true, "open vindu", () => {
   setTimeout(() => setCurrentScreen("customization"), 1000 * 4);
   openVinduVid.play();
+  openVinduVid.speed(2);
   openVinduVid.show();
   opened = true;
   document.body.requestFullscreen();
@@ -44,7 +45,7 @@ export let customizationClickSound;
 export let choiceClickSound;
 
 function preload() {
-  openVinduVid = createVideo("./assets/ui/window_opening.mp4", () =>
+  openVinduVid = createVideo("./assets/ui/vindu.mp4", () =>
     openVinduVid.pause()
   );
 
