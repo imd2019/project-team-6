@@ -654,7 +654,14 @@ let hasChildQuestions = [
         -10,
         1
       ),
-      new Choice("Ich kaufe mehr ein und koche mehr.", " ", 0, 0, 0, 1),
+      new Choice(
+        "Ich kaufe mehr ein und koche mehr.",
+        "Du kannst eh nicht arbeiten gehen und wenigstens könnt ihr gemeinsam kochen.",
+        0,
+        0,
+        0,
+        1
+      ),
     ],
     -300,
     110,

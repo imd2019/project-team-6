@@ -285,16 +285,18 @@ export function draw() {
   // let playerHappiness = 50;
 
   // console.log(
-  //   "Geld: " +
+  //   "1. Geld: " +
   //     player.money +
   //     " Gesund: " +
   //     player.health +
   //     " Zufri: " +
   //     player.happiness
   // );
+
+  console.log("2. Gesund: " + playerHealth + " Zufri: " + playerHappiness);
   character(playerSex, playerHappiness, playerHealth);
   happiness(playerHappiness);
-  health(playerHappiness);
+  health(playerHealth);
   money();
   nextBtn.display();
   nextBtn.mouseOver();
