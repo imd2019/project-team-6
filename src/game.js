@@ -738,6 +738,9 @@ let randomHasChildQuestions = [
     120,
     "png/frage_10_grafik.png"
   ),
+];
+
+let week1to2HasChildQuestions = [
   new Question(
     "Freunde haben dich in eine Bar eingeladen. \n \nGehst du mit?",
     [
@@ -983,11 +986,10 @@ export function pushHasChildQuestions() {
   upcomingEvents.push(new QuestionEvent(hasChildQuestions[4], 17));
   upcomingEvents.push(new QuestionEvent(hasChildQuestions[2], 22));
 
-  randomQuestionsWeek1to2.splice(3, 1);
-  randomQuestionsWeek1to2.splice(4, 1);
+  randomQuestionsWeek1to2.splice(3, 2);
   randomQuestionsWeek1to2.push(
-    randomHasChildQuestions[1],
-    randomHasChildQuestions[2]
+    week1to2HasChildQuestions[0],
+    week1to2HasChildQuestions[1]
   );
 
   week1QuestionsCount++;
@@ -1001,7 +1003,7 @@ export function deleteHasChildQuestions() {
     upcomingEvents.length - hasChildQuestionsCount - 1,
     hasChildQuestions.length
   );
-  randomQuestionsWeek1to2.splice(randomQuestionsWeek1to2.length - 2, 2);
+  randomQuestionsWeek1to2.splice(randomQuestionsWeek1to2.length - 2, 3);
   randomQuestionsWeek1to2.push(deletedQuestion1, deletedQuestion2);
   week1QuestionsCount--;
   week2QuestionsCount--;
@@ -1025,8 +1027,6 @@ function addRandomQuestionsToEachWeek(week, weekCount, randomQuestions) {
 }
 
 function addRandomQuestions(week, randomQuestions) {
-  console.log(randomQuestions.map((q) => typeof q));
-
   let i = Math.round(random(0, randomQuestions.length - 1));
   let question = randomQuestions[i];
   randomQuestions.splice(i, 1);
