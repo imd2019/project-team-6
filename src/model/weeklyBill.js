@@ -20,7 +20,10 @@ export class WeeklyBillEvent extends VinduEvent {
       runNextEvent();
 
       let totalDeduction = 0;
-      totalDeduction += this.tips - this.gasMoney;
+      totalDeduction += this.tips;
+      if (player.apartment.needsCar === true) {
+        totalDeduction -= this.gasMoney;
+      }
 
       if (player.hasChild) {
         totalDeduction -= this.foodWithChild;
@@ -59,8 +62,9 @@ export class WeeklyBillEvent extends VinduEvent {
 
     text("Trinkgeld: ", windowWidth / 2 + 150, windowHeight / 2 - 10);
     text("Einkauf: ", windowWidth / 2 + 150, windowHeight / 2 + 20);
-    text("Tankgeld: ", windowWidth / 2 + 150, windowHeight / 2 + 50);
-
+    if (player.apartment.needsCar === true) {
+      text("Tankgeld: ", windowWidth / 2 + 150, windowHeight / 2 + 50);
+    }
     text("+" + this.tips + "€", windowWidth / 2 + 220, windowHeight / 2 - 10);
     if (!player.hasChild) {
       text(
@@ -76,11 +80,13 @@ export class WeeklyBillEvent extends VinduEvent {
         windowHeight / 2 + 20
       );
     }
-    text(
-      "-" + this.gasMoney + "€",
-      windowWidth / 2 + 220,
-      windowHeight / 2 + 50
-    );
+    if (player.apartment.needsCar === true) {
+      text(
+        "-" + this.gasMoney + "€",
+        windowWidth / 2 + 220,
+        windowHeight / 2 + 50
+      );
+    }
     this.okBtn.mouseOver();
     this.okBtn.display();
     pop();

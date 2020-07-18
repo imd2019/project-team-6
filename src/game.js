@@ -63,16 +63,8 @@ let coronaQuestions = [
         -10,
         1,
         new Question(
-          "Möchtest du dir eine Maske kaufen?",
+          "Du hast immer noch keine Maske. Möchtest du dir eine Maske kaufen?",
           [
-            new Choice(
-              "Nein, ich brauche keine.",
-              "Du siehst die Gefahr noch nicht und tust das als unnötig ab.",
-              0,
-              0,
-              -10,
-              1
-            ),
             new Choice(
               "Ich kaufe mir eine.",
               "Du fühlst dich sicher, aber die Masken waren sehr teuer.",
@@ -83,14 +75,12 @@ let coronaQuestions = [
             ),
             new Choice(
               "Nein, ich werde mir eine nähen.",
-              [
-                "Du bist stolz auf dich, weil du es geschafft hast, Geld gespart hast und geschützt bist.",
-                "Du bist enttäuscht: Es hat nicht geklappt, du hast Zeit verschwendet und bist nicht geschützt.",
-              ],
-              [10, -10],
-              [0, 0],
-              [0, -10],
-              0.5
+
+              "Du bist stolz auf dich, weil du es geschafft hast, Geld gespart hast und geschützt bist.",
+              10,
+              0,
+              0,
+              1
             ),
           ],
           300,
@@ -118,16 +108,8 @@ let coronaQuestions = [
         0.5,
         [
           new Question(
-            "Möchtest du dir eine Maske kaufen?",
+            "Das mit dem nähen hat nicht geklappt. Probierst du es nochmal oder kaufst du dir eine?",
             [
-              new Choice(
-                "Nein, ich brauche keine.",
-                "Du siehst die Gefahr noch nicht und tust das als unnötig ab.",
-                0,
-                0,
-                -10,
-                1
-              ),
               new Choice(
                 "Ich kaufe mir eine.",
                 "Du fühlst dich sicher, aber die Masken waren sehr teuer.",
@@ -138,14 +120,13 @@ let coronaQuestions = [
               ),
               new Choice(
                 "Nein, ich werde mir eine nähen.",
-                [
-                  "Du bist stolz auf dich, weil du es geschafft hast, Geld gespart hast und geschützt bist.",
-                  "Du bist enttäuscht: Es hat nicht geklappt, du hast Zeit verschwendet und bist nicht geschützt.",
-                ],
-                [10, -10],
-                [0, 0],
-                [0, -10],
-                0.5
+
+                "Du bist stolz auf dich, weil du es geschafft hast, Geld gespart hast und geschützt bist.",
+
+                10,
+                0,
+                0,
+                1
               ),
             ],
             300,
@@ -746,7 +727,7 @@ let randomHasChildQuestions = [
     "Dein Kind hat Geburtstag. \n \nWas schenkst du ihm?",
     [
       new Choice(
-        "Ein Buch.",
+        "Ein Buch",
         [
           "Deinem Kind gefällt das Buch.",
           "Deinem Kind gefällt das Buch nicht.",
@@ -822,7 +803,7 @@ let week1to2HasChildQuestions = [
         1
       ),
       new Choice(
-        "Ich beibe daheim",
+        "Ich beibe daheim.",
         "Du verbringst einen schönen Spielemittag mit deinem Kind, aber deine Freunde haben dich lange nicht mehr gesehen.",
         0,
         0,
