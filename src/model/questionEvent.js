@@ -7,6 +7,7 @@ export class QuestionEvent extends VinduEvent {
       daysUntil,
       "assets/questionBGs/" + player.sex + "/" + question.backgroundPath
     );
+
     this.question = question;
   }
 

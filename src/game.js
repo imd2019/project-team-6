@@ -1073,21 +1073,26 @@ function addRandomQuestions(week, randomQuestions) {
 function randomFreeDayInWeek(week) {
   let firstDayOfWeek = 7 * (week - 1) + 1;
 
-  let hasWeekFreeDay = true;
+  let hasWeekFreeDay = false;
+  //go through whole week and look if theres a free day
   for (let i = firstDayOfWeek; i <= firstDayOfWeek + 5; i++) {
     if (!hasUpcomingEventOnDay(i)) {
-      hasWeekFreeDay = false;
+      hasWeekFreeDay = true;
     }
   }
 
-  if (hasWeekFreeDay) {
+  if (!hasWeekFreeDay) {
     console.log(upcomingEvents);
+    //throw new error works like return (stops program and shows this error)
+    //added this for testing
     throw new Error("Week " + week + " doesn't have any free days.");
   }
 
   while (true) {
+    // get random day in week
     let randomFreeDay = Math.round(random(firstDayOfWeek, firstDayOfWeek + 5));
 
+    // check if is free
     if (!hasUpcomingEventOnDay(randomFreeDay)) {
       return randomFreeDay;
     }
