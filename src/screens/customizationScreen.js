@@ -307,8 +307,4 @@ function preload() {
   zS = loadImage("./assets/endBGs/happiness/Zs-03.png");
 }
 
-export function drawPlayer() {
-  // TODO: Implement
-}
-
 export default { draw, mouseClicked, preload };

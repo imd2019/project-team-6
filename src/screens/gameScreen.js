@@ -28,9 +28,10 @@ function onStart() {
 }
 
 let t = false;
-let img;
 function draw() {
   clear();
+
+  //for debugging
   if (!t) {
     t = true;
     console.log(upcomingEvents);
@@ -39,15 +40,20 @@ function draw() {
       console.log("Event on day " + e.daysUntil);
     }
   }
+  //if it isnt a video
   if (!getCurrentEvent().hasBackgroundVideo()) {
     vid.hide();
+    //if it is a video and src ending isnt the same as backgroundpath
   } else if (!vid.src.endsWith(getCurrentEvent().backgroundPath)) {
+    //change src
     vid.src = getCurrentEvent().backgroundPath;
     vid.loop();
     vid.show();
   }
 
+  //if its an image
   if (getCurrentEvent().backgroundImage) {
+    //show image
     image(
       getCurrentEvent().backgroundImage,
       windowWidth / 2,
