@@ -938,10 +938,11 @@ function hasEventToday(events) {
 let currentEvent;
 
 export function runNextEvent() {
-  // after making a choice, show animation before showing next event
+  // to do: after making a choice, show animation before showing next event
   let nextEvent = getNextEvent();
   console.log(nextEvent);
 
+  //if nextEvent===null
   if (!nextEvent) {
     setTimeout(() => setCurrentScreen("result"), 450);
     return;
@@ -1074,7 +1075,7 @@ function randomFreeDayInWeek(week) {
   let firstDayOfWeek = 7 * (week - 1) + 1;
 
   let hasWeekFreeDay = false;
-  //go through whole week and look if theres a free day
+  //go through whole week and look if theres a free day (except sunday)
   for (let i = firstDayOfWeek; i <= firstDayOfWeek + 5; i++) {
     if (!hasUpcomingEventOnDay(i)) {
       hasWeekFreeDay = true;
