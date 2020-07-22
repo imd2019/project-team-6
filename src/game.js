@@ -611,7 +611,7 @@ let hasChildQuestions = [
         1
       ),
       new Choice(
-        "Ich nehme mir Urlaub für die Woche, um auf mein Kind aufzupassen.",
+        "Ich nehme mir Urlaub für die Woche.",
 
         "Du bist unzufrieden mit der Situation, dass die Schulen geschlossen haben.",
         -5,
@@ -980,7 +980,7 @@ export function pushCoronaQuestions() {
 export function deleteCoronaQuestions() {
   upcomingEvents.splice(
     upcomingEvents.length - coronaQuestionsCount - 1,
-    hasChildQuestions.length
+    coronaQuestions.length
   );
 
   week1QuestionsCount--;
