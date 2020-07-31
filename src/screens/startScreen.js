@@ -30,8 +30,6 @@ let closedVinduImg = new Pictures(0, 0, 400, 500, () => {
   customizationClickSound.play();
 });
 
-let loop = false;
-
 export function draw() {
   clear();
 

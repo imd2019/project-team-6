@@ -611,7 +611,7 @@ let hasChildQuestions = [
         1
       ),
       new Choice(
-        "Ich nehme mir Urlaub für die Woche, um auf mein Kind aufzupassen.",
+        "Ich nehme mir Urlaub für die Woche.",
 
         "Du bist unzufrieden mit der Situation, dass die Schulen geschlossen haben.",
         -5,
@@ -938,10 +938,11 @@ function hasEventToday(events) {
 let currentEvent;
 
 export function runNextEvent() {
-  // after making a choice, show animation before showing next event
+  // to do: after making a choice, show animation before showing next event
   let nextEvent = getNextEvent();
   console.log(nextEvent);
 
+  //if nextEvent===null
   if (!nextEvent) {
     setTimeout(() => setCurrentScreen("result"), 450);
     return;
@@ -979,7 +980,7 @@ export function pushCoronaQuestions() {
 export function deleteCoronaQuestions() {
   upcomingEvents.splice(
     upcomingEvents.length - coronaQuestionsCount - 1,
-    hasChildQuestions.length
+    coronaQuestions.length
   );
 
   week1QuestionsCount--;
@@ -1073,21 +1074,26 @@ function addRandomQuestions(week, randomQuestions) {
 function randomFreeDayInWeek(week) {
   let firstDayOfWeek = 7 * (week - 1) + 1;
 
-  let hasWeekFreeDay = true;
+  let hasWeekFreeDay = false;
+  //go through whole week and look if theres a free day (except sunday)
   for (let i = firstDayOfWeek; i <= firstDayOfWeek + 5; i++) {
     if (!hasUpcomingEventOnDay(i)) {
-      hasWeekFreeDay = false;
+      hasWeekFreeDay = true;
     }
   }
 
-  if (hasWeekFreeDay) {
+  if (!hasWeekFreeDay) {
     console.log(upcomingEvents);
+    //throw new error works like return (stops program and shows this error)
+    //added this for testing
     throw new Error("Week " + week + " doesn't have any free days.");
   }
 
   while (true) {
+    // get random day in week
     let randomFreeDay = Math.round(random(firstDayOfWeek, firstDayOfWeek + 5));
 
+    // check if is free
     if (!hasUpcomingEventOnDay(randomFreeDay)) {
       return randomFreeDay;
     }

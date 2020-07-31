@@ -3,7 +3,6 @@ import { setCurrentScreen } from "../../sketch.js";
 import {
   cityPic,
   townPic,
-  drawPlayer,
   townPicStroke,
   cityPicStroke,
 } from "./customizationScreen.js";
@@ -86,8 +85,6 @@ function mouseClicked() {
 
   cityPicture.mouseClicked();
   townPicture.mouseClicked();
-
-  drawPlayer();
 }
 
 export default {

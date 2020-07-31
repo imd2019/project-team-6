@@ -271,7 +271,12 @@ function preload() {
   closedVindu = loadImage("./assets/ui/Startscreen.png");
 
   endbg = loadImage("./assets/endBGs/end_bg.png");
-
+//erste Buchstabe:_Geschlecht
+//"G"=geld
+//"H"=Gesundheit
+//g=gut
+//m=mittel
+//s=schlecht
   dGgHg = loadImage("./assets/endBGs/diverse/D_Gg-Hg-02.png");
   dGgHm = loadImage("./assets/endBGs/diverse/D_Gg-Hm-02.png");
   dGgHs = loadImage("./assets/endBGs/diverse/D_Gg-Hs-02.png");
@@ -305,10 +310,6 @@ function preload() {
   zG = loadImage("./assets/endBGs/happiness/Zg-03.png");
   zM = loadImage("./assets/endBGs/happiness/Zm-03.png");
   zS = loadImage("./assets/endBGs/happiness/Zs-03.png");
-}
-
-export function drawPlayer() {
-  // TODO: Implement
 }
 
 export default { draw, mouseClicked, preload };

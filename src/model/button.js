@@ -41,15 +41,6 @@ export class Button {
     text(this.textTriangle, this.x - this.width - 40, this.y + 20);
   }
 
-  showPicture(picAdult, picChild) {
-    push();
-
-    imageMode(CENTER);
-    image(picAdult, this.x - this.width / 2, this.y - 250);
-    image(picChild, this.x - 100, this.y - this.height - 100);
-    pop();
-  }
-
   mouseClicked() {
     if (this.hitTest(mouseX, mouseY)) {
       this.clicked();
