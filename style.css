@@ -1,0 +1,30 @@
+body {
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  display: block;
+  background: #191d3d;
+}
+
+video {
+  z-index: -1;
+  /* user-select: none; */
+}
+
+#p5_loading {
+  position: relative;
+
+  margin-left: auto;
+  margin-right: auto;
+  width: 100vw;
+}
+
+#img {
+  position: absolute;
+  width: 100%;
+}
+
+/* html {
+  font-family: "Semplicita", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  src: url("./assets/Semplicita_Medium.otf");
+} */
